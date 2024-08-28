@@ -1,0 +1,29 @@
+- title: Home
+  url: "/"
+
+- title: Members
+  url: "/members/"
+  side: left
+  dropdown:
+  - title: "Professor"
+    url: "/members/professor/"
+    side: left
+  - title: "Students"
+    url: "/members/students/"
+    side: left
+  - title: "Alumni"
+    url: "/members/alumni/"
+    side: left
+
+- title: "Publications"
+  url: "/publications/"
+  side: left
+
+- title: "Research"
+  url: "/research/"
+
+- title: "Courses"
+  url: "/courses/"
+
+- title: "Contact"
+  url: "/contact/"
