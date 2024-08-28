@@ -1,5 +1,6 @@
 - title: Home
   url: "/"
+  side: left
 
 - title: Members
   url: "/members/"
@@ -21,9 +22,12 @@
 
 - title: "Research"
   url: "/research/"
+  side: left
 
 - title: "Courses"
   url: "/courses/"
+  side: left
 
 - title: "Contact"
   url: "/contact/"
+  side: left
