@@ -22,7 +22,7 @@ categories:
       {% assign n_images = 0 -%}
       {% for image in photo.images -%}
         {% assign n_images = n_images | plus: 1 -%}
-        <div class="slides-{{ n_galleries }} slide-fade">
+        <div class="slides-{{ n_images }} slide-fade">
           <img src="{{ image }}" style="width: 100%;">
         </div>
       {% endfor -%}
@@ -32,7 +32,7 @@ categories:
     </div>
     <br/>
     <div style="text-align: center;">
-      {% for idx in (1..{{ n_images }}) -%}
+      {% for idx in (1..n_images) -%}
         <span class="slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
       {% endfor -%}
     </div>

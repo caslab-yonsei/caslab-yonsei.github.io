@@ -27,6 +27,6 @@ function show_slide(gallery, idx) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" slide-active", "");
     }
-    slides[slide_indices[gallery]].setAttribute("style", "display:block");
-    dots[slide_indices[gallery]].className += " slide-active";
+    slides[slide_indices[gallery]-1].setAttribute("style", "display:block");
+    dots[slide_indices[gallery]-1].className += " slide-active";
 }
