@@ -28,8 +28,8 @@ categories:
 <div class="row">
   <div class="col-md-12">
     <h1>
-      <a class="off" href="/publications/">
-        Recent Publications
+      <a class="off" href="/photos/">
+        Recent Events
       </a>
     </h1>
     <hr>
@@ -45,8 +45,8 @@ categories:
     <!--{% include pub_box.html pub=publication short=true %}-->
     <div class="col-md-3">
       <a href="/photos/#{{ photo.title }}">
-        <div class="row">
-          <img width=100% src="{{ photo.image }}" style="object-fit: fill">
+        <div class="row" style="position: relative; width: 100%; padding-bottom: 56.25; overflow: hidden">
+          <img src="{{ photo.image }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="row" style="text-align: center;">
           {{ photo.title}}
