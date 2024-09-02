@@ -6,6 +6,7 @@ function init_slides(n_galleries) {
         slide_indices.push(1);
         show_slide(idx, slide_indices[idx]);
     }
+    setTimeout(auto_slide, 2000);
 }
 
 function next_slide(gallery, idx) {
@@ -14,6 +15,13 @@ function next_slide(gallery, idx) {
 
 function current_slide(gallery, idx) {
     show_slide(gallery, slide_indices[gallery] = idx);
+}
+
+function auto_slide() {
+    for (let idx = 0; idx < n_galleries; idx++) {
+        next_slide(idx, 1);
+    }
+    setTimeout(auto_slide, 2000);
 }
 
 function show_slide(gallery, idx) {
