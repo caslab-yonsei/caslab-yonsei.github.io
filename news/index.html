@@ -20,7 +20,15 @@ categories:
     <div class="row">
       <div class="col-md-12">
         <table>
+          <thead>
+            <tr class="header">
+              <td class="date">Date</td>
+              <td class="news">News</td>
+            </tr>
+          </thead>
+          <tbody>
   {% elsif this_year != prev_year %}
+          </tbody>
         </table>
       </div>
     </div>
@@ -33,17 +41,20 @@ categories:
     <div class="row">
       <div class="col-md-12">
         <table>
-          <tr class="header">
-            <td class="date">Date</td>
-            <td class="news">News</td>
-          </tr>
-  {% else %}
-          <tr class="body">
-            <td class="date">{{ news.year }}</td>
-            <td class="news">{{ news.title }}</td>
-          </tr>
+          <thead>
+            <tr class="header">
+              <td class="date">Date</td>
+              <td class="news">News</td>
+            </tr>
+          </thead>
+          <tbody>
   {% endif %}
+            <tr class="body">
+              <td class="date">{{ news.year }}</td>
+              <td class="news">{{ news.title }}</td>
+            </tr>
 {% endfor %}
+          </tbody>
         </table>
       </div>
     </div>
