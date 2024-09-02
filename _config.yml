@@ -1,6 +1,6 @@
-name: Riggleman Research Lab
-description: Computational research on polymer and glassy materials from the Riggleman Lab at the University of Pennsylvania
-url: http://rrgroup.seas.upenn.edu
+name: CASLab@Yonsei
+description: Computer Architecture and Systems Laboratory at Yonsei University
+url: https://caslab-yonsei.github.io
 
 markdown: kramdown
 permalink: /:categories/:title/
