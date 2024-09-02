@@ -10,12 +10,9 @@ categories:
     <!--<object id="home-logo" class="pull-left" data="/images/rigg.png" type="image/png">
     </object>-->
     <div id="home-title">
-      Computer Architecture and Systems Laboratory
+      Welcome to CASLAB@Yonsei!
     </div>
   </div>
-</div>
-
-<div class="row">
   <div class="col-md-12">
     <ul>
       <li><a href="https://cas.dgist.ac.kr/">Computer Architecture and Systems Laboratory</a></li>
@@ -42,12 +39,13 @@ categories:
 
   {% assign counter = 1 %}
   {% assign loopindex = -1 %}
-  {% for publication in site.categories.publications limit:4 %}
-    {% assign loopindex = counter | modulo: 2 %}
+  {% for photo in site.categories.photos limit:4 %}
+    {% assign loopindex = counter | modulo: 4 %}
     {% if loopindex == 1 %}
 <div class="row">
     {% endif %}
-    {% include pub_box.html pub=publication short=true %}
+    <!--{% include pub_box.html pub=publication short=true %}-->
+    <a href="/photos/#{{ photo.title }}"><img width=25% src="{{ photo.image }}"></a>
     {% if loopindex == 0 %}
 </div>
     {% endif %}
