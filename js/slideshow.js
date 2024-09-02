@@ -1,4 +1,5 @@
 let slide_indices = [];
+let slide_auto;
 
 function init_slides(n_galleries) {
     slide_indices = [];
@@ -6,7 +7,7 @@ function init_slides(n_galleries) {
         slide_indices.push(1);
         show_slide(idx, slide_indices[idx]);
     }
-    setTimeout(auto_slide, 5000);
+    slide_auto = setTimeout(auto_slide, 5000);
 }
 
 function next_slide(gallery, idx) {
@@ -22,13 +23,13 @@ function auto_slide() {
     for (let idx = 0; idx < slide_indices.length; idx++) {
         slides = document.getElementsByClassName("slides-gallery-"+String(idx));
         if (elementIsVisibleInViewport(slides[slide_indices[idx]-1])) {
-            next_slide(idx, 1);
+            next_slide(idx, 1, true);
         }
     }
-    setTimeout(auto_slide, 5000);
+    slide_auto = setTimeout(auto_slide, 5000);
 }
 
-function show_slide(gallery, idx) {
+function show_slide(gallery, idx, auto=false) {
     let i;
     let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
     let dots;
@@ -44,6 +45,10 @@ function show_slide(gallery, idx) {
             dots[i].className = dots[i].className.replace(" slide-active", "");
         }
         dots[slide_indices[gallery]-1].className += " slide-active";
+    }
+    if (!auto) {
+        clearTimeout(slide_auto);
+        slide_auto = setTimeout(auto_slide, 5000);
     }
 }
 
