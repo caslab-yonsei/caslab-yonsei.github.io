@@ -1,7 +1,6 @@
 ---
 title: Group Lunch Summer 2016
-image: /images/photos/2016-group-lunch.jpg
-slides:
+images:
   - /images/photos/2016-group-lunch.jpg
 ---
 

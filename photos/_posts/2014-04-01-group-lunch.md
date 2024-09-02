@@ -1,7 +1,6 @@
 ---
 title: Group Lunch Spring 2014
-image: /images/photos/2014-group-lunch.png
-slides:
+images:
   - /images/photos/2014-group-lunch.png
 ---
 

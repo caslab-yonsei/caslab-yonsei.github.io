@@ -1,7 +1,6 @@
 ---
 title: Group Lunch Summer 2013
-image: /images/photos/2013-group-lunch.jpg
-slides:
+images:
   - /images/photos/2013-group-lunch.jpg
 ---
 

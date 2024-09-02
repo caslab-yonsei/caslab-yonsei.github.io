@@ -1,7 +1,6 @@
 ---
 title: Spring 2013
-image: /images/photos/2013-group-photo.png
-slides:
+images:
   - /images/photos/2013-group-photo.png
 ---
 

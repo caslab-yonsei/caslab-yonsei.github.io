@@ -1,7 +1,6 @@
 ---
 title: Group Photo May 2017
-image: /images/photos/2017-group-photo.jpg
-slides:
+images:
   - /images/photos/2017-group-photo.jpg
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Group Photo February 2020
-image: /images/photos/2020-group-photo.jpg
-slides:
+images:
   - /images/photos/2020-group-photo.jpg
   - /images/photos/2017-group-photo.jpg
 ---

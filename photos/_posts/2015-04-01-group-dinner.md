@@ -1,7 +1,6 @@
 ---
 title: Group Dinner Spring 2015
-image: /images/photos/2015-group-dinner.png
-slides:
+images:
   - /images/photos/2015-group-dinner.png
 ---
 

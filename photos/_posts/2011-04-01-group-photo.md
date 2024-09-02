@@ -1,7 +1,6 @@
 ---
 title: Spring 2011
-image: /images/photos/2011-group-photo.jpg
-slides:
+images:
   - /images/photos/2011-group-photo.jpg
 ---
 

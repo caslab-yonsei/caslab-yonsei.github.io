@@ -6,4 +6,4 @@ gem 'kramdown-parser-gfm'
 # compiling less
 gem 'therubyracer'
 gem 'less'
-gem 'jekyll-paginate'
+gem 'jekyll-paginate', '~> 1.1'

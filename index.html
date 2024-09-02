@@ -47,7 +47,9 @@ categories:
       <div class="col-md-3">
         <a class="off" href="/photos/#{{ photo.title }}">
           <div class="row" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; margin: 0 auto;">
-            <img src="{{ photo.image }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            {% for image in photo.images limit:1 %}
+              <img src="{{ image }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            {% endfor %}
           </div>
           <div class="row" style="text-align: center;">
             {{ photo.title}}

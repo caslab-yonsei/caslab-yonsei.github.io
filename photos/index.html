@@ -12,21 +12,37 @@ categories:
 </div>
 
 <hr>
+{% assign n_galleries = 0 -%}
 {% for photo in site.categories.photos %}
 <div class="row">
   <div class="col-md-12" id="{{ photo.title }}">
     <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
     <hr/>
-    <!--<img width=100% src="{{ photo.image }}">-->
-    {% paginate photo.slides by 1 %}
-      {% for image in photo.slides %}
-        <img width=100% src="{{ image }}">
-      {% endfor %}
-    {% endpaginate %}
+    <div class="slideshow-container" style="position:relative; margin:auto;">
+      {% assign n_images = 0 -%}
+      {% for image in photo.images -%}
+        {% assign n_images = n_images | plus: 1 -%}
+        <div class="slides-{{ n_galleries }} slide-fade">
+          <img src="{{ image }}" style="width: 100%;">
+        </div>
+      {% endfor -%}
+
+      <a class="slide-prev" onclick="next_slide({{ n_galleries }}, -1)">&#10094;</a>
+      <a class="slide-next" onclick="next_slide({{ n_galleries }}, 1)">&#10095;</a>
+    </div>
+    <br/>
+    <div style="text-align: center;">
+      {% for idx in (1..{{ n_images }}) -%}
+        <span class="slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
+      {% endfor -%}
+    </div>
     <p>{{ photo.content }}</p>
   </div>
 </div>
 
 <div class="spacer"></div>
-
+{% assign n_galleries = n_galleries | plus: 1 -%}
 {% endfor %}
+<script>
+  init_slides({{ n_galleries }});
+</script>
