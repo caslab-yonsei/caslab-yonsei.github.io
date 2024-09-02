@@ -39,18 +39,14 @@ categories:
 
   {% assign counter = 1 %}
   {% assign loopindex = -1 %}
+  <div class="row">
   {% for photo in site.categories.photos limit:4 %}
-    {% assign loopindex = counter | modulo: 2 %}
-    {% if loopindex == 1 %}
-<div class="row">
-    {% endif %}
+    {% assign loopindex = counter | modulo: 4 %}
     <!--{% include pub_box.html pub=publication short=true %}-->
-    <a href="/photos/#{{ photo.title }}"><img width=25% src="{{ photo.image }}"></a>
-    {% if loopindex == 0 %}
-</div>
-    {% endif %}
-    {% assign counter = counter | plus: 1 %}
+    <div class="vol-md-6">
+      <a href="/photos/#{{ photo.title }}"><img width=25% src="{{ photo.image }}"></a>
+      {{ photo.title}}
+      {% assign counter = counter | plus: 1 %}
+    </div>
   {% endfor %}
-  {% if loopindex == 1 %}
 </div>
-  {% endif %}
