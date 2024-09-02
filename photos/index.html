@@ -18,15 +18,11 @@ categories:
     <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
     <hr/>
     <!--<img width=100% src="{{ photo.image }}">-->
-    <div class="slideshow-container">
-    {% assign counter = 0 %}
-    {% for image in photo.slides %}
-      {% assign counter = counter | plus: 1 %}
-      <div class="slides fade">
+    {% paginate photo.slides by 1 %}
+      {% for image in photo.slides %}
         <img width=100% src="{{ image }}">
-      </div>
-    {% endfor %}
-    </div>
+      {% endfor %}
+    {% endpaginate %}
     <p>{{ photo.content }}</p>
   </div>
 </div>
