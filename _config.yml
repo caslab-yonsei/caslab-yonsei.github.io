@@ -11,4 +11,5 @@ exclude:
   - "Gemfile.lock"
   - "deploy.sh"
   - "ghp_deploy.sh"
-  - [vendor]
+  - vendor/
+  - tmp/
