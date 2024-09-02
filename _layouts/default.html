@@ -114,6 +114,13 @@
             {% endif %}
               <a href="/photos/">Photos</a>
             </li>
+            {% if page.categories.first == 'news' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/news/">News</a>
+            </li>
           </ul>
         </div>
       </div>
