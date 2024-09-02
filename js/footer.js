@@ -18,7 +18,7 @@ $(window).resize(function() {
     autoHeight();
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     // Change text and color of footer logo to white on mouseover
     $('#footer-logo-box').mouseover(function() {
         $('#yonseiimg').attr('src','/images/upenn-footer-logo-white.png');
@@ -31,3 +31,4 @@ $(document).ready(function() {
         $('#ysu-text').css('color', '#9d9d9d');
     });
 });
+*/
