@@ -28,17 +28,17 @@ function show_slide(gallery, idx) {
     let i;
     let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
     let dots;
-    if (slides.length > 1) dots = document.getElementsByClassName("slides-dot-"+String(gallery));
     if (idx > slides.length) {slide_indices[gallery] = 1;}
     if (idx < 1) {slide_indices[gallery] = slides.length;}
     for (i = 0; i < slides.length; i++) {
         slides[i].setAttribute("style", "display: none");
     }
+    slides[slide_indices[gallery]-1].setAttribute("style", "display:block");
     if (slides.length > 1) {
+        dots = document.getElementsByClassName("slides-dot-"+String(gallery));
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" slide-active", "");
         }
+        dots[slide_indices[gallery]-1].className += " slide-active";
     }
-    slides[slide_indices[gallery]-1].setAttribute("style", "display:block");
-    if (slides.length > 1) dots[slide_indices[gallery]-1].className += " slide-active";
 }
