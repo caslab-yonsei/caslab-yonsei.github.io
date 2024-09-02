@@ -43,13 +43,15 @@ categories:
   {% for photo in site.categories.photos limit:4 %}
     {% assign loopindex = counter | modulo: 4 %}
     <!--{% include pub_box.html pub=publication short=true %}-->
-    <div class="col-md-2.5">
-      <div class="row">
-        <a href="/photos/#{{ photo.title }}"><img width=100% src="{{ photo.image }}"></a>
-      </div>
-      <div class="row" style="display: flex">
-        {{ photo.title}}
-      </div>
+    <div class="col-md-2">
+      <a href="/photos/#{{ photo.title }}">
+        <div class="row">
+          <img width=100% src="{{ photo.image }}" style="object-fit: fill">
+        </div>
+        <div class="row" style="text-align: center;">
+          {{ photo.title}}
+        </div>
+      </a>
       {% assign counter = counter | plus: 1 %}
     </div>
   {% endfor %}
