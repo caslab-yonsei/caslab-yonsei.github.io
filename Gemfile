@@ -1,13 +1,8 @@
 source 'https://rubygems.org'
-
-gem 'jekyll'
-
-group :jekyll_plugins do
-  gem 'jekyll-gist'
-  gem 'jekyll-paginate'
-  gem "jekyll-asciidoc"
-end
-
-gem 'asciidoctor', '~> 1.5.4'
-gem 'coderay', '1.1.1'
-
+# jekyll
+gem "jekyll", "~> 3.7"
+gem 'kramdown'
+gem 'kramdown-parser-gfm'
+# compiling less
+gem 'therubyracer'
+gem 'less'

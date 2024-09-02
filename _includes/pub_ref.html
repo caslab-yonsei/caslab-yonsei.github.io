@@ -1,0 +1,51 @@
+{% if include.short == true %}
+
+  {% for author in include.pub_loc.authors-short %}
+    {% assign linked = false %}
+    {% for member in site.categories.members %}
+      {% if author == member.abbrev %}
+        {% capture mem_url %}{{ member.url }}{% endcapture %}
+        {% assign linked = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if include.pub_loc.co-first and forloop.index == 2 %}
+      {% assign co-first-now = true %}
+    {% else %}
+      {% assign co-first-now = false %}
+    {% endif %}
+    {% if linked %}
+      <a href="{{ mem_url }}">{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+    {% else %}
+      {{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <i> {{ include.pub_loc.journal-short }}</i> ({{include.pub_loc.year}})
+
+{% else %}
+
+  {% for author in include.pub_loc.authors %}
+    {% assign linked = false %}
+    {% for member in site.categories.members %}
+      {% if author == member.title %}
+        {% capture mem_url %}{{ member.url }}{% endcapture %}
+        {% assign linked = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if include.pub_loc.co-first and forloop.index == 2 %}
+      {% assign co-first-now = true %}
+    {% else %}
+      {% assign co-first-now = false %}
+    {% endif %}
+    {% if linked %}
+      <a href="{{ mem_url }}">{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+    {% else %}
+      {{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <i> {{ include.pub_loc.journal }}</i> {{ include.pub_loc.ref }} ({{include.pub_loc.year}})
+
+{% endif %}

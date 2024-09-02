@@ -1,23 +1,167 @@
----
-layout: compress
----
-<!doctype html>
-<html class="no-js" lang="{% if site.language == nil %}en{% else %}{{ site.language }}{% endif %}">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	{% include _head.html %}
+  <meta charset="utf-8"/>
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}"
+  href="{{ site.url }}/feed.xml">
+
+  <!-- Customized Bootstrap + Font Awesome + Solarized -->
+  <link href="/css/style.css" rel="stylesheet" media="screen">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26220778-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <!-- END Google Analytics -->
+
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"">
+  </script>
+
+  <!-- jQuery -->
+  <script src="/js/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="/js/transition.js"></script>
+  <script src="/js/collapse.js"></script>
+
+  <!-- Custom script to put footer at bottom even if post is short -->
+  <!-- also controls color of footer logo on mouseover -->
+  <script src="/js/footer.js"></script>
+
 </head>
-<body id="top-of-page" class="{{ layout.format }}">
-	{% unless page.skip_boilerplate %}
-	{% include _navigation.html %}
-	{% endunless %}
 
-	{% include _masthead.html %}
-	{{ content }}
+<body>
 
-	{% unless page.skip_boilerplate %}
-	{% include _footer.html %}
-	{% endunless %}
+  <div id="header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Riggleman Lab</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-element">
+          <ul class="nav navbar-nav navbar-right">
+            {% if page.categories.first == 'research' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/research/">Research</a>
+            </li>
+            {% if page.categories.first == 'publications' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/publications/">Publications</a>
+            </li>
+            {% if page.categories.first == 'members' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/members/">Members</a>
+            </li>
+            {% if page.categories.first == 'code' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/code/">Code</a>
+            </li>
+            {% if page.categories.first == 'lectures' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/lectures/">Lectures</a>
+            </li>
+            {% if page.categories.first == 'photos' %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+              <a href="/photos/">Photos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-	{% include _footer_scripts.html %}
+  <div id="content-wrapper">
+    <div class="container">
+      {{ content }}
+    </div>
+  </div>
+
+  <div id="footer">
+    <nav class="navbar navbar-inverse text-center" role="navigation">
+      <div class="container">
+        <ul class="nav navbar-nav footernav">
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <li>
+            <a href="/contact/">Contact</a>
+          </li>
+          <li>
+            <a href="/collaborate/">Collaborate</a>
+          </li>
+          <li>
+            <a href="/join/">Join</a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer-logo-box" class="container">
+        <ul class="nav navbar-nav footernav">
+          <li>
+            <a id="cbe-text" href="http://cbe.seas.upenn.edu/">
+              University of Pennsylvania</br>
+              Chemical and Biomolecular Engineering Department</br>
+            </a>
+          </li>
+        </ul>
+        <div id="footer-logo" class="center-block">
+          <a href="http://cbe.seas.upenn.edu/">
+            <img id="pennimg" src="/images/upenn-footer-logo.png">
+          </a>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </nav>
+  </div>
+
 </body>
 </html>
