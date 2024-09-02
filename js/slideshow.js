@@ -6,7 +6,7 @@ function init_slides(n_galleries) {
         slide_indices.push(1);
         show_slide(idx, slide_indices[idx]);
     }
-    setTimeout(auto_slide, 2000);
+    setTimeout(auto_slide, 5000);
 }
 
 function next_slide(gallery, idx) {
@@ -18,10 +18,13 @@ function current_slide(gallery, idx) {
 }
 
 function auto_slide() {
-    for (let idx = 0; idx < slide_indices.length; idx++) {
-        next_slide(idx, 1);
+    let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
+    for (let idx = 0; idx < slides.length; idx++) {
+        if (elementIsVisibleInViewport(slides[idx])) {
+            next_slide(idx, 1);
+        }
     }
-    setTimeout(auto_slide, 2000);
+    setTimeout(auto_slide, 5000);
 }
 
 function show_slide(gallery, idx) {
@@ -42,3 +45,13 @@ function show_slide(gallery, idx) {
         dots[slide_indices[gallery]-1].className += " slide-active";
     }
 }
+
+const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+    const { innerHeight, innerWidth } = window;
+    return partiallyVisible
+      ? ((top > 0 && top < innerHeight) ||
+          (bottom > 0 && bottom < innerHeight)) &&
+          ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+  };
