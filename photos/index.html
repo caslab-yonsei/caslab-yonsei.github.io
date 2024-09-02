@@ -33,7 +33,7 @@ categories:
     <br/>
     <div style="text-align: center;">
       {% for idx in (1..n_images) -%}
-        <span class="slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
+        <span class="dot slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
       {% endfor -%}
     </div>
     <p>{{ photo.content }}</p>
