@@ -21,7 +21,7 @@ function auto_slide() {
     let slides;
     for (let idx = 0; idx < slide_indices.length; idx++) {
         slides = document.getElementsByClassName("slides-gallery-"+String(idx));
-        if (elementIsVisibleInViewport(slides[slide_indices[idx]])) {
+        if (elementIsVisibleInViewport(slides[slide_indices[idx]-1])) {
             next_slide(idx, 1);
         }
     }
