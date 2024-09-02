@@ -43,7 +43,7 @@ categories:
   {% for photo in site.categories.photos limit:4 %}
     {% assign loopindex = counter | modulo: 4 %}
     <!--{% include pub_box.html pub=publication short=true %}-->
-    <div class="vol-md-6">
+    <div class="col-md-6">
       <a href="/photos/#{{ photo.title }}"><img width=25% src="{{ photo.image }}"></a>
       {{ photo.title}}
       {% assign counter = counter | plus: 1 %}
