@@ -18,9 +18,10 @@ function current_slide(gallery, idx) {
 }
 
 function auto_slide() {
-    let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
-    for (let idx = 0; idx < slides.length; idx++) {
-        if (elementIsVisibleInViewport(slides[idx])) {
+    let slides;
+    for (let idx = 0; idx < slide_indices.length; idx++) {
+        slides = document.getElementsByClassName("slides-gallery-"+String(idx));
+        if (elementIsVisibleInViewport(slides[slide_indices[idx]])) {
             next_slide(idx, 1);
         }
     }
