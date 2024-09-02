@@ -22,11 +22,11 @@ function show_slide(gallery, idx) {
     if (idx > slides.length) {slide_indices[gallery] = 1;}
     if (idx < 1) {slide_indices[gallery] = slides.length;}
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].setAttribute("style", "display: none");
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" slide-active", "");
     }
-    slides[slide_indices[gallery]].style.display = "block";
+    slides[slide_indices[gallery]].setAttribute("style", "display:block");
     dots[slide_indices[gallery]].className += " slide-active";
 }
