@@ -17,7 +17,7 @@ function current_slide(gallery, idx) {
 
 function show_slide(gallery, idx) {
     let i;
-    let slides = document.getElementsByClassName("slides-"+String(gallery));
+    let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
     let dots = document.getElementsByClassName("slides-dot-"+String(gallery));
     if (idx > slides.length) {slide_indices[gallery] = 1;}
     if (idx < 1) {slide_indices[gallery] = slides.length;}
