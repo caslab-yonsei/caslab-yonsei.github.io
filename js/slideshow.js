@@ -27,6 +27,7 @@ function auto_slide() {
 function show_slide(gallery, idx) {
     let i;
     let slides = document.getElementsByClassName("slides-gallery-"+String(gallery));
+    if (slides.length <= 1) return;
     let dots = document.getElementsByClassName("slides-dot-"+String(gallery));
     if (idx > slides.length) {slide_indices[gallery] = 1;}
     if (idx < 1) {slide_indices[gallery] = slides.length;}
