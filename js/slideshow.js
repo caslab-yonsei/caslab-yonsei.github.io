@@ -4,6 +4,7 @@ function init_slides(n_galleries) {
     slide_indices = [];
     for (let idx = 0; idx < n_galleries; idx++) {
         slide_indices.push(1);
+        show_slide(idx, slide_indices[idx]);
     }
 }
 
