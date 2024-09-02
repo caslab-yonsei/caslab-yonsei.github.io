@@ -39,11 +39,11 @@ categories:
 
   {% assign counter = 1 %}
   {% assign loopindex = -1 %}
-  <div class="row" style="margin: 10 auto;">
-  {% for photo in site.categories.photos limit:8 %}
+  <div class="row">
+  {% for photo in site.categories.photos limit:12 %}
     {% assign loopindex = counter | modulo: 4 %}
     {% if loopindex == 1 %}
-    <div class="row">
+    <div class="row" style="margin-bottom: 15px">
     {% endif %}
     <!--{% include pub_box.html pub=publication short=true %}-->
       <div class="col-md-3">
