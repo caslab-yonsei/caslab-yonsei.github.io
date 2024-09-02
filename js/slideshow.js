@@ -18,7 +18,7 @@ function current_slide(gallery, idx) {
 }
 
 function auto_slide() {
-    for (let idx = 0; idx < n_galleries; idx++) {
+    for (let idx = 0; idx < slide_indices.length; idx++) {
         next_slide(idx, 1);
     }
     setTimeout(auto_slide, 2000);
