@@ -43,7 +43,7 @@ categories:
   {% for photo in site.categories.photos limit:4 %}
     {% assign loopindex = counter | modulo: 4 %}
     <!--{% include pub_box.html pub=publication short=true %}-->
-    <div class="col-md-2">
+    <div class="col-md-3">
       <a href="/photos/#{{ photo.title }}">
         <div class="row">
           <img width=100% src="{{ photo.image }}" style="object-fit: fill">
