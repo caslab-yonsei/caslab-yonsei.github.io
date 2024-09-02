@@ -10,25 +10,39 @@ categories:
   {% capture this_year %}{% assign year = news.year | split: '.' | first -%}{% endcapture %}
 
   {% if forloop.first %}
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{ this_year }}</h1>
-      <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ this_year }}</h1>
+        <hr>
+      </div>
     </div>
-  </div>
-  <table>
+    <div class="row">
+      <div class="col-md-12">
+        <table>
   {% elsif this_year != prev_year %}
-  </table>
-  <table>
-    <tr class="header">
-      <td class="date">Date</td>
-      <td class="news">News</td>
-    </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ this_year }}</h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table>
+          <tr class="header">
+            <td class="date">Date</td>
+            <td class="news">News</td>
+          </tr>
   {% else %}
-    <tr class="body">
-      <td class="date">{{ news.year }}</td>
-      <td class="news">{{ news.title }}</td>
-    </tr>
+          <tr class="body">
+            <td class="date">{{ news.year }}</td>
+            <td class="news">{{ news.title }}</td>
+          </tr>
   {% endif %}
 {% endfor %}
-  </table>
+        </table>
+      </div>
+    </div>
