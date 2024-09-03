@@ -16,16 +16,15 @@ layout: default
     <h3>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h3>
     <div class="profile-position">{{ member.position }}</div>
     <div class="profile-location">{{ member.location }}</div>
-    <div class="spacer"></div>
-    {% if member.info -%}
-        <div class="pad-left note">
-          <div class="smallspacer"></div>
-          <i class="fa fa-info-circle fa-fw"></i>
-          {{ member.info }}
-        </div>
-        <div class="spacer"></div>
-    {% endif -%}
     <div class="hidden-xs" style="text-align:left;">
+      {% if member.info -%}
+          <div class="pad-left note">
+            <div class="smallspacer"></div>
+            <i class="fa fa-info-circle fa-fw"></i>
+            {{ member.info }}
+          </div>
+      {% endif -%}
+      <div class="spacer"></div>
       {% include member_links.html member_loc=member %}
     </div>
   </div>
