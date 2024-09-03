@@ -14,7 +14,7 @@
         </a>
       </div>
       <div class="col-xs-6">
-        <a href="{{ member.url }}" class="off">
+        <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}" class="off">
           <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h2>
         </a>
         <h3>{{ member.position }}</h3>
