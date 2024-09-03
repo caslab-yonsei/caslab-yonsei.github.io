@@ -19,7 +19,16 @@
       </div>
       <div class="col-xs-6">
         <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}" class="off">
-          <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h2>
+          <h2>
+            {%- if member.profile_name -%}
+              {{ member.profile_name }}
+            {%- else -%}
+              {{ member.title }}
+            {%- endif -%}
+            {%- if member.leader -%}
+            <i class="fa fa-star" aria-hidden="true" title="Lab Leader"></i>
+            {%- endif -%}
+          </h2>
         </a>
         <h3>{{ member.position }}</h3>
         <div class="spacer"></div>
