@@ -1,0 +1,29 @@
+
+<div class="row">
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Degree</td>
+        <td>Date</td>
+        <td>Affiliation</td>
+      </tr>
+    </thead>
+    <tbody>
+{% for member in site.categories.members reversed -%}
+  {% if member.role == include.role -%}
+      <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
+        <td>
+          <a class="off" href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+            {% if member.profile_name -%}{{ member.profile_name }}{% else -%}{{ member.title }}{% endif -%}
+          </a>
+        </td>
+        <td>{{ member.grad_degree }}</td>
+        <td>{{ member.grad_date }}</td>
+        <td>{{ member.grad_affiliation }}</td>
+      </tr>
+  {% endif %}
+{% endfor %}
+    </tbody>
+  </table>
+</div>

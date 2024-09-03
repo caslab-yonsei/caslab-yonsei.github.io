@@ -5,6 +5,13 @@ categories:
  - news
 ---
 
+<div class="row">
+  <div class="col-md-12">
+    <h1>News</h1>
+  </div>
+</div>
+<hr>
+
 {% for news in site.categories.news %}
   {% capture prev_year %}{{ this_year }}{% endcapture %}
   <!--{% capture this_year %}{% assign year = news.year | split: '.' | first -%}{% endcapture %}-->
@@ -13,7 +20,7 @@ categories:
   {% if forloop.first %}
     <div class="row">
       <div class="col-md-12">
-        <h1>{{ this_year }}</h1>
+        <h2>{{ this_year }}</h2>
       </div>
     </div>
     <div class="row">
@@ -33,7 +40,7 @@ categories:
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h1>{{ this_year }}</h1>
+        <h2>{{ this_year }}</h2>
       </div>
     </div>
     <div class="row">

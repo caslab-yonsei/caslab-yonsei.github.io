@@ -8,8 +8,8 @@ researches:
   - Undergraduate Alum
 position: Staff Scientist, Berkeley Lights 
 image: /images/members/michelle-sorkin.jpg
-grad-degree: Ph.D.
-grad-affiliation: ETRI
-grad-date: February 2022
+grad_degree: Ph.D.
+grad_affiliation: ETRI
+grad_date: February 2022
 ---
 

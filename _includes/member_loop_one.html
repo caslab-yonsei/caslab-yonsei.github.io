@@ -1,6 +1,6 @@
 {% for member in site.categories.members reversed %}
   {% if member.role == include.role %}
-<div class="row" id="{{ member.title }}">
+<div class="row" id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
   <div class="col-sm-3">
     <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
       <img class="pi-img" src="{{ member.image }}">
@@ -12,7 +12,7 @@
   </div>
   <div class="col-sm-9">
     <a class="off" href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
-      <h2>{{ member.title }}</h2>
+      <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h2>
     </a>
     <h3>{{ member.position }}</h3>
     <div class="bigspacer"></div>
