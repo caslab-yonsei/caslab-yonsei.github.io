@@ -1,7 +1,7 @@
 {% for member in site.categories.members reversed %}
   {% if member.role == include.role %}
 <div class="row" id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
-  <div class="col-sm-3">
+  <div class="col-sm-3 pi-col">
     <div class="pi-sqr">
       <div class="pi-div">
         <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
