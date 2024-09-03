@@ -13,7 +13,7 @@ scholar: t0MgfgAAAAJ
 twitter: annaneupenn
 image: /images/members/anna-neuman.png
 alterlink: https://www.google.com/
-info: Lab Leader
+task: Lab Leader
 ---
 
 Hi, I'm Anna! I am a  PhD student in the Chemical and Biomolecular Engineering department, coadvised by [Daeyeon Lee](https://www.seas.upenn.edu/~leegroup/people.html). I use polymer field theory and molecular dynamics to understand the impacts of confinement and polymer-nanoparticle interactions on the thermodynamics of highly-filled polymer blend nanocomposites. I work closely with experimentalists in the Lee Lab creating composites with the Capillary Rise Infiltration (CaRI) method. 

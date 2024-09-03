@@ -21,12 +21,6 @@
       <h1>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h1>
     </a>
     <h3>{{ member.position }}</h3>
-    {% if member.info -%}
-        <div class="pad-left note">
-          <i class="fa fa-info-circle fa-fw"></i>
-          {{ member.info }}
-        </div>
-    {% endif -%}
     <div class="bigspacer"></div>
     {{ member.content }}
     <div class="bigspacer"></div>

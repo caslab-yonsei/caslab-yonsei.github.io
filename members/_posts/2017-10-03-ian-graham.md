@@ -11,5 +11,5 @@ email: igraham at seas.upenn.edu
 image: /images/members/ian-graham.png
 alumni: false
 location: "@E3-304, DGIST"
-info: Test Professor
+task: Test Professor
 ---
