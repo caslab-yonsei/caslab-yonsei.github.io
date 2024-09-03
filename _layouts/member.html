@@ -24,7 +24,7 @@ layout: default
     </div>
   </div>
   <div class="col-md-9">
-    <div class="row">
+    <div>
 {% for research in member.researches -%}
   {% if forloop.first -%}
       <h1 id="research">Research Interests</h1>
@@ -54,7 +54,7 @@ layout: default
 
 {% if papersq == true %}
     <div class="bigspacer"></div>
-    <h1>Publications</h1>
+    <h1 id="publications">Publications</h1>
     <div class="spacer"></div>
 
     <ol>
