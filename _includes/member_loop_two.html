@@ -25,9 +25,6 @@
             {%- else -%}
               {{ member.title }}
             {%- endif -%}
-            {%- if member.leader -%}
-            <i class="fa fa-star" aria-hidden="true" title="Lab Leader"></i>
-            {%- endif -%}
           </h2>
         </a>
         <h3>{{ member.position }}</h3>
@@ -36,12 +33,19 @@
     {% if member.email %}
       {% assign emailarray = member.email | split: ' at ' -%}
         <div class="pad-left note">
-          <div class=""smallspacer"></div>
+          <div class="smallspacer"></div>
           <i class="fa fa-inbox fa-fw"></i>
           {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
         </div>
-        <div class="bigspacer"></div>
     {% endif -%}
+    {% if member.info -%}
+        <div class="pad-left note">
+          <div class="smallspacer"></div>
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          {{ member.info }}
+        </div>
+    {% endif -%}
+      <div class="bigspacer"></div>
       </div>
     </div>
     <div class="bigspacer"></div>
