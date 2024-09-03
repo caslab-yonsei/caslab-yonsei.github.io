@@ -1,7 +1,7 @@
 {% assign counter = 1 -%}
 {% assign loopindex = -1 -%}
 {% for member in site.categories.members reversed -%}
-  {% if member.role == render.role -%}
+  {% if member.role == include.role -%}
     {% assign loopindex = counter | modulo: 2 -%}
     {% if loopindex == 1 -%}
 <div class="row">

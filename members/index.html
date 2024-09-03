@@ -12,7 +12,7 @@ categories:
 </div>
 
 <hr>
-{% render "member_loop", role: "Professor" %}
+{% include "member_loop" role="Professor" %}
 <!--
 {% for member in site.categories.members reversed %}
   {% if member.role == "Professor" %}
@@ -59,7 +59,7 @@ categories:
 </div>
 
 <hr>
-{% render "member_loop", role: "Student" %}
+{% include "member_loop" role="Student" %}
 {% # include member_loop.html member_role="Student" alumni=false %}
 
 
@@ -92,6 +92,6 @@ categories:
 
 <hr>
 
-{% render "member_loop", role: "Alumni" %}
+{% include "member_loop" role="Alumni" %}
 {% # include member_loop.html alumni=true%}
 
