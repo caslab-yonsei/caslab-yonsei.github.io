@@ -8,9 +8,9 @@
     {% endif -%}
   <div class="col-sm-6" id="{{ member.title }}">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-6 pi-div">
         <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
-          <img width=100% class="media-object" src="{{ member.image }}">
+          <img width=100% class="pi-img" src="{{ member.image }}">
         </a>
       </div>
       <div class="col-xs-6">

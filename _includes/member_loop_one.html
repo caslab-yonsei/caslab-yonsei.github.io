@@ -2,9 +2,11 @@
   {% if member.role == include.role %}
 <div class="row" id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
   <div class="col-sm-3">
-    <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
-      <img class="pi-img" src="{{ member.image }}">
-    </a>
+    <div class="pi-div">
+      <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+        <img class="pi-img" src="{{ member.image }}">
+      </a>
+    </div>
     <div class="spacer"></div>
     <div class="hidden-xs">
       {% include member_links.html member_loc=member %}
