@@ -10,5 +10,5 @@ researches:
 email: igraham at seas.upenn.edu
 image: /images/members/ian-graham.png
 alumni: false
-located: @E3-304, DGIST
+location: "@E3-304, DGIST"
 ---
