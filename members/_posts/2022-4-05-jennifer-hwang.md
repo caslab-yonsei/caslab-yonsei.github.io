@@ -4,9 +4,11 @@ title: Hyun Joo Hwang
 profile_name: Hyun (Jennifer) Hwang
 abbrev: H. J. Hwang
 alumni: True
+role: Alumni
 suffix: Ph.D.
 position: Senior Data Scientist, Forcepoint 
-research: Ph.D. Alum
+researches:
+  - Ph.D. Alum
 github: hyunhw
 image: /images/members/jennifer-hwang.jpg
 ---

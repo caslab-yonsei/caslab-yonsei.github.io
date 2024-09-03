@@ -4,7 +4,9 @@ title: Anubhav Sharma
 suffix: M.S.
 abbrev: A. Sharma
 alumni: true
-research: M.S. Alum
+role: Alumni
+researches:
+  - M.S. Alum
 image: /images/members/anubhav-sharma.png
 ---
 

@@ -4,9 +4,11 @@ title: Benjamin J. Lindsay
 profile_name: Ben Lindsay
 abbrev: B. J. Lindsay
 alumni: True
+role: Alumni
 suffix: Ph.D.
 position: Data Scientist, C.H. Robinson
-research: Ph.D. Alum
+researches:
+  - Ph.D. Alum
 website: benjlindsay.com
 github: benlindsay
 bitbucket: benlindsay

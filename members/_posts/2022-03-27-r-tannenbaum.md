@@ -2,11 +2,13 @@
 layout: member
 title: Robert Tannenbaum 
 alumni: true
+role: Alumni
 profile_name: Robert Tannenbaum
 abbrev: R. Tannenbaumi
 suffix: M.S.
 position: Ph.D. student, Columbia University
-research: M.S. Alum
+researches:
+  - M.S. Alum
 email: rtann at alumni.upenn.edu
 image: /images/members/robbie-tannenbaum.jpg
 ---

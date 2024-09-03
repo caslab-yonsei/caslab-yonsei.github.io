@@ -1,10 +1,12 @@
 ---
 layout: member
 title: Conor Luppnow
-alumni: false 
+alumni: false  
+role: Student
 profile_name: Conor Luppnow
 abbrev: C. Luppnow
-research: Energy landscapes of glassy systems
+researches:
+  - Energy landscapes of glassy systems
 position: PhD Student
 email: cluppnow at seas.upenn.edu
 image: /images/members/conorl.jpg

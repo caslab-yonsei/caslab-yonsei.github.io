@@ -3,10 +3,12 @@ layout: member
 title: Jason Koski
 suffix: Ph.D.
 abbrev: J. Koski
+role: Alumni
 position: Postdoctoral Fellow, Sandia National Labs
 email: jkoski134 at gmail.com
 scholar: 64yuufQAAAAJ
-research: Ph.D. Alum
+researches:
+  - Ph.D. Alum
 alumni: true
 image: /images/members/jason-koski.png
 ---

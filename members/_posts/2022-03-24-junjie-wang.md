@@ -2,7 +2,9 @@
 layout: member
 title: Junjie Wang 
 alumni: true
+role: Alumni
 suffix: M.S.
-research: M.S. Alum
+researches:
+  - M.S. Alum
 image: /images/members/junjie-wang.jpg
 ---

@@ -3,7 +3,9 @@ layout: member
 title: Colin Gillespie
 abbrev: C. Gillespie
 position: PhD Student
-research: Self-assembly of multiblock ionomers
+role: Student
+researches:
+  - Self-assembly of multiblock ionomers
 email: colinhg at seas.upenn.edu
 image: /images/members/colin-gillespie.jpg
 ---

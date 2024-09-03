@@ -2,6 +2,7 @@
 layout: member
 title: Dongqi Zhao
 alumni: false 
+role: Student
 profile_name: Dongqi Zhao
 abbrev: D. Zhao
 position: PhD Student

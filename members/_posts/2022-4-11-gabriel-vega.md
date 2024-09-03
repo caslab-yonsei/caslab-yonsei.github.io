@@ -2,6 +2,7 @@
 layout: member
 title: Gabriel Vega Bellido
 alumni: false 
+role: Student
 profile_name: Gabriel Vega Bellido
 abbrev: G.I. Vega Bellido 
 position: PhD Student

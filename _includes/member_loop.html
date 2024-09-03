@@ -1,87 +1,45 @@
-{% if include.alumni != true %}
-
-  {% assign counter = 1 %}
-  {% assign loopindex = -1 %}
-  {% for member in site.categories.members reversed %}
-    {% if member.alumni != true and member.position == include.member_role %}
-      {% assign loopindex = counter | modulo: 2 %}
-      {% if loopindex == 1 %}
+{% assign counter = 1 -%}
+{% assign loopindex = -1 -%}
+{% for member in site.categories.members reversed -%}
+  {% if member.role == render.role -%}
+    {% assign loopindex = counter | modulo: 2 -%}
+    {% if loopindex == 1 -%}
 <div class="row">
-      {% endif %}
-  <div class="col-sm-6">
+    {% endif -%}
+  <div class="col-sm-6" id="{{ member.title }}">
     <div class="row">
       <div class="col-xs-6">
-        <a href="{{ member.url }}">
+        <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
           <img width=100% class="media-object" src="{{ member.image }}">
         </a>
       </div>
       <div class="col-xs-6">
         <a href="{{ member.url }}" class="off">
-          <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h2>
+          <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h2>
         </a>
+        <h3>{{ member.position }}</h3>
         <div class="spacer"></div>
-        <p class="note">{{ member.research }}</p>
-      {% if member.email %}
-        {% assign emailarray = member.email | split: ' at ' %}
+        <p class="note">{% for research in member.researches %}{{ research }}{% unless forloop.last %}, {% endunless -%}{% endfor -%}</p>
+    {% if member.email %}
+      {% assign emailarray = member.email | split: ' at ' -%}
         <div class="pad-left note">
-          <div class="smallspacer"></div>
+          <div class=""smallspacer"></div>
           <i class="fa fa-inbox fa-fw"></i>
           {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
         </div>
         <div class="bigspacer"></div>
-      {% endif %}
+    {% endif -%}
       </div>
     </div>
     <div class="bigspacer"></div>
     <div class="bigspacer"></div>
   </div>
-      {% if loopindex == 0 %}
+    {% if loopindex == 0 -%}
 </div>
-      {% endif %}
-      {% assign counter = counter | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  {% if loopindex == 1 %}
-</div>
+    {% endif -%}
+    {% assign counter = counter | plus: 1 -%}
   {% endif %}
-
-{% else %}
-
-  {% assign counter = 1 %}
-  {% assign loopindex = -1 %}
-  {% for member in site.categories.members %}
-    {% if member.alumni == true %}
-      {% assign loopindex = counter | modulo: 2 %}
-      {% if loopindex == 1 %}
-<div class="row">
-      {% endif %}
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-xs-6">
-        <a href="{{ member.url }}">
-          <img width=100% class="media-object" src="{{ member.image }}">
-        </a>
-      </div>
-      <div class="col-xs-6">
-        <a href="{{ member.url }}" class="off">
-          <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h2>
-        </a>
-        <div class="spacer"></div>
-        <p class="note"><i>{{ member.position }}</i></p>
-        <p class="note">{{ member.research }}</p>
-      </div>
-    </div>
-    <div class="bigspacer"></div>
-    <div class="bigspacer"></div>
-  </div>
-      {% if loopindex == 0 %}
+{% endfor -%}
+{% if loopindex == 1 -%}
 </div>
-      {% endif %}
-      {% assign counter = counter | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  {% if loopindex == 1 %}
-</div>
-  {% endif %}
-
-{% endif %}
+{% endif -%}

@@ -4,7 +4,9 @@ title: Amit Shavit
 suffix: Ph.D.
 abbrev: A. Shavit
 position: Principal Data Scientist, Fidelity Investments
-research: Ph.D. Alum
+role: Alumni
+researches:
+  - Ph.D. Alum
 email: shavitamit at gmail.com
 scholar: QqABbL0AAAAJ
 github: shavitamit
