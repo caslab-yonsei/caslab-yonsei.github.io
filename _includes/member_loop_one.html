@@ -13,10 +13,12 @@
     <div class="hidden-xs" style="text-align:left;">
       {% include member_links.html member_loc=member %}
     </div>
+    <div class="bigspacer"></div>
+    <div class="bigspacer"></div>
   </div>
   <div class="col-sm-9">
     <a class="off" href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
-      <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h2>
+      <h1>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h1>
     </a>
     <h3>{{ member.position }}</h3>
     {% if member.info -%}
@@ -27,9 +29,9 @@
     {% endif -%}
     <div class="bigspacer"></div>
     {{ member.content }}
+    <div class="bigspacer"></div>
+    <div class="bigspacer"></div>
   </div>
-  <div class="bigspacer"></div>
-  <div class="bigspacer"></div>
 </div>
   {% endif %}
 {% endfor %}
