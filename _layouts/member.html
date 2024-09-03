@@ -5,62 +5,65 @@ layout: default
 {% assign member = page %}
 
 <div class="row">
-  <div class="col-sm-12">
-    <div class="media">
-      {% if member.image %}
-      <img class="pull-left pad-right media-object" width=170 src="{{ member.image }}">
-      {% endif %}
-      <div class="media-body">
-        <h1>{% if member.profile_name %}{{member.profile_name}}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h1>
-        <div class="bigspacer"></div>
-        <h3><i>{{ member.position }}</i></h3>
-        <div class="bigspacer"></div>
-        <h3>{{ member.research }}</h3>
+  <div class="col-md-3">
+{% if member.image %}
+    <div class="pi-sqr">
+      <div class="pi-div">
+        <img class="pi-img" src="{{ member.image }}">
       </div>
     </div>
-  </div>
-</div>
-
-<div class="bigspacer"></div>
-
-<div class="row">
-  <div class="col-md-3">
-    {% include member_links.html member_loc=member %}
+{% endif %}
+    <h2>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h2>
+    <h3><i>{{ member.position }}</i></h3>
+    <p>{{ member.location }}</p>
+    <div class="spacer"></div>
+    <div class="hidden-xs">
+      {% include member_links.html member_loc=member %}
+    </div>
   </div>
   <div class="col-md-9">
+    <div class="row">
+{% for research in member.researches -%}
+  {% if forloop.first -%}
+      <h1 id="research">Research Interests</h1>
+      <ul>
+  {% endif -%}
+        <li>{{ research }}</li>
+  {% if forloop.last -%}
+      </ul>
+  {% endif -%}
+{% endfor -%}
+    </div>
     <div class="post">
       {{ content }}
     </div>
+{% for publication in site.categories.publications %}
+  {% for author in publication.authors %}
+    {% if author == member.title %}
+      {% assign papersq = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if papersq %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
-    {% for publication in site.categories.publications %}
-      {% for author in publication.authors %}
-        {% if author == member.title %}
-          {% assign papersq = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {% if papersq %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-
-    {% if papersq == true %}
-
+{% if papersq == true %}
     <div class="bigspacer"></div>
-    <h3>Publications</h3>
+    <h1>Publications</h1>
     <div class="spacer"></div>
 
     <ol>
-      {% for publication in site.categories.publications %}
-        {% for author in publication.authors %}
-          {% if author == member.title %}
+  {% for publication in site.categories.publications %}
+    {% for author in publication.authors %}
+      {% if author == member.title %}
       <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
     </ol>
-    {% endif %}
-
+{% endif %}
   </div>
   <div class="col-md-1"></div>
 </div>
