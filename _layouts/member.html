@@ -13,12 +13,11 @@ layout: default
       </div>
     </div>
 {% endif %}
-    <h3>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</h3>
+    <div class="profile-name">{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% if member.suffix %}, {{ member.suffix }}{% endif %}</div>
     <div class="profile-position">{{ member.position }}</div>
     <div class="profile-location">{{ member.location }}</div>
     {% if member.info -%}
         <div class="pad-left note">
-          <div class="smallspacer"></div>
           <i class="fa fa-info-circle fa-fw"></i>
           {{ member.info }}
         </div>
