@@ -3,7 +3,7 @@ layout: member
 title: Ian Graham
 profile_name: Ian Graham
 abbrev: I. R. Graham
-role: Student
+role: Professor
 position: PhD Student
 researches:
   - "Interplay of structure and dynamics in glassy systems"

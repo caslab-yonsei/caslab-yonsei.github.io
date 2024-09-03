@@ -189,19 +189,28 @@ img.offset {
 }
 
 // Members Page Stuff //
+// seungkyu
+.pi-sqr {
+    display: inline-block;
+    position: relative;
+    max-width: @pi-img-max-size;
+}
 
 .pi-div {
     display: inline-block;
     position: relative;
     width: 100%;
-    height: 100%;
+    padding-bottom: 100%;
     overflow: hidden;
     border-radius: 50%;
 }
 
 .pi-img {
+    position: absolute;
     width: 100%;
-    max-width: @pi-img-max-size;
+    object-fit: cover;
+    top: 0;
+    left: 0;
 }
 
 // Some other stuff that might come in handy if we use these features //

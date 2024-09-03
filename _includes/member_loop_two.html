@@ -9,10 +9,12 @@
   <div class="col-sm-6" id="{{ member.title }}">
     <div class="row">
       <div class="col-xs-6">
-        <div class="pi-div">
-          <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
-            <img width=100% class="pi-img" src="{{ member.image }}">
-          </a>
+        <div class="pi-sqr">
+          <div class="pi-div">
+            <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+              <img width=100% class="pi-img" src="{{ member.image }}">
+            </a>
+          </div>
         </div>
       </div>
       <div class="col-xs-6">
