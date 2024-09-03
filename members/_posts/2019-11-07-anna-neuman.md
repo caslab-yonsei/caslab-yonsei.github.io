@@ -5,7 +5,7 @@ alumni: false
 profile_name: Anastasia Neuman
 abbrev: A. Neuman
 role: Student
-position: PhD Student
+position: PhD Student<br>Lab Leader
 researches:
   - Thermodynamics of highly confined polymer blend nanocomposites
 email: annaneu at seas.upenn.edu
