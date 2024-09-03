@@ -17,6 +17,14 @@ layout: default
     <div class="profile-position">{{ member.position }}</div>
     <div class="profile-location">{{ member.location }}</div>
     <div class="spacer"></div>
+    {% if member.info -%}
+        <div class="pad-left note">
+          <div class="smallspacer"></div>
+          <i class="fa fa-info-circle fa-fw"></i>
+          {{ member.info }}
+        </div>
+        <div class="spacer"></div>
+    {% endif -%}
     <div class="hidden-xs" style="text-align:left;">
       {% include member_links.html member_loc=member %}
     </div>
