@@ -40,7 +40,7 @@ categories:
     <ul class="carousel">
   {%- for photo in site.categories.photos limit:20 -%}
       <li class="carousel-item">
-        <a class="off" href="/photos/#{{- photo.title -}}">
+        <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
             {%- for image in photo.images limit:1 -%}
               <img src="{{ image }}" draggable="false">
