@@ -348,11 +348,19 @@ table tr:hover td {
     margin: 0 0 0 0;
 }
 
+.carousel-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 .carousel-wrapper .carousel {
     white-space: nowrap;
     cursor: pointer;
     overflow: hidden;
     scroll-behavior: smooth;
+    font-size: 0px;
 }
 
 .carousel.dragging {
@@ -388,6 +396,7 @@ table tr:hover td {
 
 .carousel-title {
     text-align: center;
+    font-size: 14px;
 }
 
 .carousel-control {
