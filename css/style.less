@@ -383,11 +383,12 @@ table tr:hover td {
 }
 .carousel.dragging {
     cursor: grab;
+    pointer-events: none;
     scroll-behavior: auto;
     scroll-snap-type: none;
 }
 
-.carousel.dragging .carousel-item img {
+.carousel.dragging a {
     pointer-events: none;
 }
 
