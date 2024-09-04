@@ -34,26 +34,27 @@ categories:
     </h1>
   </div>
 </div>
-
-<div class="col-md-12 carousel-wrapper">
-  <i class="fa-solid fa-angle-left carousel-control" id="left"></i>
-  <div class="carousel">
-{%- for photo in site.categories.photos limit:20 -%}
-    <div class="carousel-item">
-      <a class="off" href="/photos/#{{- photo.title -}}">
-        <div class="carousel-image">
-          {%- for image in photo.images limit:1 -%}
-            <img src="{{ image }}" draggable="false">
-          {%- endfor -%}
-        </div>
-        <div class="carousel-title">
-          {{- photo.title -}}
-        </div>
-      </a>
-    </div>
-{% endfor -%}
+<div class="col-md-12 carousel-body">
+  <div class="carousel-wrapper">
+    <i class="fa-solid fa-angle-left carousel-control" id="left"></i>
+    <ul class="carousel">
+  {%- for photo in site.categories.photos limit:20 -%}
+      <li class="carousel-item">
+        <a class="off" href="/photos/#{{- photo.title -}}">
+          <div class="carousel-image">
+            {%- for image in photo.images limit:1 -%}
+              <img src="{{ image }}" draggable="false">
+            {%- endfor -%}
+          </div>
+          <span class="carousel-title">
+            {{- photo.title -}}
+          </span>
+        </a>
+      </li>
+  {% endfor -%}
+    </ul>
+    <i class="fa-solid fa-angle-right carousel-control" id="right"></i>
   </div>
-  <i class="fa-solid fa-angle-right carousel-control" id="right"></i>
 </div>
 
 {% comment %}
