@@ -39,11 +39,11 @@ categories:
   <i class="fa-solid fa-angle-left carousel-control" id="left"></i>
   <div class="carousel">
 {% for photo in site.categories.photos limit:20 -%}
-    <div class="col-md-3 carousel-item">
+    <div class="carousel-item">
       <a class="off" href="/photos/#{{ photo.title }}">
         <div class="carousel-image">
           {% for image in photo.images limit:1 -%}
-            <img scr="{{ image }}" draggable="false">
+            <img src="{{ image }}" draggable="false">
           {% endfor -%}
         </div>
         <div class="carousel-title">
