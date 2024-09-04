@@ -35,19 +35,19 @@ categories:
   </div>
 </div>
 
-<div class="row carousel-wrapper">
+<div class="col-md-12 carousel-wrapper">
   <i class="fa-solid fa-angle-left carousel-control" id="left"></i>
   <div class="carousel">
-{% for photo in site.categories.photos limit:20 -%}
+{%- for photo in site.categories.photos limit:20 -%}
     <div class="carousel-item">
-      <a class="off" href="/photos/#{{ photo.title }}">
+      <a class="off" href="/photos/#{{- photo.title -}}">
         <div class="carousel-image">
-          {% for image in photo.images limit:1 -%}
+          {%- for image in photo.images limit:1 -%}
             <img src="{{ image }}" draggable="false">
-          {% endfor -%}
+          {%- endfor -%}
         </div>
         <div class="carousel-title">
-          {{ photo.title }}
+          {{- photo.title -}}
         </div>
       </a>
     </div>
