@@ -362,26 +362,30 @@ table tr:hover td {
 .carousel-wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 25% - 12px;
+    grid-auto-columns: calc((100% / 4) -12px);
     gap: 12px;
+    overflow-x: auto;
     overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
 }
 
 .carousel .carousel-item {
     list-style: none;
     display: flex;
-    align-items: center;
     justify-content: center;
     cursor: pointer;
     flex-direction: column;
     padding-bottom: 15px;
+    text-align: center;
 }
-.carousel.dragging {
+.carousel.dragging .carousel-item {
     cursor: grab;
     scroll-behavior: auto;
 }
 
-.carousel.dragging img {
+.carousel.dragging .carousel-item img {
     pointer-events: none;
 }
 
