@@ -52,7 +52,7 @@ carousel.addEventListener("mousemove", dragging);
 //carousel.addEventListener("touchmove", dragging);
 
 carousel.addEventListener("mouseup", dragStop);
-//carousel.addEventListener("mouseleave", dragStop);
-carousel.addEventListener("touchleave", dragStop);
+carousel.addEventListener("mouseleave", dragStop);
+//carousel.addEventListener("touchleave", dragStop);
 
 //carousel.addEventListener("scroll", infiniteScroll);
