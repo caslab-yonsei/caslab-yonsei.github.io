@@ -11,7 +11,7 @@ carouselBtn.forEach(btn => {
     });
 });
 
-const dragStart = () => {
+const dragStart = (e) => {
     isDragging = true;
     carousel.classList.add("dragging");
     startX = e.pageX;

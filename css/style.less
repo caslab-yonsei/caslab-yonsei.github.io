@@ -372,6 +372,7 @@ table tr:hover td {
 }
 
 .carousel .carousel-item {
+    scroll-snap-align: start;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -380,9 +381,10 @@ table tr:hover td {
     padding-bottom: 15px;
     text-align: center;
 }
-.carousel.dragging .carousel-item {
+.carousel.dragging {
     cursor: grab;
     scroll-behavior: auto;
+    scroll-snap-type: none;
 }
 
 .carousel.dragging .carousel-item img {
