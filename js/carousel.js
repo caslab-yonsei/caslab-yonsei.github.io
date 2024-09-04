@@ -23,13 +23,13 @@ carouselBtn.forEach(btn => {
 const dragStart = (e) => {
     isDragging = true;
     carousel.classList.add("dragging");
-    startX = e.pageX || e.touches[0].pageX;
+    startX = e.pageX;
     startScrollLeft = carousel.scrollLeft;
 }
 
 const dragging = (e) => {
     if (!isDragging) return;
-    carousel.scrollLeft = startScrollLeft - ((e.pageX || e.touches[0].pageX) - startX);
+    carousel.scrollLeft = startScrollLeft - (e.pageX- startX);
 }
 
 const dragStop = () => {
@@ -46,10 +46,10 @@ const infiniteScroll = () => {
 }
 
 carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
+//carousel.addEventListener("touchstart", dragStart);
 
 carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
+//carousel.addEventListener("touchmove", dragging);
 
 carousel.addEventListener("mouseup", dragStop);
 //carousel.addEventListener("mouseleave", dragStop);
