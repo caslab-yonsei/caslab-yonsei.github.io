@@ -3,6 +3,7 @@ carouselFirst = carousel.querySelectorAll(".carousel-item")[0];
 carouselControls = document.querySelectorAll(".carousel-control");
 
 let isDragStart = false;
+let isDragging = false;
 let prevPageX, prevScrollLeft, positionDiff;
 let firstItemWidth = carouselFirst.clientWidth + 12;
 let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
@@ -42,6 +43,7 @@ const dragStart = (e) => {
 const dragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault();
+    isDragging = true;
     carousel.classList.add("dragging");
     let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
@@ -50,6 +52,9 @@ const dragging = (e) => {
 const dragStop = () => {
     isDragStart = false;
     carousel.classList.remove("dragging");
+
+    if (!isDragging) return;
+    isDragging = false;
     autoSlide();
 }
 
