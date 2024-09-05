@@ -1,6 +1,6 @@
-const carousel = document.querySelector(".carousel");
-const carouselFirst = document.querySelectorAll(".carousel-item")[0];
-const carouselControls = document.querySelectorAll(".carousel-control");
+const carousel = document.querySelector(".carousel"),
+carouselFirst = carousel.querySelectorAll(".carousel-item")[0];
+carouselControls = document.querySelectorAll(".carousel-control");
 
 let isDragStart = false;
 let prevPageX, prevScrollLeft;
