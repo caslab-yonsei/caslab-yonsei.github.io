@@ -3,7 +3,6 @@ layout: post
 title: CASLAB Research
 author: Minho Kim
 image: /images/research/mechanical-properties.png
-thumbnail: /images/research/mechanical-properties-thumbnail.png
 ---
 
 # Research
