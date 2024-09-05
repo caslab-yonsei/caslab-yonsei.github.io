@@ -38,6 +38,7 @@ categories:
   <div class="col-md-12 carousel-wrapper">
     <div class="carousel">
   {%- for photo in site.categories.photos limit:20 -%}
+    {% if photo.template -%}{% continue -%}{% endif -%}
       <div class="carousel-item">
         <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
@@ -56,36 +57,6 @@ categories:
     <i class="fa fa-angle-right carousel-control" id="cc-right"></i>
   </div>
 </div>
-
-{% comment %}
-{% assign counter = 1 %}
-{% assign loopindex = -1 %}
-<div class="row">
-{% for photo in site.categories.photos limit:4 %}
-  {% assign loopindex = counter | modulo: 4 %}
-  {% if loopindex == 1 %}
-  <div class="row" style="margin-bottom: 15px">
-  {% endif %}
-  <!--{% include pub_box.html pub=publication short=true %}-->
-    <div class="col-md-3">
-      <a class="off" href="/photos/#{{ photo.title }}">
-        <div class="row" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; margin: 0 auto;">
-          {% for image in photo.images limit:1 %}
-            <img src="{{ image }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-          {% endfor %}
-        </div>
-        <div class="row" style="text-align: center;">
-          {{ photo.title}}
-        </div>
-      </a>
-    </div>
-  {% if loopindex == 0 %}
-  </div>
-  {% endif %}
-  {% assign counter = counter | plus: 1 %}
-{% endfor %}
-</div>
-{% endcomment %}
 
 <div class="bigspacer"></div>
 

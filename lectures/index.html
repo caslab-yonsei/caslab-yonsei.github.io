@@ -12,18 +12,31 @@ categories:
   </div>
 </div>
 
-{% for project in site.categories.lectures %}
-
-  {% cycle 'add rows': '<div class="row">', nil, nil %}
-  <div class="col-md-4 projectbox">
-      <a href="{{ project.url }}" class="off">
-        <h2>{{ project.title }}</h2>
-      </a>
-    <div class="smallspacer"></div>
-        {{ project.abstract}}
-    <div class="bigspacer"></div>
-    <div class="spacer"></div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="lecture">
+      <thead>
+        <tr class="header lecture">
+          <td class="code">Code</td>
+          <td class="course">Course</td>
+          <td class="target">Target</td>
+          <td class="semesters">Semesters</td>
+          <td class="note">Note</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for course in site.categories.lectures %}
+          {% if course.template -%}{% continue -%}{% endif -%}
+        <tr class="body">
+          <td class="code">{{ course.code }}</td>
+          <td class="course">{{ course.title }}</td>
+          <td class="target">{{ course.target }}</td>
+          <td class="semesters">{% for semester in course.semesters reversed -%}{{ semester }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in course.notes reversed -%}{{ note }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
+        </tr>
+        {% endfor -%}
+      </tbody>
+    </table>
   </div>
-  {% cycle 'close rows': nil, nil, '</div>' %}
+</div>
 {% endfor %}
-  {% cycle 'close rows': nil, '</div>', '</div>' %}

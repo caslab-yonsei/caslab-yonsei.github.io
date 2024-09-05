@@ -6,6 +6,7 @@ categories:
 ---
 
 {% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
   {% capture prev_year %}{{ this_year }}{% endcapture %}
   {% capture this_year %}{{ publication.year }}{% endcapture %}
 

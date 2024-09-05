@@ -11,6 +11,7 @@
     </thead>
     <tbody>
 {% for member in site.categories.members reversed -%}
+{% if member.template -%}{% continue -%}{% endif -%}
   {% if member.role == include.role -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>

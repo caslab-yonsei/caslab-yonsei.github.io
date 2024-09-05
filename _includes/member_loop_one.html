@@ -1,4 +1,5 @@
 {% for member in site.categories.members reversed %}
+{% if member.template -%}{% continue -%}{% endif -%}
   {% if member.role == include.role %}
 <div class="row" id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
   <div class="col-sm-3 pi-col">
