@@ -36,9 +36,9 @@ categories:
 </div>
 <div class="col-md-12 carousel-body">
   <div class="carousel-wrapper">
-    <ul class="carousel">
+    <div class="carousel">
   {%- for photo in site.categories.photos limit:20 -%}
-      <li class="carousel-item">
+      <div class="carousel-item">
         <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
             {%- for image in photo.images limit:1 -%}
@@ -49,9 +49,9 @@ categories:
             {{- photo.title -}}
           </span>
         </a>
-      </li>
+      </div>
   {% endfor -%}
-    </ul>
+    </div>
     <i class="fa fa-angle-left carousel-control" id="cc-left"></i>
     <i class="fa fa-angle-right carousel-control" id="cc-right"></i>
   </div>
