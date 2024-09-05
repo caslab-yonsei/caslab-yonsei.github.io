@@ -19,7 +19,7 @@ carouselControls.forEach(btn => {
         } else {
             carousel.scrollLeft += btn.id === "cc-left" ? -firstItemWidth : firstItemWidth;
         }
-    })
+    });
 });
 
 const autoSlide = () => {

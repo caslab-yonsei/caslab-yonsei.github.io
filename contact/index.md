@@ -5,6 +5,7 @@ categories:
  - contact
 ---
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b39590003fae695d5cd234d45edf0e58"></script>
 <script>
     var container = document.getElementById('map');
     var options = {
@@ -14,6 +15,9 @@ categories:
 
     var map = new kakao.maps.Map(container, options);
 </script>
+
+<div id="map" style="width:500px;height:400px;"></div>
+<div class="bigspacer"></div>
 
 <address>
     <table id="address">
@@ -28,7 +32,7 @@ categories:
         </tr>
         <tr>
             <td><h3 style="text-align:middle;">Email</h3></td>
-            <td>dkim [_a_t_] dgist.ac.kr</td>
+            <td>daehoonkim<span style="display:none">obfuscate</span>@yonsei.ac.kr</td>
         </tr>
         </tbody>
     </table>
