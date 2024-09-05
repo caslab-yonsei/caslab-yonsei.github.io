@@ -16,7 +16,7 @@ categories:
 
 <div class="row">
     <div class="col-md-12">
-        <div id="map" style="width: 950px; height: 500px;"></div>
+        <div id="map" style="width: 920px; height: 500px;"></div>
         <div class="bigspacer"></div>
         <div class="bigspacer"></div>
 
