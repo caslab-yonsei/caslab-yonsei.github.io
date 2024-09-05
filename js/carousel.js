@@ -9,7 +9,6 @@ let firstItemWidth = carouselFirst.clientWidth + 12;
 let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
 
 carouselControls.forEach(btn => {
-    if (carousel.scrollLeft == scrollWidth || carousel.scrollLeft == 0) return;
 
     btn.addEventListener("click", () => {
         if (carousel.scrollLeft <= 0 && btn.id === "cc-left") {
@@ -23,6 +22,8 @@ carouselControls.forEach(btn => {
 });
 
 const autoSlide = () => {
+    if (carousel.scrollLeft == scrollWidth || carousel.scrollLeft == 0) return;
+    
     positionDiff = Math.abs(positionDiff);
     let valDiff = firstItemWidth - positionDiff;
 
