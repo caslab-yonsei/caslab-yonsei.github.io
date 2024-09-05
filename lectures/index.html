@@ -26,6 +26,7 @@ categories:
       </thead>
       <tbody>
         {% for project in site.categories.lectures %}
+          {% if project.template -%}{% continue -%}{% endif -%}
         <tr class="body">
           <td class="code">{{ project.code }}</td>
           <td class="course">{{ project.title }}</td>
