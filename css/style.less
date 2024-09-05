@@ -1,5 +1,3 @@
----
----
 
 @home-logo-size: 80px;
 @footer-logo-height: 45px;
@@ -37,7 +35,7 @@ h4, .h4 { font-size:  @font-size-base; }
 h5, .h5 { font-size: ceil(@font-size-base * 0.85); }  /* ~12px */
 h6, .h6 { font-size: ceil(@font-size-base * 0.75); }  /* ~10px */
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: sans-serif;
 }
 
@@ -333,6 +331,10 @@ table thead {
 
 table {
     border-bottom: 2px solid #ddd;
+}
+
+table.noheader {
+    border-top: 2px solid #ddd;
 }
 
 table tr:hover td {
