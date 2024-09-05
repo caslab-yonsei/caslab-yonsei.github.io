@@ -25,14 +25,13 @@ categories:
         </tr>
       </thead>
       <tbody>
-        {% for course in site.categories.lectures %}
-          {% if course.template -%}{% continue -%}{% endif -%}
+        {% for project in site.categories.lectures %}
         <tr class="body">
-          <td class="code">{{ course.code }}</td>
-          <td class="course">{{ course.title }}</td>
-          <td class="target">{{ course.target }}</td>
-          <td class="semesters">{% for semester in course.semesters reversed -%}{{ semester }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
-          <td class="notes">{% for note in course.notes reversed -%}{{ note }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
+          <td class="code">{{ project.code }}</td>
+          <td class="course">{{ project.title }}</td>
+          <td class="target">{{ project.target }}</td>
+          <td class="semesters">{% for semester in project.semesters reversed -%}{{ semester }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in project.notes reversed -%}{{ note }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
         </tr>
         {% endfor -%}
       </tbody>
