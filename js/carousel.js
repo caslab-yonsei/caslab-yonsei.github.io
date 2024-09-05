@@ -1,5 +1,5 @@
 const carousel = document.querySelector(".carousel");
-const carouselFirst = carousel.querySelectorAll(".carousel-item")[0];
+const carouselFirst = document.querySelectorAll(".carousel-item")[0];
 const carouselControls = documnet.querySelectorAll(".carousel-control");
 
 let isDragStart = false;
