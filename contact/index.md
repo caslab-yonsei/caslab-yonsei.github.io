@@ -8,15 +8,15 @@ categories:
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b39590003fae695d5cd234d45edf0e58"></script>
 
 <div class="row">
-    <div class="col-md-12 post">
+    <div class="col-md-12">
         <h1>Contact</h1>
         <hr/>
     </div>
 </div>
 
 <div class="row">
-    <div id="col-md-12">
-        <div id="map" style="width: 791.66px; height: 500px;"></div>
+    <div class="col-md-12">
+        <div id="map" style="width: 950px; height: 500px;"></div>
         <div class="bigspacer"></div>
         <div class="bigspacer"></div>
 
