@@ -352,7 +352,6 @@ table tr:hover td {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 35px;
 }
 
 .carousel-wrapper {
@@ -364,6 +363,7 @@ table tr:hover td {
     white-space: nowrap;
     cursor: pointer;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 .carousel .carousel-item {
@@ -381,9 +381,10 @@ table tr:hover td {
 .carousel.dragging {
     cursor: grab;
     pointer-events: none;
+    scroll-behavior: auto;
 }
 
-.carousel.dragging a {
+.carousel.dragging a, .carousel.dragging img {
     pointer-events: none;
 }
 
