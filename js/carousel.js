@@ -24,7 +24,6 @@ carouselControls.forEach(btn => {
 
 const autoSlide = () => {
     positionDiff = Math.abs(positionDiff);
-    let firstItemWidth = carouselFirst.clientWidth + 12;
     let valDiff = firstItemWidth - positionDiff;
 
     if (carousel.scrollLeft > prevScrollLeft) {
@@ -45,7 +44,7 @@ const dragging = (e) => {
     e.preventDefault();
     isDragging = true;
     carousel.classList.add("dragging");
-    let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
 }
 
