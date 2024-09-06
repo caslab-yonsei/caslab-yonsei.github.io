@@ -19,6 +19,7 @@ categories:
     <div class="col-md-12" id="{{ photo.title }}">
       <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
       <hr/>
+      {{ photo.images }}
       {% include photo_slide.html images_loc=photo.images gall_index=n_galleries %}
   </div>
 

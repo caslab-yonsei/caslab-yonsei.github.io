@@ -5,23 +5,22 @@ gall_index: index of gallery
 
 <div class="slideshow-container" style="position:relative; margin:auto;">
   {% assign n_images = 0 -%}
-  {{ images_loc }}
-  {% for image in images_loc -%}
+  {% for image in include.images_loc -%}
     {% assign n_images = n_images | plus: 1 -%}
-    <div class="slides-gallery-{{ gall_index }} slide-fade">
+    <div class="slides-gallery-{{ include.gall_index }} slide-fade">
       <img src="{{ image }}" style="width: 100%;">
     </div>
   {% endfor -%}
   {% if n_images > 1 -%}
-    <a class="slide-prev" onclick="next_slide({{ gall_index }}, -1)">&#10094;</a>
-    <a class="slide-next" onclick="next_slide({{ gall_index }}, 1)">&#10095;</a>
+    <a class="slide-prev" onclick="next_slide({{ include.gall_index }}, -1)">&#10094;</a>
+    <a class="slide-next" onclick="next_slide({{ include.gall_index }}, 1)">&#10095;</a>
   {% endif -%}
 </div>
 <br/>
 {% if n_images > 1 -%}
   <div style="text-align: center;">
     {% for idx in (1..n_images) -%}
-      <span class="slides-dot-{{ gall_index }}" onclick="current_slide({{ gall_index }}, {{ idx }})"></span>
+      <span class="slides-dot-{{ include.gall_index }}" onclick="current_slide({{ include.gall_index }}, {{ idx }})"></span>
     {% endfor -%}
   </div>
 {% endif -%}
