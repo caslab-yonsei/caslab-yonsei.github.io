@@ -16,9 +16,7 @@ gall_index: index of gallery
         {% endif -%}
         {% if image.members -%}
           <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-            {% for member in image.members-%}
-              {% if forloop.length > 1 and forloop.first -%}(from left to right) {% endif -%}{{ member }}{% unless forloop.last -%}, {% endunless -%}
-            {% endfor -%}
+            {% if image.members.size > 1 -%}(from left to right) {% endif -%}{% include member_ref.html mem_loc=page.members %}
           </p>
         {% endif -%}
       </div>

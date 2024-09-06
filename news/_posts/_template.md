@@ -6,7 +6,7 @@ images:
  - /image/(filename 2)
  - (...)
  - /image/(filenames)
-participants:
+members:
  - (related person 1)
  - (related person 2)
  - (...)

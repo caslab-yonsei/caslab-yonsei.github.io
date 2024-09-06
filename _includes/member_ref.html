@@ -1,4 +1,4 @@
-{% for participant in include.mem_loc.participants %}
+{% for participant in include.mem_loc %}
   {% assign linked = false %}
   {% for member in site.categories.members %}
     {% if participant == member.title %}
