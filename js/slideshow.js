@@ -11,9 +11,8 @@ function init_slides(n_galleries) {
 
         slides = document.getElementsByClassName("slides-gallery-"+String(idx));
         let j_lim = slides.length;
-        let dicts;
+        let dicts = [];
         for (let jdx = 0; jdx < j_lim; jdx++) {
-            dicts = [];
             dicts.push(
                 {
                     btn_desc: document.getElementById("slides-btn-desc-"+String(idx)+"-"+String(jdx)),

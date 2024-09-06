@@ -26,6 +26,6 @@ categories:
   {% assign n_galleries = n_galleries | plus: 1 -%}
   <p>{{ photo.content }}</p>
 {% endfor %}
-<script>
+<script defer>
   init_slides({{ n_galleries }});
 </script>
