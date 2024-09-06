@@ -1,14 +1,61 @@
 let slide_indices = [];
 let slide_auto;
+let slide_caps = [];
 
 function init_slides(n_galleries) {
+    let slides;
     slide_indices = [];
     for (let idx = 0; idx < n_galleries; idx++) {
         slide_indices.push(1);
         show_slide(idx, slide_indices[idx], true);
+
+        slides = document.getElementsByClassName("slides-gallery-"+String(idx));
+        let j_lim = slides.length;
+        let dicts;
+        for (let jdx = 0; jdx < j_lim; jdx++) {
+            dicts = [];
+            dicts.push(
+                {
+                    btn_desc: document.getElementById("slides-btn-desc-"+String(idx)+"-"+String(jdx)),
+                    btn_mem: document.getElementById("slides-btn-mem-"+String(idx)+"-"+String(jdx)),
+                    txt_desc: document.getElementById("slides-desc-"+String(idx)+"-"+String(jdx)),
+                    txt_mem: document.getElementById("slides-mem-"+String(idx)+"-"+String(jdx)),
+                    caption: document.getElementById("slides-caption-"+String(idx)+"-"+String(jdx)),
+                    btns: document.getElementById("slides-btns-"+String(idx)+"-"+String(jdx))
+                }
+            );
+        }
     }
-    slide_auto = setTimeout(auto_slide, 5000);
+    //slide_auto = setTimeout(auto_slide, 5000);
 }
+
+function show_caption(image, caption) {
+    image.btns.classList.add('hidden');
+    image.caption.classList.add('show');
+    image.txt_desc.setAttribute("style", caption === 'desc' ? 'block' : 'none');
+    image.txt_mem.setAttribute("style", caption === 'mem' ? 'block' : 'none');
+}
+
+function show_buttons(image) {
+    image.caption.classList.remove('show');
+    setTimeout(() => {
+        image.btns.classList.remove('hidden');
+    }, 500);
+}
+
+slide_caps.forEach((gallery) => {
+    gallery.forEach((image) => {
+        image.btn_desc.addEventListener('mouseenter', () => show_caption(image, 'desc'));
+        image.btn_mem.addEventListener('mouseenter', () => show_caption(image, 'mem'));
+        image.btns.addEventListener('mouseenter', () => {
+            image.btns.classList.add('hidden');
+        });
+        image.caption.addEventListener('mouseenter', () => {
+            image.btns.classList.add('show');
+        });
+        image.caption.addEventListener('mouseleave', () => show_buttons(image));
+    });
+});
 
 function next_slide(gallery, idx, auto=false) {
     show_slide(gallery, slide_indices[gallery] += idx, auto);
@@ -46,10 +93,10 @@ function show_slide(gallery, idx, auto=false) {
         }
         dots[slide_indices[gallery]-1].className += " slide-active";
     }
-    if (!auto) {
+    /*if (!auto) {
         clearTimeout(slide_auto);
         slide_auto = setTimeout(auto_slide, 5000);
-    }
+    }*/
 }
 
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
