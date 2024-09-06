@@ -2,7 +2,7 @@
 <div class="smallhead">
   Location
 </div>
-<div class="pad-left note">
+<div class="pad-left note reveal">
   <i class="fa fa-map-marker fa-fw"></i>
   {{ member.location }}
 </div>
@@ -12,7 +12,7 @@
 <div class="smallhead">
   Task
 </div>
-<div class="pad-left note">
+<div class="pad-left note reveal">
   <i class="fa fa-info-circle fa-fw"></i>
   {{ member.task }}
 </div>
@@ -23,7 +23,7 @@
 <div class="smallhead">
   Email
 </div>
-<div class="pad-left note">
+<div class="pad-left note reveal">
   <i class="fa fa-inbox fa-fw"></i>
   {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
 </div>
@@ -33,7 +33,7 @@
 <div class="smallhead">
   Phone
 </div>
-<div class="pad-left note">
+<div class="pad-left note reveal">
   <i class="fa fa-phone fa-fw"></i>
   {{ include.member_loc.phone }}
 </div>
