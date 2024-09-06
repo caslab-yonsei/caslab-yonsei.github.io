@@ -9,18 +9,26 @@ gall_index: index of gallery
     <div class="slides-gallery-{{ include.gall_index }} slide-fade">
       <img src="{{ image.file }}" style="width: 100%;">
       <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
-        <p class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
-          {{ image.caption }}
-        </p>
-        <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-          {% for member in image.members-%}
-            {% if forloop.length > 1 and forloop.first -%}(from left to right) {% endif -%}{{ member }}{% unless forloop.last -%}, {% endunless -%}
-          {% endfor -%}
-        </p>
+        {% if image.caption -%}
+          <p class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
+            {{ image.caption }}
+          </p>
+        {% endif -%}
+        {% if image.members -%}
+          <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
+            {% for member in image.members-%}
+              {% if forloop.length > 1 and forloop.first -%}(from left to right) {% endif -%}{{ member }}{% unless forloop.last -%}, {% endunless -%}
+            {% endfor -%}
+          </p>
+        {% endif -%}
       </div>
       <div class="slides-btns-{{ include.gall_index }}" id="slides-btns-{{ include.gall_index }}-{{ n_images }}">
-        <i class="fa fa-info-circle slides-btn-desc-{{ include.gall_index }}" id="slides-btn-desc-{{ include.gall_index }}-{{ n_images }}"></i>
-        <i class="fa fa-users slides-btn-mem-{{ include.gall_index }}" id="slides-btn-mem-{{ include.gall_index }}-{{ n_images }}"></i>
+        {% if image.caption -%}
+          <i class="fa fa-info-circle slides-btn-desc-{{ include.gall_index }}" id="slides-btn-desc-{{ include.gall_index }}-{{ n_images }}"></i>
+        {% endif -%}
+        {% if image.members -%}
+          <i class="fa fa-users slides-btn-mem-{{ include.gall_index }}" id="slides-btn-mem-{{ include.gall_index }}-{{ n_images }}"></i>
+        {% endif -%}
       </div>
     </div>
     {% assign n_images = n_images | plus: 1 -%}
