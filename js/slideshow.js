@@ -29,15 +29,17 @@ function init_slides(n_galleries) {
     
     slide_caps.forEach((gallery, idx) => {
         gallery.forEach((image, jdx) => {
-            image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
-            image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
-            image.btnbox.addEventListener('mouseenter', () => {
+            if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
+            if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
+            if (image.btnbox) image.btnbox.addEventListener('mouseenter', () => {
                 image.btnbox.classList.add('hidden');
             });
-            image.caption.addEventListener('mouseenter', () => {
-                image.btnbox.classList.add('show');
-            });
-            image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+            if (image.caption) {
+                image.caption.addEventListener('mouseenter', () => {
+                    image.btnbox.classList.add('show');
+                });
+                image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+            }
         });
     });
 
