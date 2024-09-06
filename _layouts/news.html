@@ -32,7 +32,7 @@ layout: default
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="{{ link }}" style="text-overflow: ellipsis; whitespace: nowrap;">{{ link }}</a>
+        <a class="off" href="{{ link }}" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ link }}</a>
       </div>
       {% endfor -%}
       <div class="bigspacer"></div>
@@ -44,9 +44,7 @@ layout: default
       {{ content }}
 
       <div class="row">
-        <div class="col-md-8">
-          {% include photo_slide.html images_loc=page.images gall_index=0 %}
-        </div>
+        {% include photo_slide.html images_loc=page.images gall_index=0 %}
       </div>
 
       <div class="spacer"></div>
