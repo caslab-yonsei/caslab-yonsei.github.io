@@ -25,6 +25,7 @@ function init_slides(n_galleries) {
                 }
             );
         }
+        slide_caps.push(dicts);
     }
     //slide_auto = setTimeout(auto_slide, 5000);
 }
