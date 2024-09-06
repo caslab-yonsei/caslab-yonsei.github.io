@@ -54,24 +54,26 @@ categories:
           </thead>
           <tbody>
   {% endif %}
-    {% assign linked = false -%}
-    {% if news.linked -%}
-            <a href="{{ news.url }}">
-      {% assign linked = true -%}
-    {% elsif news.alterlink > 0 -%}
-      {% assign link = news.links[news.alterlink] -%}
-      {% unless link == empty -%}
-            <a href="{{ link }}">
-        {% assign linked = true -%}
-      {% endunless -%}
-    {% endif -%}
               <tr class="body">
                 <td class="date">{% if news.YYYY -%}{{ news.YYYY }}{% endif -%}{% if news.MM -%}.{{ news.MM }}{% endif -%}{% if news.DD -%}.{{ news.DD }}{% endif -%}</td>
-                <td class="news">{{ news.title }}</td>
+                <td class="news">
+  {% assign linked = false -%}
+  {% if news.linked -%}
+                  <a href="{{ news.url }}">
+    {% assign linked = true -%}
+  {% elsif news.alterlink > 0 -%}
+    {% assign link = news.links[news.alterlink] -%}
+    {% unless link == empty -%}
+                  <a href="{{ link }}">
+      {% assign linked = true -%}
+    {% endunless -%}
+  {% endif -%}
+                    {{ news.title }}
+  {% if linked -%}
+                  </a>
+  {% endif -%}
+                </td>
               </tr>
-    {% if linked -%}
-            </a>
-    {% endif -%}
 {% endfor %}
           </tbody>
         </table>
