@@ -20,7 +20,8 @@ function init_slides(n_galleries) {
                     txt_desc: document.getElementById("slides-desc-"+String(idx)+"-"+String(jdx)),
                     txt_mem: document.getElementById("slides-mem-"+String(idx)+"-"+String(jdx)),
                     caption: document.getElementById("slides-caption-"+String(idx)+"-"+String(jdx)),
-                    btnbox: document.getElementById("slides-btnbox-"+String(idx)+"-"+String(jdx))
+                    btnbox: document.getElementById("slides-btnbox-"+String(idx)+"-"+String(jdx)),
+                    wrapper: document.getElementById("slides-gallery-"+String(idx)),
                 }
             );
         }
@@ -31,22 +32,15 @@ function init_slides(n_galleries) {
         gallery.forEach((image, jdx) => {
             if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
-            /*if (image.btnbox) image.btnbox.addEventListener('mouseenter', () => {
-                image.btnbox.classList.add('slide-hidden');
-                image.btnbox.classList.remove('slide-visible');
-            });*/
             if (image.caption) {
-                /*image.caption.addEventListener('mouseenter', () => {
-                    image.caption.classList.add('slide-show');
-                });*/
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
-                image.caption.addEventListener('transitionend', (event) => {
-                    setTimeout(() => {
-                        if (event.propertyName === 'transform' && image.caption.matches('.slide-show')) {
+                if (image.wrapper) {
+                    image.wrapper.addEventListener('mousemove', () => {
+                        if (image.caption.matches('.slide-show')) {
                             if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
                         }
-                    }, 200);
-                });
+                    });
+                }
             }
         });
     });

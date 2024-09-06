@@ -3,7 +3,7 @@ images_loc: array of images
 gall_index: index of gallery
 {% endcomment -%}
 
-<div class="slideshow-container" style="position:relative; margin:auto;">
+<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}" style="position:relative; margin:auto;">
   {% assign n_images = 0 -%}
   {% for image in include.images_loc -%}
     <div class="slides-gallery-{{ include.gall_index }} slide-fade">
@@ -16,7 +16,7 @@ gall_index: index of gallery
         {% endif -%}
         {% if image.members -%}
           <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-            {% if image.members.size > 1 -%}(from left to right) {% endif -%}{% include member_ref.html mem_loc=page.members %}
+            {% if image.members.size > 1 -%}(from left to right) {% endif -%}{% include member_ref.html mem_loc=image.members %}
           </p>
         {% endif -%}
       </div>
