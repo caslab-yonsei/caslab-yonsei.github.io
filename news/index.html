@@ -59,12 +59,13 @@ categories:
                 <td class="news">
   {% assign linked = false -%}
   {% if news.linked -%}
-                  <a href="{{ news.url }}">
+                  <a href="{{ news.url }}" class="off">
     {% assign linked = true -%}
   {% elsif news.alterlink > 0 -%}
-    {% assign link = news.links[news.alterlink] -%}
+    {% assign linkindex = news.alterlink | minus: 1 -%}
+    {% assign link = news.links[linkindex] -%}
     {% unless link == empty -%}
-                  <a href="{{ link }}">
+                  <a href="{{ link }}" class="off">
       {% assign linked = true -%}
     {% endunless -%}
   {% endif -%}
