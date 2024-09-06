@@ -20,7 +20,7 @@ function init_slides(n_galleries) {
                     txt_desc: document.getElementById("slides-desc-"+String(idx)+"-"+String(jdx)),
                     txt_mem: document.getElementById("slides-mem-"+String(idx)+"-"+String(jdx)),
                     caption: document.getElementById("slides-caption-"+String(idx)+"-"+String(jdx)),
-                    btns: document.getElementById("slides-btns-"+String(idx)+"-"+String(jdx))
+                    btnbox: document.getElementById("slides-btnbox-"+String(idx)+"-"+String(jdx))
                 }
             );
         }
@@ -31,11 +31,11 @@ function init_slides(n_galleries) {
         gallery.forEach((image, jdx) => {
             image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
             image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
-            image.btns.addEventListener('mouseenter', () => {
-                image.btns.classList.add('hidden');
+            image.btnbox.addEventListener('mouseenter', () => {
+                image.btnbox.classList.add('hidden');
             });
             image.caption.addEventListener('mouseenter', () => {
-                image.btns.classList.add('show');
+                image.btnbox.classList.add('show');
             });
             image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
         });
@@ -45,16 +45,16 @@ function init_slides(n_galleries) {
 }
 
 function show_caption(gallery, image, caption) {
-    slide_caps[gallery][image].btns.classList.add('hidden');
+    slide_caps[gallery][image].btnbox.classList.add('hidden');
     slide_caps[gallery][image].caption.classList.add('show');
-    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'block' : 'none');
-    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'block' : 'none');
+    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
+    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
 }
 
 function show_buttons(gallery, image) {
     slide_caps[gallery][image].caption.classList.remove('show');
     setTimeout(() => {
-        slide_caps[gallery][image].btns.classList.remove('hidden');
+        slide_caps[gallery][image].btnbox.classList.remove('hidden');
     }, 500);
 }
 

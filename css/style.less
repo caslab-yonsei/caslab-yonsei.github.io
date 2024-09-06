@@ -294,7 +294,7 @@ table {
     font-size: 18px;
 }
 
-[class^="slides-btns-"] {
+[class^="slides-btnbox-"] {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -305,12 +305,10 @@ table {
     transition: opacity 0.25s ease;
 }
 
-[class^="slides-btns-"] [class^="slides-btn-"] {
-    cursor: pointer;
+[class^="slides-btn-"] {
     height: 46px;
     width: 46px;
     color: white;
-    position: absolute;
     font-size: 1.2rem;
     text-align: center;
     line-height: 46px;
@@ -327,12 +325,12 @@ table {
     transform: translateY(0);
 }
 
-[class^="slides-btns-"].visible {
+[class^="slides-btnbox-"].visible {
     opacity: 1;
     pointer-events: auto;
 }
 
-[class^="slides-btns-"].hidden {
+[class^="slides-btnbox-"].hidden {
     opacity: 0;
     pointer-events: none;
 }
