@@ -42,7 +42,7 @@ function init_slides(n_galleries) {
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
                 image.caption.addEventListener('transitionend', (event) => {
                     if (event.propertyName === 'transform' && image.caption.matches('.slide-show')) {
-                        if (!image.caption.matches(':hover')) show_buttons(idx, jdx);
+                        if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
                     }
                 });
             }
@@ -50,6 +50,16 @@ function init_slides(n_galleries) {
     });
 
     //slide_auto = setTimeout(auto_slide, 5000);
+}
+
+function isAnyChildHovered(container) {
+    const children = container.querySelectorAll('*'); // select all descendants
+    for (let child of children) {
+        if (child.matches(':hover')) {
+            return true; // a child is hovered
+        }
+    }
+    return false; // no children are hovered
 }
 
 function show_caption(gallery, image, caption) {
