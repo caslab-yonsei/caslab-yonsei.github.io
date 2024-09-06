@@ -1,0 +1,15 @@
+{% for participant in include.mem_loc.participants %}
+  {% assign linked = false %}
+  {% for member in site.categories.members %}
+    {% if participant == member.title %}
+      {% capture mem_url %}{{ member.url }}{% endcapture %}
+      {% assign linked = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if linked %}
+    <a href="{{ mem_url }}">{{ participant }}</a>{% if forloop.last %}.{% else %}, {% endif %}
+  {% else %}
+    {{ participant }}{% if forloop.last %}.{% else %}, {% endif %}
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="media">
+      <div class="media-body">
+        <h1>
+          {{ page.title }}
+        </h1>
+        <div class="smallhead">
+          {% include member_ref.html mem_loc=page %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="bigspacer"></div>
+    <div class="glyphbox note">
+      {% for link in page.links -%}
+        {% if forloop.first -%}
+      <div class="smallhead">
+        Links
+      </div>
+        {% endif -%}
+      <div class="pad-left note">
+        <div class="smallspacer"></div>
+        <i class="fa fa-external-link fa-fw"></i>
+        <a class="off" href="{{ page.pdf }}">{{ page.pdf | split: '/' | last }}</a>
+      </div>
+      {% endfor -%}
+      <div class="bigspacer"></div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="post">
+      <div class="spacer"></div>
+      {{ content }}
+
+      <div class="row">
+        <div class="col-md-12" id="{{ photo.title }}">
+          <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
+          <hr/>
+          <div class="slideshow-container" style="position:relative; margin:auto;">
+            {% assign n_images = 0 -%}
+            {% for image in photo.images -%}
+              {% assign n_images = n_images | plus: 1 -%}
+              <div class="slides-gallery-{{ n_galleries }} slide-fade">
+                <img src="{{ image }}" style="width: 100%;">
+              </div>
+            {% endfor -%}
+            {% if n_images > 1 -%}
+              <a class="slide-prev" onclick="next_slide({{ n_galleries }}, -1)">&#10094;</a>
+              <a class="slide-next" onclick="next_slide({{ n_galleries }}, 1)">&#10095;</a>
+            {% endif -%}
+          </div>
+          <br/>
+          {% if n_images > 1 -%}
+            <div style="text-align: center;">
+              {% for idx in (1..n_images) -%}
+                <span class="slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
+              {% endfor -%}
+            </div>
+          {% endif -%}
+          <p>{{ photo.content }}</p>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+      
+      <script>
+        init_slides({{ n_galleries }});
+      </script>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>

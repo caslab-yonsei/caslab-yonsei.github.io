@@ -15,7 +15,7 @@ journal: "(Publisher fullname)"
 journal-short: "(Publisher short name)"
 ref: "<b>(issue number)</b>: (article number / page number / etc)" (leave empty if not possible)
 doi: (doi number)
-template: true
+template: true #(delete this line)
 ---
 
 (abstract)

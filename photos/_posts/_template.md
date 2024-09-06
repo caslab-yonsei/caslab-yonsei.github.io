@@ -6,7 +6,7 @@ images:
 members:
   - [(member 1 of file 1), (member 2 of file 1), ...] (from left to right)
   - [(member 1 of file 2), (member 2 of file 2), ...]
-template: true
+template: true (delete this line)
 ---
 
 (Description in markdown / html)

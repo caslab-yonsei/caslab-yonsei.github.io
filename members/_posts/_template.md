@@ -13,6 +13,7 @@ researches:
 alumni: (true if alumni, else false/leave empty/delete this line)
 location: "(physical location e.g. @E3-304, DGIST)"
 task: (assigned task in the lab)
+template: true #(delete this line)
 ---
 
 (introduction of the member in markdown/html)
