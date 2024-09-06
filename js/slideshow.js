@@ -34,12 +34,16 @@ function init_slides(n_galleries) {
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
             if (image.caption) {
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+                image.caption.addEventListener('transitionend', () => {
+                    image.caption.classList.remove('transitioning');
+                });
                 if (image.wrapper) {
                     image.wrapper.addEventListener('mousemove', () => {
-                        if (image.caption.matches('.slide-show')) {
-                            if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
+                            if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
+                                if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
+                            }
                         }
-                    });
+                    );
                 }
             }
         });
@@ -59,7 +63,7 @@ function isAnyChildHovered(container) {
 }
 
 function show_caption(gallery, image, caption) {
-    slide_caps[gallery][image].caption.classList.add('slide-show');
+    slide_caps[gallery][image].caption.classList.add('slide-show transitioning');
     slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
     slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
     slide_caps[gallery][image].btnbox.classList.add('slide-hidden');
