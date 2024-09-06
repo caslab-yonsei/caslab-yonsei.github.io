@@ -33,6 +33,7 @@ function init_slides(n_galleries) {
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
             if (image.btnbox) image.btnbox.addEventListener('mouseenter', () => {
                 image.btnbox.classList.add('slide-hidden');
+                image.btnbox.classList.remove('slide-visible');
             });
             if (image.caption) {
                 image.caption.addEventListener('mouseenter', () => {
