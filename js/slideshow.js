@@ -40,6 +40,11 @@ function init_slides(n_galleries) {
                     image.caption.classList.add('slide-show');
                 });*/
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+                image.caption.addEventListener('transitionend', (event) => {
+                    if (event.propertyName === 'transform') {
+                        if (!image.caption.matches(':hover')) show_buttons(idx, jdx);
+                    }
+                });
             }
         });
     });
