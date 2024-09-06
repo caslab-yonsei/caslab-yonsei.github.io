@@ -18,6 +18,49 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
+{% if include.member_loc.email %}
+{% assign emailarray = include.member_loc.email | split: ' at ' %}
+<div class="smallhead">
+  Email
+</div>
+<div class="pad-left note">
+  <i class="fa fa-inbox fa-fw"></i>
+  {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.phone %}
+<div class="smallhead">
+  Phone
+</div>
+<div class="pad-left note">
+  <i class="fa fa-phone fa-fw"></i>
+  {{ include.member_loc.phone }}
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.scholar %}
+<div class="smallhead">
+  Google Scholar
+</div>
+<div class="pad-left note">
+  <i class="fa fa-book fa-fw"></i>
+  <a class="off" href="http://scholar.google.com/citations?user={{ include.member_loc.scholar }}">{{ include.member_loc.title }}</a>
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.researchgate %}
+<div class="smallhead">
+  ResearchGate
+</div>
+<div class="pad-left note">
+  <i class="fa fa-link fa-fw"></i>
+  <a class="off" href="https://www.researchgate.net/profile/{{ include.member_loc.researchgate }}">
+    {{ include.member_loc.researchgate }}
+  </a>
+</div>
+<div class="spacer"></div>
+{% endif %}
 {% if include.member_loc.cv %}
 <div class="smallhead">
   CV
@@ -38,13 +81,27 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.twitter %}
+{% if include.member_loc.portfolium%}
 <div class="smallhead">
-  Twitter
+  Portfolium
 </div>
 <div class="pad-left note">
-  <i class="fa fa-twitter fa-fw"></i>
-  <a class="off" href="https://twitter.com/{{ include.member_loc.twitter }}">{{ include.member_loc.twitter }}</a>
+  <i class="fa fa-user fa-fw"></i>
+  <a class="off" href="https://www.portfolium.com/{{ include.member_loc.portfolium }}">
+         {{ include.member_loc.title }}
+  </a>
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.linkedin %}
+<div class="smallhead">
+  LinkedIn
+</div>
+<div class="pad-left note">
+  <i class="fa fa-linkedin-square fa-fw"></i>
+  <a class="off" href="https://www.linkedin.com/in/{{ include.member_loc.linkedin }}">
+    {{ include.member_loc.title }}
+  </a>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -70,49 +127,13 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.scholar %}
+{% if include.member_loc.twitter %}
 <div class="smallhead">
-  Google Scholar
+  Twitter
 </div>
 <div class="pad-left note">
-  <i class="fa fa-book fa-fw"></i>
-  <a class="off" href="http://scholar.google.com/citations?user={{ include.member_loc.scholar }}">{{ include.member_loc.title }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.linkedin %}
-<div class="smallhead">
-  LinkedIn
-</div>
-<div class="pad-left note">
-  <i class="fa fa-linkedin-square fa-fw"></i>
-  <a class="off" href="https://www.linkedin.com/in/{{ include.member_loc.linkedin }}">
-    {{ include.member_loc.title }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.portfolium%}
-<div class="smallhead">
-  Portfolium
-</div>
-<div class="pad-left note">
-  <i class="fa fa-user fa-fw"></i>
-  <a class="off" href="https://www.portfolium.com/{{ include.member_loc.portfolium }}">
-         {{ include.member_loc.title }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.researchgate %}
-<div class="smallhead">
-  ResearchGate
-</div>
-<div class="pad-left note">
-  <i class="fa fa-link fa-fw"></i>
-  <a class="off" href="https://www.researchgate.net/profile/{{ include.member_loc.researchgate }}">
-    {{ include.member_loc.researchgate }}
-  </a>
+  <i class="fa fa-twitter fa-fw"></i>
+  <a class="off" href="https://twitter.com/{{ include.member_loc.twitter }}">{{ include.member_loc.twitter }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -125,27 +146,6 @@
   <a class="off" href="http://{{ include.member_loc.website }}">
     {{ include.member_loc.website }}
   </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.email %}
-{% assign emailarray = include.member_loc.email | split: ' at ' %}
-<div class="smallhead">
-  Email
-</div>
-<div class="pad-left note">
-  <i class="fa fa-inbox fa-fw"></i>
-  {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.phone %}
-<div class="smallhead">
-  Phone
-</div>
-<div class="pad-left note">
-  <i class="fa fa-phone fa-fw"></i>
-  {{ include.member_loc.phone }}
 </div>
 <div class="spacer"></div>
 {% endif %}

@@ -19,9 +19,9 @@
             {% if member.profile_name -%}{{ member.profile_name }}{% else -%}{{ member.title }}{% endif -%}
           </a>
         </td>
-        <td>{{ member.grad_degree }}</td>
-        <td>{{ member.grad_date }}</td>
-        <td>{{ member.grad_affiliation }}</td>
+        <td>{{ member.alumni.degree }}</td>
+        <td>{{ member.alumni.date }}</td>
+        <td>{{ member.alumni.affiliation }}</td>
       </tr>
   {% endif %}
 {% endfor %}
