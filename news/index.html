@@ -65,7 +65,7 @@ categories:
     {% assign linkindex = news.alterlink | minus: 1 -%}
     {% assign link = news.links[linkindex] -%}
     {% unless link == empty -%}
-                  <a href="{{ link }}" class="off">
+                  <a href="{{ link }}" class="off" target="_blank" rel="noopener noreferrer">
       {% assign linked = true -%}
     {% endunless -%}
   {% endif -%}
