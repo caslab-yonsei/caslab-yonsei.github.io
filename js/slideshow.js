@@ -26,6 +26,21 @@ function init_slides(n_galleries) {
         }
         slide_caps.push(dicts);
     }
+    
+    slide_caps.forEach((gallery, idx) => {
+        gallery.forEach((image, jdx) => {
+            image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
+            image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
+            image.btns.addEventListener('mouseenter', () => {
+                image.btns.classList.add('hidden');
+            });
+            image.caption.addEventListener('mouseenter', () => {
+                image.btns.classList.add('show');
+            });
+            image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+        });
+    });
+
     //slide_auto = setTimeout(auto_slide, 5000);
 }
 
@@ -43,19 +58,6 @@ function show_buttons(gallery, image) {
     }, 500);
 }
 
-slide_caps.forEach((gallery, idx) => {
-    gallery.forEach((image, jdx) => {
-        image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
-        image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
-        image.btns.addEventListener('mouseenter', () => {
-            image.btns.classList.add('hidden');
-        });
-        image.caption.addEventListener('mouseenter', () => {
-            image.btns.classList.add('show');
-        });
-        image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
-    });
-});
 
 function next_slide(gallery, idx, auto=false) {
     show_slide(gallery, slide_indices[gallery] += idx, auto);
