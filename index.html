@@ -42,9 +42,7 @@ categories:
       <div class="carousel-item">
         <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
-            {%- for image in photo.images limit:1 -%}
-              <img src="{{ image }}" draggable="false">
-            {%- endfor -%}
+            <img src="{{ photo.images[0].file }}" draggable="false">
           </div>
           <span class="carousel-title">
             {{- photo.title -}}
