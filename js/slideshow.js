@@ -29,31 +29,31 @@ function init_slides(n_galleries) {
     //slide_auto = setTimeout(auto_slide, 5000);
 }
 
-function show_caption(image, caption) {
-    image.btns.classList.add('hidden');
-    image.caption.classList.add('show');
-    image.txt_desc.setAttribute("style", caption === 'desc' ? 'block' : 'none');
-    image.txt_mem.setAttribute("style", caption === 'mem' ? 'block' : 'none');
+function show_caption(gallery, image, caption) {
+    slide_caps[gallery][image].btns.classList.add('hidden');
+    slide_caps[gallery][image].caption.classList.add('show');
+    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'block' : 'none');
+    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'block' : 'none');
 }
 
-function show_buttons(image) {
-    image.caption.classList.remove('show');
+function show_buttons(gallery, image) {
+    slide_caps[gallery][image].caption.classList.remove('show');
     setTimeout(() => {
-        image.btns.classList.remove('hidden');
+        slide_caps[gallery][image].btns.classList.remove('hidden');
     }, 500);
 }
 
-slide_caps.forEach((gallery) => {
-    gallery.forEach((image) => {
-        image.btn_desc.addEventListener('mouseenter', () => show_caption(image, 'desc'));
-        image.btn_mem.addEventListener('mouseenter', () => show_caption(image, 'mem'));
+slide_caps.forEach((gallery, idx) => {
+    gallery.forEach((image, jdx) => {
+        image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
+        image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
         image.btns.addEventListener('mouseenter', () => {
             image.btns.classList.add('hidden');
         });
         image.caption.addEventListener('mouseenter', () => {
             image.btns.classList.add('show');
         });
-        image.caption.addEventListener('mouseleave', () => show_buttons(image));
+        image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
     });
 });
 
