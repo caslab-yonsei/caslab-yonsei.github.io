@@ -18,10 +18,15 @@ website: https://sites.google.com/view/daehoonkim
 alterlink: https://sites.google.com/view/daehoonkim
 ---
 
-### Education and Employment
+<div class="bigspacer"></div>
+
+*Employment:*
 
 * **Associate Professor**, Yonsei University, Sep., 2024 - present
 * **Assistant/Associate Professor**, DGIST, Aug., 2016 - Aug., 2024.
+
+*Education:*
+
 * **Postdoctoral Research Associate**, Feb., 2014 - July, 2016
   * University of Illinois at Urbana-Champaign, Aug., 2015 - July, 2016.
   * University of Wisconsin-Madison, Feb., 2014 - Aug., 2015. 
