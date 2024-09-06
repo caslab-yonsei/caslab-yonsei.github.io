@@ -14,7 +14,6 @@ location: "@Engineering Research Park 215"
 email: daehoonkim at yonsei.ac.kr
 phone: 02)2123-5825
 scholar: zjxGtuoAAAAJ
-website: https://sites.google.com/view/daehoonkim
 alterlink: https://sites.google.com/view/daehoonkim
 ---
 

@@ -1,10 +1,15 @@
 ---
 layout: news
 title: (News title)
-image: /image/(filename)
+images:
+ - /image/(filename 1)
+ - /image/(filename 2)
+ - (...)
+ - /image/(filenames)
 participants:
  - (related person 1)
  - (related person 2)
+ - (...)
  - (related people)
 YYYY: (year)
 MM: (month in two numbers)

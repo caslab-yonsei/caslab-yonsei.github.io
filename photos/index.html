@@ -19,29 +19,7 @@ categories:
   <div class="col-md-12" id="{{ photo.title }}">
     <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
     <hr/>
-    <div class="slideshow-container" style="position:relative; margin:auto;">
-      {% assign n_images = 0 -%}
-      {% for image in photo.images -%}
-        {% assign n_images = n_images | plus: 1 -%}
-        <div class="slides-gallery-{{ n_galleries }} slide-fade">
-          <img src="{{ image }}" style="width: 100%;">
-        </div>
-      {% endfor -%}
-      {% if n_images > 1 -%}
-        <a class="slide-prev" onclick="next_slide({{ n_galleries }}, -1)">&#10094;</a>
-        <a class="slide-next" onclick="next_slide({{ n_galleries }}, 1)">&#10095;</a>
-      {% endif -%}
-    </div>
-    <br/>
-    {% if n_images > 1 -%}
-      <div style="text-align: center;">
-        {% for idx in (1..n_images) -%}
-          <span class="slides-dot-{{ n_galleries }}" onclick="current_slide({{ n_galleries }}, {{ idx }})"></span>
-        {% endfor -%}
-      </div>
-    {% endif -%}
-    <p>{{ photo.content }}</p>
-  </div>
+    {% include photo_slide.html photo=photo.images gall_index={{ n_galleries }} %}
 </div>
 
 <div class="spacer"></div>
