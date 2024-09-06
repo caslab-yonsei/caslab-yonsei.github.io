@@ -82,7 +82,7 @@ categories:
       <tbody>
         {% for news in site.categories.news limit:20 %}
         <tr class="body">
-          <td class="date">{{ news.year }}</td>
+          <td class="date">{{ news.date }}</td>
           <td class="news">{{ news.title }}</td>
         </tr>
         {% endfor -%}
