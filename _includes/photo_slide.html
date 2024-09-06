@@ -5,6 +5,7 @@ gall_index: index of gallery
 
 <div class="slideshow-container" style="position:relative; margin:auto;">
   {% assign n_images = 0 -%}
+  test
   {% for image in images_loc -%}
     {% assign n_images = n_images | plus: 1 -%}
     <div class="slides-gallery-{{ gall_index }} slide-fade">
@@ -24,5 +25,4 @@ gall_index: index of gallery
     {% endfor -%}
   </div>
 {% endif -%}
-<p>{{ images_loc.content }}</p>
 </div>

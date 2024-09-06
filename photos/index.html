@@ -14,16 +14,17 @@ categories:
 <hr>
 {% assign n_galleries = 0 -%}
 {% for photo in site.categories.photos %}
-{% if photo.template -%}{% continue -%}{% endif -%}
-<div class="row">
-  <div class="col-md-12" id="{{ photo.title }}">
-    <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
-    <hr/>
-    {% include photo_slide.html images_loc=photo.images gall_index=n_galleries %}
-</div>
+  {% if photo.template -%}{% continue -%}{% endif -%}
+  <div class="row">
+    <div class="col-md-12" id="{{ photo.title }}">
+      <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
+      <hr/>
+      {% include photo_slide.html images_loc=photo.images gall_index=n_galleries %}
+  </div>
 
-<div class="spacer"></div>
-{% assign n_galleries = n_galleries | plus: 1 -%}
+  <div class="spacer"></div>
+  {% assign n_galleries = n_galleries | plus: 1 -%}
+  <p>{{ photo.content }}</p>
 {% endfor %}
 <script>
   init_slides({{ n_galleries }});
