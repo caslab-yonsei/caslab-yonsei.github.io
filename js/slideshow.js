@@ -41,7 +41,7 @@ function init_slides(n_galleries) {
                 });*/
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
                 image.caption.addEventListener('transitionend', (event) => {
-                    if (event.propertyName === 'transform' && image.caption.matches('slide-show')) {
+                    if (event.propertyName === 'transform' && image.caption.matches('.slide-show')) {
                         if (!image.caption.matches(':hover')) show_buttons(idx, jdx);
                     }
                 });
