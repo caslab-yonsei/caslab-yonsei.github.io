@@ -29,10 +29,10 @@ layout: default
         Links
       </div>
         {% endif -%}
-      <div class="pad-left note">
+      <div class="pad-left note" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
         <div class="smallspacer"></div>
         <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="{{ link }}" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ link }}</a>
+        <a class="off" href="{{ link }}" title="{{ link }}">{{ link }}</a>
       </div>
       {% endfor -%}
       <div class="bigspacer"></div>
