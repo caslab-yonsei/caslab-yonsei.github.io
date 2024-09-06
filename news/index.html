@@ -15,8 +15,7 @@ categories:
 {% for news in site.categories.news %}
   {% if news.template -%}{% continue -%}{% endif -%}
   {% capture prev_year %}{{ this_year }}{% endcapture %}
-  {% capture this_year %}{% assign year = news.date | split: '.' | first -%}{% endcapture %}
-  {% comment -%}{% capture this_year %}{{ news.year }}{% endcapture %}{% endcomment -%}
+  {% capture this_year %}{{ news.year }}{% endcapture %}
 
   {% if forloop.first %}
     <div class="row">
@@ -56,7 +55,7 @@ categories:
           <tbody>
   {% endif %}
             <tr class="body">
-              <td class="date">{{ news.year }}</td>
+              <td class="date">{% if news.YYYY -%}{{ news.YYYY }}{% endif -%}{% if news.MM -%}.{{ news.MM }}{% endif -%}{% if news.DD -%}.{{ news.DD }}{% endif -%}</td>
               <td class="news">{{ news.title }}</td>
             </tr>
 {% endfor %}

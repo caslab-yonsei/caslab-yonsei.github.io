@@ -6,7 +6,9 @@ participants:
  - (related person 1)
  - (related person 2)
  - (related people)
-date: "(YYYY.MM.DD) (you can omit date))"
+YYYY: (year)
+MM: (month in two numbers)
+DD: (day of the month, you can omit)
 links:
   - (link1)
   - (link2)

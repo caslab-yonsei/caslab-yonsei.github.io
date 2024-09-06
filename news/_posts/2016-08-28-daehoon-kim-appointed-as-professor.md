@@ -4,7 +4,9 @@ title: Daehoon Kim was appointed as an assistant professor in Department of Info
 image: 
 participants:
  - Daehoon Kim
-date: "2016.08"
+YYYY: 2016
+MM: 08
+DD:
 links:
   - https://www.dgist.ac.kr/bbs/BBSMSTR_000000000124/B0000000018576K0foDy.do?mno=sub07_02
 linked: false
