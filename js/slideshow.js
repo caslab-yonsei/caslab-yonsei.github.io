@@ -47,10 +47,10 @@ function init_slides(n_galleries) {
 }
 
 function show_caption(gallery, image, caption) {
-    slide_caps[gallery][image].btnbox.classList.add('slide-hidden');
-    slide_caps[gallery][image].caption.classList.add('slide-show');
     slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
     slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
+    slide_caps[gallery][image].btnbox.classList.add('slide-hidden');
+    slide_caps[gallery][image].caption.classList.add('slide-show');
 }
 
 function show_buttons(gallery, image) {

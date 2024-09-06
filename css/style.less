@@ -283,6 +283,7 @@ table {
     bottom: 0;
     left: 0;
     width: 100%;
+    min-height: 64px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
@@ -292,14 +293,19 @@ table {
 
 [class*="slides-desc-"], [class*="slides-mem-"] {
     font-size: 14px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-left: 14px;
 }
 
 [class*="slides-btnbox-"] {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 14px;
+    left: 14px;
     display: flex;
-    gap: 10px;
+    gap: 14px;
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.25s ease;
@@ -309,7 +315,7 @@ table {
     height: 46px;
     width: 46px;
     color: white;
-    position: absolute;
+    position: relative;
     font-size: 1.2rem;
     text-align: center;
     line-height: 46px;
