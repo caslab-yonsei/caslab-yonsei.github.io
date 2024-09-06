@@ -20,7 +20,7 @@ layout: default
 <div class="bigspacer"></div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
       {% for link in page.links -%}
@@ -29,7 +29,7 @@ layout: default
         Links
       </div>
         {% endif -%}
-      <div class="pad-left note" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+      <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-external-link fa-fw"></i>
         <a class="off" href="{{ link }}" title="{{ link }}">{{ link }}</a>
@@ -38,7 +38,7 @@ layout: default
       <div class="bigspacer"></div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <div class="post">
       <div class="spacer"></div>
       {{ content }}
