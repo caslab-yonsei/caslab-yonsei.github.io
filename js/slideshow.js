@@ -41,9 +41,11 @@ function init_slides(n_galleries) {
                 });*/
                 image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
                 image.caption.addEventListener('transitionend', (event) => {
-                    if (event.propertyName === 'transform' && image.caption.matches('.slide-show')) {
-                        if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
-                    }
+                    setTimeout(() => {
+                        if (event.propertyName === 'transform' && image.caption.matches('.slide-show')) {
+                            if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
+                        }
+                    }, 200);
                 });
             }
         });
