@@ -83,20 +83,28 @@ categories:
           <td class="date">{% if news.YYYY -%}{{ news.YYYY }}{% endif -%}{% if news.MM -%}.{{ news.MM }}{% endif -%}{% if news.DD -%}.{{ news.DD }}{% endif -%}</td>
             <td class="news">
               {% assign linked = false -%}
-              {% if news.linked -%}
-                <a href="{{ news.url }}" class="off">
-                {% assign linked = true -%}
-              {% elsif news.alterlink > 0 -%}
-                {% assign linkindex = news.alterlink | minus: 1 -%}
-                {% assign link = news.links[linkindex] -%}
-                {% unless link == empty -%}
-                  <a href="{{ link }}" class="off" target="_blank" rel="noopener noreferrer">
-                  {% assign linked = true -%}
-                {% endunless -%}
-              {% endif -%}
-              {{ news.title }}
+              {% assign blank = false -%}
+              {% capture news_url %}
+                {%- if news.alterlink > 0 -%}
+                  {% assign linkindex = news.alterlink | minus: 1 -%}
+                  {% assign blank = true -%}
+                  {{ news.links[linkindex] }}
+                {%- else -%}
+                  {{ news.url }}
+                {%- endif -%}
+              {% endcapture %}
+              {% unless news_url == '#' -%}{% assign linked = true %}{% endunless -%}
+            
               {% if linked -%}
-                </a>
+                {% if blank %}
+              <a href="{{ news_url }}" class="off" target="_blank" rel="noopener noreferrer">
+                {% else %}
+              <a href="{{ link }}" class="off">
+                {% endif %}
+              {% endif -%}
+                {{ news.title }}
+              {% if linked -%}
+              </a>
               {% endif -%}
             </td>
           </tr>
