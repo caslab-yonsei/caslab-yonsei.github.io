@@ -34,26 +34,25 @@ function init_slides(n_galleries) {
         gallery.forEach((image, jdx) => {
             if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => {
                 if (image.btnbox.matches(".slide-visible")) {
-                    console.log("btn_desc mouseenter");
+                    console.log("btn_desc mouseenter show_caption");
                     show_caption(idx, jdx, 'desc')
                 }
             });
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => {
                 if (image.btnbox.matches(".slide-visible")) {
-                    console.log("btn_mem mouseenter");
+                    console.log("btn_mem mouseenter show_caption");
                     show_caption(idx, jdx, 'mem');
                 }
             });
             image.caption.addEventListener('mouseleave', () => {
-                console.log("caption mouseleave");
-                if (!image.caption.matches(".transitioning") && image.caption.matches(".ready")) {
-                    console.log("caption show_buttons");
+                if (image.caption.matches(".slide-show") && !image.caption.matches(".transitioning") && image.caption.matches(".ready")) {
+                    console.log("caption mouseleave show_buttons");
                     show_buttons(idx, jdx);
                 }
             });
             image.caption.addEventListener('mousemove', () => {
                 if (!image.caption.matches(".transitioning") && !image.caption.matches(".ready")) {
-                    console.log("caption ready");
+                    console.log("caption mousemove ready");
                     image.caption.classList.add('ready');
                 }
             });
@@ -64,7 +63,7 @@ function init_slides(n_galleries) {
             image.wrapper.addEventListener('mousemove', () => {
                 if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
                     if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) {
-                        console.log("wrapper show_buttons");
+                        console.log("wrapper !caption>:hover show_buttons");
                         show_buttons(idx, jdx);
                     }
                 }
