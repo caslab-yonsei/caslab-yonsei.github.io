@@ -10,17 +10,17 @@ gall_index: index of gallery
       <img src="{{ image.file }}" style="width: 100%;">
       <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
         {% if image.caption -%}
-          <p class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
-            <span class="slides-captxt">{{ image.caption }}</span>
-          </p>
+          <span class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
+            {{ image.caption }}
+          </span>
         {% endif -%}
         {% if image.members -%}
-          <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-            <span class="slides-captxt">{%- if image.members.size > 1 -%}(from left to right) {%- endif -%}{%- include member_ref.html mem_loc=image.members -%}</span>
-          </p>
+          <span class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
+            {%- if image.members.size > 1 -%}(from left to right) {%- endif -%}{%- include member_ref.html mem_loc=image.members -%}
+          </span>
         {% endif -%}
       </div>
-      <div class="slides-btnbox-{{ include.gall_index }}" id="slides-btnbox-{{ include.gall_index }}-{{ n_images }}">
+      <div class="slides-btnbox-{{ include.gall_index }} slide-visible" id="slides-btnbox-{{ include.gall_index }}-{{ n_images }}">
         {% if image.caption -%}
           <i class="fa fa-info-circle slides-btn-desc-{{ include.gall_index }}" id="slides-btn-desc-{{ include.gall_index }}-{{ n_images }}"></i>
         {% endif -%}
