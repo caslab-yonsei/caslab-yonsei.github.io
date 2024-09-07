@@ -34,14 +34,10 @@ gall_index: index of gallery
   {% if n_images > 1 -%}
     <a class="slide-prev" onclick="next_slide({{ include.gall_index }}, -1)">&#10094;</a>
     <a class="slide-next" onclick="next_slide({{ include.gall_index }}, 1)">&#10095;</a>
+    <div class="slides-dotbox-{{ include.gall_index }}">
+      {% for idx in (1..n_images) -%}
+        <span class="slides-dot-{{ include.gall_index }}" onclick="current_slide({{ include.gall_index }}, {{ idx }})"></span>
+      {% endfor -%}
+    </div>
   {% endif -%}
-</div>
-<br/>
-{% if n_images > 1 -%}
-  <div style="text-align: center;">
-    {% for idx in (1..n_images) -%}
-      <span class="slides-dot-{{ include.gall_index }}" onclick="current_slide({{ include.gall_index }}, {{ idx }})"></span>
-    {% endfor -%}
-  </div>
-{% endif -%}
 </div>

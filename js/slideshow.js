@@ -1,6 +1,8 @@
 let slide_indices = [];
 let slide_auto;
 let slide_caps = [];
+let slide_gesture = { x: [], y: [] };
+let slide_tolerance = 100;
 
 function init_slides(n_galleries) {
     let slides;
@@ -33,7 +35,9 @@ function init_slides(n_galleries) {
             if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
             if (image.caption) {
-                image.caption.addEventListener('mouseleave', () => show_buttons(idx, jdx));
+                image.caption.addEventListener('mouseleave', () => {
+                    if (!image.caption.matches(".transitioning")) show_buttons(idx, jdx);
+                });
                 image.caption.addEventListener('transitionend', () => {
                     image.caption.classList.remove('transitioning');
                 });
@@ -64,8 +68,8 @@ function isAnyChildHovered(container) {
 
 function show_caption(gallery, image, caption) {
     slide_caps[gallery][image].caption.classList.add('slide-show', 'transitioning');
-    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
-    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
+    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: contents' : 'display: none');
+    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: contents' : 'display: none');
     slide_caps[gallery][image].btnbox.classList.add('slide-hidden');
     slide_caps[gallery][image].btnbox.classList.remove('slide-visible');
 }
