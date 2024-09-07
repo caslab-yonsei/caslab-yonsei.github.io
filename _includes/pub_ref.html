@@ -28,10 +28,11 @@
 
   {% for author in include.pub_loc.authors %}
     {% assign linked = false %}
+    {% assign blank = false -%}
     {% for member in site.categories.members %}
       {% if author == member.title %}
-        {% capture mem_url %}{{ member.url }}{% endcapture %}
-        {% assign linked = true %}
+        {% capture mem_url %}{%- if member.alterlink -%}{% assign blank = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+        {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
         {% break %}
       {% endif %}
     {% endfor %}
@@ -41,7 +42,7 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      {% if forloop.last %}and {% endif %}{% if forloop.last %}and {% endif %}<a href="{{ mem_url }}">{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+      {% if forloop.last %}and {% endif %}{% if forloop.last %}and {% endif %}<a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
       {% if forloop.last %}and {% endif %}{{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% endif %}
