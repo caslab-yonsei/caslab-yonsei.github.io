@@ -12,6 +12,6 @@
   {% if linked %}
     <a href="{{ mem_url }}" class="off">{{ name }}</a>{% if forloop.last %}.{% else %}, {% endif %}
   {% else %}
-    {{ name }}{% if forloop.last %}.{% else %}, {% endif %}
+  {% if forloop.last %}and {% endif %}{{ name }}{% if forloop.last %}.{% else %}, {% endif %}
   {% endif %}
 {% endfor %}

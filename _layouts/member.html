@@ -44,11 +44,6 @@ layout: default
     </div>
     <div class="bigspacer"></div>
 
-{% if member.component.photos %} 
-  {% include member_photo.html member_loc=member gall_index=0 %}
-    <div class="bigspacer"></div>
-{% endif %}
-
 {% if member.component.publications %} 
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
@@ -65,7 +60,6 @@ layout: default
   {% if papersq == true %}
     <div class="publications">
       <h2 id="publications">Publications</h2>
-      <div class="spacer"></div>
 
       <ol>
       {% for publication in site.categories.publications %}
@@ -83,6 +77,10 @@ layout: default
 </div>
 
 {% if member.component.photos %} 
+  <div class="bigspacer"></div>
+{% include member_photo.html member_loc=member gall_index=0 %}
+  <div class="bigspacer"></div>
+
 <script defer>
   init_slides();
 </script>

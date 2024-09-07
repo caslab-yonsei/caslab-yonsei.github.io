@@ -15,9 +15,9 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      <a href="{{ mem_url }}">{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+      {% if forloop.last %}and {% endif %}<a href="{{ mem_url }}">{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
-      {{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+      {% if forloop.last %}and {% endif %}{{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% endif %}
   {% endfor %}
 
