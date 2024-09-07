@@ -20,23 +20,24 @@ layout: default
       {% include member_links.html member_loc=member %}
     </div>
   </div>
-  <div class="col-md-9">
-    
-  {% if member.component.researches %} 
+
+  <div class="col-md-9"> 
+{% if member.component.researches %} 
     <div>
-    {% for research in member.researches -%}
-      {% if forloop.first -%}
-          <h1 id="research">Research Interests</h1>
-          <ul>
-      {% endif -%}
-            <li>{{ research }}</li>
-      {% if forloop.last -%}
-          </ul>
-          <div class="bigspacer"></div>
-      {% endif -%}
-    {% endfor -%}
+  {% for research in member.researches -%}
+    {% if forloop.first -%}
+      <h1 id="research">Research Interests</h1>
+      <ul>
+    {% endif -%}
+        <li>{{ research }}</li>
+    {% if forloop.last -%}
+      </ul>
+      <div class="bigspacer"></div>
+    {% endif -%}
+  {% endfor -%}
     </div>
 {% endif %}
+
     <div class="post">
       {{ content }}
     </div>
@@ -44,7 +45,7 @@ layout: default
 
 {% if member.component.researches %} 
   {% include member_photo.html member_loc=member gall_index=0 %}
-  <div class="bigspacer"></div>
+    <div class="bigspacer"></div>
 {% endif %}
 
 {% if member.component.publications %} 
@@ -61,18 +62,18 @@ layout: default
   {% endfor %}
 
   {% if papersq == true %}
-      <h1 id="publications">Publications</h1>
-      <div class="spacer"></div>
+    <h1 id="publications">Publications</h1>
+    <div class="spacer"></div>
 
-      <ol>
+    <ol>
     {% for publication in site.categories.publications %}
       {% for author in publication.authors %}
         {% if author == member.title %}
-        <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+      <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
         {% endif %}
       {% endfor %}
     {% endfor %}
-      </ol>
+    </ol>
   {% endif %}
 {% endif %}
   </div>
