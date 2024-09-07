@@ -94,8 +94,8 @@ function show_caption(gallery, image, caption) {
     var slide = slide_caps[gallery][image];
     slide.caption.classList.add('slide-show', 'transitioning');
     slide.caption.classList.remove('ready');
-    slide.txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
-    slide.txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
+    if (slide.txt_desc) slide.txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
+    if (slide.txt_mem) slide.txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
     slide.btnbox.classList.add('slide-hidden');
     slide.btnbox.classList.remove('slide-visible');
 }
