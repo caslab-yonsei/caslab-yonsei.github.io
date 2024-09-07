@@ -24,6 +24,7 @@ function init_slides(n_galleries) {
                     caption: document.getElementById("slides-caption-"+String(idx)+"-"+String(jdx)),
                     btnbox: document.getElementById("slides-btnbox-"+String(idx)+"-"+String(jdx)),
                     wrapper: document.getElementById("slides-gallery-"+String(idx)),
+                    showbtn: null,
                 }
             );
         }
@@ -89,19 +90,23 @@ function isAnyChildHovered(container) {
 }
 
 function show_caption(gallery, image, caption) {
-    slide_caps[gallery][image].caption.classList.add('slide-show', 'transitioning');
-    slide_caps[gallery][image].caption.classList.remove('ready');
-    slide_caps[gallery][image].txt_desc.setAttribute("style", caption === 'desc' ? 'display: contents' : 'display: none');
-    slide_caps[gallery][image].txt_mem.setAttribute("style", caption === 'mem' ? 'display: contents' : 'display: none');
-    slide_caps[gallery][image].btnbox.classList.add('slide-hidden');
-    slide_caps[gallery][image].btnbox.classList.remove('slide-visible');
+    var slide = slide_caps[gallery][image];
+    slide.caption.classList.add('slide-show', 'transitioning');
+    slide.caption.classList.remove('ready');
+    slide.txt_desc.setAttribute("style", caption === 'desc' ? 'display: contents' : 'display: none');
+    slide.txt_mem.setAttribute("style", caption === 'mem' ? 'display: contents' : 'display: none');
+    slide.btnbox.classList.add('slide-hidden');
+    slide.btnbox.classList.remove('slide-visible');
 }
 
 function show_buttons(gallery, image) {
-    slide_caps[gallery][image].caption.classList.remove('slide-show', 'ready');
-    setTimeout(() => {
-        slide_caps[gallery][image].btnbox.classList.remove('slide-hidden');
-        slide_caps[gallery][image].btnbox.classList.add('slide-visible');
+    var slide = slide_caps[gallery][image];
+    slide.caption.classList.remove('slide-show', 'ready');
+    clearTimeout(slide.showbtn);
+    slide.showbtn = setTimeout(() => {
+        slide.btnbox.classList.remove('slide-hidden');
+        slide.btnbox.classList.add('slide-visible');
+        slide.showbtn
     }, 500);
 }
 
