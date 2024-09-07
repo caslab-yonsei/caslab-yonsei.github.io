@@ -15,9 +15,10 @@
   {% if member.role == include.role -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
-          {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+          {% assign blank = false -%}
+          {% capture mem_url %}{%- if member.alterlink -%}{% assign blank = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
           {% unless mem_url == '#' %}
-          <a class="off" href="{{ mem_url }}">
+          <a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
           {% endunless %}
             {% if member.profile_name -%}{{ member.profile_name }}{% else -%}{{ member.title }}{% endif -%}
           {% unless mem_url == '#' %}

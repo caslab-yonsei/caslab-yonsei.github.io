@@ -12,9 +12,10 @@
       <div class="col-xs-6 pi-col">
         <div class="pi-sqr">
           <div class="pi-div">
-            {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+            {% assign blank = false -%}
+            {% capture mem_url %}{%- if member.alterlink -%}{% assign blank = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
             {% unless mem_url == '#' %}
-            <a href="{{ mem_url }}">
+              <a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
             {% endunless %}
               <img width=100% class="pi-img" src="{{ member.image }}">
             {% unless mem_url == '#' %}
@@ -25,7 +26,7 @@
       </div>
       <div class="col-xs-6">
         {% unless mem_url == '#' %}
-        <a href="{{ mem_url }}" class="off">
+        <a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
         {% endunless %}
           <h2>
             {%- if member.profile_name -%}
