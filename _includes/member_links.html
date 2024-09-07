@@ -9,7 +9,7 @@
   {% if include.member_loc.alumni.affiliation %}
 <div class="pad-left note reveal">
   <i class="fa fa-briefcase fa-fw"></i>
-  {%- if include.member_loc.alumni.designation -%} {{- include.member_loc.alumni.designation -}} at {%- endif -%}{{ include.member_loc.alumni.affiliation }}
+  {% if include.member_loc.alumni.designation %} {{ include.member_loc.alumni.designation }} at {% endif %}{{ include.member_loc.alumni.affiliation }}
 </div>
 {% endif %}
 <div class="spacer"></div>
