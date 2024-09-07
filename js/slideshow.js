@@ -54,10 +54,11 @@ function init_slides(n_galleries) {
                 image.caption.classList.remove('transitioning');
             });
             image.wrapper.addEventListener('mousemove', () => {
-                    console.log("wrapper mousemove");
                     if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
-                        console.log("wrapper show_buttons");
-                        if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
+                        if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) {
+                            console.log("wrapper show_buttons");
+                            show_buttons(idx, jdx);
+                        }
                     }
                 }
             );
