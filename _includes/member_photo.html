@@ -1,9 +1,9 @@
 {% comment -%}
-mem_loc: member
+member_loc: member
 gall_index: gallery index
-{% endcomment -%}image.members contains member.title
+{% endcomment -%}
 
-{%- assign member = include.mem_loc -%}
+{%- assign member = include.member_loc -%}
 {%- assign n_images = 0 -%}
 {%- for photo in site.categories.photos -%}
   {%- for image in photo.images -%}
