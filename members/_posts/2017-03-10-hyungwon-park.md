@@ -10,7 +10,7 @@ researches:
   - Network I/O optimization
   - Cache side channel attack
   - Tiered memory system
-location: "Engineering Research Park 212D, Yonsei"
+location: "Engineering Research Park 212D"
 note: 
 email: hwpark at dgist.ac.kr
 scholar: Sy3wZSEAAAAJ

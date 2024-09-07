@@ -5,12 +5,12 @@
     {% if participant == member.title %}
       {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
       {% capture name %}{% if member.prefix %}{{ member.prefix }} {% endif %}{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% endcapture %}
-      {% assign linked = true %}
+      {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
       {% break %}
     {% endif %}
   {% endfor %}
   {% if linked %}
-    <a href="{{ mem_url }}">{{ name }}</a>{% if forloop.last %}.{% else %}, {% endif %}
+    <a href="{{ mem_url }}" class="off">{{ name }}</a>{% if forloop.last %}.{% else %}, {% endif %}
   {% else %}
     {{ name }}{% if forloop.last %}.{% else %}, {% endif %}
   {% endif %}
