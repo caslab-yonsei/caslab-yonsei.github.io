@@ -11,12 +11,12 @@ gall_index: index of gallery
       <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
         {% if image.caption -%}
           <p class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
-            {{ image.caption }}
+            <span class="slides-captxt">{{ image.caption }}</span>
           </p>
         {% endif -%}
         {% if image.members -%}
           <p class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-            {% if image.members.size > 1 -%}(from left to right) {% endif -%}{% include member_ref.html mem_loc=image.members %}
+            <span class="slides-captxt">{%- if image.members.size > 1 -%}(from left to right) {%- endif -%}{%- include member_ref.html mem_loc=image.members -%}</span>
           </p>
         {% endif -%}
       </div>
