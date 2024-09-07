@@ -4,7 +4,7 @@ title: (Fullname)
 abbrev: (Short name)
 profile_name: (Fullname for profile)
 role: (Professor/Student/Alumni)
-position: (Position e.g. Assistant Professor, PhD. Student)
+position: (Position e.g. Assistant Professor, Ph.D. Student)
 image: /images/members/(image file)
 researches:
   - (research interest 1)
@@ -27,7 +27,7 @@ alumni: # delete if not needed
   degree: (graduation degree)
   affiliation: (affiliation after graduation)
   date: (graduation month year, e.g. February 2022)
-alterlink: (alternative link address, )
+alterlink: (alternative link address, if provided this page is not accessible)
 component:
   researches: true #(false if you don't want to print research interest)
   publications: true #(false if you don't want to print publications)
