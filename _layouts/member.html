@@ -79,6 +79,8 @@ layout: default
   </div>
 </div>
 
+{% if member.component.photos %} 
 <script defer>
-  init_slides({{ 1 }});
+  init_slides();
 </script>
+{% endif %}

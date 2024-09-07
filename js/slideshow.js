@@ -4,7 +4,8 @@ let slide_caps = [];
 let slide_gesture = { x: [], y: [] };
 let slide_tolerance = 100;
 
-function init_slides(n_galleries) {
+function init_slides() {
+    let n_galleries = document.querySelectorAll(".slideshow-container").length;
     let slides;
     slide_indices = [];
     for (let idx = 0; idx < n_galleries; idx++) {
