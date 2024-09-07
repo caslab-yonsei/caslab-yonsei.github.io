@@ -32,21 +32,37 @@ function init_slides(n_galleries) {
     
     slide_caps.forEach((gallery, idx) => {
         gallery.forEach((image, jdx) => {
-            if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
-            if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
+            if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => {
+                    console.log("btn_desc mouseenter");
+                    show_caption(idx, jdx, 'desc')
+                }
+            );
+            if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => {
+                    console.log("btn_mem mouseenter");
+                    show_caption(idx, jdx, 'mem');
+                }
+            );
             image.caption.addEventListener('mouseleave', () => {
-                if (!image.caption.matches(".transitioning")) show_buttons(idx, jdx);
+                console.log("caption mouseleave");
+                if (!image.caption.matches(".transitioning")) {
+                    console.log("caption show_buttons");
+                    show_buttons(idx, jdx);
+                }
             });
             image.caption.addEventListener('transitionend', () => {
+                console.log("caption transitionend");
                 image.caption.classList.remove('transitioning');
             });
             image.wrapper.addEventListener('mousemove', () => {
+                    console.log("wrapper mousemove");
                     if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
+                        console.log("wrapper show_buttons");
                         if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
                     }
                 }
             );
             image.wrapper.addEventListener('mouseleave', () => {
+                    console.log("wrapper mouseleave");
                     show_buttons(idx, jdx);
                 }
             );
