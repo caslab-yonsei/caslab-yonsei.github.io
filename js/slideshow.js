@@ -51,7 +51,7 @@ function init_slides(n_galleries) {
                 }
             });
             image.caption.addEventListener('mousemove', () => {
-                if (!image.caption.matches(".transitioning") && !image.caption.matches(".ready")) {
+                if (image.caption.matches(".slide-show") && !image.caption.matches(".transitioning") && !image.caption.matches(".ready")) {
                     console.log("caption mousemove ready");
                     image.caption.classList.add('ready');
                 }
