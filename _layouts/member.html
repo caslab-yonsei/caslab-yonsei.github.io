@@ -13,6 +13,7 @@ layout: default
       </div>
     </div>
 {% endif %}
+    <div class="bigspacer"></div>
     <div class="profile-name">{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</div>
     <div class="profile-position">{{ member.position }}</div>
     <div class="bigspacer"></div>
@@ -23,10 +24,10 @@ layout: default
 
   <div class="col-md-9"> 
 {% if member.component.researches %} 
-    <div>
+    <div class="research">
   {% for research in member.researches -%}
     {% if forloop.first -%}
-      <h1 id="research">Research Interests</h1>
+      <h2 id="research">Research Interests</h2>
       <ul>
     {% endif -%}
         <li>{{ research }}</li>
@@ -62,18 +63,20 @@ layout: default
   {% endfor %}
 
   {% if papersq == true %}
-    <h1 id="publications">Publications</h1>
-    <div class="spacer"></div>
+    <div class="publications">
+      <h2 id="publications">Publications</h2>
+      <div class="spacer"></div>
 
-    <ol>
-    {% for publication in site.categories.publications %}
-      {% for author in publication.authors %}
-        {% if author == member.title %}
-      <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
-        {% endif %}
+      <ol>
+      {% for publication in site.categories.publications %}
+        {% for author in publication.authors %}
+          {% if author == member.title %}
+        <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
-    {% endfor %}
-    </ol>
+      </ol>
+    </div>
   {% endif %}
 {% endif %}
   </div>

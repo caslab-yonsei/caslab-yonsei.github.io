@@ -3,6 +3,7 @@ layout: member
 title: (Fullname)
 abbrev: (Short name)
 profile_name: (Fullname for profile)
+prefix: (title, e.g. Prof., Dr.)
 role: (Professor/Student/Alumni)
 position: (Position e.g. Assistant Professor, Ph.D. Student)
 image: /images/members/(image file)
@@ -10,7 +11,7 @@ researches:
   - (research interest 1)
   - (research interest 2)
 location: "(physical location e.g. @E3-304, DGIST)"
-task: (assigned task in the lab)
+note: (assigned note in the lab)
 email: (id) at (address)
 phone: (phone number, delete if not needed)
 scholar: (google scholar user identifier, delete if not needed)
@@ -25,8 +26,9 @@ twitter: (twitter account, delete if not needed)
 website: (website address, delete if not needed)
 alumni: # delete if not needed
   degree: (graduation degree)
-  affiliation: (affiliation after graduation)
   date: (graduation month year, e.g. February 2022)
+  affiliation: (affiliation after graduation)
+  designation: (designation at affiliation)
 alterlink: (alternative link address, if provided this page is not accessible)
 component:
   researches: true #(false if you don't want to print research interest)
@@ -36,3 +38,5 @@ template: true #(delete this line)
 ---
 
 (introduction of the member in markdown/html)
+
+use <div class="bigspacer"></div> between paragraphs for better layout

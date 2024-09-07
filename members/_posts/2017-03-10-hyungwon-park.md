@@ -2,9 +2,8 @@
 layout: member
 title: Hyungwon Park
 abbrev: H. Park
-profile_name: Hyungwon Park
 role: Student
-position: PhD. Student
+position: Ph.D. Student
 image: /images/members/hpark.jpg
 researches:
   - Virtualization
@@ -12,7 +11,7 @@ researches:
   - Cache side channel attack
   - Tiered memory system
 location: "Engineering Research Park 212D, Yonsei"
-task: 
+note: 
 email: hwpark at dgist.ac.kr
 scholar: Sy3wZSEAAAAJ
 component:

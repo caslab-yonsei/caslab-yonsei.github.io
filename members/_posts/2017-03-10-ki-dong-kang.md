@@ -2,10 +2,9 @@
 layout: member
 title: Ki-Dong Kang
 abbrev: K.D. Kang
-profile_name: Ki-Dong Kang
 role: Alumni
+prefix: Dr.
 image: /images/members/kdkang.jpg
-position: Senior researcher at ETRI
 researches:
   - Energy-Efficient Systems
   - Virtualization
@@ -14,8 +13,9 @@ researches:
 scholar: RnI3ge4AAAAJ
 alumni:
   degree: Ph.D.
-  affiliation: ETRI
   date: February 2022
+  affiliation: ETRI
+  designation: Senior researcher
 component:
   researches: true
   publications: true
@@ -26,6 +26,8 @@ component:
 * **Ph.D.** in Information and Communication Engineering, DGIST, Daegu, Feb, 2022
 * **M.S.** in Information and Communication Engineering, DGIST, Daegu, Feb, 2017
 * **B.S.** in Computer Science, Gachon University, Seongnam, Feb, 2015
+
+<div class="bigspacer"></div>
 
 ## Scholarships & Awards
 * Administrator's Award, Ministry of Science and ICT, February 2022.

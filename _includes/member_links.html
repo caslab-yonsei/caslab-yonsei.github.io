@@ -1,3 +1,19 @@
+{% if include.member_loc.role == "Alumni" -%}
+<div class="smallhead">
+  Graduated {{ include.member_loc.alumni.date }}
+</div>
+<div class="pad-left note reveal">
+  <i class="fa fa-graduation-cap fa-fw"></i>
+  {{ include.member_loc.alumni.degree }} Degree
+</div>
+  {% if include.member_loc.alumni.affiliation %}
+<div class="pad-left note reveal">
+  <i class="fa fa-briefcase fa-fw"></i>
+  {%- if include.member_loc.alumni.designation -%} {{- include.member_loc.alumni.designation -}} at {%- endif -%}{{ include.member_loc.alumni.affiliation }}
+</div>
+{% endif %}
+<div class="spacer"></div>
+{% endif %}
 {% if include.member_loc.location -%}
 <div class="smallhead">
   Location
@@ -8,13 +24,13 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.task -%}
+{% if include.member_loc.note -%}
 <div class="smallhead">
-  Task
+  Note
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-info-circle fa-fw"></i>
-  {{ member.task }}
+  {{ member.note }}
 </div>
 <div class="spacer"></div>
 {% endif %}

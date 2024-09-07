@@ -3,6 +3,7 @@ layout: member
 title: Daehoon Kim
 abbrev: D. Kim
 role: Professor
+prefix: Prof.
 position: Assistant Professor
 image: /images/members/dkim.png
 researches:
@@ -27,6 +28,8 @@ component:
 * **Postdoctoral Research Associate**, Feb., 2014 - July, 2016
   * University of Illinois at Urbana-Champaign, Aug., 2015 - July, 2016.
   * University of Wisconsin-Madison, Feb., 2014 - Aug., 2015. 
+
+<div class="bigspacer"></div>
 
 ## Education
 * **Ph.D.**, in [Computer Science](http://cs.kaist.ac.kr/), [KAIST](http://www.kaist.ac.kr/), Daejeon, Feb., 2014.

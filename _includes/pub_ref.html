@@ -4,7 +4,7 @@
     {% assign linked = false %}
     {% for member in site.categories.members %}
       {% if author == member.abbrev %}
-        {% capture mem_url %}{{ member.url }}{% endcapture %}
+        {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
         {% assign linked = true %}
         {% break %}
       {% endif %}
