@@ -3,7 +3,7 @@ images_loc: array of images
 gall_index: index of gallery
 {% endcomment -%}
 
-<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}" style="position:relative; margin:auto;">
+<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}">
   {% assign n_images = 0 -%}
   {% for image in include.images_loc -%}
     <div class="slides-gallery-{{ include.gall_index }} slide-fade">

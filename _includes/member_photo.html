@@ -16,7 +16,7 @@ gall_index: gallery index
     {% endfor %}
     {% if linked %}
       {%- if n_images == 0 -%}
-<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}" style="position:relative; margin:auto;">
+<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}">
       {%- endif -%}
   <div class="slides-gallery-{{ include.gall_index }} slide-fade">
     <img src="{{ image.file }}" style="width: 100%;">
