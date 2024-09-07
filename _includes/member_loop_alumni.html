@@ -15,9 +15,14 @@
   {% if member.role == include.role -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
-          <a class="off" href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+          {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+          {% unless mem_url == '#' %}
+          <a class="off" href="{{ mem_url }}">
+          {% endunless %}
             {% if member.profile_name -%}{{ member.profile_name }}{% else -%}{{ member.title }}{% endif -%}
+          {% unless mem_url == '#' %}
           </a>
+          {% endunless %}
         </td>
         <td>{{ member.alumni.degree }}</td>
         <td>{{ member.alumni.date }}</td>

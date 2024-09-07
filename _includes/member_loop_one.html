@@ -5,9 +5,14 @@
   <div class="col-sm-3 pi-col">
     <div class="pi-sqr">
       <div class="pi-div">
-        <a href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+        {% capture mem_url %}{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+        {% unless mem_url == '#' %}
+        <a href="{{ mem_url }}">
+        {% endunless %}
           <img class="pi-img" src="{{ member.image }}">
+        {% unless mem_url == '#' %}
         </a>
+        {% endunless %}
       </div>
     </div>
     <div class="spacer"></div>
@@ -18,9 +23,13 @@
     <div class="bigspacer"></div>
   </div>
   <div class="col-sm-9">
-    <a class="off" href="{%- if member.alterlink -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}">
+    {% unless mem_url == '#' %}
+    <a class="off" href="{{ mem_url }}">
+    {% endunless %}
       <h1>{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}</h1>
+    {% unless mem_url == '#' %}
     </a>
+    {% endunless %}
     <h3>{{ member.position }}</h3>
     <div class="bigspacer"></div>
     {{ member.content }}

@@ -29,7 +29,7 @@ alumni: # delete if not needed
   date: (graduation month year, e.g. February 2022)
   affiliation: (affiliation after graduation)
   designation: (designation at affiliation)
-alterlink: (alternative link address, if provided this page is not accessible)
+alterlink: (alternative link address, if provided this page is not accessible, '#' indicates no link at all)
 component:
   researches: true #(false if you don't want to print research interest)
   publications: true #(false if you don't want to print publications)

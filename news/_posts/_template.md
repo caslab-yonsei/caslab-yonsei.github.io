@@ -19,8 +19,8 @@ links:
   - (link2)
   - (...)
   - (links)
-linked: true/false (has detailed description then true, if need alterlink or no description then false)
-alterlink: (index of link for linking the news, if linked is true or no linking then 0)
+  - '#'
+alterlink: (index of links for linking the news, if no linking insert index of '#', leave empty if this page)
 template: true #(delete this line)
 ---
 
