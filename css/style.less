@@ -507,11 +507,21 @@ table tr:hover td {
 }
 
 .carousel-control#cc-left {
-    left: -23px;
+    left: 0px;
 }
 
 .carousel-control#cc-right {
-    right: -23px;
+    right: 0px;
+}
+
+@media (min-width: @screen-md-min) {
+    .carousel-control#cc-left {
+        left: -23px;
+    }
+    
+    .carousel-control#cc-right {
+        right: -23px;
+    }
 }
 
 .pad-left {

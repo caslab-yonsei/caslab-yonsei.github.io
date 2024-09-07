@@ -25,7 +25,7 @@ categories:
         <div class="bigspacer"></div>
         <div class="bigspacer"></div>
         <address>
-            <table id="address">
+            <table id="address" class="noheader">
                 <tbody>
                 <tr>
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Address</span></td>

@@ -15,6 +15,10 @@ email: daehoonkim at yonsei.ac.kr
 phone: 02)2123-5825
 scholar: zjxGtuoAAAAJ
 alterlink: https://sites.google.com/view/daehoonkim
+component:
+  researches: true
+  publications: true
+  photos: true
 ---
 
 <div class="bigspacer"></div>

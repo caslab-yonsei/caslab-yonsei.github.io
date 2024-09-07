@@ -28,6 +28,10 @@ alumni: # delete if not needed
   affiliation: (affiliation after graduation)
   date: (graduation month year, e.g. February 2022)
 alterlink: (alternative link address, )
+component:
+  researches: true #(false if you don't want to print research interest)
+  publications: true #(false if you don't want to print publications)
+  photos: true #(false if you don't want to print photos slide)
 template: true #(delete this line)
 ---
 
