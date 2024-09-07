@@ -17,8 +17,8 @@ email: hwpark at dgist.ac.kr
 scholar: Sy3wZSEAAAAJ
 component:
   researches: true
-  publications: true
   photos: true
+  publications: true
 ---
 
 # Education

@@ -1,13 +1,20 @@
 {% comment -%}
-member: member name (title)
+mem_loc: member
 gall_index: gallery index
-{% endcomment -%}
+{% endcomment -%}image.members contains member.title
 
 {%- assign member = include.mem_loc -%}
 {%- assign n_images = 0 -%}
 {%- for photo in site.categories.photos -%}
   {%- for image in photo.images -%}
-    {%- if image.members contains member.title -%}
+    {% assign linked = false %}
+    {% for photo_member in image.members %}
+      {% if photo_member == member.title %}
+        {% assign linked = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if linked %}
       {%- if n_images == 0 -%}
 <div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}" style="position:relative; margin:auto;">
       {%- endif -%}
