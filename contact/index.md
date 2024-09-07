@@ -16,7 +16,7 @@ categories:
 
 <div class="row">
     <div class="col-md-12">
-        <div id="map" style="width: 920px; height: 500px;"></div>
+        <div id="contact-map"></div>
         <div class="bigspacer"></div>
         <div class="bigspacer"></div>
 
@@ -46,7 +46,7 @@ categories:
 </div>
 
 <script>
-    var container = document.getElementById('map');
+    var container = document.getElementById('contact-map');
     var options = {
         center: new kakao.maps.LatLng(37.5608403, 126.9354738),
         level: 3
@@ -60,5 +60,6 @@ categories:
     });
 
     marker.setMap(map);
+
 </script>
 

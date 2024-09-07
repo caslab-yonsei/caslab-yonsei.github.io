@@ -34,22 +34,22 @@ function init_slides(n_galleries) {
         gallery.forEach((image, jdx) => {
             if (image.btn_desc) image.btn_desc.addEventListener('mouseenter', () => show_caption(idx, jdx, 'desc'));
             if (image.btn_mem) image.btn_mem.addEventListener('mouseenter', () => show_caption(idx, jdx, 'mem'));
-            if (image.caption) {
-                image.caption.addEventListener('mouseleave', () => {
-                    if (!image.caption.matches(".transitioning")) show_buttons(idx, jdx);
-                });
-                image.caption.addEventListener('transitionend', () => {
-                    image.caption.classList.remove('transitioning');
-                });
-                if (image.wrapper) {
-                    image.wrapper.addEventListener('mousemove', () => {
-                            if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
-                                if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
-                            }
-                        }
-                    );
+            image.caption.addEventListener('mouseleave', () => {
+                if (!image.caption.matches(".transitioning")) show_buttons(idx, jdx);
+            });
+            image.caption.addEventListener('transitionend', () => {
+                image.caption.classList.remove('transitioning');
+            });
+            image.wrapper.addEventListener('mousemove', () => {
+                    if (image.caption.matches('.slide-show') && !image.caption.matches(".transitioning") ) {
+                        if (!image.caption.matches(':hover') && !isAnyChildHovered(image.caption)) show_buttons(idx, jdx);
+                    }
                 }
-            }
+            );
+            image.wrapper.addEventListener('mouseleave', () => {
+                    show_buttons(idx, jdx);
+                }
+            );
         });
     });
 
