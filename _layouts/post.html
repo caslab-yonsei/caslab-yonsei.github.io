@@ -44,7 +44,7 @@ layout: default
           {% capture pub-url %}http://dx.doi.org/{{ doi }}{% endcapture %}
           {% capture pub-title %}{{ doi }}{% endcapture %}
           {% for publication in site.categories.publications %}
-            {% if doi == publication.doi %}
+            {% if doi == publication.sidebar.doi %}
               {% capture pub-url %}{{ publication.url }}{% endcapture %}
               {% capture pub-title %}{{ publication.title }}{% endcapture %}
               {% break %}

@@ -1,14 +1,15 @@
 ---
 layout: publication
-title: (paper title)
+title: "(paper title)"
 image: (representative image, leave empty if not possible)
 authors:
   - name: (author fullname 1)
-    short: (author short name 1)
+    short: (author short name 1) # if member, you can omit this
   - name: (author fullname 2)
     short: (author short name 2)
   - name: (author fullname 3)
     short: (author short name 3)
+co-first: false # true if author 1, 2 are co-first authors
 type: Conference, Journal, Patent
 international: true # false if domestic
 paper: # delete if patent
@@ -23,14 +24,26 @@ patent: # delete if conference/journal
   date-application: YYYY.MM.DD
   number-publication: (issued patent number)
   date-publication: YYYY.MM.DD
-pdf: (pdf file address)
-supplement: (supplement address)
-github: (source code github address)
-doi: (doi number)
-awards:
-  - (award 1)
-  - (award 2)
-hidden: false # true if not in publication page
+sidebar:
+  awards:
+    - (award 1)
+    - (award 2)
+  pdf: (pdf file address)
+  supplement: (supplement address)
+  doi: (doi number)
+  github: (source code github address)
+  links: # delete if not needed
+    - name: (title for the link 1)
+      url: (link for link 1)
+      icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
+      title: (Title of the site for link 1, revealed on hover)
+      reveal: false # when true, on hover the omitted part will be revealed
+    - name: (title for the link 2)
+      url: (link for link 2)
+      title: (Title of the site for link 2)
+      icon: (icon for link 2)
+      reveal: false
+hidden: false # true to hide from publication page (not related to the lab, etc.)
 template: true #(delete this line)
 ---
 

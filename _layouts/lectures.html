@@ -48,7 +48,7 @@ layout: default
       {% for topic in site.categories.research %}
         {% assign listed = false %}
         {% for doi in topic.publication-dois %}
-          {% if doi == page.doi %}
+          {% if doi == page.sidebar.doi %}
             {% assign listed = true %}
             {% break %}
           {% endif %}
@@ -65,7 +65,7 @@ layout: default
           {% assign topic_index = forloop.index %}
           {% assign listed = false %}
           {% for doi in topic.publication-dois %}
-            {% if doi == page.doi %}
+            {% if doi == page.sidebar.doi %}
       <p>
         <a href="/research/#topic{{ topic_index }}">
           {{ topic.title }}

@@ -10,8 +10,8 @@ layout: default
       {% endif %}
       <div class="media-body">
         <h1>
-          {% if page.doi %}
-          <a class="off" href="http://dx.doi.org/{{ page.doi }}">
+          {% if page.sidebar.doi %}
+          <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }}">
             {{ page.title }}
           </a>
           {% else %}
@@ -67,14 +67,14 @@ layout: default
       </div>
       <div class="bigspacer"></div>
       {% endif %}
-      {% if page.doi %}
+      {% if page.sidebar.doi %}
       <div class="smallhead">
         DOI
       </div>
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="http://dx.doi.org/{{ page.doi }}">{{ page.doi }}</a>
+        <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }}">{{ page.sidebar.doi }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
@@ -89,6 +89,20 @@ layout: default
       </div>
       <div class="bigspacer"></div>
       {% endif %}
+      {% if page.links %}
+      <div class="smallhead">
+        Additional Links
+      </div>
+        {% for link in page.links %}
+      <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
+        <i class="fa {% if link.icon %}{{ link.icon }}{% else %}fa-external-link{% endif %} fa-fw"></i>
+        <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+          {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
+        </a>
+      </div>
+      <div class="spacer"></div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
   <div class="col-md-8">
@@ -100,7 +114,7 @@ layout: default
       {% for topic in site.categories.research %}
         {% assign listed = false %}
         {% for doi in topic.publication-dois %}
-          {% if doi == page.doi %}
+          {% if doi == page.sidebar.doi %}
             {% assign listed = true %}
             {% break %}
           {% endif %}
@@ -117,7 +131,7 @@ layout: default
           {% assign topic_index = forloop.index %}
           {% assign listed = false %}
           {% for doi in topic.publication-dois %}
-            {% if doi == page.doi %}
+            {% if doi == page.sidebar.doi %}
       <p>
         <a href="/research/#topic{{ topic_index }}">
           {{ topic.title }}

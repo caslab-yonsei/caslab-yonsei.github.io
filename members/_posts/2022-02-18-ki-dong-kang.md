@@ -1,7 +1,7 @@
 ---
 layout: member
 title: Ki-Dong Kang
-abbrev: K.D. Kang
+abbrev: K.-D. Kang
 role: Alumni
 prefix: Dr.
 image: /members/images/kdkang.jpg
