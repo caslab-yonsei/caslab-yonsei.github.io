@@ -9,6 +9,10 @@ layout: default
       <img class="pull-left pad-right media-object" width=170 src="{{ page.image }}">
       {% endif %}
       <div class="media-body">
+        {% for award in include.pub.awards %}
+          {% if forloop.first %}<div class="smallhead">{% endif %}
+          [<b>{{ award }}</b>]{% if forloop.last %}</div>{% endif %}
+        {% endfor %}
         <h1>
           {% if page.doi %}
           <a class="off" href="http://dx.doi.org/{{ page.doi }}">

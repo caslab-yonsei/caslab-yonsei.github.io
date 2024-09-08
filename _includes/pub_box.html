@@ -7,6 +7,9 @@
     {% endif %}
     <div class="media-body">
       <div class="media-heading">
+        {% for award in include.pub.awards %}
+          [<b>{{ award }}</b>]{% if forloop.last %}<br/>{% endif %}
+        {% endfor %}
         <a href="{{ publication.url }}" class="off">
           {{ publication.title }}
         </a>
