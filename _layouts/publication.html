@@ -32,7 +32,7 @@ layout: default
   <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
-      {% for award in page.awards %}
+      {% for award in page.sidebar.awards %}
         {% if forloop.first %}
       <div class="smallhead">
         Awards
@@ -45,25 +45,25 @@ layout: default
       </div>
       {% endfor %}
       <div class="bigspacer"></div>
-      {% if page.pdf %}
+      {% if page.sidebar.pdf %}
       <div class="smallhead">
         PDF
       </div>
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-file-text-o fa-fw"></i>
-        <a class="off" href="{{ page.pdf }}">{{ page.pdf | split: '/' | last }}</a>
+        <a class="off" href="{{ page.sidebar.pdf }}">{{ page.sidebar.pdf | split: '/' | last }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
-      {% if page.supplement %}
+      {% if page.sidebar.supplement %}
       <div class="smallhead">
         Supplement
       </div>
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-paperclip fa-fw"></i>
-        <a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
+        <a class="off" href="{{ page.sidebar.supplement }}">{{ page.sidebar.supplement | split: '/' | last }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
@@ -78,22 +78,22 @@ layout: default
       </div>
       <div class="bigspacer"></div>
       {% endif %}
-      {% if page.github %}
+      {% if page.sidebar.github %}
       <div class="smallhead">
         Source Code
       </div>
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-github-alt fa-fw"></i>
-        <a class="off" href="{{ page.github }}">{{ page.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
+        <a class="off" href="{{ page.sidebar.github }}">{{ page.sidebar.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
-      {% if page.links %}
+      {% if page.sidebar.links %}
       <div class="smallhead">
         Additional Links
       </div>
-        {% for link in page.links %}
+        {% for link in page.sidebar.links %}
       <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
         <i class="fa {% if link.icon %}{{ link.icon }}{% else %}fa-external-link{% endif %} fa-fw"></i>
         <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
