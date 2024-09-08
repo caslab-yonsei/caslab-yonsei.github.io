@@ -4,7 +4,7 @@ title: Ki-Dong Kang
 abbrev: K.D. Kang
 role: Alumni
 prefix: Dr.
-image: /images/members/kdkang.jpg
+image: /members/images/kdkang.jpg
 researches:
   - Energy-Efficient Systems
   - Virtualization

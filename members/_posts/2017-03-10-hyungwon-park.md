@@ -4,7 +4,7 @@ title: Hyungwon Park
 abbrev: H. Park
 role: Student
 position: Ph.D. Student
-image: /images/members/hpark.jpg
+image: /members/images/hpark.jpg
 researches:
   - Virtualization
   - Network I/O optimization

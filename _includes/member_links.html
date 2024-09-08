@@ -14,28 +14,28 @@
 {% endif %}
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.location -%}
+{% if include.member_loc.sidebar.location -%}
 <div class="smallhead">
   Location
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-map-marker fa-fw"></i>
-  {{ member.location }}
+  {{ include.member_loc.sidebar.location }}
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.note -%}
+{% if include.member_loc.sidebar.note -%}
 <div class="smallhead">
   Note
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-info-circle fa-fw"></i>
-  {{ member.note }}
+  {{ include.member_loc.sidebar.note }}
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.email %}
-{% assign emailarray = include.member_loc.email | split: ' at ' %}
+{% if include.member_loc.sidebar.email %}
+{% assign emailarray = include.member_loc.sidebar.email | split: ' at ' %}
 <div class="smallhead">
   Email
 </div>
@@ -45,123 +45,157 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.phone %}
+{% if include.member_loc.sidebar.phone %}
 <div class="smallhead">
   Phone
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-phone fa-fw"></i>
-  {{ include.member_loc.phone }}
+  {{ include.member_loc.sidebar.phone }}
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.scholar %}
+{% if include.member_loc.sidebar.scholar %}
 <div class="smallhead">
   Google Scholar
 </div>
 <div class="pad-left note">
   <i class="fa fa-book fa-fw"></i>
-  <a class="off" href="http://scholar.google.com/citations?user={{ include.member_loc.scholar }}">{{ include.member_loc.title }}</a>
+  <a class="off" href="http://scholar.google.com/citations?user={{ include.member_loc.scholar }} target="_blank" rel="noopener noreferrer"">{{ include.member_loc.title }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.researchgate %}
+{% if include.member_loc.sidebar.researchgate %}
 <div class="smallhead">
   ResearchGate
 </div>
 <div class="pad-left note">
   <i class="fa fa-link fa-fw"></i>
-  <a class="off" href="https://www.researchgate.net/profile/{{ include.member_loc.researchgate }}">
-    {{ include.member_loc.researchgate }}
+  <a class="off" href="https://www.researchgate.net/profile/{{ include.member_loc.sidebar.researchgate }} target="_blank" rel="noopener noreferrer"">
+    {{ include.member_loc.sidebar.researchgate }}
   </a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.cv %}
+{% if include.member_loc.sidebar.cv %}
 <div class="smallhead">
   CV
 </div>
 <div class="pad-left note">
   <i class="fa fa-file-text-o fa-fw"></i>
-  <a class="off" href="{{ include.member_loc.cv }}">{{ include.member_loc.cv | split: '/' | last }}</a>
+  <a class="off" href="{{ include.member_loc.sidebar.cv }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.cv | split: '/' | last }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.resume %}
+{% if include.member_loc.sidebar.resume %}
 <div class="smallhead">
   Resume
 </div>
 <div class="pad-left note">
   <i class="fa fa-file-text-o fa-fw"></i>
-  <a class="off" href="{{ include.member_loc.resume }}">{{ include.member_loc.resume | split: '/' | last }}</a>
+  <a class="off" href="{{ include.member_loc.sidebar.resume }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.resume | split: '/' | last }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.portfolium%}
+{% if include.member_loc.sidebar.portfolium%}
 <div class="smallhead">
   Portfolium
 </div>
 <div class="pad-left note">
   <i class="fa fa-user fa-fw"></i>
-  <a class="off" href="https://www.portfolium.com/{{ include.member_loc.portfolium }}">
+  <a class="off" href="https://www.portfolium.com/{{ include.member_loc.sidebar.portfolium }}" target="_blank" rel="noopener noreferrer">
          {{ include.member_loc.title }}
   </a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.linkedin %}
+{% if include.member_loc.sidebar.linkedin %}
 <div class="smallhead">
   LinkedIn
 </div>
 <div class="pad-left note">
   <i class="fa fa-linkedin-square fa-fw"></i>
-  <a class="off" href="https://www.linkedin.com/in/{{ include.member_loc.linkedin }}">
+  <a class="off" href="https://www.linkedin.com/in/{{ include.member_loc.sidebar.linkedin }}" target="_blank" rel="noopener noreferrer">
     {{ include.member_loc.title }}
   </a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.github %}
+{% if include.member_loc.sidebar.github %}
 <div class="smallhead">
   GitHub
 </div>
 <div class="pad-left note">
   <i class="fa fa-github-alt fa-fw"></i>
-  <a class="off" href="https://github.com/{{ include.member_loc.github }}">{{ include.member_loc.github }}</a>
+  <a class="off" href="https://github.com/{{ include.member_loc.sidebar.github }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.github }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.bitbucket %}
+{% if include.member_loc.sidebar.bitbucket %}
 <div class="smallhead">
   Bitbucket
 </div>
 <div class="pad-left note">
   <i class="fa fa-bitbucket fa-fw"></i>
-  <a class="off" href="https://bitbucket.org/{{ include.member_loc.bitbucket }}">
-    {{ include.member_loc.bitbucket }}
+  <a class="off" href="https://bitbucket.org/{{ include.member_loc.sidebar.bitbucket }}" target="_blank" rel="noopener noreferrer">
+    {{ include.member_loc.sidebar.bitbucket }}
   </a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.twitter %}
+{% if include.member_loc.sidebar.instagram %}
+<div class="smallhead">
+  Twitter
+</div>
+<div class="pad-left note">
+  <i class="fa fa-instagram fa-fw"></i>
+  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.instagram }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.instagram }}</a>
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.sidebar.facebook %}
+<div class="smallhead">
+  Twitter
+</div>
+<div class="pad-left note">
+  <i class="fa fa-facebook-official fa-fw"></i>
+  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.facebook }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.facebook }}</a>
+</div>
+<div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.sidebar.twitter %}
 <div class="smallhead">
   Twitter
 </div>
 <div class="pad-left note">
   <i class="fa fa-twitter fa-fw"></i>
-  <a class="off" href="https://twitter.com/{{ include.member_loc.twitter }}">{{ include.member_loc.twitter }}</a>
+  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.twitter }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.twitter }}</a>
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.website %}
+{% if include.member_loc.sidebar.website %}
 <div class="smallhead">
   Website
 </div>
 <div class="pad-left note">
   <i class="fa fa-globe fa-fw"></i>
-  <a class="off" href="http://{{ include.member_loc.website }}">
-    {{ include.member_loc.website }}
+  <a class="off" href="{{ include.member_loc.sidebar.website }}" target="_blank" rel="noopener noreferrer">
+    {{ include.member_loc.sidebar.website }}
   </a>
 </div>
 <div class="spacer"></div>
+{% endif %}
+{% if include.member_loc.sidebar.links %}
+<div class="smallhead">
+  Links
+</div>
+  {% for link in include.member_loc.sidebar.links %}
+<div class="pad-left note{% if link.reveal %} reveal{% endif %}">
+  <i class="fa {% if link.icon %}{{ link.icon }}{% else %}fa-external-link{% endif %} fa-fw"></i>
+  <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+    {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
+  </a>
+</div>
+<div class="spacer"></div>
+  {% endfor %}
 {% endif %}

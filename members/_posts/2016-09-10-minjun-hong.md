@@ -3,7 +3,7 @@ layout: member
 title: Minjun Hong
 abbrev: M. Hong
 role: Alumni
-image: /images/members/mjhong.png
+image: /members/images/mjhong.png
 alumni:
   degree: M.S.
   date: February 2019

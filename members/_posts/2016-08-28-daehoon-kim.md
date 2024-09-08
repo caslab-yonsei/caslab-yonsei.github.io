@@ -5,7 +5,7 @@ abbrev: D. Kim
 role: Professor
 prefix: Prof.
 position: Assistant Professor
-image: /images/members/dkim.png
+image: /members/images/dkim.png
 researches:
   - Computer Architecture
   - Operating Systems
