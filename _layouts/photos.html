@@ -7,10 +7,9 @@ layout: default
   <div class="col-md-12"> 
     <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
       <hr/>
-      {% include photo_slide.html images_loc=photo.images gall_index=n_galleries %}
+      {% include photo_slide.html images_loc=photo.images gall_index=0 %}
 
       <div class="spacer"></div>
-      {% assign n_galleries = n_galleries | plus: 1 -%}
       <p>{{ photo.content }}</p>
       <div class="bigspacer"></div>
       <div class="bigspacer"></div>
