@@ -44,7 +44,9 @@ categories:
     {% include pub_box.html pub=publication %}
   {% assign n_pubs = n_pubs | plus: 1 %}
 {% endfor %}
+{% if n_pubs > 0 %}
   </div>
+{% endif %}
 
 {% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
@@ -73,7 +75,9 @@ categories:
     {% include pub_box.html pub=publication %}
   {% assign n_pubs = n_pubs | plus: 1 %}
 {% endfor %}
+{% if n_pubs > 0 %}
   </div>
+{% endif %}
 
 {% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
@@ -101,4 +105,6 @@ categories:
     {% include pub_box.html pub=publication %}
   {% assign n_pubs = n_pubs | plus: 1 %}
 {% endfor %}
+{% if n_pubs > 0 %}
   </div>
+{% endif %}
