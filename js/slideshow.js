@@ -91,7 +91,7 @@ function isAnyChildHovered(container) {
 }
 
 function show_caption(gallery, image, caption) {
-    var slide = slide_caps[gallery][image];
+    let slide = slide_caps[gallery][image];
     slide.caption.classList.add('slide-show', 'transitioning');
     slide.caption.classList.remove('ready');
     if (slide.txt_desc) slide.txt_desc.setAttribute("style", caption === 'desc' ? 'display: block' : 'display: none');
@@ -101,7 +101,7 @@ function show_caption(gallery, image, caption) {
 }
 
 function show_buttons(gallery, image) {
-    var slide = slide_caps[gallery][image];
+    let slide = slide_caps[gallery][image];
     slide.caption.classList.remove('slide-show', 'ready');
     clearTimeout(slide.showbtn);
     slide.showbtn = setTimeout(() => {

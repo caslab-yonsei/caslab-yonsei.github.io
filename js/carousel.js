@@ -1,6 +1,7 @@
-const meerus = document.getElementsByClassName("obfuscator");
-meerus.forEach((meeru) => {
-    meeru.parentElement.setAttribute("href", "mailto:"+meeru.parentElement.innerText);
+const obfrs = document.querySelectorAll(".obfuscator")
+obfrs.forEach((obfr) => {
+    let obfs = "";
+    obfr.parentElement.setAttribute("href", "mai"+obfs+"lto:"+obfr.parentElement.innerText);
 });
 
 const carousel = document.querySelector(".carousel");
