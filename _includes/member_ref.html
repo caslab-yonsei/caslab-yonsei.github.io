@@ -12,8 +12,8 @@
   {% endfor %}
   {% if linked %}
     <a href="{{ mem_url }}" class="off ref"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
-    {% if forloop.last and include.mem_loc.lastrow %}and {% endif %}{{ name }}</a>{% if forloop.last %}{% if include.mem_loc.lastrow %}.{% else %}, <br/>{% endif %}{% else %}, {% endif %}
+    {% if forloop.last and include.lastrow %}and {% endif %}{{ name }}</a>{% if forloop.last %}{% if include.lastrow %}.{% else %}, <br/>{% endif %}{% else %}, {% endif %}
   {% else %}
-    {% if forloop.last and include.mem_loc.lastrow %}and {% endif %}{{ name }}{% if forloop.last %}{% if include.mem_loc.lastrow %}.{% else %}, <br/>{% endif %}{% else %}, {% endif %}
+    {% if forloop.last and include.lastrow %}and {% endif %}{{ name }}{% if forloop.last %}{% if include.lastrow %}.{% else %}, <br/>{% endif %}{% else %}, {% endif %}
   {% endif %}
 {% endfor %}
