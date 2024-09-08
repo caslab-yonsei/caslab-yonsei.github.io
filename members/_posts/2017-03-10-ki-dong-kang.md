@@ -10,7 +10,8 @@ researches:
   - Virtualization
   - Network Systems
   - Hardware Security
-scholar: RnI3ge4AAAAJ
+sidebar:
+  scholar: RnI3ge4AAAAJ
 alumni:
   degree: Ph.D.
   date: February 2022

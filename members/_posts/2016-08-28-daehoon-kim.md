@@ -11,10 +11,11 @@ researches:
   - Operating Systems
   - Virtualization
   - Computer Systems Security
-location: "Engineering Research Park 215"
-email: daehoonkim at yonsei.ac.kr
-phone: 02)2123-5825
-scholar: zjxGtuoAAAAJ
+sidebar:
+  location: "Engineering Research Park 215"
+  email: daehoonkim at yonsei.ac.kr
+  phone: 02)2123-5825
+  scholar: zjxGtuoAAAAJ
 alterlink: https://sites.google.com/view/daehoonkim
 component:
   researches: true

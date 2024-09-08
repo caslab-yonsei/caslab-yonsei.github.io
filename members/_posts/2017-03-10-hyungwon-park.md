@@ -11,9 +11,15 @@ researches:
   - Cache side channel attack
   - Tiered memory system
 location: "Engineering Research Park 212D"
-note: 
-email: hwpark at dgist.ac.kr
-scholar: Sy3wZSEAAAAJ
+sidebar:
+  note: 
+  email: hwpark at dgist.ac.kr
+  scholar: Sy3wZSEAAAAJ
+  links: 
+    - name: '@parkhyungwon'
+      url: https://www.instagram.com/parkhyungwon/
+      icon: fa-instagram
+      reveal: true
 component:
   researches: true
   publications: true
