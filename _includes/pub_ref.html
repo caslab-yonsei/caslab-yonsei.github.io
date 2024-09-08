@@ -3,14 +3,15 @@
 {% for author in publication.authors %}
   {% assign linked = false %}
   {% assign newtab = false -%}
+  {% capture name %}{% if include.short == true and author.short %}{{ author.short }}{% else %}{{ author.name }}{% endif %}{% endcapture %} 
   {% for member in site.categories.members %}
     {% if author.name == member.title %}
       {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
       {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
+      {% if include.short == true %}{% assign name = member.abbrev %}{% endif %}
       {% break %}
     {% endif %}
   {% endfor %}
-  {% capture name %}{% if include.short == true and author.short %}{% if linked %}{{ member.abbrev }}{% else %}{{ author.short }}{% endif %}{% else %}{{ author.name }}{% endif %}{% endcapture %}
   {% if publication.co-first and forloop.index == 2 %}
     {% assign co-first-now = true %}
   {% else %}
