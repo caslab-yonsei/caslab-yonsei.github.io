@@ -7,6 +7,9 @@ categories:
 
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% unless publication.international -%}{% continue -%}{% endunless -%}
   {% capture prev_year %}{{ this_year }}{% endcapture %}
   {% capture this_year %}{{ publication.paper.year }}{% endcapture %}
 
