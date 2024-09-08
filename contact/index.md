@@ -33,11 +33,11 @@ categories:
                 </tr>
                 <tr>
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Office</span></td>
-                    <td style="vertical-align:middle;"><span title="공학원 212D">Yonsei Engineering Research Park 212D</span></td>
+                    <td style="vertical-align:middle;"><span title="연세대학교 신촌캠퍼스 공학원 212D">Engineering Research Park 212D, Yonsei University</span></td>
                 </tr>
                 <tr>
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Email</span></td>
-                    <td style="vertical-align:middle;">daehoonkim<span style="display:none">obfuscate</span>@yonsei.ac.kr</td>
+                    <td style="vertical-align:middle;"><span class="meeru">daehoonkim<span style="display:none">obfuscate</span>@yonsei.ac.kr</span></td>
                 </tr>
                 </tbody>
             </table>

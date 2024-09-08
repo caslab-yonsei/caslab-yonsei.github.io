@@ -41,19 +41,19 @@
         <h3>{{ member.position }}</h3>
         <div class="spacer"></div>
         <p class="note">{% for research in member.researches %}{{ research }}{% unless forloop.last %}, {% endunless -%}{% endfor -%}</p>
-    {% if member.email %}
-      {% assign emailarray = member.email | split: ' at ' -%}
+    {% if member.sidebar.email %}
+      {% assign emailarray = member.sidebar.email | split: ' at ' -%}
         <div class="pad-left note">
           <div class="smallspacer"></div>
           <i class="fa fa-inbox fa-fw"></i>
-          {{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}
+          <span class="meeru">{{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}</span>
         </div>
     {% endif -%}
-    {% if member.note -%}
+    {% if member.sidebar.note -%}
         <div class="pad-left note">
           <div class="smallspacer"></div>
           <i class="fa fa-info-circle fa-fw"></i>
-          {{ member.note }}
+          {{ member.sidebar.note }}
         </div>
     {% endif -%}
       <div class="bigspacer"></div>
