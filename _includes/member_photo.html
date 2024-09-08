@@ -1,11 +1,15 @@
 {% comment -%}
 member_loc: member
 gall_index: gallery index
+n_limit: number of max photos
 {% endcomment -%}
 
 {%- assign member = include.member_loc -%}
 {%- assign n_images = 0 -%}
 {%- for photo in site.categories.photos -%}
+  {%- if photo.template -%}{% continue %}{% endif %}
+  {%- if photo.hidden -%}{% continue %}{% endif %}
+  {% if include.n_limit and n_image >= include.n_limit %}{% break %}{% endif %}
   {%- for image in photo.images -%}
     {% assign linked = false %}
     {% for photo_member in image.members %}
@@ -28,7 +32,10 @@ gall_index: gallery index
       {% endif -%}
       {% if image.members -%}
         <span class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
-          {%- if image.members.size > 1 -%}(from left to right) {%- endif -%}{%- include member_ref.html mem_loc=image.members -%}
+          {%- if image.members.size > 1 or image.members[0].size > 1 -%}
+            {%- if image.members.size > 1 or image.members[0].size > 1 -%}(from top to bottom) {%- endif -%}
+            (from left to right)<br/>
+          {%- endif -%}{% for memrow in image.members %}{%- include member_ref.html mem_loc=memrow lastrow=forloop.last -%}{% endfor %}
         </span>
       {% endif -%}
     </div>
