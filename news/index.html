@@ -71,7 +71,7 @@ categories:
   {% unless news_url == '#' -%}{% assign linked = true %}{% endunless -%}
 
   {% if linked -%}
-    {% if blank == true %}
+    {% if blank %}
                   <a href="{{ news_url }}" class="off" target="_blank" rel="noopener noreferrer">
     {% else %}
                   <a href="{{ news_url }}" class="off">

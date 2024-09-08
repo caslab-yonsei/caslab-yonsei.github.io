@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Daehoon Kim was appointed as an assistant professor in Department of Information & Communication Engineering at DGIST.
+title: test no link
 images: 
 members:
  - Daehoon Kim

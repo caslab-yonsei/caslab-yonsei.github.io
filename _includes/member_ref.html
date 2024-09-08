@@ -11,7 +11,13 @@
     {% endif %}
   {% endfor %}
   {% if linked %}
-    <a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ name }}</a>{% if forloop.last %}.{% else %}, {% endif %}
+    {% if blank %}
+      <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
+    {% else %}
+      <a href="{{ mem_url }}" class="off">
+    {% endif %}
+    {{ name }}
+      </a>{% if forloop.last %}.{% else %}, {% endif %}
   {% else %}
   {% if forloop.last %}and {% endif %}{{ name }}{% if forloop.last %}.{% else %}, {% endif %}
   {% endif %}

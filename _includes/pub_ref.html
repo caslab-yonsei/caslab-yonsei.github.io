@@ -16,7 +16,13 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      <a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+      {% if blank %}
+        <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
+      {% else %}
+        <a href="{{ mem_url }}" class="off">
+      {% endif %}
+          {{ author }}
+        </a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
       {{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% endif %}
@@ -42,7 +48,13 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      {% if forloop.last %}and {% endif %}{% if forloop.last %}and {% endif %}<a href="{{ mem_url }}" class="off"{% if blank == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+      {% if blank == true %}
+        <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
+      {% else %}
+        <a href="{{ mem_url }}" class="off">
+      {% endif %}
+      {{ author }}
+        </a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
       {% if forloop.last %}and {% endif %}{{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% endif %}
