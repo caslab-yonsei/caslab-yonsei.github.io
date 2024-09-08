@@ -8,7 +8,7 @@
     <div class="media-body">
       {% for award in include.pub.awards %}
       {% if forloop.first %}<div class="media-preheader">{% endif %}
-        <div class="media-preheader-award"><i class="fa fa-trophy fa-fw"></i> <b>{{ award }}</b></div>
+        <div class="media-preheader-award"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
       {% if forloop.last %}</div>{% endif %}
       {% endfor %}
       <div class="media-heading">
