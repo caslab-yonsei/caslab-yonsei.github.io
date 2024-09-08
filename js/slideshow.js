@@ -140,7 +140,7 @@ function show_slide(gallery, idx, auto=false) {
     for (i = 0; i < slides.length; i++) {
         slides[i].setAttribute("style", "display: none");
     }
-    slides[slide_indices[gallery]-1].setAttribute("style", "display:block");
+    slides[slide_indices[gallery]-1].setAttribute("style", "display: flex");
     if (slides.length > 1) {
         dots = document.getElementsByClassName("slides-dot-"+String(gallery));
         for (i = 0; i < dots.length; i++) {
