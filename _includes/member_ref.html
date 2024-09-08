@@ -10,7 +10,7 @@
       {% break %}
     {% endif %}
   {% endfor %}
-  {%- if forloop.last and include.lastrow -%}and {%- endif -%}
+  {% if forloop.last and include.lastrow %}and {% endif %}
   {%- if linked -%}
     <a href="{{- mem_url -}}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{{- name -}}</a>
   {%- else -%}
