@@ -1,3 +1,8 @@
+const meerus = document.getElementsByClassName("obfuscator");
+meerus.forEach((meeru) => {
+    meeru.parentElement.setAttribute("href", "mailto:"+meeru.parentElement.innerText);
+});
+
 const carousel = document.querySelector(".carousel");
 if (carousel && carousel.querySelectorAll(".carousel-item").length > 0)
 {

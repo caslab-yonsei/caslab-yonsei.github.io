@@ -46,7 +46,7 @@
         <div class="pad-left note">
           <div class="smallspacer"></div>
           <i class="fa fa-inbox fa-fw"></i>
-          <span class="meeru">{{ emailarray.first }}<span style="display:none">obfuscate</span>@{{ emailarray.last }}</span>
+          <a class="off">{{ emailarray.first }}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a>
         </div>
     {% endif -%}
     {% if member.sidebar.note -%}
