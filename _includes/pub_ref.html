@@ -2,10 +2,10 @@
 
   {% for author in include.pub_loc.authors-short %}
     {% assign linked = false %}
-    {% assign blank = false -%}
+    {% assign newtab = false -%}
     {% for member in site.categories.members %}
       {% if author == member.abbrev %}
-        {% capture mem_url %}{%- if member.alterlink -%}{% assign blank = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+        {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
         {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
         {% break %}
       {% endif %}
@@ -16,11 +16,7 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      {% if blank %}
-        <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
-      {% else %}
-        <a href="{{ mem_url }}" class="off">
-      {% endif %}
+        <a href="{{ mem_url }}" class="off"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
           {{ author }}
         </a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
@@ -34,10 +30,10 @@
 
   {% for author in include.pub_loc.authors %}
     {% assign linked = false %}
-    {% assign blank = false -%}
+    {% assign newtab = false -%}
     {% for member in site.categories.members %}
       {% if author == member.title %}
-        {% capture mem_url %}{%- if member.alterlink -%}{% assign blank = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+        {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
         {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
         {% break %}
       {% endif %}
@@ -48,11 +44,7 @@
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-      {% if blank == true %}
-        <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
-      {% else %}
-        <a href="{{ mem_url }}" class="off">
-      {% endif %}
+        <a href="{{ mem_url }}" class="off"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
       {{ author }}
         </a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}

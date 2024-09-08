@@ -24,4 +24,4 @@ alterlink: (index of links for linking the news, if no linking insert index of '
 template: true #(delete this line)
 ---
 
-(news description if needed, if provided changed linked to true)
+(news description if needed, if provided leave alterlink 0 )

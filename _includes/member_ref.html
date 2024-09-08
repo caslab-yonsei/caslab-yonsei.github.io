@@ -1,23 +1,19 @@
 {% for participant in include.mem_loc %}
   {% assign linked = false %}
-  {% assign blank = false -%}
+  {% assign newtab = false -%}
   {% capture name %}{{ participant }}{% endcapture %}
   {% for member in site.categories.members %}
     {% if participant == member.title %}
-      {%- if member.alterlink -%}{% assign blank = true -%}{% capture mem_url %}{{ member.alterlink }}{% endcapture %}{%- else -%}{% capture mem_url %}{{ member.url }}{% endcapture %}{%- endif -%}
+      {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
       {% capture name %}{% if member.prefix %}{{ member.prefix }} {% endif %}{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% endcapture %}
       {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
       {% break %}
     {% endif %}
   {% endfor %}
   {% if linked %}
-    {% if blank %}
-      <a href="{{ mem_url }}" class="off" target="_blank" rel="noopener noreferrer">
-    {% else %}
-      <a href="{{ mem_url }}" class="off">
-    {% endif %}
-    {{ name }}
-      </a>{% if forloop.last %}.{% else %}, {% endif %}
+    <a href="{{ mem_url }}" class="off"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
+      {{ name }}
+    </a>{% if forloop.last %}.{% else %}, {% endif %}
   {% else %}
   {% if forloop.last %}and {% endif %}{{ name }}{% if forloop.last %}.{% else %}, {% endif %}
   {% endif %}

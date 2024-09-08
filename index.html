@@ -83,11 +83,11 @@ categories:
           <td class="date">{% if news.YYYY -%}{{ news.YYYY }}{% endif -%}{% if news.MM -%}.{{ news.MM }}{% endif -%}{% if news.DD -%}.{{ news.DD }}{% endif -%}</td>
             <td class="news">
               {% assign linked = false -%}
-              {% assign blank = false -%}
+              {% assign newtab = false -%}
               {% capture news_url %}
                 {%- if news.alterlink > 0 -%}
                   {% assign linkindex = news.alterlink | minus: 1 -%}
-                  {% assign blank = true -%}
+                  {% assign newtab = true -%}
                   {{ news.links[linkindex] }}
                 {%- else -%}
                   {{ news.url }}
@@ -96,11 +96,7 @@ categories:
               {% unless news_url == '#' -%}{% assign linked = true %}{% endunless -%}
             
               {% if linked -%}
-                {% if blank -%}
-              <a href="{{ news_url }}" class="off" target="_blank" rel="noopener noreferrer">
-                {% else %}
-              <a href="{{ news_url }}" class="off">
-                {% endif %}
+              <a href="{{ news_url }}" class="off"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
               {% endif -%}
                 {{ news.title }}
               {% if linked -%}
