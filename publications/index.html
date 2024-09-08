@@ -4,7 +4,7 @@ title: CASLAB@Yonsei / Publications
 categories:
  - publications
 ---
-
+{% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
@@ -13,7 +13,7 @@ categories:
   {% capture prev_year %}{{ this_year }}{% endcapture %}
   {% capture this_year %}{{ publication.paper.year }}{% endcapture %}
 
-  {% if forloop.first %}
+  {% if n_pubs == 0 %}
     {% assign counter = 0 %}
   <div class="row">
     <div class="col-md-12">
@@ -42,6 +42,63 @@ categories:
   {% endif %}
 
     {% include pub_box.html pub=publication %}
+  {% assign n_pubs = n_pubs | plus: 1 %}
+{% endfor %}
+  </div>
 
+{% assign n_pubs = 0 %}
+{% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% if publication.international -%}{% continue -%}{% endif -%}
+  {% if n_pubs == 0 %}
+    {% assign counter = 0 %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Domestic Papers</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+  {% else %}
+    {% assign counter = counter | plus: 1 %}
+    {% assign mod = counter | modulo: 2 %}
+    {% if mod == 0 %}
+  </div>
+  <div class="row">
+    {% endif %}
+  {% endif %}
+
+    {% include pub_box.html pub=publication %}
+  {% assign n_pubs = n_pubs | plus: 1 %}
+{% endfor %}
+  </div>
+
+{% assign n_pubs = 0 %}
+{% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
+  {% if n_pubs == 0 %}
+    {% assign counter = 0 %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Patents</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+  {% else %}
+    {% assign counter = counter | plus: 1 %}
+    {% assign mod = counter | modulo: 2 %}
+    {% if mod == 0 %}
+  </div>
+  <div class="row">
+    {% endif %}
+  {% endif %}
+
+    {% include pub_box.html pub=publication %}
+  {% assign n_pubs = n_pubs | plus: 1 %}
 {% endfor %}
   </div>
