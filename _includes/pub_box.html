@@ -6,7 +6,7 @@
     </a>
     {% endif %}
     <div class="media-body">
-      {% for award in include.pub.awards %}
+      {% for award in include.pub.sidebar.awards %}
       {% if forloop.first %}<div class="media-preheader">{% endif %}
         <div class="media-preheader-award"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
       {% if forloop.last %}</div>{% endif %}
