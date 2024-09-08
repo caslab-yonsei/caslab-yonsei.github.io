@@ -48,7 +48,9 @@ layout: default
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
       {% if author == member.title %}
-        {% assign papersq = true %}
+        {% if publication.type == 'Journal' or publication.type == 'Conference' %}
+          {% assign papersq = true %}
+        {% endif %}
         {% break %}
       {% endif %}
     {% endfor %}
@@ -63,6 +65,7 @@ layout: default
 
       <ol>
       {% for publication in site.categories.publications %}
+        {% unless publication.type == 'Journal' or publication.type == 'Conference' %}{% continue %}{% endunless %}
         {% for author in publication.authors %}
           {% if author == member.title %}
         <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
@@ -71,8 +74,44 @@ layout: default
       {% endfor %}
       </ol>
     </div>
+    <div class="bigspacer"></div>
   {% endif %}
 {% endif %}
+
+{% if member.component.patents %} 
+  {% for publication in site.categories.publications %}
+    {% for author in publication.authors %}
+      {% if author == member.title %}
+        {% if publication.type == 'Patent' %}
+          {% assign patentsq = true %}
+        {% endif %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if patentsq %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if patentsq == true %}
+    <div class="patents">
+      <h2 id="patents">Patents</h2>
+
+      <ol>
+      {% for publication in site.categories.publications %}
+        {% unless publication.type == 'Patent' %}{% continue %}{% endunless %}
+        {% for author in publication.authors %}
+          {% if author == member.title %}
+        <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ol>
+    </div>
+    <div class="bigspacer"></div>
+  {% endif %}
+{% endif %}
+
   </div>
 </div>
 

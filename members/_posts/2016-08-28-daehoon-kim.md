@@ -18,8 +18,9 @@ scholar: zjxGtuoAAAAJ
 alterlink: https://sites.google.com/view/daehoonkim
 component:
   researches: true
-  photos: false
   publications: true
+  patents: false
+  photos: false
 ---
 
 ## Employment

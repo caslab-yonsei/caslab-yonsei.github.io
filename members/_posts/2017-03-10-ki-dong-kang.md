@@ -19,6 +19,7 @@ alumni:
 component:
   researches: true
   publications: true
+  patents: true
   photos: true
 ---
 

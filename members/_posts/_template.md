@@ -33,6 +33,7 @@ alterlink: (alternative link address, if provided this page is not accessible, '
 component:
   researches: true #(false if you don't want to print research interest)
   publications: true #(false if you don't want to print publications)
+  patents: true #(false if you don't want to print patents)
   photos: true #(false if you don't want to print photos slide)
 template: true #(delete this line)
 ---
