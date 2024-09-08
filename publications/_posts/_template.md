@@ -16,9 +16,6 @@ paper: # delete if patent
   publisher: "(Publisher fullname)"
   publisher-short: "(Publisher short name)"
   ref: "<b>(issue number)</b>: (article number / page number / etc)" #(leave empty if not possible)
-  awards:
-    - (award 1)
-    - (award 2)
 patent: # delete if conference/journal
   status: filed/issued
   nation: Korea/PCT/US/Japan/...
@@ -30,6 +27,9 @@ pdf: (pdf file address)
 supplement: (supplement address)
 github: (source code github address)
 doi: (doi number)
+awards:
+  - (award 1)
+  - (award 2)
 hidden: false # true if not in publication page
 template: true #(delete this line)
 ---
