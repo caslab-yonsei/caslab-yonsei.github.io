@@ -7,8 +7,11 @@ categories:
 
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endif -%}
+  {% unless publication.international -%}{% continue -%}{% endif -%}
   {% capture prev_year %}{{ this_year }}{% endcapture %}
-  {% capture this_year %}{{ publication.year }}{% endcapture %}
+  {% capture this_year %}{{ publication.paper.year }}{% endcapture %}
 
   {% if forloop.first %}
     {% assign counter = 0 %}
@@ -25,6 +28,61 @@ categories:
   <div class="row">
     <div class="col-md-12">
       <h1>{{ this_year }}</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+  {% else %}
+    {% assign counter = counter | plus: 1 %}
+    {% assign mod = counter | modulo: 2 %}
+    {% if mod == 0 %}
+  </div>
+  <div class="row">
+    {% endif %}
+  {% endif %}
+
+    {% include pub_box.html pub=publication %}
+
+{% endfor %}
+  </div>
+
+{% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endif -%}
+  {% if publication.international -%}{% continue -%}{% endif -%}
+  {% if forloop.first %}
+    {% assign counter = 0 %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Domestic Papers</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+  {% else %}
+    {% assign counter = counter | plus: 1 %}
+    {% assign mod = counter | modulo: 2 %}
+    {% if mod == 0 %}
+  </div>
+  <div class="row">
+    {% endif %}
+  {% endif %}
+
+    {% include pub_box.html pub=publication %}
+
+{% endfor %}
+  </div>
+
+  {% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Patent" -%}{% continue -%}{% endif -%}
+  {% if forloop.first %}
+    {% assign counter = 0 %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Patents</h1>
       <hr>
     </div>
   </div>

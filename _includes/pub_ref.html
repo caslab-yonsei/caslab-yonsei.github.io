@@ -1,6 +1,9 @@
+
+{% assign publication = include.pub_loc %}
+
 {% if include.short == true %}
 
-  {% for author in include.pub_loc.authors-short %}
+  {% for author in publication.authors-short %}
     {% assign linked = false %}
     {% assign newtab = false -%}
     {% for member in site.categories.members %}
@@ -10,24 +13,32 @@
         {% break %}
       {% endif %}
     {% endfor %}
-    {% if include.pub_loc.co-first and forloop.index == 2 %}
+    {% if publication.co-first and forloop.index == 2 %}
       {% assign co-first-now = true %}
     {% else %}
       {% assign co-first-now = false %}
     {% endif %}
     {% if linked %}
-        <a href="{{ mem_url }}" class="off ref"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
+        <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
         {{ author }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% else %}
       {{ author }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
     {% endif %}
   {% endfor %}
-
-  <i> {{ include.pub_loc.journal-short }}</i> ({{include.pub_loc.year}})
+  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+  <i> {{ publication.paper.publisher-short }}</i> ({{publication.paper.year}})
+  {%- elsif publication.type == 'Patent' -%}
+    {{ publication.patent.status }}, {{ publication.patent.nation }}
+    {%- if publication.patent.status == 'issued' -%}
+      , {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
+    {%- else -%}
+      , {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
+    {%- endif -%}
+  {%- endif -%}
 
 {% else %}
 
-  {% for author in include.pub_loc.authors %}
+  {% for author in publication.authors %}
     {% assign linked = false %}
     {% assign newtab = false -%}
     {% for member in site.categories.members %}
@@ -37,7 +48,7 @@
         {% break %}
       {% endif %}
     {% endfor %}
-    {% if include.pub_loc.co-first and forloop.index == 2 %}
+    {% if publication.co-first and forloop.index == 2 %}
       {% assign co-first-now = true %}
     {% else %}
       {% assign co-first-now = false %}
@@ -51,6 +62,13 @@
     {% endif %}
   {% endfor %}
 
-  <i> {{ include.pub_loc.journal }}</i> {{ include.pub_loc.ref }} ({{include.pub_loc.year}})
+  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+  <i> {{ publication.paper.publisher }}</i> {{ publication.paper.ref }} ({{publication.paper.year}})
+  {%- elsif publication.type == 'Patent' -%}
+    {{ publication.patent.status }}, {{ publication.patent.nation }}.
+    <br/>Application No. {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
+    <br/>Registration No. {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
+    {%- endif -%}
+  {%- endif -%}
 
 {% endif %}
