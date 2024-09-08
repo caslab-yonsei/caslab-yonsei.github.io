@@ -23,18 +23,17 @@ sidebar:
   linkedin: (linkedin account, delete if not needed)
   github: (github account, delete if not needed)
   bitbucket: (bitbucket account, delete if not needed)
-  instagram: (twitter account, delete if not needed)
-  facebook: (twitter account, delete if not needed)
-  twitter: (twitter account, delete if not needed)
   website: (website address, delete if not needed)
   links: # delete if not needed
     - name: (title for the link 1)
       url: (link for link 1)
-      icon: (icon for link 1 from font-awesome-v4, leave empty for default)
+      icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
+      title: (Title of the site for link 1, revealed on hover)
       reveal: false # when true, on hover the omitted part will be revealed
     - name: (title for the link 2)
       url: (link for link 2)
-      icon: (icon for link 2 from font-awesome-v4, leave empty for default)
+      title: (Title of the site for link 2)
+      icon: (icon for link 2)
       reveal: false
 alumni: # delete if not needed
   degree: (graduation degree)

@@ -16,9 +16,10 @@ sidebar:
   email: hwpark at dgist.ac.kr
   scholar: Sy3wZSEAAAAJ
   links: 
-    - name: '@parkhyungwon'
+    - name: 'parkhyungwon'
       url: https://www.instagram.com/parkhyungwon/
       icon: fa-instagram
+      title: Instagram
       reveal: true
 component:
   researches: true

@@ -143,36 +143,6 @@
 </div>
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.sidebar.instagram %}
-<div class="smallhead">
-  Twitter
-</div>
-<div class="pad-left note">
-  <i class="fa fa-instagram fa-fw"></i>
-  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.instagram }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.instagram }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.facebook %}
-<div class="smallhead">
-  Twitter
-</div>
-<div class="pad-left note">
-  <i class="fa fa-facebook-official fa-fw"></i>
-  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.facebook }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.facebook }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.twitter %}
-<div class="smallhead">
-  Twitter
-</div>
-<div class="pad-left note">
-  <i class="fa fa-twitter fa-fw"></i>
-  <a class="off" href="https://twitter.com/{{ include.member_loc.sidebar.twitter }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.twitter }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
 {% if include.member_loc.sidebar.website %}
 <div class="smallhead">
   Website
@@ -190,7 +160,7 @@
   Links
 </div>
   {% for link in include.member_loc.sidebar.links %}
-<div class="pad-left note{% if link.reveal %} reveal{% endif %}">
+<div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
   <i class="fa {% if link.icon %}{{ link.icon }}{% else %}fa-external-link{% endif %} fa-fw"></i>
   <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
     {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
