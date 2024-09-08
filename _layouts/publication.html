@@ -9,10 +9,6 @@ layout: default
       <img class="pull-left pad-right media-object" width=170 src="{{ page.image }}">
       {% endif %}
       <div class="media-body">
-        {% for award in include.pub.awards %}
-          {% if forloop.first %}<div class="smallhead">{% endif %}
-          [<b>{{ award }}</b>]{% if forloop.last %}</div>{% endif %}
-        {% endfor %}
         <h1>
           {% if page.doi %}
           <a class="off" href="http://dx.doi.org/{{ page.doi }}">
@@ -36,6 +32,20 @@ layout: default
   <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
+      {% for award in page.awards %}
+        {% if forloop.first %}
+      <div class="smallhead">
+        Awards
+      </div>
+        {% endif %}
+      <div class="pad-left note">
+        <div class="smallspacer"></div>
+        <i class="fa fa-trophy fa-fw"></i>
+        {{ award }}
+      </div>
+      {% endfor %}
+      <div class="bigspacer"></div>
+      {% endif %}
       {% if page.pdf %}
       <div class="smallhead">
         PDF
