@@ -15,7 +15,7 @@ co-first: true
 type: Conference
 international: true
 paper:
-  year: (published year)
+  year: 2020
   publisher: "IEEE International Conference on Computer Design"
   publisher-short: "ICCD"
   ref: pp. 377-380
