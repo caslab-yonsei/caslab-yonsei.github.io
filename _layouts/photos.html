@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign photo = page %}
+
+<div class="row">
+  <div class="col-md-12"> 
+    <h2><a class="off" href="/photos/#{{ photo.title }}">{{ photo.title }}</a></h2>
+      <hr/>
+      {% include photo_slide.html images_loc=photo.images gall_index=n_galleries %}
+
+      <div class="spacer"></div>
+      {% assign n_galleries = n_galleries | plus: 1 -%}
+      <p>{{ photo.content }}</p>
+      <div class="bigspacer"></div>
+      <div class="bigspacer"></div>
+  </div>
+</div>
+<script defer>
+  init_slides();
+</script>
