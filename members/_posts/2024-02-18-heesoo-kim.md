@@ -1,18 +1,15 @@
 ---
 layout: member
-title: (Fullname)
-abbrev: (Short name)
-profile_name: (Fullname for profile)
-prefix: (title, e.g. Prof., Dr.)
-role: (Professor/Student/Alumni)
-position: (Position e.g. Assistant Professor, Ph.D. Student)
-image: /members/images/(image file)
+title: Heesoo Kim
+abbrev: H. Kim
+role: Alumni
+image: /members/images/heesoo-kim.png
 researches:
-  - (research interest 1)
-  - (research interest 2)
+  - DRAM
+  - Memory management
+  - Heterogeneous Memory System
+  - FPGA(Verilog)
 sidebar:
-  location: "(physical location e.g. @E3-304, DGIST)"
-  note: (assigned note in the lab)
   email: (id) at (address)
   phone: (phone number, delete if not needed)
   scholar: (google scholar user identifier, delete if not needed)
@@ -49,6 +46,6 @@ component:
 template: true #(delete this line)
 ---
 
-(introduction of the member in markdown/html)
-
-use <div class="bigspacer"></div> between paragraphs for better layout
+## Education
+* 2021.02.~2024.02. - **M.S.** in Dept. Electrical Engineering and Computer Science, DGIST
+* 2017.02.~2021.02. - **B.S.** in School of Electronic Engineering, Kyungpook National Univ.

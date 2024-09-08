@@ -10,8 +10,8 @@ researches:
   - Network I/O optimization
   - Cache side channel attack
   - Tiered memory system
-location: "Engineering Research Park 212D"
 sidebar:
+  location: "Engineering Research Park 212D"
   note: 
   email: hwpark at dgist.ac.kr
   scholar: Sy3wZSEAAAAJ
@@ -29,6 +29,6 @@ component:
 ---
 
 ## Education
-* **Ph.D. Student** in Information and Communication Engineering, DGIST, Daegu, Mar, 2019 - present
-* **M.S.** in Information and Communication Engineering, DGIST, Daegu, Feb, 2019
+* **Ph.D. Student** in Electrical Engineering and Computer Science, DGIST, Daegu, Mar, 2019 - present
+* **M.S.** in Electrical Engineering and Computer Science, DGIST, Daegu, Feb, 2019
 * **B.S.** in Computer Science, Sahmyook University, Seoul, Feb, 2017

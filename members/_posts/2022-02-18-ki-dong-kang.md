@@ -25,8 +25,8 @@ component:
 ---
 
 ## Education
-* **Ph.D.** in Information and Communication Engineering, DGIST, Daegu, Feb, 2022
-* **M.S.** in Information and Communication Engineering, DGIST, Daegu, Feb, 2017
+* **Ph.D.** in Electrical Engineering and Computer Science, DGIST, Daegu, Feb, 2022
+* **M.S.** in Electrical Engineering and Computer Science, DGIST, Daegu, Feb, 2017
 * **B.S.** in Computer Science, Gachon University, Seongnam, Feb, 2015
 
 <div class="bigspacer"></div>
