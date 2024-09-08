@@ -47,7 +47,7 @@ layout: default
 {% if member.component.publications %} 
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
-      {% if author == member.title %}
+      {% if author.name == member.title %}
         {% if publication.type == 'Journal' or publication.type == 'Conference' %}
           {% assign papersq = true %}
         {% endif %}
@@ -67,7 +67,7 @@ layout: default
       {% for publication in site.categories.publications %}
         {% unless publication.type == 'Journal' or publication.type == 'Conference' %}{% continue %}{% endunless %}
         {% for author in publication.authors %}
-          {% if author == member.title %}
+          {% if author.name == member.title %}
         <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
           {% endif %}
         {% endfor %}
@@ -81,7 +81,7 @@ layout: default
 {% if member.component.patents %} 
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
-      {% if author == member.title %}
+      {% if author.name == member.title %}
         {% if publication.type == 'Patent' %}
           {% assign patentsq = true %}
         {% endif %}
@@ -101,7 +101,7 @@ layout: default
       {% for publication in site.categories.publications %}
         {% unless publication.type == 'Patent' %}{% continue %}{% endunless %}
         {% for author in publication.authors %}
-          {% if author == member.title %}
+          {% if author.name == member.title %}
         <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
           {% endif %}
         {% endfor %}
