@@ -7,18 +7,21 @@ position: Ph.D. Student
 image: /members/images/sungju.jpg
 researches:
   - Optimizing ML Models for Accelerated Computing
-    - Focus on designing machine learning models that are specifically tailored to leverage the capabilities of hardware accelerators like NPUs
 sidebar:
   location: "Engineering Research Park 212D"
   note: Lab Leader
   email: sungju_kim at dgist.ac.kr
 alterlink: 
 component:
-  researches: true #(false if you don't want to print research interest)
+  researches: false #(false if you don't want to print research interest)
   publications: true #(false if you don't want to print publications)
   patents: true #(false if you don't want to print patents)
   photos: true #(false if you don't want to print photos slide)
 ---
+
+## Research Interests
+- Optimizing ML Models for Accelerated Computing
+  - Focus on designing machine learning models that are specifically tailored to leverage the capabilities of hardware accelerators like NPUs
 
 ## Education
 * 2022.08~Present, **M.S.-Ph.D student**, Dept. of Electrical Engineering and Computer Science, DGIST

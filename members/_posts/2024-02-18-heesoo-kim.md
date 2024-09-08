@@ -22,7 +22,6 @@ component:
   publications: true #(false if you don't want to print publications)
   patents: true #(false if you don't want to print patents)
   photos: true #(false if you don't want to print photos slide)
-template: true #(delete this line)
 ---
 
 ## Education
