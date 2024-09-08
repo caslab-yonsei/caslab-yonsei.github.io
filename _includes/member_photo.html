@@ -13,7 +13,7 @@ n_limit: number of max photos
   {%- for image in photo.images -%}
     {% assign linked = false %}
     {% for photo_member in image.members %}
-      {% if photo_member == member.title %}
+      {% if photo_member contains member.title %}
         {% assign linked = true %}
         {% break %}
       {% endif %}
