@@ -11,7 +11,7 @@ researches:
   - Web Security
   - Power-efficient Computing Systems
 sidebar:
-  location: "E3-304, DGIST"
+  location: "Engineering Research Park 212D"
   email: hyosangkim at dgist.ac.kr
 alterlink: 
 component:

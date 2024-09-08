@@ -31,6 +31,8 @@ component:
 - Computer Security
   - Mitigation against Cache Side-Channel Attack
 
+<div class="bigspacer"></div>
+
 ## Education
 * 2017~, **B.S–M.S–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2014~2018, **Bachelor of Convergence engineering**, School of Basic Science, DGIST
