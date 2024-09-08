@@ -112,15 +112,14 @@ layout: default
   {% endif %}
 {% endif %}
 
+{% if member.component.photos %} 
+    <div class="bigspacer"></div>
+{% include member_photo.html member_loc=member gall_index=0 %}
+    <div class="bigspacer"></div>
+
+    <script defer>
+      init_slides();
+    </script>
+{% endif %}
   </div>
 </div>
-
-{% if member.component.photos %} 
-  <div class="bigspacer"></div>
-{% include member_photo.html member_loc=member gall_index=0 %}
-  <div class="bigspacer"></div>
-
-<script defer>
-  init_slides();
-</script>
-{% endif %}

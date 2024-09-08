@@ -20,7 +20,7 @@ links:
   - (...)
   - (links)
   - '#'
-alterlink: (index of links for linking the news, if no linking insert index of '#', leave empty if this page)
+alterlink: (index of links for linking the news, if no linking insert index of '#', leave empty or 0 if this page)
 template: true #(delete this line)
 ---
 
