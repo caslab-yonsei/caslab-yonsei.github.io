@@ -10,7 +10,7 @@
         {% if include.pub.type == 'Journal' or include.pub.type == 'Conference' %}
         <b>[{{ include.pub.paper.publisher-short }}]</b>
         {% endif %}
-        {% include pub_ref.html pub_loc=include.pub %}
+        {% include pub_ref_name.html pub_loc=include.pub %}
       </p>
       <div class="media-heading">
         <a href="{{ include.pub.url }}" class="off">
@@ -20,7 +20,6 @@
       <p class="smallnote">
         {% include pub_ref_publisher.html pub_loc=include.pub %}
       </p>
-    </div>
     </div>
   </div>
   <div class="bigspacer"></div>
