@@ -4,8 +4,8 @@ title: Our paper was <b><i>nominated for the best paper award (one of top three 
 images:
 members:
   - Daehoon Kim
-YYYY: 2017
-MM: 04
+YYYY: "2017"
+MM: "04"
 DD: 
 links:
   - url: /publications/ispass17-malian/

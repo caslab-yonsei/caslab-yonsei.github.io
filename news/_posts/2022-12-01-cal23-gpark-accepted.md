@@ -7,8 +7,8 @@ members:
   - Ki-Dong Kang
   - Minho Kim
   - Daehoon Kim
-YYYY: 2022
-MM: 12
+YYYY: "2022"
+MM: "12"
 DD: 
 links:
   - url: /publications/cal23-gpark/

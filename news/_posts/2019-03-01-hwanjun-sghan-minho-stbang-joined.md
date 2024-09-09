@@ -7,8 +7,8 @@ members:
   - Seonggyu Han
   - Minho Kim
   - Seongtae Bang
-YYYY: 2019
-MM: 03
+YYYY: "2019"
+MM: "03"
 DD: 
 links:
   - url: /members/hwanjun-lee/

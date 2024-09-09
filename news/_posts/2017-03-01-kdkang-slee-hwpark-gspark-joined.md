@@ -7,8 +7,8 @@ members:
   - Seunghak Lee
   - Hyungwon Park
   - Gyeongseo Park
-YYYY: 2017
-MM: 03
+YYYY: "2017"
+MM: "03"
 DD: 
 links:
   - url: /members/ki-dong-kang/

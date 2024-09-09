@@ -6,8 +6,8 @@ members:
   - Seunghak Lee
   - Hyungwon Park
   - Minjun Hong
-YYYY: 2018
-MM: 11
+YYYY: "2018"
+MM: "11"
 DD:
 links:
   - name: "Exploiting OS-level Page Offlining for DRAM Power Management"

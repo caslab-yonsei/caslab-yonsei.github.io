@@ -10,8 +10,8 @@ members:
   - Sungju Kim
   - Hyosang Kim
   - Daehoon Kim
-YYYY: 2024
-MM: 07
+YYYY: "2024"
+MM: "07"
 DD: 
 links:
   - url: /publications/pact24-gpark/

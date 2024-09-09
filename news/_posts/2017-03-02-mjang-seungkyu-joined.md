@@ -5,8 +5,8 @@ images:
 members:
   - Minwoo Jang
   - Seungkyu Lee
-YYYY: 2017
-MM: 03
+YYYY: "2017"
+MM: "03"
 DD:
 links:
   - url: /members/minwoo-jang/

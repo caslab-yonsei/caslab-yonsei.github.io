@@ -4,8 +4,8 @@ title: Our paper was accepted at <b><i>MICRO 2018 (top-tier conference)</i></b>.
 images:
 members:
   - Daehoon Kim
-YYYY: 2018
-MM: 07
+YYYY: "2018"
+MM: "07"
 DD: 
 links:
   - url: /publications/micro18-malian/

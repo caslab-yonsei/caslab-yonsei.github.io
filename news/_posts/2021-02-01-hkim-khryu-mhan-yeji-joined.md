@@ -7,8 +7,8 @@ members:
   - Kyeonghyeon Ryu
   - Minhyeok An
   - Yeji Jung
-YYYY: 2021
-MM: 12
+YYYY: "2021"
+MM: "12"
 DD: 
 links:
   - url: /members/heesoo-kim/

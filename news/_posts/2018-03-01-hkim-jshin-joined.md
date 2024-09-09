@@ -5,8 +5,8 @@ images:
 members:
   - Hyosang Kim
   - Jongmin Shin
-YYYY: 2018
-MM: 03
+YYYY: "2018"
+MM: "03"
 DD: 
 links:
   - url: /members/hyosang-kim/

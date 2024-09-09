@@ -6,8 +6,8 @@ members:
   - Minwoo Jang
   - Seungkyu Lee
   - Daehoon Kim
-YYYY: 2020
-MM: 10
+YYYY: "2020"
+MM: "10"
 DD: 
 links:
   - url: /publications/access20-kdkang-hpark/

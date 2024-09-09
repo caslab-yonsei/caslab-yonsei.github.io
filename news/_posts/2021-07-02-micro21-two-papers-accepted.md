@@ -10,8 +10,8 @@ members:
   - Hwanjun Lee
   - Hyungwon Park
   - Daehoon Kim
-YYYY: 2021
-MM: 07
+YYYY: "2021"
+MM: "07"
 DD: 
 links:
   - url: /publications/micro21-kdkang/

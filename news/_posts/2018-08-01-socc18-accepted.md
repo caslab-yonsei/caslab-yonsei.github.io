@@ -25,8 +25,8 @@ images:
 members:
   - Ki-Dong Kang
   - Daehoon Kim
-YYYY: 2018
-MM: 08
+YYYY: "2018"
+MM: "08"
 DD: 
 links:
   - url: /publications/socc18-kdkang/

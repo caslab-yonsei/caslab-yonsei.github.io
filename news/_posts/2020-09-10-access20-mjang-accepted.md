@@ -6,8 +6,8 @@ members:
   - Minwoo Jang
   - Seungkyu Lee
   - Daehoon Kim
-YYYY: 2020
-MM: 09
+YYYY: "2020"
+MM: "09"
 DD: 
 links:
   - url: /publications/access20-mjang/

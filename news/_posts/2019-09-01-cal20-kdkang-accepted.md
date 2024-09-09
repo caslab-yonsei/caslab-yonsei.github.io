@@ -6,8 +6,8 @@ members:
   - Ki-Dong Kang
   - Gyeongseo Park
   - Daehoon Kim
-YYYY: 2019
-MM: 06
+YYYY: "2019"
+MM: "06"
 DD: 
 links:
   - url: /publications/cal20-kdkang/

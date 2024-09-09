@@ -7,8 +7,8 @@ members:
   - Seunghak Lee
   - Yeji Jung
   - Daehoon Kim
-YYYY: 2023
-MM: 06
+YYYY: "2023"
+MM: "06"
 DD: 
 links:
   - url: /publications/cal23-hlee/

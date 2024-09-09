@@ -6,8 +6,8 @@ members:
   - Jongmin Shin
   - Ki-Dong Kang
   - Daehoon Kim
-YYYY: 2020
-MM: 12
+YYYY: "2020"
+MM: "12"
 DD: 
 links:
   - url: /publications/cal21-malian-jshin/

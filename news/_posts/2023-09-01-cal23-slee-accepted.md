@@ -7,8 +7,8 @@ members:
   - Ki-Dong Kang
   - Gyeongseo Park
   - Daehoon Kim
-YYYY: 2023
-MM: 09
+YYYY: "2023"
+MM: "09"
 DD: 
 links:
   - url: /publications/cal23-slee/

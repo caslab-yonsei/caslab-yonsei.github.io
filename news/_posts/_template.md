@@ -11,9 +11,9 @@ members:
   - (related person 2)
   - (...)
   - (related people)
-YYYY: (year)
-MM: (month in two numbers)
-DD: (day of the month, you can omit)
+YYYY: "(year)" # must be in quotes
+MM: "(month in two numbers)"
+DD: "(day of the month, you can omit)"
 links:
   - name: (title for the link 1, leave empty to show url)
     url: (link for link 1, leave '#' if no link)

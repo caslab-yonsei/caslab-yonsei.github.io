@@ -5,8 +5,8 @@ images:
 members:
   - Jongmin Shin
   - Daehoon Kim
-YYYY: 2022
-MM: 07
+YYYY: "2022"
+MM: "07"
 DD: 
 links:
   - url: /publications/micro22-malian/

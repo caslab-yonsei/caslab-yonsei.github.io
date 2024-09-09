@@ -9,8 +9,8 @@ images:
     members: 
       - [Jongmin Shin, Daehoon Kim, Seonggyu Han, Hyungwon Park, Gyeongseo Park, Seulki Kim, Ki-Dong Kang, Sangwoong Kim]
 members:
-YYYY: 2018
-MM: 07
+YYYY: "2018"
+MM: "07"
 links:
   - url: https://www.dgist.ac.kr/eng/sub04_02_07.do
     name: Research Center for Extreme Exploitation of Dark Data

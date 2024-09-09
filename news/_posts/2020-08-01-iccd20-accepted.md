@@ -7,8 +7,8 @@ members:
   - Hyungwon Park
   - Gyeongseo Park
   - Daehoon Kim
-YYYY: 2020
-MM: 08
+YYYY: "2020"
+MM: "08"
 DD: 
 links:
   - url: /publications/iccd20-kdkang-hpark/

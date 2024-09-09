@@ -5,8 +5,8 @@ images:
 members:
   - Seunghak Lee
   - Daehoon Kim
-YYYY: 2019
-MM: 06
+YYYY: "2019"
+MM: "06"
 DD: 
 links:
   - url: /publications/cal19-slee/

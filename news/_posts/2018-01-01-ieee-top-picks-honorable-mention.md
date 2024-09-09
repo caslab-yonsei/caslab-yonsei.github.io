@@ -4,8 +4,8 @@ title: Our paper was selected as an <b><i>IEEE Top Picks Honorable Mention</i></
 images:
 members:
   - Daehoon Kim
-YYYY: 2018
-MM: 01
+YYYY: "2018"
+MM: "01"
 DD: 
 links:
   - url: /publications/ispass17-malian/

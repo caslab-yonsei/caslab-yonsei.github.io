@@ -4,8 +4,8 @@ title: Congratulations! Jongmin Shin was awarded the DGIST Presidential Fellowsh
 images:
 members:
   - Jongmin Shin
-YYYY: 2019
-MM: 08
+YYYY: "2019"
+MM: "08"
 links:
   - url: /members/jongmin-shin/
     ontab: true
