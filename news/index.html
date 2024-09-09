@@ -63,7 +63,7 @@ categories:
     {%- if news.alterlink and news.alterlink > 0 -%}
       {% assign linkindex = news.alterlink | minus: 1 -%}
       {% assign newtab = true -%}
-      {{ news.links[linkindex] }}
+      {{ news.links[linkindex].url }}
     {%- else -%}
       {{ news.url }}
     {%- endif -%}

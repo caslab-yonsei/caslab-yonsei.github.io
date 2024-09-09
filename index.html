@@ -85,10 +85,10 @@ categories:
               {% assign linked = false -%}
               {% assign newtab = false -%}
               {% capture news_url %}
-                {%- if news.alterlink > 0 -%}
+                {%- if news.alterlink and news.alterlink > 0 -%}
                   {% assign linkindex = news.alterlink | minus: 1 -%}
                   {% assign newtab = true -%}
-                  {{ news.links[linkindex] }}
+                  {{ news.links[linkindex].url }}
                 {%- else -%}
                   {{ news.url }}
                 {%- endif -%}
