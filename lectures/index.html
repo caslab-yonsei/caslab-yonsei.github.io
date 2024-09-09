@@ -14,27 +14,84 @@ categories:
 
 <div class="row">
   <div class="col-md-12">
+    <h2 id="yonsei">Yonsei</h2>
     <table class="lecture">
       <thead>
         <tr class="header lecture">
           <td class="code">Code</td>
-          <td class="course">Course</td>
+          <td class="course">Title</td>
           <td class="target">Target</td>
           <td class="semesters">Semesters</td>
-          <td class="note">Note</td>
+          <td class="note">Notes</td>
         </tr>
       </thead>
       <tbody>
+        {% assign n_lectures = 0 %}
         {% for lecture in site.categories.lectures %}
           {% if lecture.template -%}{% continue -%}{% endif -%}
+          {% if lecture.hidden -%}{% continue -%}{% endif -%}
+          {% unless lecture.institution == 'Yonsei' %}{% continue %}{% endunless %}
+          {% assign n_lectures = n_lectures | plus: 1 %}
         <tr class="body">
           <td class="code">{{ lecture.code }}</td>
           <td class="course">{{ lecture.title }}</td>
           <td class="target">{{ lecture.target }}</td>
-          <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
-          <td class="notes">{% for note in lecture.notes reversed -%}{{ note }}{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
+          <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester.term }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in lecture.notes reversed -%}{{ note }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
         </tr>
         {% endfor -%}
+        {% if n_lectures == 0 %}
+          <tr class="body">
+            <td class="code"></td>
+            <td class="course"></td>
+            <td class="target"></td>
+            <td class="semesters"></td>
+            <td class="notes">To be announced</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h2 id="dgist">DGIST</h2>
+    <table class="lecture">
+      <thead>
+        <tr class="header lecture">
+          <td class="code">Code</td>
+          <td class="course">Title</td>
+          <td class="target">Target</td>
+          <td class="semesters">Semesters</td>
+          <td class="note">Notes</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign n_lectures = 0 %}
+        {% for lecture in site.categories.lectures %}
+          {% if lecture.template -%}{% continue -%}{% endif -%}
+          {% if lecture.hidden -%}{% continue -%}{% endif -%}
+          {% unless lecture.institution == 'DGIST' %}{% continue %}{% endunless %}
+          {% assign n_lectures = n_lectures | plus: 1 %}
+        <tr class="body">
+          <td class="code">{{ lecture.code }}</td>
+          <td class="course">{{ lecture.title }}</td>
+          <td class="target">{{ lecture.target }}</td>
+          <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester.term }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in lecture.notes reversed -%}{{ note }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
+        </tr>
+        {% endfor -%}
+        {% if n_lectures == 0 %}
+          <tr class="body">
+            <td class="code"></td>
+            <td class="course"></td>
+            <td class="target"></td>
+            <td class="semesters"></td>
+            <td class="notes">To be announced</td>
+          </tr>
+        {% endif %}
       </tbody>
     </table>
   </div>

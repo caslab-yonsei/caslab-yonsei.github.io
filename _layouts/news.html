@@ -23,16 +23,22 @@ layout: default
   <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
+      
       {% for link in page.links -%}
         {% if forloop.first -%}
       <div class="smallhead">
-        Links
+        More Info
       </div>
         {% endif -%}
-      <div class="pad-left note">
-        <div class="smallspacer"></div>
-        <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="{{ link }}" title="{{ link }}">{{ link }}</a>
+      <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
+        <i class="fa {% if link.icon %}{{ link.icon | prepend 'seungkyu-' | remove '-fa-' | remove 'seungkyu' | prepend fa- }}{% else %}fa-external-link{% endif %} fa-fw"></i>
+        {% unless link.url == '#' %}
+        <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+        {% endunless %}
+          {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
+        {% unless link.url == '#' %}
+        </a>
+        {% endunless %}
       </div>
       {% endfor -%}
       <div class="bigspacer"></div>

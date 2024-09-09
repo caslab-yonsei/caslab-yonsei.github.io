@@ -8,6 +8,6 @@ YYYY: 2016
 MM: 09
 DD:
 links:
-  - '#'
+  - url: '#'
 alterlink: 1
 ---

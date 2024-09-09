@@ -4,7 +4,7 @@ title: Daehoon Kim
 abbrev: D. Kim
 role: Professor
 prefix: Prof.
-position: Assistant Professor
+position: Associate Professor
 image: /members/images/dkim.png
 researches:
   - Computer Architecture

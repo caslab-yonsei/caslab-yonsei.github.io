@@ -11,9 +11,17 @@ YYYY: 2017
 MM: 03
 DD: 
 links:
-  - /members/ki-dong-kang/
-  - /members/seunghak-lee/
-  - /members/hyungwon-park/
-  - /members/gyeongseo-park/
+  - url: /members/ki-dong-kang/
+    name: "Ki-Dong Kang"
+    icon: user
+  - url: /members/seunghak-lee/
+    name: "Seunghak Lee"
+    icon: user
+  - url: /members/hyungwon-park/
+    name: "Hyungwon Park"
+    icon: user
+  - url: /members/gyeongseo-park/
+    name: "Gyeongseo Park"
+    icon: user
 alterlink: 
 ---

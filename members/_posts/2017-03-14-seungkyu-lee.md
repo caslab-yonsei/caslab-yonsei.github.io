@@ -13,6 +13,11 @@ sidebar:
   location: "E3-304, DGIST"
   email: lee.seungkyu at dgist.ac.kr
   scholar: uK_X2hUAAAAJ
+  github: lsk21kr
+  links:
+    - name: Website Contributor
+      url: '#'
+      icon: info-circle
 alterlink: 
 component:
   researches: false #(false if you don't want to print research interest)
