@@ -12,9 +12,11 @@ links:
   - url: /members/minwoo-jang/
     name: "Minwoo Jang"
     icon: user
+    ontab: true
   - url: /members/seungkyu-lee/
     name: "Seungkyu Lee"
     icon: user
+    ontab: true
 alterlink: 
 ---
 

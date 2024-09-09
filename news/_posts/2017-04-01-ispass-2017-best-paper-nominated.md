@@ -9,5 +9,9 @@ MM: 04
 DD: 
 links:
   - url: /publications/ispass17-malian/
+    name: "dist-gem5: Distributed simulation of computer clusters"
+    icon: file-text-o
+    title: Publication
+    ontab: true
 alterlink: 1
 ---

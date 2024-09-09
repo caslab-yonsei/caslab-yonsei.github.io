@@ -1,29 +1,26 @@
 <div class="col-md-12 paperbox-full">
   <div class="media">
-    {% if include.pub.type == 'Journal' or include.pub.type == 'Conference' %}
-    <div class="publisher-short">
-      <b>[{{ include.pub.paper.publisher-short }}]</b>
-    </div>
-    {% endif %}
     {% for award in include.pub.sidebar.awards %}
       {% if forloop.first %}<div class="media-awards">{% endif %}
       <div class="media-award-elem"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
       {% if forloop.last %}</div>{% endif %}
     {% endfor %}
-    {% if include.pub.image %}
-    <a class="pull-right" href="{{ include.pub.url }}">
-      <img width=100 class="media-object" src="{{ include.pub.image }}">
-    </a>
-    {% endif %}
     <div class="media-body">
+      <p class="smallnote">
+        {% if include.pub.type == 'Journal' or include.pub.type == 'Conference' %}
+        <b>[{{ include.pub.paper.publisher-short }}]</b>
+        {% endif %}
+        {% include pub_ref.html pub_loc=include.pub %}
+      </p>
       <div class="media-heading">
         <a href="{{ include.pub.url }}" class="off">
           {{ include.pub.title }}
         </a>
       </div>
       <p class="smallnote">
-        {% include pub_ref.html pub_loc=include.pub %}
+        {% include pub_ref_publisher.html pub_loc=include.pub %}
       </p>
+    </div>
     </div>
   </div>
   <div class="bigspacer"></div>

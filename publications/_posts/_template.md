@@ -37,11 +37,13 @@ sidebar:
       url: (link for link 1, leave '#' if no link)
       icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
       title: (Title of the site for link 1, revealed on hover)
+      ontab: false # when true, no newtab opens
       reveal: false # when true, on hover the omitted part will be revealed
     - name: (title for the link 2)
       url: (link for link 2)
       title: (Title of the site for link 2)
       icon: (icon for link 2)
+      ontab: false 
       reveal: false
 hidden: false # true to hide from publication page (not related to the lab, etc.)
 template: true #(delete this line)

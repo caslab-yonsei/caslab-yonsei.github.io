@@ -1,0 +1,22 @@
+{% if include.short == true %}
+  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+    <i> {{ publication.paper.publisher-short }}</i>, {{publication.paper.year}}
+  {%- elsif publication.type == 'Patent' -%}
+    <br/>{{ publication.patent.status }}, {{ publication.patent.nation }}
+    {%- if publication.patent.status == 'issued' -%}
+      , No. {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
+    {%- else -%}
+      , No. {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
+    {%- endif -%}
+  {%- endif -%}
+{% else %}
+  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+    <i> {{ publication.paper.publisher }} ({{ publication.paper.publisher-short }})</i> {{ publication.paper.ref }}, {{publication.paper.year}}
+  {%- elsif publication.type == 'Patent' -%}
+    <br/>{{ publication.patent.status }}, {{ publication.patent.nation }},
+    Application No. {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
+    {%- if publication.patent.status == 'issued' -%}
+      , Registration No. {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
