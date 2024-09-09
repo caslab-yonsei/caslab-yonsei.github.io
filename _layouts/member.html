@@ -65,7 +65,7 @@ layout: default
 
       <ol>
       {% for publication in site.categories.publications %}
-        {% unless publication.type == 'Journal' or publication.type == 'Conference' %}{% continue %}{% endunless %}
+        {% unless publication.type == 'Journal' or publication.type == 'Conference' or publication.type == 'Thesis' %}{% continue %}{% endunless %}
         {% for author in publication.authors %}
           {% if author.name == member.title %}
         <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
