@@ -124,20 +124,20 @@ layout: default
             {{ keyword }}{% if forloop.last %}.</p>{% else %}, {% endif %}
       {% endfor %}
 
+      {% assign linked = false %}
       {% for field in page.researches %}
-        {% if forloop.first %}
-          <div class="bigspacer"></div>
-          <h2>Related Research Topics</h2>
-          <p>
-        {% endif %}
-        
-        {% for topic in site.categories.researches %}
+        {% for topic in site.categories.research %}
           {% if topic.alias == field %}
-            <p>
-              <a href="/research/#{{ topic.alias }}">
-                {{ topic.title }}
-              </a>
-            </p>
+            {% unless linked %}
+              {% assign linked = true %}
+      <div class="bigspacer"></div>
+      <h2>Related Research Topics</h2>
+            {% endunless %}
+      <p>
+        <a href="/research/#{{ topic.alias }}">
+          {{ topic.title }}
+        </a>
+      </p>
             {% break %}
           {% endif %}
         {% endfor %}
