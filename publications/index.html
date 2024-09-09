@@ -20,6 +20,30 @@ categories:
       <hr>
     </div>
   </div>
+  {% endif %}
+  <div class="row">
+    <div class="col-md-12">
+      {% include pub_box_full.html pub=publication %}
+    </div>
+  </div>
+{% endfor %}
+
+{% comment %}
+{% assign n_pubs = 0 %}
+{% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}
+  {% if publication.hidden -%}{% continue -%}{% endif -%}
+  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% unless publication.international -%}{% continue -%}{% endunless -%}
+
+  {% if n_pubs == 0 %}
+    {% assign counter = 0 %}
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Publications</h1>
+      <hr>
+    </div>
+  </div>
   <div class="row">
   {% else %}
     {% assign counter = counter | plus: 1 %}
@@ -36,7 +60,7 @@ categories:
 {% if n_pubs > 0 %}
   </div>
 {% endif %}
-
+{% endcomment %}
 
 {% comment %}
 <!-- 국내 페이퍼: 생략 -->
