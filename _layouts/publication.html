@@ -115,39 +115,71 @@ layout: default
       <div class="spacer"></div>
       {{ content }}
 
-      {% for topic in site.categories.research %}
-        {% assign listed = false %}
-        {% for doi in topic.publication-dois %}
-          {% if doi == page.sidebar.doi %}
-            {% assign listed = true %}
+      {% for keyword in page.keywords %}
+        {% if forloop.first %}
+          <div class="bigspacer"></div>
+          <h2>Keywords</h2>
+          <p>
+        {% endif %}
+            {{ keyword }}{% if forloop.last %}.</p>{% else %}, {% endif %}
+      {% endfor %}
+
+      {% for field in page.researches %}
+        {% if forloop.first %}
+          <div class="bigspacer"></div>
+          <h2>Related Research Topics</h2>
+          <p>
+        {% endif %}
+        
+        {% for topic in site.categories.researches %}
+          {% if topic.alias == field %}
+            <p>
+              <a href="/research/#{{ topic.alias }}">
+                {{ topic.title }}
+              </a>
+            </p>
             {% break %}
           {% endif %}
         {% endfor %}
-        {% if listed == true %}
-          {% break %}
-        {% endif %}
       {% endfor %}
-
-      {% if listed == true %}
-      <div class="bigspacer"></div>
-      <h2>Related Research Topics</h2>
-        {% for topic in site.categories.research %}
-          {% assign topic_index = forloop.index %}
-          {% assign listed = false %}
-          {% for doi in topic.publication-dois %}
-            {% if doi == page.sidebar.doi %}
-      <p>
-        <a href="/research/#topic{{ topic_index }}">
-          {{ topic.title }}
-        </a>
-      </p>
-              {% assign listed = true %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      {% endif %}
+      
     </div>
   </div>
   <div class="col-md-1"></div>
 </div>
+
+
+{% comment %}
+  {% for topic in site.categories.research %}
+    {% assign listed = false %}
+    {% for doi in topic.publication-dois %}
+      {% if doi == page.sidebar.doi %}
+        {% assign listed = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if listed == true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if listed == true %}
+  <div class="bigspacer"></div>
+  <h2>Related Research Topics</h2>
+    {% for topic in site.categories.research %}
+      {% assign topic_index = forloop.index %}
+      {% assign listed = false %}
+      {% for doi in topic.publication-dois %}
+        {% if doi == page.sidebar.doi %}
+  <p>
+    <a href="/research/#topic{{ topic_index }}">
+      {{ topic.title }}
+    </a>
+  </p>
+          {% assign listed = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endcomment %}

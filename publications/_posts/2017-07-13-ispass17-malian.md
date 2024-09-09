@@ -23,6 +23,12 @@ paper:
   publisher-short: ISPASS
   publisher-type: Conference
   ref: pp. 153-162
+researches: 
+keywords:
+  - Distributed computer systems
+  - Full-system simulation
+  - Performance analysis
+  - Simulation infrastructure
 sidebar:
   doi: 10.1109/ISPASS.2017.7975287
   awards:

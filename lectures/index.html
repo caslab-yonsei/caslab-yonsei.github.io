@@ -37,7 +37,7 @@ categories:
           <td class="course">{{ lecture.title }}</td>
           <td class="target">{{ lecture.target }}</td>
           <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester.term }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
-          <td class="notes">{% for note in lecture.notes reversed -%}{{ note }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in lecture.notes reversed -%}<i class="fa fa-globe fa-fw" title="{{ note }}"></i>{% unless forloop.last -%}, {% endunless -%}{% endfor -%}</td>
         </tr>
         {% endfor -%}
         {% if n_lectures == 0 %}
@@ -85,11 +85,7 @@ categories:
         {% endfor -%}
         {% if n_lectures == 0 %}
           <tr class="body">
-            <td class="code"></td>
-            <td class="course"></td>
-            <td class="target"></td>
-            <td class="semesters"></td>
-            <td class="notes">To be announced</td>
+            <td colspan="5" style="text-align: center;">To be announced</td>
           </tr>
         {% endif %}
       </tbody>

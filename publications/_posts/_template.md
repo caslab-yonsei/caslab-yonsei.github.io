@@ -24,6 +24,10 @@ patent: # delete if conference/journal
   date-application: YYYY.MM.DD
   number-publication: (issued patent number)
   date-publication: YYYY.MM.DD
+researches: # related research area among ai/cloud/memory/power/security
+  - (area 1)
+  - (area 2)
+keywords: [(keyword 1), (keyword 2), ...]
 sidebar:
   awards:
     - (award 1)
