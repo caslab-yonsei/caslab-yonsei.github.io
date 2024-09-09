@@ -13,7 +13,7 @@
     {% assign has_header = false %}
     {% for pub in site.categories.publications %}
       {% if pub.hidden or pub.template %}{% continue %}{% endif %}
-      {% if pub.researches include topic_loc.alias %}
+      {% if pub.researches contains topic_loc.alias %}
         {% unless has_header %}
           {% assign has_header = true %}
     <div class="bigspacer"></div>
