@@ -146,7 +146,7 @@ function show_slide(gallery, idx, auto=false) {
         slides[i].setAttribute("style", "display: none");
     }
     slides[slide_indices[gallery]-1].setAttribute("style", "display: flex");
-    if (slides.length > 1) {
+    if (slides.length > 1 && slides.length <= 10) {
         dots = document.getElementsByClassName("slides-dot-"+String(gallery));
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" slide-active", "");
