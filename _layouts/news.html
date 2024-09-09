@@ -31,7 +31,7 @@ layout: default
       </div>
         {% endif -%}
       <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
-        <i class="fa {% if link.icon %}{{ link.icon | prepend 'seungkyu-' | remove '-fa-' | remove 'seungkyu-' | remove 'seungkyu' | prepend 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
+        <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
         {% unless link.url == '#' %}
         <a class="off" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
         {% endunless %}
