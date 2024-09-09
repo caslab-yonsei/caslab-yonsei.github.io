@@ -33,7 +33,7 @@ function init_slides() {
         slide_caps.push(dicts);
         if (n_images > 10) {
             Array.from(slides).forEach((slide, s_index) => {
-                slide.getElementById("slide-number-"+String(idx)+"-"+String(jdx)).setAttribute("style", "display: block");
+                slide.getElementById("slide-number-"+String(idx)+"-"+String(s_index)).setAttribute("style", "display: block");
             });
         }
     }
