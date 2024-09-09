@@ -35,9 +35,9 @@ if (carousel && carousel.querySelectorAll(".carousel-item").length > 0)
         let valDiff = (firstItemWidth - positionDiff) % firstItemWidth;
 
         if (carousel.scrollLeft > prevScrollLeft) {
-            carousel.scrollLeft += positionDiff > firstItemWidth / 3 ? valDiff : -positionDiff;
+            carousel.scrollLeft += positionDiff % firstItemWidth > firstItemWidth / 3 ? valDiff : -positionDiff;
         } else {
-            carousel.scrollLeft -= positionDiff > firstItemWidth / 3 ? valDiff : -positionDiff;
+            carousel.scrollLeft -= positionDiff % firstItemWidth > firstItemWidth / 3 ? valDiff : -positionDiff;
         }
     }
 
