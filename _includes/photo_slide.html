@@ -9,7 +9,7 @@ gall_index: index of gallery
     <div class="slides-gallery-{{ include.gall_index }} slide-fade">
       <img src="{{ image.file }}" style="width: 100%;">
       <div class="slides-number-{{ include.gall_index }}" id="slide-number-{{ include.gall_index }}-{{ n_images }}">
-        {{ n_images | plus: 1}}
+        {{ n_images | plus: 1 }}
       </div>
       <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
         {% if image.caption -%}
