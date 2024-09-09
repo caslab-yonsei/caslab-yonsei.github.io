@@ -7,7 +7,7 @@
     {% endfor %}
     <div class="media-body">
       <p class="smallnote">
-        {% if include.pub.type == 'Journal' or include.pub.type == 'Conference' %}
+        {% if include.pub.type == 'Paper' %}
         <b>[{{ include.pub.paper.publisher-short }}]</b>
         {% endif %}
         {% include pub_ref_name.html pub_loc=include.pub %}

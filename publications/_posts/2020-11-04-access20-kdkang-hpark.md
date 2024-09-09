@@ -12,12 +12,13 @@ authors:
   - name: Daehoon Kim
     short: D. Kim
 co-first: true
-type: Journal
+type: Paper
 international: true
 paper:
   year: 2020
   publisher: "IEEE Access"
   publisher-short: "Access"
+  publisher-type: Journal
   ref: vol. 8, pp. 201028-201039
 sidebar:
   doi: 10.1109/ACCESS.2020.3035777

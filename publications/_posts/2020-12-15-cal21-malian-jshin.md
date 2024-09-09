@@ -18,12 +18,13 @@ authors:
   - name: Nam Sung Kim
     short: N. S. Kim
 co-first: true
-type: Journal
+type: Paper
 international: true
 paper: # delete if patent
   year: 2021
   publisher: "IEEE Computer Architecture Letters"
   publisher-short: "CAL"
+  publisher-type: Journal
   ref: vol. 20, no. 1, pp. 30-33
 sidebar:
   doi: 10.1109/LCA.2020.3044923

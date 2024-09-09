@@ -8,12 +8,13 @@ authors:
     short: S. Lee
   - name: Daehoon Kim
 co-first: false
-type: Thesis
+type: Paper
 international: false
 paper: 
   year: 2019
-  publisher: "DGIST"
-  publisher-short: "Thesis"
+  publisher: Daegugyeongbuk Institute of Science and Technology
+  publisher-short: DGIST
+  publisher-type: Thesis
   ref:
 sidebar:
   doi: 10.22694/thesis.200000171481

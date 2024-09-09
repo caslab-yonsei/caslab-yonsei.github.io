@@ -11,11 +11,12 @@ authors:
     short: J. Kung
   - name: Daehoon Kim
     short: D. Kim
-type: Journal
+type: Paper
 international: true
 paper:
   year: 2020
   publisher: "IEEE Access"
+  publisher-type: Journal
   publisher-short: "Access"
   ref: vol. 8, pp. 179837-179844
 sidebar:

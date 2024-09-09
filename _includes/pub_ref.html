@@ -27,7 +27,7 @@
 {% endfor %}
 
 {% if include.short == true %}
-  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+  {% if publication.type == 'Paper' %}
     <i> {{ publication.paper.publisher-short }}</i>, {{publication.paper.year}}
   {%- elsif publication.type == 'Patent' -%}
     <br/>{{ publication.patent.status }}, {{ publication.patent.nation }}
@@ -38,7 +38,7 @@
     {%- endif -%}
   {%- endif -%}
 {% else %}
-  {% if publication.type == 'Conference' or publication.type == 'Journal' %}
+  {% if publication.type == 'Paper' %}
     <i> {{ publication.paper.publisher }} ({{ publication.paper.publisher-short }})</i>{% if publication.paper.ref %} {{ publication.paper.ref }}{% endif %}, {{publication.paper.year}}
   {%- elsif publication.type == 'Patent' -%}
     <br/>{{ publication.patent.status }}, {{ publication.patent.nation }},

@@ -18,12 +18,13 @@ authors:
   - name: Nam Sung Kim
     short: N. S. Kim
 co-first: false
-type: Conference
+type: Paper
 international: true
 paper:
   year: 2022
   publisher: "IEEE/ACM International Symposium on Microarchitecture"
   publisher-short: "MICRO"
+  publisher-type: Conference
   ref: pp. 480-493
 sidebar:
   doi: 10.1109/MICRO56248.2022.00042

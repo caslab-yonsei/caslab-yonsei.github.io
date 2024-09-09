@@ -10,7 +10,7 @@ authors:
   - name: (author fullname 3)
     short: (author short name 3)
 co-first: false # true if author 1, 2 are co-first authors
-type: Conference, Journal, Patent
+type: Paper, Patent, ...
 international: true # false if domestic
 paper: # delete if patent
   year: (published year)

@@ -12,12 +12,13 @@ authors:
   - name: Daehoon Kim
     short: D. Kim
 co-first: true
-type: Conference
+type: Paper
 international: true
 paper:
   year: 2020
   publisher: "IEEE International Conference on Computer Design"
   publisher-short: "ICCD"
+  publisher-type: Conference
   ref: pp. 377-380
 sidebar:
   doi: 10.1109/ICCD50377.2020.00069

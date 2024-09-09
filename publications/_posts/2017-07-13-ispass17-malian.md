@@ -15,12 +15,13 @@ authors:
     short: D. Kim
   - name: Nam Sung Kim
     short: N. S. Kim
-type: Conference
+type: Paper
 international: true
 paper:
   year: 2017
   publisher: IEEE International Symposium on Performance Analysis of Systems and Software
   publisher-short: ISPASS
+  publisher-type: Conference
   ref: pp. 153-162
 sidebar:
   doi: 10.1109/ISPASS.2017.7975287

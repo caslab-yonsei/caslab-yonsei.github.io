@@ -48,7 +48,7 @@ layout: default
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
       {% if author.name == member.title %}
-        {% if publication.type == 'Journal' or publication.type == 'Conference' %}
+        {% if publication.type == 'Paper' %}
           {% assign papersq = true %}
         {% endif %}
         {% break %}
@@ -65,10 +65,10 @@ layout: default
 
       <ol>
       {% for publication in site.categories.publications %}
-        {% unless publication.type == 'Journal' or publication.type == 'Conference' or publication.type == 'Thesis' %}{% continue %}{% endunless %}
+        {% unless publication.type == 'Paper'%}{% continue %}{% endunless %}
         {% for author in publication.authors %}
           {% if author.name == member.title %}
-        <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+        <li>({{ publication.paper.publisher-type }}) <a href="{{ publication.url }}">{{ publication.title }}</a></li>
           {% endif %}
         {% endfor %}
       {% endfor %}

@@ -29,12 +29,13 @@ authors:
     short: W.-m. Hwu
   - name: Nam Sung Kim
     short: N. S. Kim
-type: Conference
+type: Paper
 international: true
 paper: 
   year: 2018
   publisher: "IEEE/ACM International Symposium on Microarchitecture"
   publisher-short: "MICRO"
+  publisher-type: Conference
   ref: pp. 802-814
 sidebar:
   doi: 10.1109/MICRO.2018.00070

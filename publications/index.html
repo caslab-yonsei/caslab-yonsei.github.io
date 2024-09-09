@@ -9,7 +9,7 @@ categories:
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
-  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
   {% unless publication.international -%}{% continue -%}{% endunless -%}
 
   {% if n_pubs == 0 %}
@@ -35,7 +35,7 @@ categories:
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
-  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
   {% unless publication.international -%}{% continue -%}{% endunless -%}
 
   {% if n_pubs == 0 %}
@@ -70,7 +70,7 @@ categories:
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
-  {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
+  {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
   {% if publication.international -%}{% continue -%}{% endif -%}
   {% if n_pubs == 0 %}
     {% assign counter = 0 %}
