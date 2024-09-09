@@ -5,6 +5,11 @@
       <b>[{{ include.pub.paper.publisher-short }}]</b>
     </div>
     {% endif %}
+    {% for award in include.pub.sidebar.awards %}
+      {% if forloop.first %}<div class="media-awards">{% endif %}
+      <div class="media-award-elem"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
+      {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
     {% if include.pub.image %}
     <a class="pull-right" href="{{ include.pub.url }}">
       <img width=100 class="media-object" src="{{ include.pub.image }}">
@@ -17,13 +22,8 @@
         </a>
       </div>
       <p class="smallnote">
-        {% include pub_ref.html pub_loc=include.pub short=true %}
+        {% include pub_ref.html pub_loc=include.pub %}
       </p>
-      {% for award in include.pub.sidebar.awards %}
-      {% if forloop.first %}<div class="media-awards">{% endif %}
-        <div class="media-award-elem"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
-      {% if forloop.last %}</div>{% endif %}
-      {% endfor %}
     </div>
   </div>
   <div class="bigspacer"></div>

@@ -24,8 +24,10 @@ categories:
   <div class="row">
     <div class="col-md-12">
       {% include pub_box_full.html pub=publication %}
+      {% assign counter = counter | plus: 1 %}
     </div>
   </div>
+  {% assign n_pubs = n_pubs | plus: 1 %}
 {% endfor %}
 
 {% comment %}
