@@ -19,7 +19,7 @@ gall_index: index of gallery
             {%- if image.members.size > 1 or image.members[0].size > 1 -%}
               {% if image.members.size > 1 %}(from top to bottom) {% endif %}
               (from left to right)<br/>
-            {%- endif -%}{% for memrow in image.members %}{% if forloop.length > 1 %}row {{ forloop.index }}: {% endif %}{%- include member_ref.html mem_loc=memrow lastrow=forloop.last -%}{% endfor %}
+            {%- endif -%}{% for memrow in image.members %}{% if forloop.length > 1 %}row {{ forloop.index }}: {% endif %}{%- include photo_member.html mem_loc=memrow lastrow=forloop.last -%}{% endfor %}
           </span>
         {% endif -%}
       </div>
