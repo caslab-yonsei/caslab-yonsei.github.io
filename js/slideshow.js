@@ -15,6 +15,7 @@ function init_slides() {
         slides = document.getElementsByClassName("slides-gallery-"+String(idx));
         let j_lim = slides.length;
         let dicts = [];
+        let n_images = slides.length;
         for (let jdx = 0; jdx < j_lim; jdx++) {
             dicts.push(
                 {
@@ -30,6 +31,11 @@ function init_slides() {
             );
         }
         slide_caps.push(dicts);
+        if (n_images > 10) {
+            Array.from(slides).forEach((slide, s_index) => {
+                slide.getElementById("slide-number-"+String(idx)+"-"+String(jdx)).setAttribute("style", "display: block");
+            });
+        }
     }
     
     slide_caps.forEach((gallery, idx) => {
@@ -107,7 +113,6 @@ function show_buttons(gallery, image) {
     slide.showbtn = setTimeout(() => {
         slide.btnbox.classList.remove('slide-hidden');
         slide.btnbox.classList.add('slide-visible');
-        slide.showbtn
     }, 500);
 }
 

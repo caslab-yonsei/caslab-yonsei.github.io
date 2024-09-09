@@ -2,7 +2,7 @@
 layout: publication
 title: "Page Scanning Techniques for Efficient Hotness Tracking in Tiered Memory Systems"
 authors:
-  - name: Kim Heesoo
+  - name: Heesoo Kim
   - name: Donghoon Shin
     short: D. Shin
   - name: Daehoon Kim
