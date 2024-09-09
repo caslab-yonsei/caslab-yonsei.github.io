@@ -11,7 +11,7 @@
   {%- endif -%}
 {% else %}
   {% if publication.type == 'Conference' or publication.type == 'Journal' %}
-    <i> {{ publication.paper.publisher }} ({{ publication.paper.publisher-short }})</i> {{ publication.paper.ref }}, {{publication.paper.year}}
+    <i> {{ publication.paper.publisher }} ({{ publication.paper.publisher-short }})</i>, {{publication.paper.year}}
   {%- elsif publication.type == 'Patent' -%}
     <br/>{{ publication.patent.status }}, {{ publication.patent.nation }},
     Application No. {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
