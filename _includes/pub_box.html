@@ -1,15 +1,15 @@
 <div class="col-md-6 paperbox">
   <div class="media">
     {% if include.pub.image %}
-    <a class="pull-right" href="{{ publication.url }}">
-      <img width=100 class="media-object" src="{{ publication.image }}">
+    <a class="pull-right" href="{{ include.pub.url }}">
+      <img width=100 class="media-object" src="{{ include.pub.image }}">
     </a>
     {% endif %}
     <div class="media-body">
       <div class="media-heading">
-        {% if publication.type == 'Journal' or publication.type == 'Conference' %}<div class="publisher-short"><b>[{{pulication.paper.publisher-short}}]</b></div>{% endif %}
-        <a href="{{ publication.url }}" class="off">
-          {{ publication.title }}
+        {% if include.pub.type == 'Journal' or include.pub.type == 'Conference' %}<div class="publisher-short"><b>[{{ include.pub.paper.publisher-short }}]</b></div>{% endif %}
+        <a href="{{ include.pub.url }}" class="off">
+          {{ include.pub.title }}
         </a>
       </div>
       <p class="smallnote">
