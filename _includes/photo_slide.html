@@ -1,4 +1,4 @@
-{% comment -%}
+<!-- {% comment -%}
 images_loc: array of images
 gall_index: index of gallery
 {% endcomment -%}
@@ -20,6 +20,73 @@ gall_index: index of gallery
               {% if image.members.size > 1 %}(from top to bottom) {% endif %}
               (from left to right)<br/>
             {%- endif -%}{% for memrow in image.members %}{% if forloop.length > 1 %}row {{ forloop.index }}: {% endif %}{%- include member_ref.html mem_loc=memrow lastrow=forloop.last -%}{% endfor %}
+          </span>
+        {% endif -%}
+      </div>
+      <div class="slides-btnbox-{{ include.gall_index }} slide-visible" id="slides-btnbox-{{ include.gall_index }}-{{ n_images }}">
+        {% if image.caption -%}
+          <i class="fa fa-info-circle slides-btn-desc-{{ include.gall_index }}" id="slides-btn-desc-{{ include.gall_index }}-{{ n_images }}"></i>
+        {% endif -%}
+        {% if image.members -%}
+          <i class="fa fa-user slides-btn-mem-{{ include.gall_index }}" id="slides-btn-mem-{{ include.gall_index }}-{{ n_images }}"></i>
+        {% endif -%}
+      </div>
+    </div>
+    {% assign n_images = n_images | plus: 1 -%}
+  {% endfor -%}
+  {% if n_images > 1 -%}
+    <a class="slide-prev" onclick="next_slide({{ include.gall_index }}, -1)">&#10094;</a>
+    <a class="slide-next" onclick="next_slide({{ include.gall_index }}, 1)">&#10095;</a>
+    <div class="slides-dotbox-{{ include.gall_index }}">
+      {% for idx in (1..n_images) -%}
+        <span class="slides-dot-{{ include.gall_index }}" onclick="current_slide({{ include.gall_index }}, {{ idx }})"></span>
+      {% endfor -%}
+    </div>
+  {% endif -%}
+</div> -->
+
+{% comment -%}
+images_loc: array of images
+gall_index: index of gallery
+{% endcomment -%}
+
+<div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}">
+  {% assign n_images = 0 -%}
+  {% for image in include.images_loc -%}
+    <div class="slides-gallery-{{ include.gall_index }} slide-fade">
+      <img src="{{ image.file }}" style="width: 100%;">
+      <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
+        {% if image.caption -%}
+          <span class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
+            {{ image.caption }}
+          </span>
+        {% endif -%}
+        {% if image.members -%}
+          <span class="slides-mem-{{ include.gall_index }}" id="slides-mem-{{ include.gall_index }}-{{ n_images }}">
+            {%- assign member_count = image.members | size -%}
+            
+            {%- if member_count == 1 -%}
+              {{ image.members[0] }}
+            {%- else -%}
+              {% for memrow in image.members %}
+                {%- assign row_count = memrow | size -%}
+                
+                {%- if row_count == 1 -%}
+                  {{ memrow[0] }}
+                {%- else -%}
+                  {% for member in memrow %}
+                    {%- if forloop.last -%}
+                      and {{ member }}
+                    {%- elsif forloop.first -%}
+                      {{ member }}
+                    {%- else -%}
+                      {{ member }},
+                    {%- endif -%}
+                  {% endfor %}
+                {%- endif -%}
+                {%- if forloop.last == false %}<br/>{% endif -%}
+              {% endfor %}
+            {% endif %}
           </span>
         {% endif -%}
       </div>
