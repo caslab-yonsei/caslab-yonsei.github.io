@@ -37,7 +37,7 @@ categories:
           <td class="course">{{ lecture.title }}</td>
           <td class="target">{{ lecture.target }}</td>
           <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester.term }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
-          <td class="notes">{% for note in lecture.notes reversed -%}<i class="fa fa-globe fa-fw" title="{{ note }}"></i>{% unless forloop.last -%} {% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in lecture.notes reversed -%}<i class="fa fa-info-circle fa-fw" title="{{ note }}"></i>{% unless forloop.last -%} {% endunless -%}{% endfor -%}</td>
         </tr>
         {% endfor -%}
         {% if n_lectures == 0 %}
@@ -76,7 +76,7 @@ categories:
           <td class="course">{{ lecture.title }}</td>
           <td class="target">{{ lecture.target }}</td>
           <td class="semesters">{% for semester in lecture.semesters reversed -%}{{ semester.term }}{% unless forloop.last -%}<br/>{% endunless -%}{% endfor -%}</td>
-          <td class="notes">{% for note in lecture.notes reversed -%}<i class="fa fa-globe fa-fw" title="{{ note }}"></i>{% unless forloop.last -%} {% endunless -%}{% endfor -%}</td>
+          <td class="notes">{% for note in lecture.notes reversed -%}<i class="fa fa-info-circle fa-fw" title="{{ note }}"></i>{% unless forloop.last -%} {% endunless -%}{% endfor -%}</td>
         </tr>
         {% endfor -%}
         {% if n_lectures == 0 %}
