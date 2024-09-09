@@ -38,7 +38,7 @@ categories:
   <div class="col-md-12 carousel-wrapper">
     <div class="carousel">
   {%- for photo in site.categories.photos limit:20 -%}
-    {% if photo.template -%}{% continue -%}{% endif -%}
+    {%- if photo.template -%}{% continue -%}{% endif -%}
       <div class="carousel-item">
         <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
@@ -49,7 +49,7 @@ categories:
           </span>
         </a>
       </div>
-  {% endfor -%}
+  {%- endfor -%}
     </div>
     <i class="fa fa-angle-left carousel-control" id="cc-left"></i>
     <i class="fa fa-angle-right carousel-control" id="cc-right"></i>
@@ -78,7 +78,7 @@ categories:
         </tr>
       </thead>
       <tbody>
-        {% for news in site.categories.news limit:20 %}
+        {% for news in site.categories.news limit:30 %}
         <tr class="body">
           <td class="date">{% if news.YYYY -%}{{ news.YYYY }}{% endif -%}{% if news.MM -%}.{{ news.MM }}{% endif -%}{% if news.DD -%}.{{ news.DD }}{% endif -%}</td>
             <td class="news">
@@ -105,7 +105,7 @@ categories:
             </td>
           </tr>
         {% endfor -%}
-        {% if site.categories.news.size > 20 %}
+        {% if site.categories.news.size > 30 %}
           <tr class="body">
             <td style="text-align: center;" colspan="2"><a href="/news/">(More)</a></td>
           </tr>
