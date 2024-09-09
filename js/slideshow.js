@@ -3,9 +3,10 @@ let slide_auto;
 let slide_caps = [];
 let slide_gesture = { x: [], y: [] };
 let slide_tolerance = 100;
+let n_galleries;
 
 function init_slides() {
-    let n_galleries = document.querySelectorAll(".slideshow-container").length;
+    n_galleries = document.querySelectorAll(".slideshow-container").length;
     let slides;
     slide_indices = [];
     for (let idx = 0; idx < n_galleries; idx++) {
@@ -85,7 +86,7 @@ function init_slides() {
         });
     });
 
-    //slide_auto = setTimeout(auto_slide, 5000);
+    if (n_galleries == 1) slide_auto = setTimeout(auto_slide, 5000);
 }
 
 function isAnyChildHovered(container) {
@@ -155,10 +156,10 @@ function show_slide(gallery, idx, auto=false) {
         }
         dots[slide_indices[gallery]-1].className += " slide-active";
     }
-    /*if (!auto) {
+    if (!auto && n_galleries == 1) {
         clearTimeout(slide_auto);
         slide_auto = setTimeout(auto_slide, 5000);
-    }*/
+    }
 }
 
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
