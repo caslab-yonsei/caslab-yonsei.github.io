@@ -33,7 +33,8 @@ function init_slides() {
         slide_caps.push(dicts);
         if (n_images > 10) {
             Array.from(slides).forEach((slide, s_index) => {
-                document.getElementById("slide-number-"+String(idx)+"-"+String(s_index)).setAttribute("style", "display: block");
+                let numbox = document.getElementById("slide-number-"+String(idx)+"-"+String(s_index)).setAttribute("style", "display: block");
+                numbox.textContent += ' / '+String(n_images);
             });
         }
     }
