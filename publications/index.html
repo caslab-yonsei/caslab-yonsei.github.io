@@ -4,27 +4,16 @@ title: CASLAB@Yonsei / Publications
 categories:
  - publications
 ---
+
 {% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
   {% unless publication.type == "Journal" or publication.type == "Conference" -%}{% continue -%}{% endunless -%}
   {% unless publication.international -%}{% continue -%}{% endunless -%}
-  {% capture prev_year %}{{ this_year }}{% endcapture %}
-  {% capture this_year %}{{ publication.paper.year }}{% endcapture %}
 
   {% if n_pubs == 0 %}
     {% assign counter = 0 %}
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{ this_year }}</h1>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-  {% elsif this_year != prev_year %}
-    {% assign counter = 0 %}
-  </div>
   <div class="row">
     <div class="col-md-12">
       <h1>{{ this_year }}</h1>
@@ -48,6 +37,9 @@ categories:
   </div>
 {% endif %}
 
+
+{% comment %}
+<!-- 국내 페이퍼: 생략 -->
 {% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
@@ -79,6 +71,7 @@ categories:
   </div>
 {% endif %}
 
+<!-- 특허: 생략 -->
 {% assign n_pubs = 0 %}
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}
@@ -108,3 +101,5 @@ categories:
 {% if n_pubs > 0 %}
   </div>
 {% endif %}
+
+{% comment %}

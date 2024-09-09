@@ -2,15 +2,15 @@
 layout: news
 title: (News title)
 images:
- - /image/(filename 1)
- - /image/(filename 2)
- - (...)
- - /image/(filenames)
+  - /image/(filename 1)
+  - /image/(filename 2)
+  - (...)
+  - /image/(filenames)
 members:
- - (related person 1)
- - (related person 2)
- - (...)
- - (related people)
+  - (related person 1)
+  - (related person 2)
+  - (...)
+  - (related people)
 YYYY: (year)
 MM: (month in two numbers)
 DD: (day of the month, you can omit)

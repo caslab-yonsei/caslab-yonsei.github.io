@@ -3,10 +3,11 @@ layout: news
 title: Computer Architecture and Systems Laboratory at DGIST was launched.
 images: 
 members:
- - Daehoon Kim
+  - Daehoon Kim
 YYYY: 2016
 MM: 08
 DD:
 links:
-alterlink: 0
+  - '#'
+alterlink: 1
 ---

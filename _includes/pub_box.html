@@ -7,6 +7,7 @@
     {% endif %}
     <div class="media-body">
       <div class="media-heading">
+        {% if publication.type == 'Journal' or publication.type == 'Conference' %}<div class="publisher-short"><b>[{{pulication.paper.publisher-short}}]</b></div>{% endif %}
         <a href="{{ publication.url }}" class="off">
           {{ publication.title }}
         </a>
