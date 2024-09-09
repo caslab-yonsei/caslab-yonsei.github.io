@@ -17,11 +17,12 @@
   {% else %}
     {% assign co-first-now = false %}
   {% endif %}
+  {% if forloop.last and forloop.length > 1 and short != true %}and {% endif %}
   {% if linked %}
       <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
     {{ name }}</a>{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
   {% else %}
-    {% if forloop.last and short != true %}and {% endif %}{{ name }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
+    {{ name }}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
   {% endif %}
 {% endfor %}
 
