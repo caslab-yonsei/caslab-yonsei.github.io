@@ -140,16 +140,16 @@ function show_buttons(gallery, image) {
 
 function toggle_auto_play(gallery, on=null) {
     let btn = document.getElementById("slides-playtxt-"+String(gallery));
-    if (on === true || (on === null && slide_autoplays[gallery] === null)) {
+    if (on === true || (on === null && !slide_autoggle[gallery])) {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
-        slide_autoplays[gallery] = true;
+        slide_autoggle[gallery] = true;
         btn.classList.remove('fa-play');
         btn.classList.add('fa-pause');
     } else {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = null;
-        slide_autoplays[gallery] = false;
+        slide_autoggle[gallery] = false;
         btn.classList.remove('fa-pause');
         btn.classList.add('fa-play');
     }
