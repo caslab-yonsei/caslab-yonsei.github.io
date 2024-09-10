@@ -1,5 +1,6 @@
 let slide_indices = [];
 let slide_autoplays = [];
+let slide_autoggle = [];
 let slide_caps = [];
 let slide_gesture = { x: [], y: [] };
 let slide_tolerance = 100;
@@ -10,9 +11,11 @@ function init_slides() {
     let slides;
     slide_indices = [];
     slide_autoplays = [];
+    slide_autoggle = [];
     for (let idx = 0; idx < n_galleries; idx++) {
         slide_indices.push(1);
         slide_autoplays.push(null);
+        slide_autoggle.push(false);
         show_slide(idx, slide_indices[idx], true);
 
         slides = document.getElementsByClassName("slides-gallery-"+String(idx));
@@ -90,7 +93,8 @@ function init_slides() {
 
     if (n_galleries == 1) {
         slide_autoplays[0] = setTimeout(auto_slide, 5000, 0);
-        let btn = document.getElementsByClassName("slides-playtxt-0");
+        slide_autoggle[0] = true;
+        let btn = document.getElementsByClassName("slides-playtxt-0")[0];
         btn.classList.remove('fa-play');
         btn.classList.add('fa-pause');
     }
@@ -114,6 +118,10 @@ function show_caption(gallery, image, caption) {
     if (slide.txt_mem) slide.txt_mem.setAttribute("style", caption === 'mem' ? 'display: block' : 'display: none');
     slide.btnbox.classList.add('slide-hidden');
     slide.btnbox.classList.remove('slide-visible');
+    if (slide_autoggle[gallery]) {
+        clearTimeout(slide_autoplays[gallery]);
+        slide_autoplays[gallery] = null;
+    }
 }
 
 function show_buttons(gallery, image) {
@@ -124,6 +132,10 @@ function show_buttons(gallery, image) {
         slide.btnbox.classList.remove('slide-hidden');
         slide.btnbox.classList.add('slide-visible');
     }, 500);
+    if (slide_autoggle[gallery]) {
+        clearTimeout(slide_autoplays[gallery]);
+        slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
+    }
 }
 
 function toggle_auto_play(gallery, on=null) {
@@ -131,11 +143,13 @@ function toggle_auto_play(gallery, on=null) {
     if (on === true || (on === null && slide_autoplays[gallery] === null)) {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
+        slide_autoplays[gallery] = true;
         btn.classList.remove('fa-play');
         btn.classList.add('fa-pause');
     } else {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = null;
+        slide_autoplays[gallery] = false;
         btn.classList.remove('fa-pause');
         btn.classList.add('fa-play');
     }
@@ -154,7 +168,6 @@ function auto_slide(gallery) {
     if (elementIsVisibleInViewport(slide[slide_indices[gallery]-1]) && !slide_caps[gallery][slide_indices[gallery]-1].caption.classList.contains("slide-show")) {
         next_slide(gallery, 1, true);
     }
-    slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
 }
 
 function show_slide(gallery, idx, auto=false) {
@@ -174,7 +187,7 @@ function show_slide(gallery, idx, auto=false) {
         }
         dots[slide_indices[gallery]-1].className += " slide-active";
     }
-    if (!auto && slide_autoplays[gallery] !== null) {
+    if (slide_autoggle[gallery]) {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
     }
