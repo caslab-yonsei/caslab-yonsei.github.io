@@ -14,6 +14,7 @@ paper: # delete if patent
   publisher-short: DGIST
   publisher-type: Thesis
   ref: 
+keywords: [DRAM, Row Hammering, Integrity, Reliability, Memory Offlining]
 sidebar:
   doi: 10.22677/THESIS.200000723486
   links: 
@@ -23,4 +24,4 @@ sidebar:
 hidden: false
 ---
 
-DRAM;Row Hammering;Integrity;Reliability;Memory Offlining
+(Under embargo until 2029-02-28)

@@ -24,7 +24,7 @@ n_limit: number of max photos
       {%- endif -%}
   <div class="slides-gallery-{{ include.gall_index }} slide-fade">
     <img src="{{ image.file }}" style="width: 100%;">
-    <div class="slides-number-{{ include.gall_index }}" id="slide-number-{{ include.gall_index }}-{{ n_images }}">
+    <div class="slides-number-{{ include.gall_index }}" id="slides-number-{{ include.gall_index }}-{{ n_images }}">
       {{ n_images | plus: 1 }}
     </div>
     <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
@@ -59,6 +59,7 @@ n_limit: number of max photos
   {% if n_images > 1 -%}
     <a class="slide-prev" onclick="next_slide({{ include.gall_index }}, -1)">&#10094;</a>
     <a class="slide-next" onclick="next_slide({{ include.gall_index }}, 1)">&#10095;</a>
+    <a class="slides-playbtn-{{ include.gall_index }}" onclick="toggle_autoplay({{ include.gall_index }})"><i class="fa fa-play slides-playtxt-{{ include.gall_index }}"></i></a>
     {% unless n_images > 10 %}
     <div class="slides-dotbox-{{ include.gall_index }}">
       {% for idx in (1..n_images) -%}
