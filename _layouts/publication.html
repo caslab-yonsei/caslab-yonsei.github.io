@@ -41,7 +41,7 @@ layout: default
       <div class="pad-left note reveal">
         <div class="smallspacer"></div>
         <i class="fa fa-trophy fa-fw"></i>
-        {{ award }}
+        <span>{{ award }}</span>
       </div>
       {% endfor %}
       <div class="bigspacer"></div>
@@ -96,13 +96,15 @@ layout: default
         {% for link in page.sidebar.links %}
       <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
         <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
-        {% unless link.url == '#' %}
-        <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
-        {% endunless %}
-          {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
-        {% unless link.url == '#' %}
-        </a>
-        {% endunless %}
+        <span>
+          {% unless link.url == '#' %}
+          <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
+          {% endunless %}
+            {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
+          {% unless link.url == '#' %}
+          </a>
+          {% endunless %}
+        </span>
       </div>
       <div class="spacer"></div>
         {% endfor %}

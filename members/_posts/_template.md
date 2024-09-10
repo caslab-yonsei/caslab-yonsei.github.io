@@ -26,7 +26,7 @@ sidebar:
   website: (website address, delete if not needed)
   links: # delete if not needed
     - name: (title for the link 1)
-      url: (link for link 1, leave '#' if no link)
+      url: (link for link 1, leave '#' or empty if no link)
       icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
       title: (Title of the site for link 1, revealed on hover)
       ontab: false # when true, no newtab opens
