@@ -168,6 +168,7 @@ function auto_slide(gallery) {
     if (elementIsVisibleInViewport(slide[slide_indices[gallery]-1]) && !slide_caps[gallery][slide_indices[gallery]-1].caption.classList.contains("slide-show")) {
         next_slide(gallery, 1, true);
     }
+    slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
 }
 
 function show_slide(gallery, idx, auto=false) {
@@ -187,7 +188,7 @@ function show_slide(gallery, idx, auto=false) {
         }
         dots[slide_indices[gallery]-1].className += " slide-active";
     }
-    if (slide_autoggle[gallery]) {
+    if (!auto && slide_autoggle[gallery]) {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);
     }
