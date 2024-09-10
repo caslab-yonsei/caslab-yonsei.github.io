@@ -94,7 +94,7 @@ function init_slides() {
     if (n_galleries == 1) {
         slide_autoplays[0] = setTimeout(auto_slide, 5000, 0);
         slide_autoggle[0] = true;
-        let btn = document.getElementsByClassName("slides-playtxt-0")[0];
+        let btn = document.getElementById("slides-playtxt-0");
         btn.classList.remove('fa-play');
         btn.classList.add('fa-pause');
     }
@@ -139,7 +139,7 @@ function show_buttons(gallery, image) {
 }
 
 function toggle_auto_play(gallery, on=null) {
-    let btn = document.getElementsByClassName("slides-playtxt-"+String(gallery));
+    let btn = document.getElementById("slides-playtxt-"+String(gallery));
     if (on === true || (on === null && slide_autoplays[gallery] === null)) {
         clearTimeout(slide_autoplays[gallery]);
         slide_autoplays[gallery] = setTimeout(auto_slide, 5000, gallery);

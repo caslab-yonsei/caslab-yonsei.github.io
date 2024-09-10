@@ -40,7 +40,7 @@ gall_index: index of gallery
   {% if n_images > 1 -%}
       <a class="slide-prev" onclick="next_slide({{ include.gall_index }}, -1)">&#10094;</a>
       <a class="slide-next" onclick="next_slide({{ include.gall_index }}, 1)">&#10095;</a>
-      <a class="slides-playbtn-{{ include.gall_index }}" onclick="toggle_auto_play({{ include.gall_index }})"><i class="fa fa-play slides-playtxt-{{ include.gall_index }}"></i></a>
+      <a class="slides-playbtn" id="slides-playbtn-{{ include.gall_index }}" onclick="toggle_auto_play({{ include.gall_index }})"><i class="fa fa-play slides-playtxt-{{ include.gall_index }}"></i></a>
     {% unless n_images > 10 %}
     <div class="slides-dotbox-{{ include.gall_index }}">
       {% for idx in (1..n_images) -%}
