@@ -72,8 +72,9 @@
       </div>
 
     {% when 'internal' %}
-      {% assign newpage = site.posts | where_exp: 'search', 'search.url == item.url' | first %}
-      {% if newpage %}
+      {% assign newpage = site.posts | where_exp: 'search', 'search.url == item.url' %}
+      {% if newpage.size > 0 %}
+        {% assign newpage = newpage | first %}
         {% unless icon %}
           {% case newpage.categories[0] %}
             {% when 'members' %}{% assign icon = 'fa-user' %}
