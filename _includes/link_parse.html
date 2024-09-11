@@ -72,7 +72,7 @@
       </div>
 
     {% when 'internal' %}
-      {% assign newpage = site.posts | where_exp: 'page', 'page.url == item.url' | first %}
+      {% assign newpage = site.posts | where_exp: 'search', 'search.url == item.url' | first %}
       {% if newpage %}
         {% unless icon %}
           {% case newpage.categories[0] %}
