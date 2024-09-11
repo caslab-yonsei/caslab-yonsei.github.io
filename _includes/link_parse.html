@@ -75,7 +75,7 @@
       {% assign newpage = site.posts | where_exp: 'page', 'page.url == item.url' | first %}
       {% if newpage %}
         {% unless icon %}
-          {% case newpage.category %}
+          {% case newpage.categories[0] %}
             {% when 'members' %}{% assign icon = 'fa-user' %}
             {% when 'publications' %}{% assign icon = 'fa-file-text-o' %}
             {% when 'research' %}{% assign icon = 'fa-book' %}
