@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Congratulations! Seunghak Lee, Hyungwon Park, and Minjun Hong successfully defended their Master Thesis.
+title: Congratulations! Seunghak Lee, Hyungwon Park, and Minjun Hong successfully defended their Master's Theses.
 images:
 members:
   - Seunghak Lee
