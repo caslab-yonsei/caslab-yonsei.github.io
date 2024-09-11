@@ -73,7 +73,7 @@
 
     {% when 'internal' %}
       {% assign newpage = site.posts | where_exp: 'search', 'search.url == item.url' %}
-      <div class="pad-left note {% if item.reveal %}reveal{% endif %}">{{ newpage }}</div>
+      <div class="pad-left note {% if item.reveal %}reveal{% endif %}">{{ newpage.title }}</div>
       {% if newpage %}
         {% unless icon %}
           {% case newpage.category %}
