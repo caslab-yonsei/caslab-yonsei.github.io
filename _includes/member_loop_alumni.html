@@ -10,9 +10,8 @@
       </tr>
     </thead>
     <tbody>
-<!-- Ph.D. -->
-{% capture phd %}{{ site.categories.members | where_exp: 'alumni', "alumni.degree == 'Ph.D.'" }}{% endcapture %}
-{% capture ms %}{{ site.categories.members | where_exp: 'alumni', "alumni.degree == 'M.S.'" }}{% endcapture %}
+{% assign phd = site.categories.members | where_exp: "alumni", "alumni.degree == 'Ph.D.'" %}
+{% assign ms = site.categories.members | where_exp: "alumni", "alumni.degree == 'M.S.'" %}
 {% assign members = phd | concat: ms %}
 
 {% for member in members reversed -%}
