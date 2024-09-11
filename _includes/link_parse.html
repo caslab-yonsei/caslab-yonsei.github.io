@@ -78,22 +78,13 @@
         {% assign newpage = site.categories.category | where_exp 'newpage', 'newpage.url == item.url' %}
         {% unless icon %}
           {% case category %}
-            {% when 'members' %}
-              {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
-              {% assign member = site.categories.members | where_exp '' %}
-              {% if item.text %}{% assign text = item.text %}{% else %}{% endunless %}
-            {% when 'publications' %}
-              {% unless icon %}{% assign icon = 'fa-file-text-o' %}{% endunless %}
-            {% when 'research' %}
-              {% unless icon %}{% assign icon = 'fa-book' %}{% endunless %}
-            {% when 'lectures' %}
-              {% unless icon %}{% assign icon = 'fa-university' %}{% endunless %}
-            {% when 'news' %}
-              {% unless icon %}{% assign icon = 'fa-newspaper-o' %}{% endunless %}
-            {% when 'photo' %}
-              {% unless icon %}{% assign icon = 'fa-picture-o' %}{% endunless %}
-            {% else %}
-              {% unless icon %}{% assign icon = 'fa-link' %}{% endunless %}
+            {% when 'members' %}{% assign icon = 'fa-user' %}
+            {% when 'publications' %}{% assign icon = 'fa-file-text-o' %}
+            {% when 'research' %}{% assign icon = 'fa-book' %}
+            {% when 'lectures' %}{% assign icon = 'fa-university' %}
+            {% when 'news' %}{% assign icon = 'fa-newspaper-o' %}
+            {% when 'photo' %}{% assign icon = 'fa-picture-o' %}
+            {% else %}{% assign icon = 'fa-link' %}
           {% endcase %}
         {% endunless %}
 <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
