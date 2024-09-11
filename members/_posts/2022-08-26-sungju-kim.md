@@ -8,15 +8,26 @@ image: /members/images/sungju.jpg
 researches:
   - Optimizing ML Models for Accelerated Computing
 sidebar:
-  location: "Engineering Research Park 212D"
-  note: Lab Leader
-  email: sungju_kim at dgist.ac.kr
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        reveal: true
+        text: "Engineering Research Park 212D"
+  - title: Task
+    items:
+      - type: text
+        icon: map-marker
+        text: Lab Leader
+        overt: true
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: sungju_kim at dgist.ac.kr
 alterlink: 
-component:
-  researches: false #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [contents, publications, patents, photos]
 ---
 
 # Research Interests

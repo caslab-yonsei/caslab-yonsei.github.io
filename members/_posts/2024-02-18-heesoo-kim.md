@@ -10,18 +10,19 @@ researches:
   - Heterogeneous Memory System
   - FPGA(Verilog)
 sidebar:
-  email: hkim at dgist.ac.kr
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: hkim at dgist.ac.kr
 alumni:
   degree: M.S.
   date: February 2024
   affiliation: Samsung Electronics
   designation: 
 alterlink: 
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos]
 ---
 
 # Education

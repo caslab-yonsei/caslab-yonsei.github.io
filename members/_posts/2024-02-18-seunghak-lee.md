@@ -10,18 +10,19 @@ researches:
   - High-integrity DRAM against Row hammering attack
   - Advanced Hybrid Memory System for High-performance and Low-power
 sidebar:
-  scholar: sQkbSPQAAAAJ
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=sQkbSPQAAAAJ
+        text: Seunghak Lee
 alumni: # delete if not needed
   degree: Ph.D.
   date: February 2024
   affiliation: Samsung Electronics
   designation:
 alterlink:
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos]
 ---
 
 # Education

@@ -11,43 +11,83 @@ researches:
   - (research interest 1)
   - (research interest 2)
 sidebar:
-  location: "(physical location e.g. @E3-304, DGIST)"
-  note: (assigned note in the lab)
-  email: (id) at (address)
-  phone: (phone number, delete if not needed)
-  scholar: (google scholar user identifier, delete if not needed)
-  researchgate: (researchgate account, delete if not needed)
-  cv: (cv file link, delete if not needed)
-  resume: (resume file link, delete if not needed)
-  portfolium: (portfolium account, delete if not needed)
-  linkedin: (linkedin account, delete if not needed)
-  github: (github account, delete if not needed)
-  bitbucket: (bitbucket account, delete if not needed)
-  website: (website address, delete if not needed)
-  links: # delete if not needed
-    - name: (title for the link 1)
-      url: (link for link 1, leave '#' or empty if no link)
-      icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
-      title: (Title of the site for link 1, revealed on hover)
-      ontab: false # when true, no newtab opens
-      reveal: false # when true, on hover the omitted part will be revealed
-    - name: (title for the link 2)
-      url: (link for link 2)
-      title: (Title of the site for link 2)
-      icon: (icon for link 2)
-      ontab: false
-      reveal: false
+  # following is just example, all types are shown
+  # you can reorder, delete, add, and/or customise
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        text: (location)
+        reveal: true
+  - title: Email
+    items:
+      - type: email
+        text: (id) at (address)
+        reveal: true
+        overt: true
+  - title: Phone
+    items:
+      - type: text
+        icon: phone
+        text: (phone number)
+        reveal: true
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: (google scholar page url)
+        text: (fullname)
+  - title: CV
+    items:
+      - type: file
+        url: (cv file url)
+  - title: Resume
+    items:
+      - type: file
+        url: (resume file url)
+  - title: LinkedIn
+    items:
+      - type: link
+        icon: linkedin-square
+        url: (linkedin url)
+        text: (fullname)
+  - title: GitHub
+    items:
+      - type: link
+        icon: github-alt
+        url: (github profile url)
+        text: (github profile name)
+  - title: Website
+    items:
+      - type: link
+        icon: globe
+        url: (website url)
+  - title: (Title of the sidebar section)
+    items: # you also can include many items under the same section
+      - type: text
+        icon: (icon for item 1 from https://fontawesome.com/v4/icons/, leave empty if default)
+        text: (text for item 1)
+        reveal: false # when true, on hover the omitted part will be revealed
+        overt: false # when true, this info will be shown on members page
+      - type: link
+        icon: (icon for item 2)
+        url: (link for item 2)
+        text: (text for item 2, leave empty if url)
+        reveal: false
+        overt: false
+      - type: file
+        icon: (icon for item 3)
+        url: (link for item 3's file)
+        text: (text for item 3, leave empty if filename)
+        reveal: false
+        overt: false
 alumni: # delete if not needed
   degree: (graduation degree)
   date: (graduation month year, e.g. February 2022)
   affiliation: (affiliation after graduation)
   designation: (designation at affiliation)
 alterlink: (alternative link address, if provided this page is not accessible, '#' indicates no link at all)
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos] # remove if you don't want something
 template: true #(delete this line)
 ---
 

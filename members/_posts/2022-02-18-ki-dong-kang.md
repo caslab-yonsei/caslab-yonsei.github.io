@@ -11,17 +11,18 @@ researches:
   - Network Systems
   - Hardware Security
 sidebar:
-  scholar: RnI3ge4AAAAJ
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=RnI3ge4AAAAJ
+        text: Ki-Dong Kang
 alumni:
   degree: Ph.D.
   date: February 2022
   affiliation: ETRI
   designation: Senior researcher
-component:
-  researches: true
-  publications: true
-  patents: true
-  photos: true
+components: [researches, contents, publications, patents, photos]
 ---
 
 # Education

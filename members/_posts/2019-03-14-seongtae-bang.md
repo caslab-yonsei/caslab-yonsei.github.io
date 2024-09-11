@@ -8,14 +8,20 @@ image: /members/images/stbang.jpg
 researches:
   - Computer Architecture
 sidebar:
-  location: "E3-304, DGIST"
-  email: st.bang at dgist.ac.kr
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        reveal: true
+        text: "E3-304, DGIST"
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: st.bang at dgist.ac.kr
 alterlink: 
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos]
 ---
 
 # Education

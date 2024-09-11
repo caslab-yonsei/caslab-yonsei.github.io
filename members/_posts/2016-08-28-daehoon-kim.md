@@ -12,16 +12,32 @@ researches:
   - Virtualization
   - Computer Systems Security
 sidebar:
-  location: "Engineering Research Park 215"
-  email: daehoonkim at yonsei.ac.kr
-  phone: 02) 2123-5825
-  scholar: zjxGtuoAAAAJ
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        text: "Engineering Research Park 215"
+        reveal: true
+  - title: Email
+    items:
+      - type: email
+        text: daehoonkim at yonsei.ac.kr
+        reveal: true
+        overt: true
+  - title: Phone
+    items:
+      - type: text
+        icon: phone
+        text: 02) 2123-5825
+        reveal: true
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=zjxGtuoAAAAJ
+        text: Daehoon Kim
 alterlink: https://sites.google.com/view/daehoonkim
-component:
-  researches: true
-  publications: false
-  patents: false
-  photos: true
+components: [researches, contents, photos]
 ---
 
 # Employment

@@ -11,19 +11,25 @@ researches:
   - Virtualization
   - Systems for Machine Learning
 sidebar:
-  email: gspark at dgist.ac.kr
-  scholar: X3QKUDEAAAAJ
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: gspark at dgist.ac.kr
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=X3QKUDEAAAAJ
+        text: Gyeongseo Park
 alumni:
   degree: Ph.D.
   date: August 2024
   affiliation: ETRI
   designation: 
 alterlink: 
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos]
 ---
 # Education
 * Ph.D. in Electrical Engineering and Computer Science, DGIST, Daegu, Mar, 2017 – 2024

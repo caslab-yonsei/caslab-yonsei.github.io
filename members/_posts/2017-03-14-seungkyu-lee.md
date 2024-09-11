@@ -10,19 +10,36 @@ researches:
   - Virtualisation
   - Computer Security
 sidebar:
-  location: "E3-304, DGIST"
-  email: lee.seungkyu at dgist.ac.kr
-  scholar: uK_X2hUAAAAJ
-  github: lsk21kr
-  links:
-    - name: Website Contributor
-      icon: info-circle
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        reveal: true
+        text: "E3-304, DGIST"
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: lee.seungkyu at dgist.ac.kr
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=uK_X2hUAAAAJ
+        text: Seungkyu Lee
+  - title: GitHub
+    items:
+      - type: link
+        icon: github-alt
+        url: https://github.com/lsk21kr
+        text: lsk21kr
+  - title: Task
+    items:
+      - type: text
+        text: Website Administrator
 alterlink: 
-component:
-  researches: false #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [contents, publications, patents, photos]
 ---
 
 # Research Interests

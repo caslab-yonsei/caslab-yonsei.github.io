@@ -10,15 +10,26 @@ researches:
   - Hybrid Memory
   - Machine Learning Accelerator
 sidebar:
-  location: "Engineering Research Park 212D"
-  email: minwoo.jang at dgist.ac.kr
-  scholar: 4uWI2-MAAAAJ
+  - title: Location
+    items:
+      - type: text
+        icon: map-marker
+        reveal: true
+        text: "Engineering Research Park 212D"
+  - title: Email
+    items:
+      - type: email
+        reveal: true
+        overt: true
+        text: minwoo.jang at dgist.ac.kr
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=4uWI2-MAAAAJ
+        text: Minwoo Jang
 alterlink: 
-component:
-  researches: true #(false if you don't want to print research interest)
-  publications: true #(false if you don't want to print publications)
-  patents: true #(false if you don't want to print patents)
-  photos: true #(false if you don't want to print photos slide)
+components: [researches, contents, publications, patents, photos]
 ---
 
 # Education

@@ -11,167 +11,71 @@
   <i class="fa fa-briefcase fa-fw"></i>
   <span>{% if include.member_loc.alumni.designation %} {{ include.member_loc.alumni.designation }} at {% endif %}{{ include.member_loc.alumni.affiliation }}</span>
 </div>
-{% endif %}
+  {% endif %}
 <div class="spacer"></div>
 {% endif %}
-{% if include.member_loc.sidebar.location -%}
-<div class="smallhead">
-  Location
-</div>
-<div class="pad-left note reveal">
-  <i class="fa fa-map-marker fa-fw"></i>
-  <span>{{ include.member_loc.sidebar.location }}</span>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.note -%}
-<div class="smallhead">
-  Note
-</div>
-<div class="pad-left note reveal">
-  <i class="fa fa-info-circle fa-fw"></i>
-  <span>{{ include.member_loc.sidebar.note }}</span>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.email %}
-{% assign emailarray = include.member_loc.sidebar.email | split: ' at ' %}
-<div class="smallhead">
-  Email
-</div>
-<div class="pad-left note reveal">
-  <i class="fa fa-inbox fa-fw"></i>
-  <span><a class="off">{{ emailarray.first }}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.phone %}
-<div class="smallhead">
-  Phone
-</div>
-<div class="pad-left note reveal">
-  <i class="fa fa-phone fa-fw"></i>
-  <span>{{ include.member_loc.sidebar.phone }}</span>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.scholar %}
-<div class="smallhead">
-  Google Scholar
-</div>
-<div class="pad-left note">
-  <i class="fa fa-book fa-fw"></i>
-  <a class="off" href="http://scholar.google.com/citations?user={{ include.member_loc.sidebar.scholar }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.title }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.researchgate %}
-<div class="smallhead">
-  ResearchGate
-</div>
-<div class="pad-left note">
-  <i class="fa fa-link fa-fw"></i>
-  <a class="off" href="https://www.researchgate.net/profile/{{ include.member_loc.sidebar.researchgate }}" target="_blank" rel="noopener noreferrer">
-    {{ include.member_loc.sidebar.researchgate }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.cv %}
-<div class="smallhead">
-  CV
-</div>
-<div class="pad-left note">
-  <i class="fa fa-file-text-o fa-fw"></i>
-  <a class="off" href="{{ include.member_loc.sidebar.cv }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.cv | split: '/' | last }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.resume %}
-<div class="smallhead">
-  Resume
-</div>
-<div class="pad-left note">
-  <i class="fa fa-file-text-o fa-fw"></i>
-  <a class="off" href="{{ include.member_loc.sidebar.resume }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.resume | split: '/' | last }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.portfolium%}
-<div class="smallhead">
-  Portfolium
-</div>
-<div class="pad-left note">
-  <i class="fa fa-user fa-fw"></i>
-  <a class="off" href="https://www.portfolium.com/{{ include.member_loc.sidebar.portfolium }}" target="_blank" rel="noopener noreferrer">
-         {{ include.member_loc.title }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.linkedin %}
-<div class="smallhead">
-  LinkedIn
-</div>
-<div class="pad-left note">
-  <i class="fa fa-linkedin-square fa-fw"></i>
-  <a class="off" href="https://www.linkedin.com/in/{{ include.member_loc.sidebar.linkedin }}" target="_blank" rel="noopener noreferrer">
-    {{ include.member_loc.title }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.github %}
-<div class="smallhead">
-  GitHub
-</div>
-<div class="pad-left note">
-  <i class="fa fa-github-alt fa-fw"></i>
-  <a class="off" href="https://github.com/{{ include.member_loc.sidebar.github }}" target="_blank" rel="noopener noreferrer">{{ include.member_loc.sidebar.github }}</a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.bitbucket %}
-<div class="smallhead">
-  Bitbucket
-</div>
-<div class="pad-left note">
-  <i class="fa fa-bitbucket fa-fw"></i>
-  <a class="off" href="https://bitbucket.org/{{ include.member_loc.sidebar.bitbucket }}" target="_blank" rel="noopener noreferrer">
-    {{ include.member_loc.sidebar.bitbucket }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.website %}
-<div class="smallhead">
-  Website
-</div>
-<div class="pad-left note">
-  <i class="fa fa-globe fa-fw"></i>
-  <a class="off" href="{{ include.member_loc.sidebar.website }}" target="_blank" rel="noopener noreferrer">
-    {{ include.member_loc.sidebar.website }}
-  </a>
-</div>
-<div class="spacer"></div>
-{% endif %}
-{% if include.member_loc.sidebar.links %}
-<div class="smallhead">
-  More Info
-</div>
-  {% for link in include.member_loc.sidebar.links %}
-<div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
-  <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
-  <span>
-    {% unless link.url == '#' or link.url == nil %}
-    <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
-    {% endunless %}
-      {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}</span>
-    {% unless link.url == '#' or link.url == nil %}
-    </a>
-    {% endunless %}
-  </span>
-</div>
-<div class="spacer"></div>
+{% for section in include.member_loc.sidebar %}
+  <div class="smallhead">
+    {{ section.title }}
+  </div>
+  {% for item in section.items %}
+    {% assign icon = false %}
+    {% if item.icon %}
+      {% assign check_arr = item.icon | split: 'fa-' %}
+      {% unless check_arr[0] == blank %}{% assign icon = item.icon | prepend: 'fa-' %}{% endunless %}
+    {% endif %}
+    {% case item.type %}
+      {% when text %}
+        {% unless icon %}{% assign icon = 'fa-info-circle' %}{% endunless %}
+  <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+    <i class="fa {{ icon }} fa-fw"></i>
+    <span>{{ item.text }}</span>
+  </div>
+      {% when link %}
+        {% assign external = true %}
+        {% assign check_arr = item.url | split: '/' %}
+        {% if check_arr[0] == blank %}{% assign external = false %}{% endif %}
+        {% unless icon %}
+          {% if external %}{% assign icon = 'fa-external-link' %}
+          {% else %}{% assign icon = 'fa-link' %}
+          {% endif %}
+        {% endunless %}
+  <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+    <i class="fa {{ icon }} fa-fw"></i>
+    <span>
+      {% unless item.url == '#' or item.url == nil %}
+      <a class="off" href="{{ item.url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+      {% endunless %}
+        {% if item.text %}{{ item.text }}{% else %}{{ item.url }}{% endif %}
+      {% unless item.url == '#' or item.url == nil %}
+      </a>
+      {% endunless %}
+    </span>
+  </div>
+      {% when file %}
+        {% unless icon %}
+          {% assign icon = 'fa-file-text-o' %}
+        {% endunless %}
+  <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+    <i class="fa {{ icon }} fa-fw"></i>
+    <span>
+      {% unless item.url == '#' or item.url == nil %}
+      <a class="off" href="{{ item.url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+      {% endunless %}
+        {% if item.text %}{{ item.text }}{% else %}{{ item.url | split: '/' | last | split: '?' | first }}{% endif %}
+      {% unless item.url == '#' or item.url == nil %}
+      </a>
+      {% endunless %}
+    </span>
+  </div>
+      {% when email %}
+        {% unless icon %}{% assign icon = 'fa-inbox' %}{% endunless %}
+        {% assign emailarray = item.text | split: ' at ' %}
+  <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+    <i class="fa {{ icon }} fa-fw"></i>
+    <span><a class="off">{{ emailarray.first}}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
+  </div>
+    {% endcase %}
   {% endfor %}
-{% endif %}
+  <div class="spacer"></div>
+{% endfor %}

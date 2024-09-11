@@ -8,9 +8,5 @@ alumni:
   degree: M.S.
   date: February 2019
 alterlink: "#"
-component:
-  researches: true
-  publications: true
-  patents: true
-  photos: true
+components: [researches, contents, publications, patents, photos]
 ---
