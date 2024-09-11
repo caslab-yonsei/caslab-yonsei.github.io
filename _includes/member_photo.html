@@ -9,14 +9,18 @@ n_limit: number of max photos
 {%- for photo in site.categories.photos -%}
   {%- if photo.template -%}{% continue %}{% endif %}
   {%- if photo.hidden -%}{% continue %}{% endif %}
+  {% if include.n_limit and n_images >= include.n_limit %}{% break %}{% endif %}
   {%- for image in photo.images -%}
     {% assign linked = false %}
-    {% for photo_member in image.members %}
-      {% if photo_member contains member.title %}
-        {% assign linked = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
+    {%- for photo_member_group in image.members -%}
+      {%- for photo_member in photo_member_group -%}
+        {% if photo_member == member.title %}
+          {% assign linked = true %}
+          {% break %}
+        {% endif %}
+      {%- endfor -%}
+      {% if linked %}{% break %}{% endif %}
+    {%- endfor -%}
     {% if linked %}
       {%- if n_images == 0 -%}
 <div class="slideshow-container" id="slides-gallery-{{ include.gall_index }}">
