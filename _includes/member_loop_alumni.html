@@ -1,3 +1,4 @@
+{% if include.members %}{% assign members = include.members %}{% else %}{% assign members = site.categories.members %}{% endif %}
 
 <div class="row">
   <table>
@@ -10,13 +11,10 @@
       </tr>
     </thead>
     <tbody>
-{% assign phd = site.categories.members | where_exp: "member", "member.alumni.degree == 'Ph.D.'" %}
-{% assign ms = site.categories.members | where_exp: "member", "member.alumni.degree == 'M.S.'" %}
-{% assign members = phd | concat: ms %}
 
 {% for member in members reversed -%}
   {% if member.template -%}{% continue -%}{% endif -%}
-  {% if member.role == 'Alumni' and member.alumni.degree == "Ph.D." -%}
+  {% if member.role == include.role -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
           {% assign newtab = false -%}

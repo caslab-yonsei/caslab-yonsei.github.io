@@ -1,6 +1,7 @@
+{% if include.members %}{% assign members = include.members %}{% else %}{% assign members = site.categories.members %}{% endif %}
 {% assign counter = 1 -%}
 {% assign loopindex = -1 -%}
-{% for member in site.categories.members reversed -%}
+{% for member in members reversed -%}
 {% if member.template -%}{% continue -%}{% endif -%}
   {% if member.role == include.role -%}
     {% assign loopindex = counter | modulo: 2 -%}
