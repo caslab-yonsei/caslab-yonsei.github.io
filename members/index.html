@@ -33,6 +33,6 @@ categories:
 
 {% assign phd = site.categories.members | where_exp: "member", "member.alumni.degree == 'Ph.D.'" %}
 {% assign ms = site.categories.members | where_exp: "member", "member.alumni.degree == 'M.S.'" %}
-{% assign mem = phd | concat: ms %}
+{% assign mem = ms | concat: phd %}
 {% include member_loop_alumni.html role="Alumni" members=mem %}
 
