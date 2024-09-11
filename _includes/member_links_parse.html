@@ -2,9 +2,7 @@
   {% if include.overt %}{% unless item.overt %}{% continue %}{% endunless %}{% endif %}
   {% assign icon = false %}
   {% if item.icon %}
-    {% assign icon = item.icon %}
-    {% assign check_arr = item.icon | split: 'fa-' %}
-    {% unless check_arr[0] == blank %}{% assign icon = icon | prepend: 'fa-' %}{% endunless %}
+    {% assign icon = item.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-'  %}
   {% endif %}
   {% case item.type %}
     {% when 'text' %}
