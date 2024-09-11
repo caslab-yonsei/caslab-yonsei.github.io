@@ -9,7 +9,6 @@ n_limit: number of max photos
 {%- for photo in site.categories.photos -%}
   {%- if photo.template -%}{% continue %}{% endif %}
   {%- if photo.hidden -%}{% continue %}{% endif %}
-  {% if include.n_limit and n_images >= include.n_limit %}{% break %}{% endif %}
   {%- for image in photo.images -%}
     {% assign linked = false %}
     {% for photo_member in image.members %}
@@ -51,6 +50,7 @@ n_limit: number of max photos
       {% endif -%}
     </div>
   </div>
+      {% assign n_images = n_images | plus: 1 -%}
     {%- endif -%}
   {%- endfor -%}
 {%- endfor -%}
