@@ -26,7 +26,6 @@ layout: default
 {% for component in member.components %}
 {% case component %}
 {% when 'researches' %}
-{% if member.component.researches %} 
     <div class="research">
   {% for research in member.researches -%}
     {% if forloop.first -%}
@@ -40,7 +39,6 @@ layout: default
     {% endif -%}
   {% endfor -%}
     </div>
-{% endif %}
 
 {% when 'contents' %}
     <div class="post member_content">
@@ -49,7 +47,6 @@ layout: default
     <div class="bigspacer"></div>
 
 {% when 'publications' %}
-{% if member.component.publications %} 
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
       {% if author.name == member.title %}
@@ -81,10 +78,8 @@ layout: default
     </div>
     <div class="bigspacer"></div>
   {% endif %}
-{% endif %}
 
 {% when 'patents' %}
-{% if member.component.patents %} 
   {% for publication in site.categories.publications %}
     {% for author in publication.authors %}
       {% if author.name == member.title %}
@@ -116,10 +111,8 @@ layout: default
     </div>
     <div class="bigspacer"></div>
   {% endif %}
-{% endif %}
 
 {% when 'photos' %}
-{% if member.component.photos %} 
     <div class="bigspacer"></div>
 {% include member_photo.html member_loc=member gall_index=0 n_limit=20 %}
     <div class="bigspacer"></div>
@@ -127,7 +120,6 @@ layout: default
     <script defer>
       init_slides();
     </script>
-{% endif %}
 {% endcase %}
 {% endfor %}
   </div>
