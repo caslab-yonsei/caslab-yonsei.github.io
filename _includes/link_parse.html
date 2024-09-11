@@ -72,13 +72,11 @@
       </div>
 
     {% when 'internal' %}
-      {% assign category = item.url | split: '/' | first %}
-      <div class="pad-left note {% if item.reveal %}reveal{% endif %}">{{ category | join: ',' }}</div>
-      {% assign valid = 'members,publications,research,lectures,news,photo' | split: ',' %}
-      {% if valid contains category[1] %}
-        {% assign newpage = site.categories.category | where_exp 'search', 'search.url == item.url' %}
+    <div class="pad-left note {% if item.reveal %}reveal{% endif %}">{{ item.url }}</div>
+      {% assign newpage = site.posts | where_exp 'search', 'search.url == item.url' %}
+      {% if newpage %}
         {% unless icon %}
-          {% case category %}
+          {% case newpage.category %}
             {% when 'members' %}{% assign icon = 'fa-user' %}
             {% when 'publications' %}{% assign icon = 'fa-file-text-o' %}
             {% when 'research' %}{% assign icon = 'fa-book' %}
