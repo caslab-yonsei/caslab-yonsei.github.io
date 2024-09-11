@@ -1,0 +1,60 @@
+{% for item in include.items %}
+  {% if include.overt %}{% unless item.overt %}{% continue %}{% endunless %}{% endif %}
+  {% assign icon = false %}
+  {% if item.icon %}
+    {% assign check_arr = item.icon | split: 'fa-' %}
+    {% unless check_arr[0] == blank %}{% assign icon = item.icon | prepend: 'fa-' %}{% endunless %}
+  {% endif %}
+  {% case item.type %}
+    {% when 'text' %}
+      {% unless icon %}{% assign icon = 'fa-info-circle' %}{% endunless %}
+<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+  <i class="fa {{ icon }} fa-fw"></i>
+  <span>{{ item.text }}</span>
+</div>
+    {% when 'link' %}
+      {% assign external = true %}
+      {% assign check_arr = item.url | split: '/' %}
+      {% if check_arr[0] == blank %}{% assign external = false %}{% endif %}
+      {% unless icon %}
+        {% if external %}{% assign icon = 'fa-external-link' %}
+        {% else %}{% assign icon = 'fa-link' %}
+        {% endif %}
+      {% endunless %}
+<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+  <i class="fa {{ icon }} fa-fw"></i>
+  <span>
+    {% unless item.url == '#' or item.url == nil %}
+    <a class="off" href="{{ item.url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+    {% endunless %}
+      {% if item.text %}{{ item.text }}{% else %}{{ item.url }}{% endif %}
+    {% unless item.url == '#' or item.url == nil %}
+    </a>
+    {% endunless %}
+  </span>
+</div>
+    {% when 'file' %}
+      {% unless icon %}
+        {% assign icon = 'fa-file-text-o' %}
+      {% endunless %}
+<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+  <i class="fa {{ icon }} fa-fw"></i>
+  <span>
+    {% unless item.url == '#' or item.url == nil %}
+    <a class="off" href="{{ item.url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+    {% endunless %}
+      {% if item.text %}{{ item.text }}{% else %}{{ item.url | split: '/' | last | split: '?' | first }}{% endif %}
+    {% unless item.url == '#' or item.url == nil %}
+    </a>
+    {% endunless %}
+  </span>
+</div>
+    {% when 'email' %}
+      {% unless icon %}{% assign icon = 'fa-inbox' %}{% endunless %}
+      {% assign emailarray = item.text | split: ' at ' %}
+<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+  <i class="fa {{ icon }} fa-fw"></i>
+  <span><a class="off">{{ emailarray.first}}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
+</div>
+  {% endcase %}
+{% endfor %}
