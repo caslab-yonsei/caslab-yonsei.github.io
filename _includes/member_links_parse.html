@@ -2,8 +2,9 @@
   {% if include.overt %}{% unless item.overt %}{% continue %}{% endunless %}{% endif %}
   {% assign icon = false %}
   {% if item.icon %}
+    {% assign icon = item.icon %}
     {% assign check_arr = item.icon | split: 'fa-' %}
-    {% unless check_arr[0] == blank %}{% assign icon = item.icon | prepend: 'fa-' %}{% endunless %}
+    {% unless check_arr[0] == blank %}{% assign icon = icon | prepend: 'fa-' %}{% endunless %}
   {% endif %}
   {% case item.type %}
     {% when 'text' %}
