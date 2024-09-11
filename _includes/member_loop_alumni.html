@@ -10,9 +10,32 @@
       </tr>
     </thead>
     <tbody>
+<!-- Ph.D. -->
 {% for member in site.categories.members reversed -%}
 {% if member.template -%}{% continue -%}{% endif -%}
-  {% if member.role == include.role -%}
+  {% if member.role == 'Alumni' and member.alumni.degree == "Ph.D." -%}
+      <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
+        <td>
+          {% assign newtab = false -%}
+          {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+          {% unless mem_url == '#' %}
+          <a href="{{ mem_url }}" class="off"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
+          {% endunless %}
+            {% if member.profile_name -%}{{ member.profile_name }}{% else -%}{{ member.title }}{% endif -%}
+          {% unless mem_url == '#' %}
+          </a>
+          {% endunless %}
+        </td>
+        <td>{{ member.alumni.degree }}</td>
+        <td>{{ member.alumni.date }}</td>
+        <td>{{ member.alumni.affiliation }}</td>
+      </tr>
+  {% endif %}
+{% endfor %}
+<!--M.S.-->
+{% for member in site.categories.members reversed -%}
+{% if member.template -%}{% continue -%}{% endif -%}
+  {% if member.role == 'Alumni' and member.alumni.degree == "M.S." -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
           {% assign newtab = false -%}

@@ -4,12 +4,12 @@
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-graduation-cap fa-fw"></i>
-  {{ include.member_loc.alumni.degree }} Degree
+  <span>{{ include.member_loc.alumni.degree }} Degree</span>
 </div>
   {% if include.member_loc.alumni.affiliation %}
 <div class="pad-left note reveal">
   <i class="fa fa-briefcase fa-fw"></i>
-  {% if include.member_loc.alumni.designation %} {{ include.member_loc.alumni.designation }} at {% endif %}{{ include.member_loc.alumni.affiliation }}
+  <span>{% if include.member_loc.alumni.designation %} {{ include.member_loc.alumni.designation }} at {% endif %}{{ include.member_loc.alumni.affiliation }}</span>
 </div>
 {% endif %}
 <div class="spacer"></div>
@@ -20,7 +20,7 @@
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-map-marker fa-fw"></i>
-  {{ include.member_loc.sidebar.location }}
+  <span>{{ include.member_loc.sidebar.location }}</span>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -30,7 +30,7 @@
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-info-circle fa-fw"></i>
-  {{ include.member_loc.sidebar.note }}
+  <span>{{ include.member_loc.sidebar.note }}</span>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -41,7 +41,7 @@
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-inbox fa-fw"></i>
-  <a class="off">{{ emailarray.first }}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a>
+  <span><a class="off">{{ emailarray.first }}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -51,7 +51,7 @@
 </div>
 <div class="pad-left note reveal">
   <i class="fa fa-phone fa-fw"></i>
-  {{ include.member_loc.sidebar.phone }}
+  <span>{{ include.member_loc.sidebar.phone }}</span>
 </div>
 <div class="spacer"></div>
 {% endif %}
@@ -162,13 +162,15 @@
   {% for link in include.member_loc.sidebar.links %}
 <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
   <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
-  {% unless link.url == '#' %}
-  <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
-  {% endunless %}
-    {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
-  {% unless link.url == '#' %}
-  </a>
-  {% endunless %}
+  <span>
+    {% unless link.url == '#' or link.url == nil %}
+    <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
+    {% endunless %}
+      {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}</span>
+    {% unless link.url == '#' or link.url == nil %}
+    </a>
+    {% endunless %}
+  </span>
 </div>
 <div class="spacer"></div>
   {% endfor %}

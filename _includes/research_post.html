@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h1 id="topic{{ include.index }}">{{ topic_loc.title }}</h1>
+    <h1 id="{{ include.topic_loc.alias }}">{{ topic_loc.title }}</h1>
     <hr/>
     {% if topic_loc.image %}
     <img class="offset" src="{{ topic_loc.image }}">
@@ -10,23 +10,42 @@
     <div class="post">
       {{ topic_loc.content }}
     </div>
-    {% if topic_loc.publication-dois %}
+    {% assign has_header = false %}
+    {% for pub in site.categories.publications %}
+      {% if pub.hidden or pub.template %}{% continue %}{% endif %}
+      {% if pub.researches contains topic_loc.alias %}
+        {% unless has_header %}
+          {% assign has_header = true %}
     <div class="bigspacer"></div>
     <h2>Publications</h2>
     <ol>
-      {% for doi in topic_loc.publication-dois %}
-        {% capture pub-url %}http://dx.doi.org/{{ doi }}{% endcapture %}
-        {% capture pub-title %}{{ doi }}{% endcapture %}
-        {% for publication in site.categories.publications %}
-          {% if doi == publication.sidebar.doi %}
-            {% capture pub-url %}{{ publication.url }}{% endcapture %}
-            {% capture pub-title %}{{ publication.title }}{% endcapture %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      <li><a href="{{ pub-url }}">{{ pub-title }}</a></li>
-      {% endfor %}
+        {% endunless %}
+      <li><a href="{{ pub.url }}">{{ pub.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if has_header %}
     </ol>
     {% endif %}
   </div>
 </div>
+
+{% comment %}
+{% if topic_loc.publication-dois %}
+<div class="bigspacer"></div>
+<h2>Publications</h2>
+<ol>
+  {% for doi in topic_loc.publication-dois %}
+    {% capture pub-url %}http://dx.doi.org/{{ doi }}{% endcapture %}
+    {% capture pub-title %}{{ doi }}{% endcapture %}
+    {% for publication in site.categories.publications %}
+      {% if doi == publication.sidebar.doi %}
+        {% capture pub-url %}{{ publication.url }}{% endcapture %}
+        {% capture pub-title %}{{ publication.title }}{% endcapture %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  <li><a href="{{ pub-url }}">{{ pub-title }}</a></li>
+  {% endfor %}
+</ol>
+{% endif %}
+{% endcomment %}

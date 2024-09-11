@@ -26,7 +26,7 @@ categories:
 <ol>
 {% for topic in site.categories.research %}
   <li>
-    <a data-scroll href="#topic{{ forloop.index }}">{{ topic.title }}</a>
+    <a data-scroll href="#{{ topic.alias }}">{{ topic.title }}</a>
   </li>
 {% endfor %}
 </ol>
@@ -36,7 +36,7 @@ categories:
 <div class="row">
   <div class="col-md-12">
   {% for topic in site.categories.research %}
-    {% include research_post.html topic_loc=topic index=forloop.index %}
+    {% include research_post.html topic_loc=topic %}
     <div class="bigspacer"></div>
     <div class="bigspacer"></div>
   {% endfor %}

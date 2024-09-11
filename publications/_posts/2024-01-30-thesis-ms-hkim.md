@@ -14,6 +14,7 @@ paper: # delete if patent
   publisher-short: DGIST
   publisher-type: Thesis
   ref: 
+keywords: [Tiered Memory System, Page Table Monitor, Physical Memory Address, Page Table Walk]
 sidebar:
   doi: 10.22677/THESIS.200000723697
   links: 
@@ -23,4 +24,4 @@ sidebar:
 hidden: false
 ---
 
-Tiered Memory System; Page Table Monitor; Physical Memory Address; Page Table Walk
+(Under embargo until 2028-08-31)

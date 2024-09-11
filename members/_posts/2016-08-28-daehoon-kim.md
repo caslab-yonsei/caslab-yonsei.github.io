@@ -14,14 +14,14 @@ researches:
 sidebar:
   location: "Engineering Research Park 215"
   email: daehoonkim at yonsei.ac.kr
-  phone: 02)2123-5825
+  phone: 02) 2123-5825
   scholar: zjxGtuoAAAAJ
 alterlink: https://sites.google.com/view/daehoonkim
 component:
   researches: true
-  publications: true
+  publications: false
   patents: false
-  photos: false
+  photos: true
 ---
 
 # Employment

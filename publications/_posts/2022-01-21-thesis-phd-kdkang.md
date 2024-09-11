@@ -14,6 +14,7 @@ paper: # delete if patent
   publisher-short: DGIST
   publisher-type: Thesis
   ref: 
+keywords: [Data Center, Power Management, Dynamic Voltage/Frequency Scaling, Energy Efficiency]
 sidebar:
   doi: 10.22677/thesis.200000593442
   links: 
@@ -23,4 +24,4 @@ sidebar:
 hidden: false
 ---
 
-Data Center, Power Management, Dynamic Voltage and Frequency Scaling, Energy Efficiency, 데이터센터, 전력 관리, 동적 전압 및 주파수 조절, 에너지 효율성
+(Under embargo until 2026-02-28)

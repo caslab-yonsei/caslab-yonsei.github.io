@@ -6,7 +6,7 @@ layout: default
   <div class="col-md-12">
     <div class="media">
       {% if page.image %}
-      <img class="pull-left pad-right media-object" width=170 src="{{ page.image }}">
+      <a href="{{ page.image }}"><img class="pull-left pad-right media-object" width=170 src="{{ page.image }}"></a>
       {% endif %}
       <div class="media-body">
         <h1>
@@ -41,7 +41,7 @@ layout: default
       <div class="pad-left note reveal">
         <div class="smallspacer"></div>
         <i class="fa fa-trophy fa-fw"></i>
-        {{ award }}
+        <span>{{ award }}</span>
       </div>
       {% endfor %}
       <div class="bigspacer"></div>
@@ -96,13 +96,15 @@ layout: default
         {% for link in page.sidebar.links %}
       <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
         <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
-        {% unless link.url == '#' %}
-        <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
-        {% endunless %}
-          {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
-        {% unless link.url == '#' %}
-        </a>
-        {% endunless %}
+        <span>
+          {% unless link.url == '#' %}
+          <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
+          {% endunless %}
+            {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
+          {% unless link.url == '#' %}
+          </a>
+          {% endunless %}
+        </span>
       </div>
       <div class="spacer"></div>
         {% endfor %}
@@ -115,39 +117,71 @@ layout: default
       <div class="spacer"></div>
       {{ content }}
 
-      {% for topic in site.categories.research %}
-        {% assign listed = false %}
-        {% for doi in topic.publication-dois %}
-          {% if doi == page.sidebar.doi %}
-            {% assign listed = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-        {% if listed == true %}
-          {% break %}
+      {% for keyword in page.keywords %}
+        {% if forloop.first %}
+          <div class="bigspacer"></div>
+          <h2>Keywords</h2>
+          <p>
         {% endif %}
+            {{ keyword }}{% if forloop.last %}.</p>{% else %}, {% endif %}
       {% endfor %}
 
-      {% if listed == true %}
+      {% assign linked = false %}
+      {% for field in page.researches %}
+        {% for topic in site.categories.research %}
+          {% if topic.alias == field %}
+            {% unless linked %}
+              {% assign linked = true %}
       <div class="bigspacer"></div>
       <h2>Related Research Topics</h2>
-        {% for topic in site.categories.research %}
-          {% assign topic_index = forloop.index %}
-          {% assign listed = false %}
-          {% for doi in topic.publication-dois %}
-            {% if doi == page.sidebar.doi %}
+            {% endunless %}
       <p>
-        <a href="/research/#topic{{ topic_index }}">
+        <a href="/research/#{{ topic.alias }}">
           {{ topic.title }}
         </a>
       </p>
-              {% assign listed = true %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
+            {% break %}
+          {% endif %}
         {% endfor %}
-      {% endif %}
+      {% endfor %}
+      
     </div>
   </div>
   <div class="col-md-1"></div>
 </div>
+
+
+{% comment %}
+  {% for topic in site.categories.research %}
+    {% assign listed = false %}
+    {% for doi in topic.publication-dois %}
+      {% if doi == page.sidebar.doi %}
+        {% assign listed = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if listed == true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if listed == true %}
+  <div class="bigspacer"></div>
+  <h2>Related Research Topics</h2>
+    {% for topic in site.categories.research %}
+      {% assign topic_index = forloop.index %}
+      {% assign listed = false %}
+      {% for doi in topic.publication-dois %}
+        {% if doi == page.sidebar.doi %}
+  <p>
+    <a href="/research/#topic{{ topic_index }}">
+      {{ topic.title }}
+    </a>
+  </p>
+          {% assign listed = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endcomment %}
