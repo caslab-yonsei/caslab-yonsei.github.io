@@ -16,11 +16,11 @@ paper: # delete if patent
   ref: 
 keywords: [DRAM, Row Hammering, Integrity, Reliability, Memory Offlining]
 sidebar:
+  - title: DGIST Scholar Page
+    items:
+      - type: link
+        url: https://scholar.dgist.ac.kr/handle/20.500.11750/48034
 doi: 10.22677/THESIS.200000723486
-  links: 
-    - name: DGIST Scholar Page
-      url: https://scholar.dgist.ac.kr/handle/20.500.11750/48034
-      reveal: true
 components: [abstract, keywords, topics]
 hidden: false
 ---

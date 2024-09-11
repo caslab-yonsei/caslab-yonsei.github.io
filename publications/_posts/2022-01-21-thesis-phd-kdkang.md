@@ -16,11 +16,11 @@ paper: # delete if patent
   ref: 
 keywords: [Data Center, Power Management, Dynamic Voltage/Frequency Scaling, Energy Efficiency]
 sidebar:
+  - title: DGIST Scholar Page
+    items:
+      - type: link
+        url: https://scholar.dgist.ac.kr/handle/20.500.11750/16313
 doi: 10.22677/thesis.200000593442
-  links: 
-    - name: DGIST Scholar Page
-      url: https://scholar.dgist.ac.kr/handle/20.500.11750/16313
-      reveal: true
 components: [abstract, keywords, topics]
 hidden: false
 ---

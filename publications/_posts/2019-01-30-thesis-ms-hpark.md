@@ -17,11 +17,12 @@ paper:
   publisher-type: Thesis
   ref:
 sidebar:
+  - title: DGIST Scholar Page
+    items:
+      - type: link
+        url: https://scholar.dgist.ac.kr/handle/20.500.11750/10733
+        
 doi: 10.22686/thesis.200000171477
-  links:
-    - name: DGIST Scholar Page
-      url: https://scholar.dgist.ac.kr/handle/20.500.11750/10733
-      reveal: true
 components: [abstract, keywords, topics]
 hidden: false
 ---
