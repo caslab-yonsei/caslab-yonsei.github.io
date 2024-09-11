@@ -3,8 +3,8 @@
   {% assign newtab = false -%}
   {% assign name = participant %}
   {% assign member = site.categories.members | where_exp: 'title', "title == participant" %}
-  {% if member %}{% assign member = member | first %}{% endif %}
   {% if member %}
+    {% assign member = member | first %}
     {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
     {% capture name %}{% if member.prefix %}{{ member.prefix }} {% endif %}{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% endcapture %}
     {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}

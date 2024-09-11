@@ -10,12 +10,12 @@
       </tr>
     </thead>
     <tbody>
-{% assign phd = site.categories.members | where_exp: "alumni", "alumni.degree == 'Ph.D.'" %}
-{% assign ms = site.categories.members | where_exp: "alumni", "alumni.degree == 'M.S.'" %}
+{% assign phd = site.categories.members | where_exp: "member", "member.alumni.degree == 'Ph.D.'" %}
+{% assign ms = site.categories.members | where_exp: "member", "member.alumni.degree == 'M.S.'" %}
 {% assign members = phd | concat: ms %}
 
 {% for member in members reversed -%}
-  W{% if member.template -%}{% continue -%}{% endif -%}
+  {% if member.template -%}{% continue -%}{% endif -%}
   {% if member.role == 'Alumni' and member.alumni.degree == "Ph.D." -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
