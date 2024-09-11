@@ -1,15 +1,13 @@
 {% for participant in include.mem_loc %}
   {% assign linked = false %}
   {% assign newtab = false -%}
-  {% capture name %}{{ participant }}{% endcapture %}
-  {% for member in site.categories.members %}
-    {% if participant == member.title %}
-      {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
-      {% capture name %}{% if member.prefix %}{{ member.prefix }} {% endif %}{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% endcapture %}
-      {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
-      {% break %}
-    {% endif %}
-  {% endfor %}
+  {% assign name = participant %}
+  {% assign member = site.categories.members | where: 'title', participant | first %}
+  {% if member %}
+    {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
+    {% capture name %}{% if member.prefix %}{{ member.prefix }} {% endif %}{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}{% endcapture %}
+    {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
+  {% endif %}
   {% if forloop.last and forloop.length > 1 %}and {% endif %}
   {%- if linked -%}
     <a href="{{- mem_url -}}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{{- name -}}</a>
