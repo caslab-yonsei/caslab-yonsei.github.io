@@ -2,7 +2,7 @@
   {% assign linked = false %}
   {% assign newtab = false -%}
   {% assign name = participant %}
-  {% assign member = site.categories.members | where_exp: 'search', "search.title == participant" | first %}
+  {% assign member = site.categories.members | where_exp: 'search', "search.title == participant" %}
   {% if member.size > 0 %}
     {% assign member = member | first %}
     {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
