@@ -13,8 +13,7 @@ n_limit: number of max photos
   {%- for image in photo.images -%}
     {% assign linked = false %}
     {% for photo_member in image.members %}
-      <div style="display:none">{{ photo_member }} comparison with {{ member.title }}</div>
-      {% if photo_member contains member.title %}
+      {% if photo_member contains include.member_loc.title %}
         {% assign linked = true %}
         {% break %}
       {% endif %}
