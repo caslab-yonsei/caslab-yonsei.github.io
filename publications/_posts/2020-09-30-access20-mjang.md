@@ -20,7 +20,8 @@ paper:
   publisher-short: "Access"
   ref: vol. 8, pp. 179837-179844
 sidebar:
-  doi: 10.1109/ACCESS.2020.3027946
+doi: 10.1109/ACCESS.2020.3027946
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

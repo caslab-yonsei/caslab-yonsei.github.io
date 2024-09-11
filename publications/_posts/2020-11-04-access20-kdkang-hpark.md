@@ -21,7 +21,8 @@ paper:
   publisher-type: Journal
   ref: vol. 8, pp. 201028-201039
 sidebar:
-  doi: 10.1109/ACCESS.2020.3035777
+doi: 10.1109/ACCESS.2020.3035777
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

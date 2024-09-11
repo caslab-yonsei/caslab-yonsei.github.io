@@ -28,27 +28,60 @@ researches: # related research area among ai/cloud/memory/power/security
   - (area 1)
   - (area 2)
 keywords: [(keyword 1), (keyword 2), ...]
+doi: (doi number)
+awards:
+  - (award 1)
+  - (award 2)
 sidebar:
-  awards:
-    - (award 1)
-    - (award 2)
-  pdf: (pdf file address)
-  supplement: (supplement address)
-  doi: (doi number)
-  github: (source code github address)
-  links: # delete if not needed
-    - name: (title for the link 1, leave empty to show url)
-      url: (link for link 1, leave '#' if no link)
-      icon: (icon for link 1 from https://fontawesome.com/v4/icons/, leave empty if default)
-      title: (Title of the site for link 1, revealed on hover)
-      ontab: false # when true, no newtab opens
-      reveal: false # when true, on hover the omitted part will be revealed
-    - name: (title for the link 2)
-      url: (link for link 2)
-      title: (Title of the site for link 2)
-      icon: (icon for link 2)
-      ontab: false 
-      reveal: false
+  # following is just example, all types are shown
+  # you can reorder, delete, add, and/or customise
+  - title: Github
+    items: 
+      - type: link
+        icon: gitbub-alt
+        url: (source code github address)
+        text: (repository name)
+  - title: PDF
+    items: 
+      - type: file
+        url: (file address)
+  - title: Supplement
+    items: 
+      - type: file
+        url: (supplement address)
+        icon: paperclip
+  - title: (Title of the sidebar section)
+    items: # you also can include many items under the same section
+      - type: text
+        icon: (icon for item 1 from https://fontawesome.com/v4/icons/, leave empty if default)
+        text: (text for item 1)
+        reveal: false # when true, on hover the omitted part will be revealed
+        overt: false # when true, this info will be shown on members page
+      - type: link
+        icon: (icon for item 2)
+        url: (link for item 2)
+        text: (text for item 2, leave empty if url)
+        reveal: false
+        overt: false
+      - type: file
+        icon: (icon for item 3)
+        url: (link for item 3's file)
+        text: (text for item 3, leave empty if filename)
+        reveal: false
+        overt: false
+      - type: member
+        icon: (icon for item 4)
+        name: (name of member to link)
+        text: (text for item 4, leave empty if member's name)
+        reveal: false
+        overt: false
+      - type: internal
+        icon: (icon for item 5)
+        name: "/categoty/page-to-link/" # valid category: members,publications,photos,news,lectures
+        text: (text for item 5, leave empty if title of page)
+        reveal: false
+        overt: false
+components: [abstract, keywords, topics]
 hidden: false # true to hide from publication page (not related to the lab, etc.)
 template: true #(delete this line)
 ---

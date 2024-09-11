@@ -16,11 +16,12 @@ paper: # delete if patent
   ref: 
 keywords: [Tiered Memory System, Page Table Monitor, Physical Memory Address, Page Table Walk]
 sidebar:
-  doi: 10.22677/THESIS.200000723697
+doi: 10.22677/THESIS.200000723697
   links: 
     - name: DGIST Scholar Page
       url: https://scholar.dgist.ac.kr/handle/20.500.11750/48097
       reveal: true
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

@@ -81,6 +81,18 @@ sidebar:
         text: (text for item 3, leave empty if filename)
         reveal: false
         overt: false
+      - type: member
+        icon: (icon for item 4)
+        name: (name of member to link)
+        text: (text for item 4, leave empty if member's name)
+        reveal: false
+        overt: false
+      - type: internal
+        icon: (icon for item 5)
+        name: "/categoty/page-to-link/" # valid category: members,publications,photos,news,lectures
+        text: (text for item 5, leave empty if title of page)
+        reveal: false
+        overt: false
 alumni: # delete if not needed
   degree: (graduation degree)
   date: (graduation month year, e.g. February 2022)

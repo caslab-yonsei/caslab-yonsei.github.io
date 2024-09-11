@@ -21,7 +21,8 @@ paper:
   publisher-type: Conference
   ref: pp. 143-154
 sidebar:
-  doi: 10.1145/3466752.3480098
+doi: 10.1145/3466752.3480098
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

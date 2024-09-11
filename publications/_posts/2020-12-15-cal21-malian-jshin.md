@@ -27,7 +27,8 @@ paper: # delete if patent
   publisher-type: Journal
   ref: vol. 20, no. 1, pp. 30-33
 sidebar:
-  doi: 10.1109/LCA.2020.3044923
+doi: 10.1109/LCA.2020.3044923
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

@@ -21,7 +21,8 @@ paper:
   publisher-type: Conference
   ref: pp. 377-380
 sidebar:
-  doi: 10.1109/ICCD50377.2020.00069
+doi: 10.1109/ICCD50377.2020.00069
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

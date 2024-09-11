@@ -16,12 +16,13 @@ paper: # delete if patent
   ref: 
 keywords: [Data center, Latency-critical application, Network packet processing, Dynamic core allocation]
 sidebar:
-  doi: 
+doi: 
   links: 
     - name: DGIST Scholar Page
       url: '#'
       title: To be registered
       reveal: true
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

@@ -15,8 +15,7 @@
 
     {% when 'link' %}
       {% assign external = true %}
-      {% assign check_arr = item.url | split: '/' %}
-      {% if check_arr[0] == blank %}{% assign external = false %}{% endif %}
+      {% unless item.url contains '://' %}{% assign external = false %}{% endunless %}
       {% unless icon %}
         {% if external %}{% assign icon = 'fa-external-link' %}
         {% else %}{% assign icon = 'fa-link' %}
@@ -60,34 +59,51 @@
   <span><a class="off">{{ emailarray.first}}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
 </div>
 
-    {% when 'publication' %}
-      {% unless icon %}{% assign icon = 'fa-file-text-o' %}{% endunless %}
+    {% when 'member' %}
+      {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
+      {% assign member = site.categories.members | where 'title', item.name %}
+      <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+        <i class="fa {{ icon }} fa-fw"></i>
+        <span>
+          <a class="off" href="{{ member.url }}">
+            {% if member.prefix %}{{ member.prefix }} {% endif %}{{ member.title }}
+          </a>
+        </span>
+      </div>
+
+    {% when 'internal' %}
+      {% assign category = item.url | split: '/' | first %}
+      {% assign valid = 'members,publications,research,lectures,news,photo' | split: ',' %}
+      {% if valid contains category %}
+        {% assign newpage = site.categories.category | where_exp 'newpage', 'newpage.url == item.url' %}
+        {% unless icon %}
+          {% switch category %}
+            {% when 'members' %}
+              {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
+              {% assign member = site.categories.members | where_exp '' %}
+              {% if item.text %}{% assign text = item.text %}{% else %}{% endunless %}
+            {% when 'publications' %}
+              {% unless icon %}{% assign icon = 'fa-file-text-o' %}{% endunless %}
+            {% when 'research' %}
+              {% unless icon %}{% assign icon = 'fa-book' %}{% endunless %}
+            {% when 'lectures' %}
+              {% unless icon %}{% assign icon = 'fa-university' %}{% endunless %}
+            {% when 'news' %}
+              {% unless icon %}{% assign icon = 'fa-newspaper-o' %}{% endunless %}
+            {% when 'photo' %}
+              {% unless icon %}{% assign icon = 'fa-picture-o' %}{% endunless %}
+            {% else %}
+              {% unless icon %}{% assign icon = 'fa-link' %}{% endunless %}
+          {% endswitch %}
+        {% endunless %}
 <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
   <i class="fa {{ icon }} fa-fw"></i>
   <span>
-    {% unless item.url == '#' or item.url == nil %}
-    <a class="off" href="{{ item.url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
-    {% endunless %}
-      {% if item.text %}{{ item.text }}{% else %}{{ item.url | split: '/' | last | split: '?' | first }}{% endif %}
-    {% unless item.url == '#' or item.url == nil %}
+    <a class="off" href="{{ item.url }}">
+      {% if item.text %}{{ text }}{% else %}{{ newpage.title }}{% endunless %}
     </a>
-    {% endunless %}
   </span>
 </div>
-
-    {% when 'member' %}
-      {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
-
-    {% when 'news' %}
-      {% unless icon %}{% assign icon = 'fa-newspaper-o' %}{% endunless %}
-
-    {% when 'photo' %}
-      {% unless icon %}{% assign icon = 'fa-picture-o' %}{% endunless %}
-
-    {% when 'research' %}
-      {% unless icon %}{% assign icon = 'fa-book' %}{% endunless %}
-
-    {% when 'lecture' %}
-      {% unless icon %}{% assign icon = 'fa-university' %}{% endunless %}
+      {% endif %}
   {% endcase %}
 {% endfor %}

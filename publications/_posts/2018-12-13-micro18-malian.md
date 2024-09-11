@@ -38,9 +38,10 @@ paper:
   publisher-type: Conference
   ref: pp. 802-814
 sidebar:
-  doi: 10.1109/MICRO.2018.00070
-  awards:
-    - Nominated for the Best Paper Award
+doi: 10.1109/MICRO.2018.00070
+awards:
+  - Nominated for the Best Paper Award
+components: [abstract, keywords, topics]
 hidden: false
 ---
 

@@ -27,7 +27,8 @@ paper:
   publisher-type: Conference
   ref: pp. 480-493
 sidebar:
-  doi: 10.1109/MICRO56248.2022.00042
+doi: 10.1109/MICRO56248.2022.00042
+components: [abstract, keywords, topics]
 hidden: false
 ---
 
