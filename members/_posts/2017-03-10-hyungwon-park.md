@@ -28,7 +28,7 @@ component:
   photos: true
 ---
 
-## Education
+# Education
 * **Ph.D. Student** in Electrical Engineering and Computer Science, DGIST, Daegu, Mar, 2019 - present
 * **M.S.** in Electrical Engineering and Computer Science, DGIST, Daegu, Feb, 2019
 * **B.S.** in Computer Science, Sahmyook University, Seoul, Feb, 2017

@@ -25,13 +25,13 @@ component:
   patents: true #(false if you don't want to print patents)
   photos: true #(false if you don't want to print photos slide)
 ---
-## Education
+# Education
 * Ph.D. in Electrical Engineering and Computer Science, DGIST, Daegu, Mar, 2017 – 2024
 * B.S. in Electrical and Computer Engineering (Magna Cum Laude), Ajou University, Suwon, Feb, 2016
   
 <div class="bigspacer"></div>
 
-## Experience
+# Experience
 **Research Assistant**, March 2017 to August 2024
 
 * **ML for Systems & Systems for ML**
@@ -47,7 +47,7 @@ component:
 
 <div class="bigspacer"></div>
 
-## Skiils and Techniques
+# Skiils and Techniques
 * **Machine Learning Algorithms**: DLRM, DQN, PPO, etc.
 * **Programing Language**: C, Python, C++
 * **Frameworks/Packages**: Pytorch, Pandas, eBPF

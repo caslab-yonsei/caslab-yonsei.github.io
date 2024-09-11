@@ -16,7 +16,6 @@ sidebar:
   github: lsk21kr
   links:
     - name: Website Contributor
-      url: '#'
       icon: info-circle
 alterlink: 
 component:
@@ -26,7 +25,7 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Research Interests
+# Research Interests
 - Next-gen Memory Architecture/Systems
   - Cache/Memory Compression and Deduplication
   - Heterogeneous Memory Systems, Tiered Memory Architecture (NVM, PCM, CXL, and so on)
@@ -38,13 +37,13 @@ component:
 
 <div class="bigspacer"></div>
 
-## Education
+# Education
 * 2017~, **B.S–M.S–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2014~2018, **Bachelor of Convergence engineering**, School of Basic Science, DGIST
 
 <div class="bigspacer"></div>
 
-## Experience
+# Experience
 * Cyber-Physical Systems (CPS) Research Centre (participated in 2018~2022)
   * Architectural Side-channel Attack such as Flush+Reload, Prime+Probe, Evict+Reload
   * Architectural Side-channel Attack Detection/Mitigation in Simulated CPS Environment
@@ -54,7 +53,7 @@ component:
 
 <div class="bigspacer"></div>
 
-## Skills and Techniques
+# Skills and Techniques
 * **Linux Kernel Development**: Virtualisation, Networking, Memory Deduplication, Tiered (NUMA) Memory Management
 * **Programming Language**: C, Python, C++, javascript
 * **Language**: Korean (Native), English (Fluent), French (Beginner)

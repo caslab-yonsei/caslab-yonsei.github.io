@@ -18,6 +18,6 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2020~, **M.S.–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2016~2020, **Bachelor of Convergence engineering**, School of Basic Science, DGIST

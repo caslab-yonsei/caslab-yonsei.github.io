@@ -20,7 +20,7 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2018~, **B.S–M.S–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2015~2019, **Bachelor of Convergence engineering**, School of Basic Science, DGIST
 * 2012~2015, **Science Gifted School Course**, (Gifted School) Daegu Science High-school

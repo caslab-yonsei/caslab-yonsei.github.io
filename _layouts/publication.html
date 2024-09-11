@@ -11,7 +11,7 @@ layout: default
       <div class="media-body">
         <h1>
           {% if page.sidebar.doi %}
-          <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }}">
+          <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }}" target="_blank" rel="noopener noreferrer">
             {{ page.title }}
           </a>
           {% else %}
@@ -52,7 +52,7 @@ layout: default
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-file-text-o fa-fw"></i>
-        <a class="off" href="{{ page.sidebar.pdf }}">{{ page.sidebar.pdf | split: '/' | last }}</a>
+        <a class="off" href="{{ page.sidebar.pdf }} target="_blank" rel="noopener noreferrer"">{{ page.sidebar.pdf | split: '/' | last }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
@@ -63,7 +63,7 @@ layout: default
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-paperclip fa-fw"></i>
-        <a class="off" href="{{ page.sidebar.supplement }}">{{ page.sidebar.supplement | split: '/' | last }}</a>
+        <a class="off" href="{{ page.sidebar.supplement }} target="_blank" rel="noopener noreferrer"">{{ page.sidebar.supplement | split: '/' | last }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
@@ -74,7 +74,7 @@ layout: default
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }}">{{ page.sidebar.doi }}</a>
+        <a class="off" href="http://dx.doi.org/{{ page.sidebar.doi }} target="_blank" rel="noopener noreferrer"">{{ page.sidebar.doi }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}
@@ -85,7 +85,7 @@ layout: default
       <div class="pad-left note">
         <div class="smallspacer"></div>
         <i class="fa fa-github-alt fa-fw"></i>
-        <a class="off" href="{{ page.sidebar.github }}">{{ page.sidebar.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
+        <a class="off" href="{{ page.sidebar.github }} target="_blank" rel="noopener noreferrer"">{{ page.sidebar.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
       </div>
       <div class="bigspacer"></div>
       {% endif %}

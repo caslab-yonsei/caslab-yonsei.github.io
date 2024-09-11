@@ -24,7 +24,7 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2010~2017, **Bachelor of Engineering**, Computer Engineering, PKNU
 * 2017~2019, **Master of Engineering**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2019~2024, **Ph.D. of Engineering**, Dept. of Electrical Engineering and Computer Science, DGIST

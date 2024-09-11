@@ -21,11 +21,11 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2017~, **B.S–M.S–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2014~2018, **Bachelor of Convergence engineering**, School of Basic Science, DGIST
 
 <div class="bigspacer"></div>
 
-## Hobbies
+# Hobbies
 * Tetris

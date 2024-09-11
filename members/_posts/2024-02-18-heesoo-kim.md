@@ -24,6 +24,6 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2021.02.~2024.02. - **M.S.** in Dept. Electrical Engineering and Computer Science, DGIST
 * 2017.02.~2021.02. - **B.S.** in School of Electronic Engineering, Kyungpook National Univ.

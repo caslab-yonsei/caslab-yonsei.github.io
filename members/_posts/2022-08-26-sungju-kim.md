@@ -19,21 +19,21 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Research Interests
+# Research Interests
 - Optimizing ML Models for Accelerated Computing
   - Focus on designing machine learning models that are specifically tailored to leverage the capabilities of hardware accelerators like NPUs
 
-## Education
+# Education
 * 2022.08~Present, **M.S.-Ph.D student**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2018.03~2022.08, **Bachelor of Convergence engineering**, School of Basic Science, DGIST
 
-## SKIILS AND TECHNIQUES
+# SKIILS AND TECHNIQUES
 * C / C++
 * Python
 * Pytorch
 * Bash Script
 
-## Experience
+# Experience
 * 2024.03~2023.08, **Teaching Assistant**, CSE305 Computer Architecture, **DGIST**
 * 2023.03~2023.08, **Teaching Assistant**, CSE305 Computer Architecture, **DGIST**
 * 2022.08~Present, **Research Assistant**, **DGIST**

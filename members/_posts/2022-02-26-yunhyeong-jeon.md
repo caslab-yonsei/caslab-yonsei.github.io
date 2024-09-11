@@ -19,6 +19,6 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2022~, **M.S. Candidate** Dept. of Electrical Engineering and Computer Science, DGIST
 * 2018~2022, **Bachelor of Convergence engineering**, School of Basic Science, DGIST

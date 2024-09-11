@@ -24,7 +24,7 @@ component:
   photos: false
 ---
 
-## Employment
+# Employment
 * **Associate Professor**, Yonsei University, Sep., 2024 - present
 * **Assistant/Associate Professor**, DGIST, Aug., 2016 - Aug., 2024.
 * **Postdoctoral Research Associate**, Feb., 2014 - July, 2016
@@ -33,6 +33,6 @@ component:
 
 <div class="bigspacer"></div>
 
-## Education
+# Education
 * **Ph.D.**, in [Computer Science](http://cs.kaist.ac.kr/), [KAIST](http://www.kaist.ac.kr/), Daejeon, Feb., 2014.
 * **B.S.**, in [Computer Science](http://cs.yonsei.ac.kr/), [Yonsei University](http://www.yonsei.ac.kr/), Seoul, Feb., 2008.

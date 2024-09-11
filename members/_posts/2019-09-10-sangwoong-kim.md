@@ -18,6 +18,6 @@ component:
   photos: true #(false if you don't want to print photos slide)
 ---
 
-## Education
+# Education
 * 2019.08~, **M.S–Ph.D. Integrated Course**, Dept. of Electrical Engineering and Computer Science, DGIST
 * 2016.02~2019.08, **B.S.** in Computer Engineering, Inha University
