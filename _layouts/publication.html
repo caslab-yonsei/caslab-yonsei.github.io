@@ -68,7 +68,7 @@ layout: default
   <div class="col-md-8">
     <div class="post">
       {% for component in page.components %}
-      {% switch component %}
+      {% case component %}
       {% when 'abstract' %}
       <h2>Abstract</h2>
       <div class="spacer"></div>
@@ -103,7 +103,7 @@ layout: default
             {% endif %}
           {% endfor %}
         {% endfor %}
-      {% endswitch %}
+      {% endcase %}
       {% endfor %}
     </div>
   </div>
