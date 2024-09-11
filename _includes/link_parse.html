@@ -77,7 +77,7 @@
       {% if valid contains category %}
         {% assign newpage = site.categories.category | where_exp 'newpage', 'newpage.url == item.url' %}
         {% unless icon %}
-          {% switch category %}
+          {% case category %}
             {% when 'members' %}
               {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
               {% assign member = site.categories.members | where_exp '' %}
@@ -94,7 +94,7 @@
               {% unless icon %}{% assign icon = 'fa-picture-o' %}{% endunless %}
             {% else %}
               {% unless icon %}{% assign icon = 'fa-link' %}{% endunless %}
-          {% endswitch %}
+          {% endcase %}
         {% endunless %}
 <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
   <i class="fa {{ icon }} fa-fw"></i>
