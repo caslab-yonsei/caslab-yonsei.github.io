@@ -73,8 +73,9 @@
 
     {% when 'internal' %}
       {% assign category = item.url | split: '/' | first %}
+      {{ category | join: ',' }}
       {% assign valid = 'members,publications,research,lectures,news,photo' | split: ',' %}
-      {% if valid contains category %}
+      {% if valid contains category[1] %}
         {% assign newpage = site.categories.category | where_exp 'search', 'search.url == item.url' %}
         {% unless icon %}
           {% case category %}
