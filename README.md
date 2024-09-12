@@ -30,3 +30,4 @@ This is the repository of official website of [Computer Architecture and Systems
 
 ## Acknowledgement
 * [Lab-site template from Riggleman Group](https://github.com/rar-ensemble/lab_site)
+* ChatGPT
