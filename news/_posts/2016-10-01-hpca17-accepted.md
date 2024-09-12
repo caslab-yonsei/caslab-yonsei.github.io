@@ -7,12 +7,6 @@ members:
 YYYY: "2016"
 MM: "10"
 DD: 
-links:
-  - url: /publications/hpca17-malian/
-    name: "NCAP: Network-Driven, Packet Context-Aware Power Management for Client-Server Architecture"
-    icon: file-text-o
-    title: Publication
-    ontab: true
-alterlink: 1
+alterlink: "/publications/hpca17-malian/"
 ---
 

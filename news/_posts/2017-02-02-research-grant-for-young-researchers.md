@@ -6,7 +6,5 @@ members:
 YYYY: "2017"
 MM: "02"
 DD:
-links:
-  - url: '#'
-alterlink: 1
+alterlink: '#'
 ---
