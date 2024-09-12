@@ -1,8 +1,7 @@
 ---
 layout: news
 title: Our paper was accepted at <b><i>SoCC 2018 (top-tier conference)</i></b>.
-photos:
-  - socc-2018
+photos: socc-2018
 members:
   - Ki-Dong Kang
   - Daehoon Kim

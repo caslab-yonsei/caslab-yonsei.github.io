@@ -23,26 +23,13 @@ layout: default
   <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
-      
-      {% for link in page.links -%}
-        {% if forloop.first -%}
+      {% for section in include.member_loc.sidebar %}
       <div class="smallhead">
-        More Info
+        {{ section.title }}
       </div>
-        {% endif -%}
-      <div class="pad-left note{% if link.reveal %} reveal{% endif %}"{% if link.title %} title="{{ link.title }}"{% endif %}>
-        <i class="fa {% if link.icon %}{{ link.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-' }}{% else %}fa-external-link{% endif %} fa-fw"></i>
-        <span>
-          {% unless link.url == '#' %}
-          <a class="off" href="{{ link.url }}"{% unless link.ontab %} target="_blank" rel="noopener noreferrer"{% endunless %}>
-          {% endunless %}
-            {% if link.name %}{{ link.name }}{% else %}{{ link.url }}{% endif %}
-          {% unless link.url == '#' %}
-          </a>
-          {% endunless %}
-        </span>
-      </div>
-      {% endfor -%}
+      {% include link_parse.html items=section.items %}
+      <div class="spacer"></div>
+      {% endfor %}
       <div class="bigspacer"></div>
     </div>
   </div>
@@ -51,9 +38,22 @@ layout: default
       <div class="spacer"></div>
       {{ content }}
 
+      {% assign header = false %}
+      {% if page.photos %}
+        {% assign photo_url = "/photos/" | append: page.photos | append: "/" %}
+        {% assign photo_post = site.categories.photos | where_exp: "photo_search", "photo_search.url == photo_url" %}
+        {% if photo_post.size > 0 %}
+          {% assign photo_post = photo_post | first %}
+          {% unless header %}
+          {% assign header = true %}
       <div class="row">
-        {% include photo_slide.html images_loc=page.images gall_index=0 %}
-      </div>
+          {% endunless %}
+        {% include photo_slide.html images_loc=photo_post.images gall_index=0 %}
+        {% endif %}
+      {% endif %}
+      {% if header %}
+      </div>  
+      {% endif %}
 
       <div class="spacer"></div>
       

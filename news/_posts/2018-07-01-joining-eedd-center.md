@@ -1,8 +1,7 @@
 ---
 layout: news
 title: Our group will be joining the Extreme Exploitation of Dark Data Research Center (Engineering Research Center (ERC) funded by NRF).
-photos:
-  - joining-eedd-center
+photos: joining-eedd-center
 members:
 YYYY: "2018"
 MM: "07"

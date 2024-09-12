@@ -1,8 +1,7 @@
 ---
 layout: news
 title: (News title)
-photos: 
-  - (title of photos, from the url /photos/'title'/)
+photos: (title of photos, from the url /photos/'title'/)
 members:
   - (related person 1)
   - (related person 2)
