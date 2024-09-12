@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Ki-Dong Kang (Ph.D. student), Seunghak Lee, Hyunhwon Park, and Gyeoungseo Park (M.S. student) joined.
+title: Ki-Dong Kang (Ph.D. student), Seunghak Lee, Hyungwon Park, and Gyeongseo Park (M.S. student) joined.
 members:
   - Ki-Dong Kang
   - Seunghak Lee
