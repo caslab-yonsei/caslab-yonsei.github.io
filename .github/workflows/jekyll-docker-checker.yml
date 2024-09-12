@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: ["main"]
 
-  # You can also manually trigger it
+  # Allow running manually from any branch
   workflow_dispatch:
 
 permissions:
@@ -26,7 +26,6 @@ jobs:
           bundler-cache: true
 
       - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "/test-build"
         env:
           JEKYLL_ENV: production
