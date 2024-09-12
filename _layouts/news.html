@@ -38,24 +38,16 @@ layout: default
       <div class="spacer"></div>
       {{ content }}
 
-      {% assign header = false %}
       {% if page.photos %}
         {% assign photo_url = "/photos/" | append: page.photos | append: "/" %}
         {% assign photo_post = site.categories.photos | where_exp: "photo_search", "photo_search.url == photo_url" %}
         {% if photo_post.size > 0 %}
+      <div class="bigspacer"></div>
           {% assign photo_post = photo_post | first %}
-          {% unless header %}
-          {% assign header = true %}
-      <div class="row">
-          {% endunless %}
-        {% include photo_slide.html images_loc=photo_post.images gall_index=0 %}
+      {% include photo_slide.html images_loc=photo_post.images gall_index=0 %}
+      <div class="bigspacer"></div>
         {% endif %}
       {% endif %}
-      {% if header %}
-      </div>  
-      {% endif %}
-
-      <div class="spacer"></div>
       
       <script defer>
         init_slides();
