@@ -70,7 +70,7 @@ categories:
                         {% if mem_post.size > 0 %}
                           {% assign mem_post = mem_post | first %}
                           {% capture mem_linked %}<a href="{{ mem_post.url }}" class="off">{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
-                          {% news_text = news_text | replace: mem, mem_linked %}
+                          {% assign news_text = news_text | replace: mem, mem_linked %}
                         {% endif %}
                       {% endfor %}
                     {% else %}
