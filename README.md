@@ -21,7 +21,7 @@ This is the repository of official website of [Computer Architecture and Systems
    * with documents of your contents.
 3. Wait for them to update the site. This may take a while.
 ### By yourselves
-1. Fork and clone the repository.
+1. (if necessary) Fork and clone the repository.
 2. Make and checkout to a new branch.
 3. Modify the content as you wish.
 4. Add, commit, and push.
