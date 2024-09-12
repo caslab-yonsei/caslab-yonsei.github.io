@@ -15,13 +15,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Use Docker to build the Jekyll site inside the jekyll/builder container
+      # Install Node.js (required for Less compilation)
+      - name: Install Node.js
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+
+      # Build the site in the jekyll/builder container
       - name: Build Jekyll site using Docker
         run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll \
           -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && npm install less && bundle install && jekyll build --future"
 
       # Verify if the _site directory was successfully built
       - name: Verify Jekyll Build Output
@@ -29,7 +35,6 @@ jobs:
           if [ ! -d "_site" ]; then
             echo "Jekyll build failed! _site directory not found."
             exit 1
-          fi
 
       # Optional: Upload _site as an artifact to inspect the build result
       - name: Upload Jekyll build artifacts
