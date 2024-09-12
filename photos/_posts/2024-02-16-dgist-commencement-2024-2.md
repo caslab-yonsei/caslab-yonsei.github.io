@@ -23,4 +23,4 @@ images:
     caption: <a href='/members/heesoo-kim/' class='off ref'>Heesoo Kim</a> received her M.S. degree.
 ---
 
-Congratulations on your graduation!
+Congratulations on your graduations!

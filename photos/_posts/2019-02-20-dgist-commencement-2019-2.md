@@ -20,4 +20,4 @@ images:
     caption: <a href='/members/jongmin-shin/' class='off ref'>Jongmin Shin</a> (B.S.) and <a href='/members/hyungwon-park/' class='off ref'>Hyungwon Park</a> (M.S.) received their degrees.
 ---
 
-Congratulations on your graduation!
+Congratulations on your graduations!

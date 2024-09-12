@@ -12,4 +12,4 @@ images:
     caption: <a href='/members/kyeonghyeon-ryu/' class='off ref'>Kyeonghyeon Ryu</a> (B.S.) and <a href='/members/jungbo-kim/' class='off ref'>Jungbo Kim</a> (B.S.) received their degrees.
 ---
 
-Congratulations on your graduation!
+Congratulations on your graduations!
