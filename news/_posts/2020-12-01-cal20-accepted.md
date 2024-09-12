@@ -1,7 +1,6 @@
 ---
 layout: news
 title: Our paper was accepted at <b><i>IEEE CAL (SCI(E) journal)</i></b>.
-images:
 members:
   - Jongmin Shin
   - Ki-Dong Kang
@@ -9,8 +8,5 @@ members:
 YYYY: "2020"
 MM: "12"
 DD: 
-links:
-  - url: /publications/cal21-malian-jshin/
-    ontab: true
-alterlink: 1
+alterlink: /publications/cal21-malian-jshin/
 ---

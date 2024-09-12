@@ -17,6 +17,7 @@ images:
       - [  ]
       - [  ]
     caption: 
+hidden: false # true to hide from photos page
 template: true #(delete this line)
 ---
 

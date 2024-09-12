@@ -1,7 +1,6 @@
 ---
 layout: news
 title: 	Minwoo Jang and Seungkyu Lee (B.S. student, combined undergraduate-graduate program) joined.
-images:
 members:
   - Minwoo Jang
   - Seungkyu Lee

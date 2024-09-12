@@ -1,11 +1,8 @@
 ---
 layout: news
 title: (News title)
-images:
-  - /image/(filename 1)
-  - /image/(filename 2)
-  - (...)
-  - /image/(filenames)
+photos: 
+  - (title of photos, from the url /photos/'title'/)
 members:
   - (related person 1)
   - (related person 2)
@@ -15,6 +12,7 @@ YYYY: "(year)" # must be in quotes
 MM: "(month in two numbers)"
 DD: "(day of the month, you can omit)"
 sidebar:
+  # you can add, remove, reorder, and/or customise the sections
   - title: (Title of the sidebar section)
     items:
       - type: link
