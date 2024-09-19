@@ -20,6 +20,13 @@ paper:
   publisher-short: "Access"
   publisher-type: Journal
   ref: vol. 8, pp. 201028-201039
+researches: [power]
+keywords:
+  - Power management
+  - Energy efficiency
+  - Dynamic Voltage and Frequency Scaling
+  - Interrupt rate adjustment
+  - Latency-critical applications
 sidebar:
 doi: 10.1109/ACCESS.2020.3035777
 components: [abstract, keywords, topics]
