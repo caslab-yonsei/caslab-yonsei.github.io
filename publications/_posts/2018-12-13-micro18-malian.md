@@ -37,6 +37,14 @@ paper:
   publisher-short: "MICRO"
   publisher-type: Conference
   ref: pp. 802-814
+researches: [memory, power]
+keywords:
+  - Near-memory processing
+  - Memory Channel Network
+  - Non-volatile memory
+  - Data-intensive applications
+  - High-bandwidth communication
+  - Energy efficiency
 sidebar:
 doi: 10.1109/MICRO.2018.00070
 awards:

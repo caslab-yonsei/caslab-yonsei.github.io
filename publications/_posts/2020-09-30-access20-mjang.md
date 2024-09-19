@@ -19,6 +19,13 @@ paper:
   publisher-type: Journal
   publisher-short: "Access"
   ref: vol. 8, pp. 179837-179844
+researches: [security]
+keywords:
+  - Cache side-channel attacks
+  - Flush+Reload attack
+  - DRAM cache
+  - Security mitigation techniques
+  - Cache architecture
 sidebar:
 doi: 10.1109/ACCESS.2020.3027946
 components: [abstract, keywords, topics]
