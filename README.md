@@ -4,7 +4,7 @@ This is the repository of official website of [Computer Architecture and Systems
 ## Contributors
 * [Seungkyu Lee](https://cas.yonsei.ac.kr/members/seungkyu-lee/): Main developer
 * [Yeji Jung](https://cas.yonsei.ac.kr/members/yeji-jung/): Chief contents manager
-* [Minho Kim](https://cas.yonsei.ac.kr/members/minho-kim/): [Research](https://cas.yonsei.ac.kr/research/) page writer
+* [Minho Kim](https://cas.yonsei.ac.kr/members/minho-kim/): [Research](http://cas.yonsei.ac.kr/research/) page writer
 * [Hyunkyun Shin](https://cas.yonsei.ac.kr/members/hyunkyun-shin/): Domain manager
 * and other labmates for updating their contents.
 
