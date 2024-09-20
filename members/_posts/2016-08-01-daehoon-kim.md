@@ -30,12 +30,6 @@ sidebar:
         icon: phone
         text: 02) 2123-5825
         reveal: true
-  - title: Google Scholar
-    items:
-      - type: link
-        icon: book
-        url: http://scholar.google.com/citations?user=zjxGtuoAAAAJ
-        text: Daehoon Kim
 alterlink: https://sites.google.com/view/daehoonkim
 components: [researches, contents, photos]
 ---
