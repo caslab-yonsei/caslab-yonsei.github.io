@@ -8,9 +8,6 @@ name: Test build Jekyll site to Pages
 
 on:
   # Runs on pull requests targeting the default branch
-  push:
-    branches:
-      - "main"
   pull_request:
     branches:
       - "main" 
