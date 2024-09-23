@@ -14,10 +14,10 @@ layout: default
     </div>
     {% assign has_header = false %}
     {% for pub in site.categories.publications %}
-      {% if pub.hidden or pub.template %}{% continue %}{% endif %}
+      {% if pub.template %}{% continue %}{% endif %}
       {% if pub.researches contains page.alias %}
         {% assign pub_type = pub.type %}
-        {% if pub_type == "Paper" %}{% assign pub_type = pub.paper.publisher-type %}{% endif %}
+        {% if pub_type == "Paper" and pub.paper.publisher-type %}{% assign pub_type = pub.paper.publisher-type %}{% endif %}
         {% unless has_header %}
           {% assign has_header = true %}
     <div class="bigspacer"></div>
