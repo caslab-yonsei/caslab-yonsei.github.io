@@ -20,6 +20,16 @@ authors:
 co-first: false
 type: Paper
 international: true
+researches: [memory, cloud]
+keywords:
+  - Inbound network data orchestration
+  - Cache hierarchy optimization
+  - Direct Data I/O
+  - Mid-Level Cache
+  - Last-Level Cache
+  - Data movement reduction
+  - Server processors
+  - Network applications
 paper:
   year: 2022
   publisher: "IEEE/ACM International Symposium on Microarchitecture"

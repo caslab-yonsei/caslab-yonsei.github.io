@@ -14,6 +14,14 @@ authors:
 co-first: false 
 type: Paper
 international: true
+researches: [power]
+keywords:
+  - Power management
+  - Dynamic Voltage and Frequency Scaling
+  - Network packet processing
+  - Latency-critical workloads
+  - Service Level Objectives
+  - Energy efficiency
 paper:
   year: 2021
   publisher: "IEEE/ACM International Symposium on Microarchitecture"
