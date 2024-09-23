@@ -13,8 +13,19 @@ gall_index: index of gallery
       </div>
       <div class="slides-caption-{{ include.gall_index }}" id="slides-caption-{{ include.gall_index }}-{{ n_images }}">
         {% if image.caption -%}
+          {% assign cap_text = image.caption %}
+          {% for mem in image.members %}
+            {% assign mem_post = site.categories.members | where_exp: "mem_search", "mem_search.title == mem" %}
+            {% if mem_post.size > 0 %}
+              {% assign mem_post = mem_post | first %}
+              {% capture mem_url %}{%- if mem_post.alterlink -%}{% assign newtab = true -%}{{ mem_post.alterlink }}{%- else -%}{{ mem_post.url }}{%- endif -%}{% endcapture %}
+              {% if mem_url == '#' -%}{% continue %}{% endif -%}
+              {% capture mem_linked %}<a href="{{ mem_url }}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
+              {% assign cap_text = cap_text | replace: mem, mem_linked %}
+            {% endif %}
+          {% endfor %}
           <span class="slides-desc-{{ include.gall_index }}" id="slides-desc-{{ include.gall_index }}-{{ n_images }}">
-            {{ image.caption }}
+            {{ cap_text }}
           </span>
         {% endif -%}
         {% if image.members -%}
