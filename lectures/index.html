@@ -96,7 +96,7 @@ categories:
 {% for lecture in site.categories.lectures %}
   {% if lecture.template -%}{% continue -%}{% endif -%}
   {% if lecture.hidden -%}{% continue -%}{% endif -%}
-  {% if lecture.institution == 'Yonsei' or lecture.institution == 'DGIST' %}{% continue %}{% endunless %}
+  {% if lecture.institution == 'Yonsei' or lecture.institution == 'DGIST' %}{% continue %}{% endif %}
   {% assign n_lectures = n_lectures | plus: 1 %}
   {% if n_lectures == 1 %}
 <div class="row">
