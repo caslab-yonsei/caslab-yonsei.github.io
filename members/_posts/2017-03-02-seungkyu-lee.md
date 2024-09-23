@@ -38,6 +38,11 @@ sidebar:
     items:
       - type: text
         text: Website Administrator
+      - type: link
+        icon: github-alt
+        url: https://github.com/caslab-yonsei/caslab-yonsei.github.io
+        text: caslab-yonsei.github.io
+        overt: true
 alterlink: 
 components: [contents, publications, patents, photos]
 ---
