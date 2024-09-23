@@ -19,12 +19,10 @@ gall_index: index of gallery
               {% assign mem_post = site.categories.members | where_exp: "mem_search", "mem_search.title == mem" %}
               {% if mem_post.size > 0 %}
                 {% assign mem_post = mem_post | first %}
-                <span style="display:none">"{{ mem }}"</span>
-                {% assign cap_newtab = false -%}
-                {% capture mem_url %}{%- if mem_post.alterlink -%}{% assign cap_newtab = true -%}{{ mem_post.alterlink }}{%- else -%}{{ mem_post.url }}{%- endif -%}{% endcapture %}
+                {% assign newtab = false -%}
+                {% capture mem_url %}{%- if mem_post.alterlink -%}{% assign newtab = true -%}{{ mem_post.alterlink }}{%- else -%}{{ mem_post.url }}{%- endif -%}{% endcapture %}
                 {% if mem_url == '#' -%}{% continue %}{% endif -%}
-                {% capture mem_linked %}<a href="{{ mem_url }}" class="off ref"{%- if cap_newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
-                <span style="display:none">"{{ mem }}" -> "{{ mem_linked }}"</span>
+                {% capture mem_linked %}<a href="{{ mem_url }}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
                 {% assign cap_text = cap_text | replace: mem, mem_linked %}
               {% endif %}
             {% endfor %}
