@@ -21,7 +21,7 @@ gall_index: index of gallery
                 {% assign mem_post = mem_post | first %}
                 {% assign newtab = false -%}
                 {% capture mem_url %}{%- if mem_post.alterlink -%}{% assign newtab = true -%}{{ mem_post.alterlink }}{%- else -%}{{ mem_post.url }}{%- endif -%}{% endcapture %}
-                {% if mem_url == '#' -%}{% continue %}{% endif -%}
+                {% if mem_url == '#' -%}{% if mem_post.prefix %}{% capture mem_linked %}{{ mem_post.prefix }} {{ mem_post.title }}{% endcapture %}{% else %}{% continue %}{% endif %}{% endif -%}
                 {% capture mem_linked %}<a href="{{ mem_url }}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
                 {% assign cap_text = cap_text | replace: mem, mem_linked %}
               {% endif %}
