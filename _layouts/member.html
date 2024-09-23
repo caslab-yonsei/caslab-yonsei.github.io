@@ -70,7 +70,7 @@ layout: default
         {% unless publication.type == 'Paper'%}{% continue %}{% endunless %}
         {% for author in publication.authors %}
           {% if author.name == member.title %}
-        <li>({{ publication.paper.publisher-type }}) <a href="{{ publication.url }}">{{ publication.title }}</a></li>
+        <li>{% if publication.paper.publisher-type %}({{ publication.paper.publisher-type }}) {% endif %}<a href="{{ publication.url }}">{{ publication.title }}</a></li>
           {% endif %}
         {% endfor %}
       {% endfor %}
@@ -103,7 +103,7 @@ layout: default
         {% unless publication.type == 'Patent' %}{% continue %}{% endunless %}
         {% for author in publication.authors %}
           {% if author.name == member.title %}
-        <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+        <li>({{ publication.patent.nation }}) <a href="{{ publication.url }}">{{ publication.title }}</a></li>
           {% endif %}
         {% endfor %}
       {% endfor %}

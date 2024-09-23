@@ -72,7 +72,7 @@ categories:
                           {% assign newtab = false -%}
                           {% capture mem_url %}{%- if mem_post.alterlink -%}{% assign newtab = true -%}{{ mem_post.alterlink }}{%- else -%}{{ mem_post.url }}{%- endif -%}{% endcapture %}
                           {% if mem_url == '#' -%}{% continue %}{% endif -%}
-                          {% capture mem_linked %}<a href="{{ mem_url }}" class="off ref"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
+                          {% capture mem_linked %}<a href="{{ mem_url }}" class="off"{%- if newtab == true -%} target="_blank" rel="noopener noreferrer"{%- endif -%}>{% if mem_post.prefix %}{{ mem_post.prefix }} {% endif %}{{ mem_post.title }}</a>{% endcapture %}
                           {% assign news_text = news_text | replace: mem, mem_linked %}
                         {% endif %}
                       {% endfor %}
