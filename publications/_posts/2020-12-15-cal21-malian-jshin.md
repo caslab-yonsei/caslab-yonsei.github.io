@@ -20,6 +20,13 @@ authors:
 co-first: true
 type: Paper
 international: true
+researches: [memory, cloud]
+keywords:
+  - Inbound network data placement
+  - Memory hierarchy optimization
+  - Cache architecture
+  - Server processors
+  - Data center performance
 paper: # delete if patent
   year: 2021
   publisher: "IEEE Computer Architecture Letters"

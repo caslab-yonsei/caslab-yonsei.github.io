@@ -16,13 +16,15 @@ layout: default
     {% for pub in site.categories.publications %}
       {% if pub.hidden or pub.template %}{% continue %}{% endif %}
       {% if pub.researches contains page.alias %}
+        {% assign pub_type = pub.type %}
+        {% if pub_type == "Paper" %}{% assign pub_type = pub.paper.publisher-type %}{% endif %}
         {% unless has_header %}
           {% assign has_header = true %}
     <div class="bigspacer"></div>
     <h2>Publications</h2>
     <ol>
         {% endunless %}
-      <li><a href="{{ pub.url }}">{{ pub.title }}</a></li>
+      <li>({{ pub_type }}) <a href="{{ pub.url }}">{{ pub.title }}</a></li>
       {% endif %}
     {% endfor %}
     {% if has_header %}

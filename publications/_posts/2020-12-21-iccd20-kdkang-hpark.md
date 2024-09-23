@@ -14,6 +14,13 @@ authors:
 co-first: true
 type: Paper
 international: true
+researches: [power]
+keywords:
+  - Power management
+  - Energy efficiency
+  - Dynamic Voltage and Frequency Scaling
+  - Interrupt management
+  - Latency-critical applications
 paper:
   year: 2020
   publisher: "IEEE International Conference on Computer Design"
