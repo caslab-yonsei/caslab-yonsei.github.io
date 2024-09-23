@@ -10,6 +10,7 @@
     <div class="post">
       {{ topic_loc.content }}
     </div>
+    {% comment %}
     {% assign has_header = false %}
     {% for pub in site.categories.publications %}
       {% if pub.hidden or pub.template %}{% continue %}{% endif %}
@@ -26,6 +27,7 @@
     {% if has_header %}
     </ol>
     {% endif %}
+    {% endcomment %}
   </div>
 </div>
 
