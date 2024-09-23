@@ -36,9 +36,8 @@ sidebar:
         text: lsk21kr
   - title: Task
     items:
-      - type: link
+      - type: text
         text: Website Administrator
-        url: /members/
 alterlink: 
 components: [contents, publications, patents, photos]
 ---

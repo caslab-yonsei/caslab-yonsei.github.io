@@ -5,5 +5,5 @@ members:
 YYYY: "2024"
 MM: "09"
 DD: 
-alterlink: '#'
+alterlink: /photos/#CASLAB@Yonsei%202024
 ---

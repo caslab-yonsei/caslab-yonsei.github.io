@@ -1,0 +1,32 @@
+---
+layout: publication
+title: Electronic device and controlling method of electonic device
+image: 
+authors:
+  - name: Daehoon Kim
+  - name: Hyungwon Park
+  - name: Ki-Dong Kang
+  - name: Gyeongseo Park
+type: Patent
+international: false
+researches: [power]
+keywords:
+  - Power management
+  - Energy efficiency
+  - Power state adjustment
+  - Interrupt generation rate control
+  - Load-aware control
+patent:
+  status: issued
+  nation: Korea
+  number-application: 10-2020-0188031
+  date-application: 2020.12.30
+  number-publication: 10-2625723
+  date-publication: 2024.01.11
+sidebar:
+doi: 10.8080/1020200188031
+components: [abstract, keywords, topics]
+hidden: false
+---
+
+Disclosed are an electronic device and a control method of the electronic device. Specifically, the electronic device according to the present disclosure obtains the information for a load of the electronic device, determines a target delay time for at least one application based on the information for the load, identifies at least one combination that satisfies the target delay time among the combinations of a plurality of predefined power states and a plurality of interrupt generation rates, identifies one combination with the lowest energy consumption among the at least one combinations, and enables the electronic device to be controlled based on the power state and the interrupt generation rate according to the identified one combination. Therefore, the present invention is capable of providing the electronic device with a significantly improved energy efficiency.

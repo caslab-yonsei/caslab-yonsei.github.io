@@ -20,6 +20,12 @@ sidebar:
         reveal: true
         overt: true
         text: skkim at dgist.ac.kr
+  - title: Instagram Manager
+    items:
+      - type: link
+        icon: instagram
+        url: https://www.instagram.com/yonsei.caslab/
+        text: "yonsei.caslab"
 alterlink: 
 components: [researches, contents, publications, patents, photos]
 ---

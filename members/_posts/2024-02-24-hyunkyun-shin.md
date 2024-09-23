@@ -20,7 +20,7 @@ sidebar:
       - type: email
         reveal: true
         overt: true
-        text: #To be updated
+        text: hk.shin at yonsei.ac.kr
 alterlink: 
 components: [researches, contents, publications, patents, photos]
 ---
