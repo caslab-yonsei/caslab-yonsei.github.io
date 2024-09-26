@@ -39,6 +39,7 @@ categories:
     <div class="carousel">
   {%- for photo in site.categories.photos limit:20 -%}
     {%- if photo.template -%}{% continue -%}{% endif -%}
+    {%- if photo.hidden -%}{% continue -%}{% endif -%}
       <div class="carousel-item">
         <a class="off" href="/photos/#{{- photo.title -}}" draggable="false">
           <div class="carousel-image">
