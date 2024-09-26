@@ -2,7 +2,7 @@
 {% for item in include.items %}
   {% if include.overt %}{% unless item.overt %}{% continue %}{% endunless %}{% endif %}
   {% assign n_items_inc = n_items_inc | plus: 1 %}
-  {% unless include.overt %}{% if n_items_inc == 1 %}
+  {% unless include.short %}{% if n_items_inc == 1 %}
   <div class="smallhead">
     {{ section.title }}
   </div>
@@ -105,6 +105,6 @@
       {% endif %}
   {% endcase %}
 {% endfor %}
-{% unless include.overt %}{% if n_items_inc > 0 %} 
+{% unless include.short %}{% if n_items_inc > 0 %} 
 <div class="spacer"></div>
 {% endif %}{% endunless %}

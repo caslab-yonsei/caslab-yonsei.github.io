@@ -43,7 +43,7 @@
         <div class="spacer"></div>
         <p class="note">{% for research in member.researches %}{{ research }}{% unless forloop.last %}, {% endunless -%}{% endfor -%}</p>
         {% for section in member.sidebar %}
-          {% include link_parse.html items=section.items overt=true %}
+          {% include link_parse.html items=section.items overt=true short=true %}
         {% endfor %}
         <div class="bigspacer"></div>
       </div>
