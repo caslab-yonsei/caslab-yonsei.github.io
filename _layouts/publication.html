@@ -33,11 +33,7 @@ layout: default
     <div class="bigspacer"></div>
     <div class="glyphbox note">
       {% for section in page.sidebar %}
-        <div class="smallhead">
-          {{ section.title }}
-        </div>
         {% include link_parse.html items=section.items %}
-        <div class="spacer"></div>
       {% endfor %}
       {% if page.doi %}
       <div class="smallhead">
