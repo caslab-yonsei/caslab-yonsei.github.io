@@ -39,6 +39,10 @@ categories:
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Email</span></td>
                     <td style="vertical-align:middle;"><a class="off">daehoonkim<span class="obfuscator" style="display:none">obfuscate</span>@yonsei.ac.kr</a></td>
                 </tr>
+                <tr>
+                    <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Phone</span></td>
+                    <td style="vertical-align:middle;"><span>02) 2123-5825</span></td>
+                </tr>
                 </tbody>
             </table>
         </address>
