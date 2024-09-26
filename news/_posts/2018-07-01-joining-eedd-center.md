@@ -14,7 +14,7 @@ sidebar:
       reveal: true
     - type: link
       url: https://www.dgist.ac.kr/kor/sub04_02_07.do
-      name: 암흑데이터 극한활용 연구센터
-      text: true
+      text: 암흑데이터 극한활용 연구센터
+      reveal: true
 alterlink: 
 ---

@@ -24,11 +24,7 @@ layout: default
     <div class="bigspacer"></div>
     <div class="glyphbox note">
       {% for section in page.sidebar %}
-      <div class="smallhead">
-        {{ section.title }}
-      </div>
-      {% include link_parse.html items=section.items %}
-      <div class="spacer"></div>
+        {% include link_parse.html items=section.items %}
       {% endfor %}
       <div class="bigspacer"></div>
     </div>
