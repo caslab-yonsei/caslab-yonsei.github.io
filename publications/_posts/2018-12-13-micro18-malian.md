@@ -46,9 +46,14 @@ keywords:
   - High-bandwidth communication
   - Energy efficiency
 sidebar:
+  - title: Awards
+    items:
+      - type: text
+        text: Nominated for the Best Paper Award
+        icon: trophy
+        overt: true
+        reveal: true
 doi: 10.1109/MICRO.2018.00070
-awards:
-  - Nominated for the Best Paper Award
 components: [abstract, keywords, topics]
 hidden: false
 ---

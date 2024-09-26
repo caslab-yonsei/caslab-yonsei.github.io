@@ -30,9 +30,14 @@ keywords:
   - Performance analysis
   - Simulation infrastructure
 sidebar:
+  - title: Awards
+    items:
+      - type: text
+        text: Nominated for the Best Paper Award
+        icon: trophy
+        overt: true
+        reveal: true
 doi: 10.1109/ISPASS.2017.7975287
-awards:
-  - Nominated for the Best Paper Award
 components: [abstract, keywords, topics]
 hidden: false
 ---

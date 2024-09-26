@@ -15,9 +15,5 @@
 <div class="spacer"></div>
 {% endif %}
 {% for section in include.member_loc.sidebar %}
-  <div class="smallhead">
-    {{ section.title }}
-  </div>
-  {% include link_parse.html items=section.items %}
-  <div class="spacer"></div>
+  {% include link_parse.html items=section.items overt=include.overt %}
 {% endfor %}

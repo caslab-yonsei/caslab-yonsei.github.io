@@ -29,18 +29,28 @@ researches: # related research area among ai/cloud/memory/power/security
   - (area 2)
 keywords: [(keyword 1), (keyword 2), ...]
 doi: (doi number)
-awards:
-  - (award 1)
-  - (award 2)
 sidebar:
   # following is just example, all types are shown
   # you can reorder, delete, add, and/or customise
+  - title: Awards
+    items:
+      - type: text
+        icon: trophy
+        text: (award 1)
+        reveal: true
+        overt: true
+      - type: text
+        icon: trophy
+        text: (award 2)
+        reveal: true
+        overt: true
   - title: Github
     items: 
       - type: link
         icon: gitbub-alt
         url: (source code github address)
         text: (repository name)
+        overt: false
   - title: PDF
     items: 
       - type: file
@@ -56,7 +66,7 @@ sidebar:
         icon: (icon for item 1 from https://fontawesome.com/v4/icons/, leave empty if default)
         text: (text for item 1)
         reveal: false # when true, on hover the omitted part will be revealed
-        overt: false # when true, this info will be shown on members page
+        overt: false # when true, this info will be shown on publications page
       - type: link
         icon: (icon for item 2)
         url: (link for item 2)

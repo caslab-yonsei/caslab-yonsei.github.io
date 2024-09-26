@@ -1,13 +1,7 @@
-{% assign n_items_inc = 0 %}
 {% for item in include.items %}
-  {% if include.overt %}{% unless item.overt %}{% continue %}{% endunless %}{% endif %}
-  {% assign n_items_inc = n_items_inc | plus: 1 %}
-  {% if n_items_inc == 1 %}
-  <div class="smallhead">
-    {{ section.title }}
-  </div>
-  {% endif %}
-
+  {% unless item.overt %}{% continue %}{% endunless %}
+  {% assign n_info = n_info | plus: 1 %}
+  {% if n_info == 1 %}<div class="media-awards">{% endif %}
   {% assign icon = false %}
   {% if item.icon %}
     {% assign icon = item.icon | prepend: 'seungkyu-' | remove: '-fa-' | remove: 'seungkyu-' | remove: 'seungkyu' | prepend: 'fa-'  %}
@@ -16,7 +10,7 @@
   {% case item.type %}
     {% when 'text' %}
       {% unless icon %}{% assign icon = 'fa-info-circle' %}{% endunless %}
-<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+<div class="media-award-elem">
   <i class="fa {{ icon }} fa-fw"></i>
   <span>{{ item.text }}</span>
 </div>
@@ -29,7 +23,7 @@
         {% else %}{% assign icon = 'fa-link' %}
         {% endif %}
       {% endunless %}
-<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+<div class="media-award-elem">
   <i class="fa {{ icon }} fa-fw"></i>
   <span>
     {% unless item.url == '#' or item.url == nil %}
@@ -46,7 +40,7 @@
       {% unless icon %}
         {% assign icon = 'fa-file-text-o' %}
       {% endunless %}
-<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+<div class="media-award-elem">
   <i class="fa {{ icon }} fa-fw"></i>
   <span>
     {% unless item.url == '#' or item.url == nil %}
@@ -62,7 +56,7 @@
     {% when 'email' %}
       {% unless icon %}{% assign icon = 'fa-inbox' %}{% endunless %}
       {% assign emailarray = item.text | split: ' at ' %}
-<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+<div class="media-award-elem">
   <i class="fa {{ icon }} fa-fw"></i>
   <span><a class="off">{{ emailarray.first}}<span class="obfuscator" style="display:none">obfuscate</span>@{{ emailarray.last }}</a></span>
 </div>
@@ -70,7 +64,7 @@
     {% when 'member' %}
       {% unless icon %}{% assign icon = 'fa-user' %}{% endunless %}
       {% assign member = site.categories.members | where 'title', item.name %}
-      <div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+      <div class="media-award-elem">
         <i class="fa {{ icon }} fa-fw"></i>
         <span>
           <a class="off" href="{{ member.url }}">
@@ -94,7 +88,7 @@
             {% else %}{% assign icon = 'fa-link' %}
           {% endcase %}
         {% endunless %}
-<div class="pad-left note {% if item.reveal %}reveal{% endif %}">
+<div class="media-award-elem">
   <i class="fa {{ icon }} fa-fw"></i>
   <span>
     <a class="off" href="{{ item.url }}">
@@ -105,6 +99,3 @@
       {% endif %}
   {% endcase %}
 {% endfor %}
-{% if n_items_inc > 0 %} 
-<div class="spacer"></div>
-{% endif %}

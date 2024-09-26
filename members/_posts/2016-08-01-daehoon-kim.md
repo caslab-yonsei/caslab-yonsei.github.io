@@ -18,6 +18,7 @@ sidebar:
         icon: map-marker
         text: "Engineering Research Park 215"
         reveal: true
+        overt: true
   - title: Email
     items:
       - type: email
@@ -30,6 +31,14 @@ sidebar:
         icon: phone
         text: 02) 2123-5825
         reveal: true
+        overt: true
+  - title: Google Scholar
+    items:
+      - type: link
+        icon: book
+        url: http://scholar.google.com/citations?user=zjxGtuoAAAAJ
+        text: Daehoon Kim
+        overt: false
 alterlink: https://sites.google.com/view/daehoonkim
 components: [researches, contents, photos]
 ---
