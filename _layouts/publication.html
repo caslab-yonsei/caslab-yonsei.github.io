@@ -32,28 +32,6 @@ layout: default
   <div class="col-md-3">
     <div class="bigspacer"></div>
     <div class="glyphbox note">
-      {% for award in page.awards %}
-        {% if forloop.first %}
-      <div class="smallhead">
-        Awards
-      </div>
-        {% endif %}
-      <div class="pad-left note reveal">
-        <i class="fa fa-trophy fa-fw"></i>
-        <span>{{ award }}</span>
-      </div>
-      {% if forloop.last %}<div class="spacer"></div>{% endif %}
-      {% endfor %}
-      {% if page.doi %}
-      <div class="smallhead">
-        DOI
-      </div>
-      <div class="pad-left note">
-        <i class="fa fa-external-link fa-fw"></i>
-        <a class="off" href="http://dx.doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer">{{ page.doi }}</a>
-      </div>
-      <div class="spacer"></div>
-      {% endif %}
       {% for section in page.sidebar %}
         <div class="smallhead">
           {{ section.title }}
@@ -61,6 +39,16 @@ layout: default
         {% include link_parse.html items=section.items %}
         <div class="spacer"></div>
       {% endfor %}
+      {% if page.doi %}
+      <div class="smallhead">
+        DOI
+      </div>
+      <div class="pad-left note">
+        <i class="fa fa-external-link fa-fw"></i>
+        <a class="off reveal" href="http://dx.doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer">{{ page.doi }}</a>
+      </div>
+      <div class="spacer"></div>
+      {% endif %}
     </div>
   </div>
   <div class="col-md-8">

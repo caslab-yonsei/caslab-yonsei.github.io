@@ -19,11 +19,11 @@
       <p class="smallnote">
         {% include pub_ref.html pub_loc=include.pub short=true %}
       </p>
-      {% for award in include.pub.sidebar.awards %}
-      {% if forloop.first %}<div class="media-awards">{% endif %}
-        <div class="media-award-elem"><i class="fa fa-trophy fa-fw"></i> {{ award }}</div>
-      {% if forloop.last %}</div>{% endif %}
+      {% assign n_info = 0 %}
+      {% for info in include.pub.sidebar %}
+        {% include link_parse_pub.html items=info.items %}
       {% endfor %}
+      {% if n_info > 0 %}</div>{% endif %}
     </div>
   </div>
   <div class="bigspacer"></div>
