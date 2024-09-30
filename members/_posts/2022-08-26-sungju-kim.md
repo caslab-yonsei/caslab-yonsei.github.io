@@ -26,7 +26,7 @@ sidebar:
         icon: map-marker
         text: Lab Leader
         overt: true
-alterlink: 
+alterlink: https://sites.google.com/view/sungju-kim
 components: [contents, publications, patents, photos]
 ---
 
