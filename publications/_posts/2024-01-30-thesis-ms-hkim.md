@@ -6,6 +6,7 @@ authors:
   - name: Donghoon Shin
     short: D. Shin
   - name: Daehoon Kim
+    corresponding: true
 type: Paper
 international: false
 paper: # delete if patent

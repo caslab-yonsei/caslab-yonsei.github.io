@@ -6,6 +6,7 @@ authors:
   - name: Jaeha Kung
     short: J. Kung
   - name: Daehoon Kim
+    corresponding: true
 type: Paper
 international: false
 paper: # delete if patent

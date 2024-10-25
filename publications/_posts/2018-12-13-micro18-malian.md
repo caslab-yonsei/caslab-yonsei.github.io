@@ -25,10 +25,12 @@ authors:
     short: J. Xiong
   - name: Daehoon Kim
     short: D. Kim
+    corresponding: true
   - name: Wen-mei Hwu
     short: W.-m. Hwu
   - name: Nam Sung Kim
     short: N. S. Kim
+    corresponding: true
 type: Paper
 international: true
 paper: 

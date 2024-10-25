@@ -11,6 +11,7 @@ authors:
     short: J. Kung
   - name: Daehoon Kim
     short: D. Kim
+    corresponding: true
 type: Paper
 international: true
 paper:

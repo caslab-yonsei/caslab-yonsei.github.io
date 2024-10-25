@@ -7,6 +7,7 @@ authors:
   - name: Sungjin Lee
     short: S. Lee
   - name: Daehoon Kim
+    corresponding: true
 co-first: false
 type: Paper
 international: false

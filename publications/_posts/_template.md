@@ -9,6 +9,7 @@ authors:
     short: (author short name 2)
   - name: (author fullname 3)
     short: (author short name 3)
+    corresponding: true # if not, you can omit this
 co-first: false # true if author 1, 2 are co-first authors
 type: Paper, Patent, ...
 international: true # false if domestic
