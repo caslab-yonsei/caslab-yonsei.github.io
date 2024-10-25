@@ -11,6 +11,7 @@ authors:
   - name: Nam Sung Kim
     short: N. S. Kim
   - name: Daehoon Kim
+    corresponding: true
 co-first: false 
 type: Paper
 international: true

@@ -11,6 +11,7 @@ authors:
     short: G. Park
   - name: Daehoon Kim
     short: D. Kim
+    corresponding: true
 co-first: true
 type: Paper
 international: true

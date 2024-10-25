@@ -6,6 +6,7 @@ authors:
   - name: Hoon Sung Chwa
     short: H. S. Chwa
   - name: Daehoon Kim
+    corresponding: true
 type: Paper
 international: false
 paper: # delete if patent
