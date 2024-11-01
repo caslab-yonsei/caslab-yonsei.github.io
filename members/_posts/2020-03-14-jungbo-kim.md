@@ -6,7 +6,12 @@ role: Student
 position: Ph.D. Student
 image: /members/images/jbkim.jpg
 researches:
-  - Computer Architecture
+  - Computer Architecture & Systems
+  - CPU-GPU Memory Architecture/System
+  - Disaggregated Memory System & Cache Coherence (e.g. CXL)
+  - ML System
+  - Simulator Development (e.g. gem5)
+  - Tiered(Heterogeneous) Memory Management
 sidebar:
   - title: Location
     items:
