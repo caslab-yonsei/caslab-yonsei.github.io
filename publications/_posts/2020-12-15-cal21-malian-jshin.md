@@ -5,6 +5,7 @@ image:
 authors:
   - name: Mohammad Alian
     short: M. Alian
+    corresponding: true
   - name: Jongmin Shin
     short: J. Shin
   - name: Ki-Dong Kang
@@ -15,6 +16,7 @@ authors:
     short: A. Daglis
   - name: Daehoon Kim
     short: D. Kim
+    corresponding: true
   - name: Nam Sung Kim
     short: N. S. Kim
 co-first: true
