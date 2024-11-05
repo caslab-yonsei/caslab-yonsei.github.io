@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Our paper was accepted at HPCA 2025 (top-tier conference).
+title: Our paper was accepted at <b><i>HPCA 2025 (top-tier conference)</i></b>.
 members:
 YYYY: "2024"
 MM: "11"
