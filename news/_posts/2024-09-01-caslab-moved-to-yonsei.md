@@ -1,6 +1,6 @@
 ---
 layout: news
-title: We moved to Yonsei university!
+title: We moved to Yonsei University!
 members:
 YYYY: "2024"
 MM: "09"
