@@ -1,9 +1,9 @@
 ---
 layout: news
-title: We moved to Yonsei University!
+title: Our paper was accepted at HPCA 2025 (top-tier conference).
 members:
 YYYY: "2024"
-MM: "09"
+MM: "11"
 DD: 
 alterlink: /photos/#CASLAB@Yonsei%202024
 ---
