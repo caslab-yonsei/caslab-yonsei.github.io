@@ -11,7 +11,7 @@ members:
   - Jinin So
   - Daehoon Kim
 YYYY: "2025"
-MM: "1"
+MM: "01"
 DD: 
 alterlink: /publications/cal25-yjeon/
 ---
