@@ -47,70 +47,74 @@ layout: default
     <div class="bigspacer"></div>
 
 {% when 'publications' %}
+  {% assign n_pubs = 0 %}
   {% for publication in site.categories.publications %}
-    {% for author in publication.authors %}
-      {% if author.name == member.title %}
-        {% if publication.type == 'Paper' %}
-          {% assign papersq = true %}
-        {% endif %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if papersq %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
+    {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
+    <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
+    {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
+    <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
 
-  {% if papersq == true %}
+    {% if n_pubs == 0 %}
+      {% assign counter = 0 %}
     <div class="publications">
-      <h2 id="publications">Publications</h2>
-
-      <ol>
-      {% for publication in site.categories.publications %}
-        {% unless publication.type == 'Paper'%}{% continue %}{% endunless %}
-        {% for author in publication.authors %}
-          {% if author.name == member.title %}
-        <li>{% if publication.paper.publisher-type %}({{ publication.paper.publisher-type }}) {% endif %}<a href="{{ publication.url }}">{{ publication.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-      </ol>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 id="publications">Publications</h2>
+          <hr style="margin-bottom: 2px">
+          <div class="corr-right col-md-12">
+            <span><b>* Corresponding Author</b></span>
+            <div class="smallspacer"></div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+      <div class="row">
+        <div class="col-md-12">
+          {% include pub_box_full.html pub=publication %}
+          {% assign counter = counter | plus: 1 %}
+        </div>
+      </div>
+      {% assign n_pubs = n_pubs | plus: 1 %}
+  {% endfor %}
+  {% unless n_pubs == 0 %}
     </div>
     <div class="bigspacer"></div>
-  {% endif %}
+  {% endunless %}
 
 {% when 'patents' %}
-  {% for publication in site.categories.publications %}
-    {% for author in publication.authors %}
-      {% if author.name == member.title %}
-        {% if publication.type == 'Patent' %}
-          {% assign patentsq = true %}
-        {% endif %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if patentsq %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
+{% assign n_pubs = 0 %}
+{% for publication in site.categories.publications %}
+  {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
+  <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
+  {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
+  <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
 
-  {% if patentsq == true %}
-    <div class="patents">
-      <h2 id="patents">Patents</h2>
-
-      <ol>
-      {% for publication in site.categories.publications %}
-        {% unless publication.type == 'Patent' %}{% continue %}{% endunless %}
-        {% for author in publication.authors %}
-          {% if author.name == member.title %}
-        <li>({{ publication.patent.nation }}) <a href="{{ publication.url }}">{{ publication.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-      </ol>
+  {% if n_pubs == 0 %}
+    {% assign counter = 0 %}
+  <div class="publications">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id="publications">Publications</h2>
+        <hr style="margin-bottom: 2px">
+        <div class="corr-right col-md-12">
+          <span><b>* Corresponding Author</b></span>
+          <div class="smallspacer"></div>
+        </div>
+      </div>
     </div>
-    <div class="bigspacer"></div>
   {% endif %}
+    <div class="row">
+      <div class="col-md-12">
+        {% include pub_box_full.html pub=publication %}
+        {% assign counter = counter | plus: 1 %}
+      </div>
+    </div>
+    {% assign n_pubs = n_pubs | plus: 1 %}
+{% endfor %}
+{% unless n_pubs == 0 %}
+  </div>
+  <div class="bigspacer"></div>
+{% endunless %}
 
 {% when 'photos' %}
     <div class="bigspacer"></div>
