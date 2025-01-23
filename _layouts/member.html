@@ -49,12 +49,12 @@ layout: default
 {% when 'publications' %}
   {% assign n_pubs = 0 %}
   {% for publication in site.categories.publications %}
-    {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
-    <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
+    {% if publication.template -%}{% continue -%}{% endif -%}
     {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
-    <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
     {% assign pubsq = false %}
+    <!-- {{ publication.title }} -->
     {% for author in publication.authors %}
+      <!-- {{ author.name }} -->
       {% if author.name == member.title %}
         {% assign pubsq = true %}
       {% endif %}
@@ -90,13 +90,12 @@ layout: default
 {% when 'patents' %}
   {% assign n_pubs = 0 %}
   {% for publication in site.categories.publications %}
-    {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
-    <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
+    {% if publication.template -%}{% continue -%}{% endif -%}
     {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
-    <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
     {% assign pubsq = false %}
+    <!-- {{ publication.title }} -->
     {% for author in publication.authors %}
-      <!-- author.name -->
+      <!-- {{ author.name }} -->
       {% if author.name == member.title %}
         {% assign pubsq = true %}
       {% endif %}
