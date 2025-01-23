@@ -86,7 +86,7 @@ layout: default
 {% for publication in site.categories.publications %}
   {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
   <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
-  {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
+  {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
   <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
 
   {% if n_pubs == 0 %}
