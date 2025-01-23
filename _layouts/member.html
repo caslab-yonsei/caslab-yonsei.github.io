@@ -52,9 +52,7 @@ layout: default
     {% if publication.template -%}{% continue -%}{% endif -%}
     {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
     {% assign pubsq = false %}
-    <!-- {{ publication.title }} -->
     {% for author in publication.authors %}
-      <!-- {{ author.name }} -->
       {% if author.name == member.title %}
         {% assign pubsq = true %}
       {% endif %}
@@ -93,9 +91,7 @@ layout: default
     {% if publication.template -%}{% continue -%}{% endif -%}
     {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
     {% assign pubsq = false %}
-    <!-- {{ publication.title }} -->
     {% for author in publication.authors %}
-      <!-- {{ author.name }} -->
       {% if author.name == member.title %}
         {% assign pubsq = true %}
       {% endif %}
