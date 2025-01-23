@@ -52,13 +52,11 @@ layout: default
     {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
     <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
     {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
-    {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
     <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
     {% assign pubsq = false %}
     {% for author in publication.authors %}
       {% if author.name == member.title %}
         {% assign pubsq = true %}
-        {% break %}
       {% endif %}
     {% endfor %}
     {% unless pubsq == true -%}{% continue -%}{% endunless -%}
@@ -90,45 +88,44 @@ layout: default
   {% endunless %}
 
 {% when 'patents' %}
-{% assign n_pubs = 0 %}
-{% for publication in site.categories.publications %}
-  {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
-  <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
-  {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
-  <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
-  {% assign pubsq = false %}
-  {% for author in publication.authors %}
-    {% if author.name == member.title %}
-      {% assign pubsq = true %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-  {% unless pubsq == true -%}{% continue -%}{% endunless -%}
+  {% assign n_pubs = 0 %}
+  {% for publication in site.categories.publications %}
+    {% if publication.template -%}{% continue -%}{% endif -%}<!-- 템플릿 항목: 생략 -->
+    <!-- publications 페이지에서 숨겨진 항목: {% if publication.hidden -%}{% continue -%}{% endif -%} -->
+    {% unless publication.type == "Patent" -%}{% continue -%}{% endunless -%}
+    <!-- 국제 페이퍼만 포함: {% unless publication.international -%}{% continue -%}{% endunless -%} -->
+    {% assign pubsq = false %}
+    {% for author in publication.authors %}
+      {% if author.name == member.title %}
+        {% assign pubsq = true %}
+      {% endif %}
+    {% endfor %}
+    {% unless pubsq == true -%}{% continue -%}{% endunless -%}
 
-  {% if n_pubs == 0 %}
-    {% assign counter = 0 %}
-  <div class="publications">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 id="publications">Publications</h2>
-        <div class="corr-right col-md-12">
-          <div class="smallspacer"></div>
+    {% if n_pubs == 0 %}
+      {% assign counter = 0 %}
+    <div class="patents">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 id="patents">Patents</h2>
+          <div class="corr-right col-md-12">
+            <div class="smallspacer"></div>
+          </div>
         </div>
       </div>
-    </div>
-  {% endif %}
-    <div class="row">
-      <div class="col-md-12">
-        {% include pub_box_full.html pub=publication %}
-        {% assign counter = counter | plus: 1 %}
+    {% endif %}
+      <div class="row">
+        <div class="col-md-12">
+          {% include pub_box_full.html pub=publication %}
+          {% assign counter = counter | plus: 1 %}
+        </div>
       </div>
-    </div>
     {% assign n_pubs = n_pubs | plus: 1 %}
-{% endfor %}
-{% unless n_pubs == 0 %}
-  </div>
-  <div class="bigspacer"></div>
-{% endunless %}
+  {% endfor %}
+  {% unless n_pubs == 0 %}
+    </div>
+    <div class="bigspacer"></div>
+  {% endunless %}
 
 {% when 'photos' %}
     <div class="bigspacer"></div>
