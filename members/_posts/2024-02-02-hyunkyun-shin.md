@@ -26,6 +26,7 @@ components: [researches, contents, publications, patents, photos]
 ---
 
 # Education
-* 2024.09~, **M.S. student**, Dept. of Systems Semiconductor Engineering, Yonsei
-* 2024.02~2024.08, **M.S. student**, Dept. of Electrical Engineering and Computer Science, DGIST
+* 2025.02~, **.M,S. student**, Electrical and Electronic Engineering, **Yonsei University**
+* 2024.02~2025.02, **M,S. student**, Dept. of Electrical Engineering and Computer Science, **DGIST**
 * 2020.02~2024.02, **Bachelor of Convergence engineering(Computer Science and Engineering Major Track, Mechanical Engineering Minor Track)**, School of Basic Science, **DGIST**
+
