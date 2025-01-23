@@ -2,7 +2,7 @@
   {% if publication.type == 'Paper' %}
     <i> {{ publication.paper.publisher-short }}</i>, {{publication.paper.year}}
   {%- elsif publication.type == 'Patent' -%}
-    <br/>{{ publication.patent.status }}, {{ publication.patent.nation }}
+    {{ publication.patent.status }}, {{ publication.patent.nation }}
     {%- if publication.patent.status == 'issued' -%}
       , No. {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
     {%- else -%}
@@ -13,7 +13,7 @@
   {% if publication.type == 'Paper' %}
     <i> {{ publication.paper.publisher }} ({{ publication.paper.publisher-short }})</i>, {{publication.paper.year}}
   {%- elsif publication.type == 'Patent' -%}
-    <br/>{{ publication.patent.status }}, {{ publication.patent.nation }},
+    {{ publication.patent.status }}, {{ publication.patent.nation }},
     Application No. {{ publication.patent.number-application }} ({{ publication.patent.date-application }})
     {%- if publication.patent.status == 'issued' -%}
       , Registration No. {{ publication.patent.number-publication }} ({{ publication.patent.date-publication }})
