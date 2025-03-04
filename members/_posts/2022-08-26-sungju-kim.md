@@ -19,12 +19,11 @@ sidebar:
       - type: email
         reveal: true
         overt: true
-        text: sungju_kim at dgist.ac.kr
+        text: sungju.kim at yonsei.ac.kr
   - title: Task
     items:
       - type: text
         icon: map-marker
-        text: Lab Leader
         overt: true
 alterlink: https://sites.google.com/view/sungju-kim
 components: [contents, publications, patents, photos]
