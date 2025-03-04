@@ -2,10 +2,11 @@
 This is the repository of official website of [Computer Architecture and Systems Laboratory](https://caslab-yonsei.github.io/) at Dept. of Systems Semiconductor Engineering, Yonsei University.
 
 ## Contributors
-* [Seungkyu Lee](http://cas.yonsei.ac.kr/members/seungkyu-lee/): Development manager
+* * [Seungkyu Lee](http://cas.yonsei.ac.kr/members/seungkyu-lee/): Original Developer
+    
+* [Hyunkyun Shin](http://cas.yonsei.ac.kr/members/hyunkyun-shin/): Repository & Domain Manager
 * [Yeji Jung](http://cas.yonsei.ac.kr/members/yeji-jung/): Chief contents manager
 * [Minho Kim](http://cas.yonsei.ac.kr/members/minho-kim/): [Research](http://cas.yonsei.ac.kr/research/) page writer
-* [Hyunkyun Shin](http://cas.yonsei.ac.kr/members/hyunkyun-shin/): Domain manager
 * and other labmates for updating their contents.
 
 ## For modification
