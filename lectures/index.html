@@ -14,7 +14,7 @@ categories:
 
 <div class="row">
   <div class="col-md-12">
-    <h2 id="yonsei">Yonsei</h2>
+    <h2 id="yonsei">Yonsei University</h2>
     <table class="lecture">
       <thead>
         <tr class="header lecture">
@@ -30,7 +30,7 @@ categories:
         {% for lecture in site.categories.lectures %}
           {% if lecture.template -%}{% continue -%}{% endif -%}
           {% if lecture.hidden -%}{% continue -%}{% endif -%}
-          {% unless lecture.institution == 'Yonsei' %}{% continue %}{% endunless %}
+          {% unless lecture.institution == 'Yonsei University' %}{% continue %}{% endunless %}
           {% assign n_lectures = n_lectures | plus: 1 %}
         <tr class="body">
           <td class="code">{{ lecture.code }}</td>
