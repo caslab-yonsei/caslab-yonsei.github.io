@@ -20,11 +20,6 @@ sidebar:
         reveal: true
         overt: true
         text: sungju.kim at yonsei.ac.kr
-  - title: Task
-    items:
-      - type: text
-        icon: map-marker
-        overt: true
 alterlink: https://sites.google.com/view/sungju-kim
 components: [contents, publications, patents, photos]
 ---
