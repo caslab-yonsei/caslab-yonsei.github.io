@@ -1,6 +1,6 @@
 ---
 layout: news
-title: A paper was accepted at <b><i>IEEE CAL (SCI(E) journal)</i></b>.
+title: Our paper was accepted at <b><i>IEEE CAL (SCI(E) journal)</i></b>.
 members:
   - Jongmin Shin
   - Seongtae Bang
