@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Two papers ware accepted at <b><i>MICRO 2021 (top-tier conference)</i></b>.
+title: Two papers were accepted at <b><i>MICRO 2021 (top-tier conference)</i></b>.
 members:
   - Ki-Dong Kang
   - Gyeongseo Park
