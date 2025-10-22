@@ -20,9 +20,10 @@ categories:
         <div class="bigspacer"></div>
         <div class="bigspacer"></div>
 
-        <span style="font-size: 1.563em;">
+        <span style="font-size: 1.2em;">
         We are seeking <strong>passionate and motivated students</strong> who are interested in the research and exploration of computer systems and architecture. Our lab is currently conducting in-depth research on topics including <strong>Processing-in-Memory (PIM)</strong>, <strong>CXL systems</strong>, and <strong>systems for accelerating AI applications</strong> (such as CPU-GPU LLM serving and RAG system acceleration).
-        <br>If you are interested in these fields, we encourage you to review our publications and other papers from top-tier conferences (e.g., <a href="https://www.microarch.org/micro58/program/" target="_blank" rel="noopener noreferrer">MICRO</a>, <a href="https://www.iscaconf.org/isca2025/program/" target="_blank" rel="noopener noreferrer">ISCA</a>, <a href="https://hpca-conf.org/2025/main-program/" target="_blank" rel="noopener noreferrer">HPCA</a>, <a href="https://www.asplos-conference.org/asplos2025/program.html" target="_blank" rel="noopener noreferrer">ASPLOS</a>). We also highly recommend considering <strong>graduate admission or an internship experience</strong> with our group.
+        <br>If you are interested in these fields, we encourage you to review our publications and other papers from top-tier conferences (e.g., <a href="https://www.microarch.org/micro58/program/" target="_blank" rel="noopener noreferrer">MICRO</a>, <a href="https://www.iscaconf.org/isca2025/program/" target="_blank" rel="noopener noreferrer">ISCA</a>, <a href="https://hpca-conf.org/2025/main-program/" target="_blank" rel="noopener noreferrer">HPCA</a>, <a href="https://www.asplos-conference.org/asplos2025/program.html" target="_blank" rel="noopener noreferrer">ASPLOS</a>). We also recommend considering <strong>graduate admission or an internship experience</strong> with our group.
+        <br>If you are interested in CASLAB, please contact us.
         </span>
         
 
