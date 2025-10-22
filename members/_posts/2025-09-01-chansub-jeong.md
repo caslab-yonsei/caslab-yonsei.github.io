@@ -1,12 +1,11 @@
 ---
 layout: member
-title: Seonmu Oh
-abbrev: S. Oh
+title: Chansub Jeong
+abbrev: C. Jeong
 role: Student
 position: M.S. Student
-image: /members/images/smoh.jpg
+image: /members/images/csjeong.jpeg
 researches:
-  - DRAM cache
   - Tiered Memory System
 sidebar:
   - title: Location
@@ -14,17 +13,18 @@ sidebar:
       - type: text
         icon: map-marker
         reveal: true
-        text: "E3-404, DGIST"
+        text: "Engineering Research Park 165B"
   - title: Email
     items:
       - type: email
         reveal: true
         overt: true
-        text: smoh at dgist.ac.kr
+        text: chansubjeong at yonsei.ac.kr
 alterlink: 
 components: [researches, contents, publications, patents, photos]
 ---
 
 # Education
-* 2023.09~, **M,S. student**, Dept. of Electrical Engineering and Computer Science, **DGIST**
-* 2019.02~2023.08, **Bachelor of Convergence engineering**, School of Basic Science, **DGIST**
+* 2025.09~, **M.S.**, Dept. of Systems Semiconductor Engineering, **Yonsei University**
+* 2021.03~2025.02, **B.S.**, in Electronic & Computer Engineering, **Kwangwoon University**
+
