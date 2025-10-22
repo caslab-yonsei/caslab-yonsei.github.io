@@ -4,7 +4,7 @@ title: Chansub Jeong
 abbrev: C. Jeong
 role: Student
 position: M.S. Student
-image: /members/images/csjeong.jpeg
+image: /members/images/csjeong.jpg
 researches:
   - Tiered Memory System
 sidebar:
