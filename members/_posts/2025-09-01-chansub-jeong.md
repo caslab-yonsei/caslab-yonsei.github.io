@@ -26,5 +26,5 @@ components: [researches, contents, publications, patents, photos]
 
 # Education
 * 2025.09~, **M.S.**, Dept. of Systems Semiconductor Engineering, **Yonsei University**
-* 2021.03~2025.02, **B.S.**, in Electronic & Computer Engineering, **Kwangwoon University**
+* 2021.02~2025.02, **B.S.**, in Electronic & Computer Engineering, **Kwangwoon University**
 
