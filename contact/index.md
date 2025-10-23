@@ -9,7 +9,7 @@ categories:
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Contact</h1>
+        <h1><b>Contact</b></h1>
         <hr/>
     </div>
 </div>
