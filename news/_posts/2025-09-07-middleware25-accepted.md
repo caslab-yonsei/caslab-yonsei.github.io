@@ -5,5 +5,5 @@ members:
 YYYY: "2025"
 MM: "09"
 DD: 
-alterlink: /publications/middleware-mkim
+alterlink: /publications/middleware25-mkim
 ---
