@@ -8,7 +8,7 @@ authors:
   - name: Gyeongseo Park
   - name: Daehoon Kim
     corresponding: true
-co-first: false 
+co-first: true 
 type: Paper
 international: true
 researches: [power]
