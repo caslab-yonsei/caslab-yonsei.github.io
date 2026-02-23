@@ -16,7 +16,7 @@ sidebar:
     items:
       - type: text
         icon: map-marker
-        text: "Engineering Research Park 215"
+        text: "Engineering Research Park B171C"
         reveal: true
         overt: true
   - title: Email
