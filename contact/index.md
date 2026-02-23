@@ -38,7 +38,7 @@ categories:
                 </tr>
                 <tr>
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Office</span></td>
-                    <td style="vertical-align:middle;"><span title="연세대학교 신촌캠퍼스 공학원 212D">Engineering Research Park 212D, Yonsei University</span></td>
+                    <td style="vertical-align:middle;"><span title="연세대학교 신촌캠퍼스 공학원 B171C">Engineering Research Park B171C, Yonsei University</span></td>
                 </tr>
                 <tr>
                     <td style="text-align:center; vertical-align:middle;"><span style="font-size: 1.125em;">Email</span></td>
