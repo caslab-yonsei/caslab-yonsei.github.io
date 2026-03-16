@@ -11,6 +11,9 @@ images:
   - file: /photos/images/2025-10-20-MICRO-2025/5.jpeg
     members:  
       - [Daehoon Kim]
+  - file: /photos/images/2025-10-20-MICRO-2025/6.jpg
+    members:  
+      - [Daehoon Kim]
 
 ---
 
