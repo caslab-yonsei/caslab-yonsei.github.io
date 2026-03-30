@@ -1,6 +1,6 @@
 ---
 layout: member
-title: YunHyeong Jeon
+title: Yunhyeong Jeon
 abbrev: Y. Jeon
 role: Student
 position: Ph.D. Student
