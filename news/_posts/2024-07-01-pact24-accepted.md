@@ -5,7 +5,7 @@ members:
   - Gyeongseo Park
   - Minho Kim
   - Ki-Dong Kang
-  - YunHyeong Jeon
+  - Yunhyeong Jeon
   - Sungju Kim
   - Hyosang Kim
   - Daehoon Kim
