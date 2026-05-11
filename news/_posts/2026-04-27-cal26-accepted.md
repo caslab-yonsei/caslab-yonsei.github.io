@@ -8,5 +8,5 @@ members:
 YYYY: "2026"
 MM: "04"
 DD: 
-alterlink: /publications/cal26-shan/
+alterlink: /publications/cal26-2-shan/
 ---
