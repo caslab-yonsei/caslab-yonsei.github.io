@@ -6,7 +6,7 @@ images:
     members:  
       - [Daehoon Kim, Hyunkyun Shin, Seongtae Bang, Yewon Jang, Minwoo Jang, Chansub Jeong, Sangwoong Kim, Jungbo Kim, Minho Kim, Hwanjun Lee, Sungju Kim, Yunhyeong Jeon]
       - [Seulki Kim, Hyungwon Park, Kyeonghyeon Ryu, Yeji Jung, Hyosang Kim, Jongmin Shin, Seonggyu Han]
-  - file: /photos/images/2026-05-15-caslab-yonsei-teachers-day-2026/2.jpeg
+  - file: /photos/images/2026-05-14-caslab-yonsei-teachers-day-2026/2.jpeg
     members:  
       - [Daehoon Kim, Yunhyeong Jeon]
   - file: /photos/images/2026-05-14-caslab-yonsei-teachers-day-2026/3.jpeg
