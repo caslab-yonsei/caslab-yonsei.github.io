@@ -21,6 +21,8 @@ paper:
   publisher-short: "Access"
   publisher-type: Journal
   ref: vol. 8, pp. 201028-201039
+publication_tags:
+  - SCI
 researches: [power]
 keywords:
   - Power management

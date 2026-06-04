@@ -35,6 +35,8 @@ paper: # delete if patent
   publisher-short: "CAL"
   publisher-type: Journal
   ref: vol. 20, no. 1, pp. 30-33
+publication_tags:
+  - SCI
 sidebar:
 doi: 10.1109/LCA.2020.3044923
 components: [abstract, keywords, topics]

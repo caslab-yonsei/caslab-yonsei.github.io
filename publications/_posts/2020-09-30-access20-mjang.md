@@ -20,6 +20,8 @@ paper:
   publisher-type: Journal
   publisher-short: "Access"
   ref: vol. 8, pp. 179837-179844
+publication_tags:
+  - SCI
 researches: [security]
 keywords:
   - Cache side-channel attacks
