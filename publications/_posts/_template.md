@@ -18,6 +18,10 @@ paper: # delete if patent
   publisher: "(Publisher fullname)"
   publisher-short: "(Publisher short name)"
   ref: "<b>(issue number)</b>: (article number / page number / etc)" #(leave empty if not possible)
+publication_tags: # TOP-Tier, Major, SCI
+  - (publication tag)
+publication_fields: # Architecture, ML system, Cloud, Memory Management, Power/Resource Management, Security
+  - (publication field)
 patent: # delete if conference/journal
   status: filed/issued
   nation: Korea/PCT/US/Japan/...

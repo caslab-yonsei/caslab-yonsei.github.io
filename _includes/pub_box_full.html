@@ -6,6 +6,7 @@
     {% endfor %}
     {% if n_info > 0 %}</div>{% endif %}
     <div class="media-body">
+      {% include pub_badges.html pub=include.pub %}
       <p class="smallnote">
         {% if include.pub.type == 'Paper' %}
         <b>[{{ include.pub.paper.publisher-short }}]</b>

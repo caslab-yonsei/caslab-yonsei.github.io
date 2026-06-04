@@ -1,0 +1,27 @@
+{% assign pub = include.pub %}
+{% assign publication_tags = pub.publication_tags %}
+{% assign publication_fields = pub.publication_fields %}
+
+{% if publication_tags.size > 0 or publication_fields.size > 0 %}
+<div class="publication-badges">
+  {% if publication_tags.size > 0 %}
+  <span class="publication-badge-group publication-tier-group">
+    {% for tag in publication_tags %}
+      {% assign tag_key = tag | downcase | replace: ' ', '-' %}
+      <span class="publication-badge publication-tier publication-tier-{{ tag_key }}">{{ tag }}</span>
+    {% endfor %}
+  </span>
+  {% endif %}
+  {% if publication_tags.size > 0 and publication_fields.size > 0 %}
+  <span class="publication-badge-separator">|</span>
+  {% endif %}
+  {% if publication_fields.size > 0 %}
+  <span class="publication-badge-group publication-field-group">
+    {% for field in publication_fields %}
+      {% assign field_key = field | downcase | replace: '/', '-' | replace: ' ', '-' %}
+      <span class="publication-badge publication-field publication-field-{{ field_key }}">{{ field }}</span>
+    {% endfor %}
+  </span>
+  {% endif %}
+</div>
+{% endif %}

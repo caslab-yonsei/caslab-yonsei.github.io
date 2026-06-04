@@ -11,6 +11,7 @@
     </a>
     {% endif %}
     <div class="media-body">
+      {% include pub_badges.html pub=include.pub %}
       <div class="media-heading">
         <a href="{{ include.pub.url }}" class="off">
           {{ include.pub.title }}
