@@ -41,6 +41,8 @@ paper:
   ref: pp. 802-814
 publication_tags:
   - TOP-Tier
+publication_fields:
+  - Memory Management
 researches: [memory, power]
 keywords:
   - Near-memory processing

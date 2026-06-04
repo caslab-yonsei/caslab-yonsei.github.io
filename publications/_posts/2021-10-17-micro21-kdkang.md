@@ -31,6 +31,9 @@ paper:
   ref: pp. 143-154
 publication_tags:
   - TOP-Tier
+publication_fields:
+  - Cloud
+  - Power/Resource Management
 sidebar:
 doi: 10.1145/3466752.3480098
 components: [abstract, keywords, topics]

@@ -23,6 +23,8 @@ paper:
   publisher-type: Conference
 publication_tags:
   - Major
+publication_fields:
+  - Memory Managemnet
 sidebar:
 doi: 
 components: [abstract, keywords, topics]

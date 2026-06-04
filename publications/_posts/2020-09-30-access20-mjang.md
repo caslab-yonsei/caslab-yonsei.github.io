@@ -22,6 +22,9 @@ paper:
   ref: vol. 8, pp. 179837-179844
 publication_tags:
   - SCI
+publication_fields:
+  - Security
+  - Architecture
 researches: [security]
 keywords:
   - Cache side-channel attacks
