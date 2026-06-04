@@ -21,6 +21,8 @@ paper:
   publisher: "ACM/IFIP International Middleware Conference"
   publisher-short: "Middleware"
   publisher-type: Conference
+publication_tags:
+  - Major
 sidebar:
 doi: 
 components: [abstract, keywords, topics]

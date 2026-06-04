@@ -28,6 +28,8 @@ paper:
   publisher-short: "ICCD"
   publisher-type: Conference
   ref: pp. 377-380
+publication_tags:
+  - Major
 sidebar:
 doi: 10.1109/ICCD50377.2020.00069
 components: [abstract, keywords, topics]

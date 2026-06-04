@@ -39,6 +39,8 @@ paper:
   publisher-short: "MICRO"
   publisher-type: Conference
   ref: pp. 802-814
+publication_tags:
+  - TOP-Tier
 researches: [memory, power]
 keywords:
   - Near-memory processing

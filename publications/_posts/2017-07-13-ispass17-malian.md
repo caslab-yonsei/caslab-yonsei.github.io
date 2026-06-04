@@ -23,6 +23,8 @@ paper:
   publisher-short: ISPASS
   publisher-type: Conference
   ref: pp. 153-162
+publication_tags:
+  - Major
 researches: 
 keywords:
   - Distributed computer systems

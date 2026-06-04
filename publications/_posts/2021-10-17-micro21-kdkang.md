@@ -29,6 +29,8 @@ paper:
   publisher-short: "MICRO"
   publisher-type: Conference
   ref: pp. 143-154
+publication_tags:
+  - TOP-Tier
 sidebar:
 doi: 10.1145/3466752.3480098
 components: [abstract, keywords, topics]
