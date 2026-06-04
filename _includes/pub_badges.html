@@ -2,7 +2,7 @@
 {% assign publication_tags = pub.publication_tags %}
 {% assign publication_fields = pub.publication_fields %}
 {% assign has_architecture = false %}
-{% assign has_ai_sytem = false %}
+{% assign has_ai_system = false %}
 {% assign has_cloud = false %}
 {% assign has_memory_management = false %}
 {% assign has_power_resource_management = false %}
@@ -12,8 +12,8 @@
   {% assign normalized_field = field | downcase | strip %}
   {% if normalized_field == 'architecture' %}
     {% assign has_architecture = true %}
-  {% elsif normalized_field == 'ai sytem' %}
-    {% assign has_ai_sytem = true %}
+  {% elsif normalized_field == 'ai system' %}
+    {% assign has_ai_system = true %}
   {% elsif normalized_field == 'cloud' %}
     {% assign has_cloud = true %}
   {% elsif normalized_field == 'memory management' %}
@@ -25,7 +25,7 @@
   {% endif %}
 {% endfor %}
 {% assign has_publication_fields = false %}
-{% if has_architecture or has_ai_sytem or has_cloud or has_memory_management or has_power_resource_management or has_security %}
+{% if has_architecture or has_ai_system or has_cloud or has_memory_management or has_power_resource_management or has_security %}
   {% assign has_publication_fields = true %}
 {% endif %}
 
@@ -47,8 +47,8 @@
     {% if has_architecture %}
       <span class="publication-badge publication-field publication-field-architecture">Architecture</span>
     {% endif %}
-    {% if has_ai_sytem %}
-      <span class="publication-badge publication-field publication-field-ai-sytem">AI Sytem</span>
+    {% if has_ai_system %}
+      <span class="publication-badge publication-field publication-field-ai-system">AI System</span>
     {% endif %}
     {% if has_cloud %}
       <span class="publication-badge publication-field publication-field-cloud">Cloud</span>
