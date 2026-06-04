@@ -24,7 +24,7 @@ paper:
 publication_tags:
   - SCI
 publication_fields:
-  - Power/Resource Manament
+  - Power/Resource Management
   - Cloud
 researches: [power]
 keywords:
