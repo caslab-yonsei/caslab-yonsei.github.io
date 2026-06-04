@@ -24,7 +24,7 @@ paper:
 publication_tags:
   - Major
 publication_fields:
-  - Memory Managemnet
+  - Memory Management
 sidebar:
 doi: 
 components: [abstract, keywords, topics]
