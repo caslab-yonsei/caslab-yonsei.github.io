@@ -23,6 +23,9 @@ paper:
   ref: vol. 8, pp. 201028-201039
 publication_tags:
   - SCI
+publication_fields:
+  - Power/Resource Manament
+  - Cloud
 researches: [power]
 keywords:
   - Power management

@@ -38,6 +38,8 @@ paper:
   ref: pp. 480-493
 publication_tags:
   - TOP-Tier
+publication_fields:
+  - Cloud
 sidebar:
 doi: 10.1109/MICRO56248.2022.00042
 components: [abstract, keywords, topics]
