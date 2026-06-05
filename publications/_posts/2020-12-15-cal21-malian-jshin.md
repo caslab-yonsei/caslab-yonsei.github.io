@@ -37,6 +37,9 @@ paper: # delete if patent
   ref: vol. 20, no. 1, pp. 30-33
 publication_tags:
   - SCI
+publication_fields:
+  - Cloud
+  - Architecture
 sidebar:
 doi: 10.1109/LCA.2020.3044923
 components: [abstract, keywords, topics]
