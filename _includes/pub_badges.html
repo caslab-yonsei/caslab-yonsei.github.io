@@ -4,9 +4,11 @@
 {% assign has_architecture = false %}
 {% assign has_ai_system = false %}
 {% assign has_cloud = false %}
-{% assign has_memory_management = false %}
+{% assign has_gpu = false %}
+{% assign has_next_gen_memory_system = false %}
 {% assign has_power_resource_management = false %}
 {% assign has_security = false %}
+{% assign has_virtualization = false %}
 
 {% for field in publication_fields %}
   {% assign normalized_field = field | downcase | strip %}
@@ -16,16 +18,20 @@
     {% assign has_ai_system = true %}
   {% elsif normalized_field == 'cloud' %}
     {% assign has_cloud = true %}
-  {% elsif normalized_field == 'memory management' %}
-    {% assign has_memory_management = true %}
+  {% elsif normalized_field == 'gpu' %}
+    {% assign has_gpu = true %}
+  {% elsif normalized_field == 'next-gen memory system' or normalized_field == 'memory management' %}
+    {% assign has_next_gen_memory_system = true %}
   {% elsif normalized_field == 'power/resource management' %}
     {% assign has_power_resource_management = true %}
   {% elsif normalized_field == 'security' %}
     {% assign has_security = true %}
+  {% elsif normalized_field == 'virtualization' %}
+    {% assign has_virtualization = true %}
   {% endif %}
 {% endfor %}
 {% assign has_publication_fields = false %}
-{% if has_architecture or has_ai_system or has_cloud or has_memory_management or has_power_resource_management or has_security %}
+{% if has_architecture or has_ai_system or has_cloud or has_gpu or has_next_gen_memory_system or has_power_resource_management or has_security or has_virtualization %}
   {% assign has_publication_fields = true %}
 {% endif %}
 
@@ -53,14 +59,20 @@
     {% if has_cloud %}
       <span class="publication-badge publication-field publication-field-cloud">Cloud</span>
     {% endif %}
-    {% if has_memory_management %}
-      <span class="publication-badge publication-field publication-field-memory-management">Memory Management</span>
+    {% if has_gpu %}
+      <span class="publication-badge publication-field publication-field-gpu">GPU</span>
+    {% endif %}
+    {% if has_next_gen_memory_system %}
+      <span class="publication-badge publication-field publication-field-next-gen-memory-system">Next-Gen Memory System</span>
     {% endif %}
     {% if has_power_resource_management %}
       <span class="publication-badge publication-field publication-field-power-resource-management">Power/Resource Management</span>
     {% endif %}
     {% if has_security %}
       <span class="publication-badge publication-field publication-field-security">Security</span>
+    {% endif %}
+    {% if has_virtualization %}
+      <span class="publication-badge publication-field publication-field-virtualization">Virtualization</span>
     {% endif %}
   </span>
   {% endif %}

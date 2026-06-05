@@ -24,9 +24,10 @@ paper:
 publication_tags:
   - Major
 publication_fields:
-  - Memory Management
+  - Next-Gen Memory System
+  - Cloud
 sidebar:
-doi: 
+doi: 10.1145/3721462.3770767
 components: [abstract, keywords, topics]
 hidden: false
 ---

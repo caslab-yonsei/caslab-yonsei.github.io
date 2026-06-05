@@ -42,7 +42,7 @@ paper:
 publication_tags:
   - TOP-Tier
 publication_fields:
-  - Memory Management
+  - Next-Gen Memory System
 researches: [memory, power]
 keywords:
   - Near-memory processing
