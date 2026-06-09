@@ -1,27 +1,25 @@
-
-{% assign publication = include.pub_loc %}
-{% for author in publication.authors %}
-  {% assign linked = false %}
-  {% assign newtab = false -%}
-  {% capture name %}{% if include.short == true and author.short %}{{ author.short }}{% else %}{{ author.name }}{% endif %}{% endcapture %} 
-  {% for member in site.categories.members %}
-    {% if author.name == member.title %}
-      {% capture mem_url %}{%- if member.alterlink -%}{% assign newtab = true -%}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{% endcapture %}
-      {% unless mem_url == '#' -%}{% assign linked = true %}{% endunless -%}
-      {% if include.short == true %}{% assign name = member.abbrev %}{% endif %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-  {% if publication.co-first and forloop.index == 2 %}
-    {% assign co-first-now = true %}
-  {% else %}
-    {% assign co-first-now = false %}
-  {% endif %}
-  {% if forloop.last and forloop.length > 1 and short != true %}and {% endif %}
-  {% if linked %}
-      <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
-    {{ name }}</a>{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
-  {% else %}
-    {{ name }}{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{% if co-first-now %} [co-first author]{% endif %}{% if forloop.last %}.{% else %}, {% endif %}
-  {% endif %}
-{% endfor %}
+{%- assign publication = include.pub_loc -%}
+{%- for author in publication.authors -%}
+  {%- assign linked = false -%}
+  {%- assign newtab = false -%}
+  {%- capture name -%}{%- if include.short == true and author.short -%}{{ author.short }}{%- else -%}{{ author.name }}{%- endif -%}{%- endcapture -%}
+  {%- for member in site.categories.members -%}
+    {%- if author.name == member.title -%}
+      {%- capture mem_url -%}{%- if member.alterlink -%}{% assign newtab = true %}{{ member.alterlink }}{%- else -%}{{ member.url }}{%- endif -%}{%- endcapture -%}
+      {%- unless mem_url == '#' -%}{% assign linked = true %}{%- endunless -%}
+      {%- if include.short == true -%}{%- assign name = member.abbrev -%}{%- endif -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if publication.co-first and forloop.index == 2 -%}
+    {%- assign co-first-now = true -%}
+  {%- else -%}
+    {%- assign co-first-now = false -%}
+  {%- endif -%}
+  {%- if forloop.last and forloop.length > 1 and short != true -%}and {% endif -%}
+  {%- if linked -%}
+      <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ name }}</a>{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- if forloop.last -%}.{%- else -%}, {% endif -%}
+  {%- else -%}
+    {{ name }}{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- if forloop.last -%}.{%- else -%}, {% endif -%}
+  {%- endif -%}
+{%- endfor -%}

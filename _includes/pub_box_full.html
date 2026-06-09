@@ -7,17 +7,14 @@
     {% if n_info > 0 %}</div>{% endif %}
     <div class="media-body">
       {% include pub_badges.html pub=include.pub %}
-      <p class="smallnote">
-        {% if include.pub.type == 'Paper' %}
-        <b>[{{ include.pub.paper.publisher-short }}]</b>
-        {% endif %}
-        {% include pub_ref_name.html pub_loc=include.pub %}
-      </p>
       <div class="media-heading">
         <a href="{{ include.pub.url }}" class="off">
           {{ include.pub.title }}
         </a>
       </div>
+      <p class="smallnote" style="margin-bottom: 0;">
+        {% include pub_ref_name.html pub_loc=include.pub %}
+      </p>
       <p class="smallnote">
         {% include pub_ref_publisher.html pub_loc=include.pub %}
       </p>
