@@ -1,10 +1,6 @@
 <div class="col-md-6 paperbox">
   <div class="media">
-    {% if include.pub.type == 'Paper' %}
-    <div class="publisher-short">
-      <b>[{{ include.pub.paper.publisher-short }}]</b>
-    </div>
-    {% endif %}
+
     {% if include.pub.image %}
     <a class="pull-right" href="{{ include.pub.url }}">
       <img width=100 class="media-object" src="{{ include.pub.image }}">
@@ -17,8 +13,11 @@
           {{ include.pub.title }}
         </a>
       </div>
+      <p class="smallnote" style="margin-bottom: 0;">
+        {% include pub_ref_name.html pub_loc=include.pub short=true %}
+      </p>
       <p class="smallnote">
-        {% include pub_ref.html pub_loc=include.pub short=true %}
+        {% include pub_ref_publisher.html pub_loc=include.pub short=true %}
       </p>
       {% assign n_info = 0 %}
       {% for info in include.pub.sidebar %}

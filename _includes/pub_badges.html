@@ -41,7 +41,7 @@
   <span class="publication-badge-group publication-tier-group">
     {% for tag in publication_tags %}
       {% assign tag_key = tag | downcase | replace: ' ', '-' %}
-      <span class="publication-badge publication-tier publication-tier-{{ tag_key }}">{{ tag }}</span>
+      <span class="publication-badge publication-tier publication-tier-{{ tag_key }}">{% if pub.paper.publisher-short %}{{ pub.paper.publisher-short }}-{% endif %}{{ tag }}</span>
     {% endfor %}
   </span>
   {% endif %}
