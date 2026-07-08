@@ -32,7 +32,6 @@ publication_tags:
   - Major
 publication_fields:
   - Power/Resource Management
-  - Cloud
 sidebar:
 doi: 10.1109/ICCD50377.2020.00069
 components: [abstract, keywords, topics]

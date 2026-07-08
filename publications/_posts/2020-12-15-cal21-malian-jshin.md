@@ -22,7 +22,7 @@ authors:
 co-first: true
 type: Paper
 international: true
-researches: [memory, cloud]
+researches: [memory]
 keywords:
   - Inbound network data placement
   - Memory hierarchy optimization
@@ -38,7 +38,6 @@ paper: # delete if patent
 publication_tags:
   - SCI
 publication_fields:
-  - Cloud
   - Architecture
 sidebar:
 doi: 10.1109/LCA.2020.3044923
