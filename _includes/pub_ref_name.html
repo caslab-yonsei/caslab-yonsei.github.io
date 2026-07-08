@@ -18,8 +18,8 @@
   {%- endif -%}
   {%- if forloop.last and forloop.length > 1 and short != true -%}and {% endif -%}
   {%- if linked -%}
-      <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ name }}</a>{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- if forloop.last -%}.{%- else -%}, {% endif -%}
+      <a href="{{ mem_url }}"{% if newtab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ name }}</a>{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}
   {%- else -%}
-    {{ name }}{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- if forloop.last -%}.{%- else -%}, {% endif -%}
+    {{ name }}{%- if author.corresponding -%}<span title="Corresponding Author" class="corresponding"><sup>*</sup></span>{%- endif -%}{%- if co-first-now -%} [co-first author]{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}
   {%- endif -%}
 {%- endfor -%}
