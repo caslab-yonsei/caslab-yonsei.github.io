@@ -27,7 +27,6 @@ publication_tags:
   - Major
 publication_fields:
   - Architecture
-  - Cloud
 researches: 
 keywords:
   - Distributed computer systems

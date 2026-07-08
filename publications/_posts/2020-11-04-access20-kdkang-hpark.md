@@ -25,7 +25,6 @@ publication_tags:
   - SCI
 publication_fields:
   - Power/Resource Management
-  - Cloud
 researches: [power]
 keywords:
   - Power management

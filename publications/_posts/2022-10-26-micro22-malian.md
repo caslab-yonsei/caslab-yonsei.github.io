@@ -20,7 +20,7 @@ authors:
 co-first: false
 type: Paper
 international: true
-researches: [memory, cloud]
+researches: [memory]
 keywords:
   - Inbound network data orchestration
   - Cache hierarchy optimization
@@ -39,7 +39,7 @@ paper:
 publication_tags:
   - TOP-Tier
 publication_fields:
-  - Cloud
+  - Architecture
 sidebar:
 doi: 10.1109/MICRO56248.2022.00042
 components: [abstract, keywords, topics]
