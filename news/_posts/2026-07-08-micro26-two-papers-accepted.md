@@ -10,10 +10,10 @@ sidebar:
   - title: Publications
     items:
       - type: internal
-        url:
+        url: /publications/micro26-mkim/
         reveal: true
       - type: internal
-        url: 
+        url: /publications/micro26-sbang/
         reveal: true
 alterlink: 
 ---
