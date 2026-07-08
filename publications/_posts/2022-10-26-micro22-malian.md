@@ -39,6 +39,7 @@ paper:
 publication_tags:
   - TOP-Tier
 publication_fields:
+  - Architecture
 sidebar:
 doi: 10.1109/MICRO56248.2022.00042
 components: [abstract, keywords, topics]
