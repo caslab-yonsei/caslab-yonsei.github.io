@@ -5,7 +5,7 @@ members:
   - Hyosang Kim
 YYYY: "2026"
 MM: "05"
-DD: "15"
+DD: 
 sidebar:
 alterlink: 
 ---
