@@ -7,9 +7,11 @@ prefix: Prof.
 position: Associate Professor
 image: /members/images/dkim.png
 researches:
-  - Computer Architecture
+  - Computer Architecture and Systems
   - Operating Systems
-  - Virtualization
+  - Systems for AI / AI Systems
+  - Memory Systems
+  - Virtualization and Cloud Computing
   - Computer Systems Security
 sidebar:
   - title: Location
