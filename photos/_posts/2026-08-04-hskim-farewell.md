@@ -14,3 +14,4 @@ images:
       - [Minho Kim, Chansub Jung, Yeji Jung, Hyosang Kim, Yewon Jang, Seonggyu Han,  Yunhyeong Jeon]
 
 ---
+Congratulations on your graduation! We'll miss you.
