@@ -3,7 +3,8 @@ layout: member
 title: Hyosang Kim
 abbrev: H. Kim
 prefix: Dr.
-role: Alumni
+role: Postdoc
+position: Postdoctoral Researcher
 image: /members/images/hyosangkim.jpg
 researches:
   - System Security
