@@ -14,7 +14,7 @@
 
 {% for member in members reversed -%}
   {% if member.template -%}{% continue -%}{% endif -%}
-  {% if member.role == include.role -%}
+  {% if member.alumni.degree -%}
       <tr id="{% if member.profile_name %}{{ member.profile_name }}{% else %}{{ member.title }}{% endif %}">
         <td>
           {% assign newtab = false -%}
