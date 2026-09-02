@@ -3,8 +3,8 @@ layout: member
 title: Hyunkyun Shin
 abbrev: H. Shin
 role: Student
-position: M.S. Student
-image: /members/images/hkshin.jpg
+position: Ph.D. Student
+image: /members/images/hkshin.jpeg
 researches:
   - GPU Unified Virtual Memory
   - Memory system, architecture

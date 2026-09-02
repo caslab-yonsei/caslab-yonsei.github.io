@@ -22,6 +22,15 @@ sidebar:
         reveal: true
         overt: true
         text: lee.hwanjun at dgist.ac.kr
-alterlink: https://sites.google.com/view/discoverlee
+  - title: Homepage
+    items:
+      - type: link
+        icon: book
+        url: https://sites.google.com/view/discoverlee
+        text: CASLAB H.J.LEE
+alterlink:
 components: [researches, contents, publications, patents, photos]
 ---
+* 2020~, **Ph.D. candidate**, Dept. of Electrical Engineering and Computer Science, DGIST
+* 2019~2020, **M.S.**, Dept. of Electrical Engineering and Computer Science, DGIST
+* 2014~2019, **B.S.**, School of Basic Science, DGIST
