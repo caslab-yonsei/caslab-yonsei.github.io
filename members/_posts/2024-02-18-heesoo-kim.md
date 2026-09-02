@@ -3,7 +3,7 @@ layout: member
 title: Heesoo Kim
 abbrev: H. Kim
 role: Alumni
-image: /members/images/heesoo-kim.png
+image: /members/images/heesoo-kim.jpg
 researches:
   - DRAM
   - Memory management
