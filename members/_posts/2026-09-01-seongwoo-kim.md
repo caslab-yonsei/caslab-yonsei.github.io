@@ -20,7 +20,7 @@ sidebar:
       - type: email
         reveal: true
         overt: true
-        text: woje at yonsei.ac.kr
+        text: seongwoo.kim at yonsei.ac.kr
 alterlink: 
 components: [researches, contents, publications, patents, photos]
 ---
