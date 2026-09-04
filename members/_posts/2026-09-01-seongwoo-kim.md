@@ -3,7 +3,7 @@ layout: member
 title: Seongwoo Kim
 abbrev: S. Kim
 role: Student
-position: Ph.D. Student
+position: M.S. Student
 image: /members/images/seongwookim.jpeg
 researches:
   - Computer Architecture & System
