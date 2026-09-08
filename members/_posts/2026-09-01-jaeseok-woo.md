@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Jeseok Wo
+title: Jaeseok Woo
 abbrev: J. Wo
 role: Student
 position: M.S. Student
