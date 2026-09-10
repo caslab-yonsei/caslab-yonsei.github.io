@@ -6,6 +6,9 @@ role: Student
 position: Ph.D. Student
 image: /members/images/stbang.jpg
 researches:
+  - GPU Memory Systems
+  - Heterogeneous Memory Systems
+  - ML Systems
   - Computer Architecture
 sidebar:
   - title: Location
@@ -20,7 +23,7 @@ sidebar:
         reveal: true
         overt: true
         text: st.bang at dgist.ac.kr
-alterlink: 
+alterlink: https://st-bang97.github.io/
 components: [researches, contents, publications, patents, photos]
 ---
 
