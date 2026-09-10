@@ -20,7 +20,7 @@
     {% assign has_cloud = true %}
   {% elsif normalized_field == 'gpu' %}
     {% assign has_gpu = true %}
-  {% elsif normalized_field == 'next-gen memory system' or normalized_field == 'memory management' %}
+  {% elsif normalized_field == 'next-gen memory system' or normalized_field == 'memory system' or normalized_field == 'memory management' %}
     {% assign has_next_gen_memory_system = true %}
   {% elsif normalized_field == 'power/resource management' %}
     {% assign has_power_resource_management = true %}
@@ -63,7 +63,7 @@
       <span class="publication-badge publication-field publication-field-gpu">GPU</span>
     {% endif %}
     {% if has_next_gen_memory_system %}
-      <span class="publication-badge publication-field publication-field-next-gen-memory-system">Next-Gen Memory System</span>
+      <span class="publication-badge publication-field publication-field-next-gen-memory-system">Memory System</span>
     {% endif %}
     {% if has_power_resource_management %}
       <span class="publication-badge publication-field publication-field-power-resource-management">Power/Resource Management</span>
