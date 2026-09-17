@@ -9,53 +9,53 @@
 
   // Domain configuration & color palette
   const DOMAINS = {
-    ai: {
-      id: 'ai',
-      name: 'AI & Heterogeneous Systems',
-      shortName: 'AI Systems',
-      color: '#8b4ea1',
-      bgLight: '#f3e8ff',
-      target: { xOffset: -240, yOffset: -140 }
+    llm: {
+      id: 'llm',
+      name: 'Efficient LLM & Emerging ML Systems',
+      shortName: 'LLM & ML',
+      color: '#7c5aa6',
+      bgLight: '#efe7f7',
+      target: { xOffset: -250, yOffset: -150 }
     },
-    memory: {
-      id: 'memory',
-      name: 'Memory-Centric Systems',
-      shortName: 'Memory Systems',
-      color: '#b88a28',
-      bgLight: '#fef3c7',
-      target: { xOffset: -220, yOffset: 160 }
+    cxl: {
+      id: 'cxl',
+      name: 'CXL-based Memory Systems',
+      shortName: 'CXL Memory',
+      color: '#2f6f9f',
+      bgLight: '#e3eef7',
+      target: { xOffset: -260, yOffset: 90 }
+    },
+    pim: {
+      id: 'pim',
+      name: 'Processing-in/Near-Memory (PIM/PNM)',
+      shortName: 'PIM / PNM',
+      color: '#3d8e82',
+      bgLight: '#e0efec',
+      target: { xOffset: -60, yOffset: 200 }
+    },
+    gpu: {
+      id: 'gpu',
+      name: 'GPU/NPU Computing Systems',
+      shortName: 'GPU / NPU',
+      color: '#9a7d2e',
+      bgLight: '#f2ecd8',
+      target: { xOffset: 0, yOffset: -220 }
     },
     cloud: {
       id: 'cloud',
-      name: 'Cloud & Datacenter Infrastructure',
-      shortName: 'Cloud / FaaS',
-      color: '#3d8e82',
-      bgLight: '#ccfbf1',
-      target: { xOffset: 240, yOffset: -130 }
+      name: 'Cloud & Datacenter Resource Management',
+      shortName: 'Cloud / Datacenter',
+      color: '#4a6fa5',
+      bgLight: '#e6ecf5',
+      target: { xOffset: 250, yOffset: -110 }
     },
     security: {
       id: 'security',
-      name: 'Hardware Security & Robustness',
+      name: 'Secure Computer Architecture',
       shortName: 'Security',
       color: '#a84564',
-      bgLight: '#ffe4e6',
-      target: { xOffset: 230, yOffset: 160 }
-    },
-    power: {
-      id: 'power',
-      name: 'Energy-Efficient & Low-Power Systems',
-      shortName: 'Power & Energy',
-      color: '#c7885d',
-      bgLight: '#ffedd5',
-      target: { xOffset: 0, yOffset: -230 }
-    },
-    arch: {
-      id: 'arch',
-      name: 'Computer Architecture Foundations',
-      shortName: 'Architecture',
-      color: '#2f6f9f',
-      bgLight: '#e0f2fe',
-      target: { xOffset: 0, yOffset: 0 }
+      bgLight: '#f5e2e8',
+      target: { xOffset: 240, yOffset: 150 }
     }
   };
 
@@ -326,14 +326,16 @@
   };
 
   function mapFieldToDomain(field) {
-    if (!field) return 'arch';
+    if (!field) return 'cloud';
     const low = String(field).toLowerCase().trim();
-    if (low.includes('ai') || low.includes('gpu')) return 'ai';
-    if (low.includes('memory') || low.includes('cxl') || low.includes('pim')) return 'memory';
-    if (low.includes('cloud') || low.includes('virtualization') || low.includes('faas')) return 'cloud';
-    if (low.includes('security')) return 'security';
-    if (low.includes('power') || low.includes('energy')) return 'power';
-    return 'arch';
+    if (low.includes('security') || low.includes('side-channel') || low.includes('side channel') || low.includes('rowhammer') || low.includes('transient') || low.includes('speculat')) return 'security';
+    if (low.includes('gpu') || low.includes('npu') || low.includes('accelerator')) return 'gpu';
+    if (low.includes('cxl')) return 'cxl';
+    if (low.includes('pim') || low.includes('pnm') || low.includes('near-memory') || low.includes('near memory') || low.includes('ndp') || low.includes('processing-in-memory')) return 'pim';
+    if (low.includes('llm') || low.includes('ai') || low.includes('ml ') || low.includes('machine learning') || low.includes('anns') || low.includes('rag') || low.includes('recommendation')) return 'llm';
+    if (low.includes('memory')) return 'cxl';
+    if (low.includes('cloud') || low.includes('datacenter') || low.includes('data center') || low.includes('virtualization') || low.includes('faas') || low.includes('serverless') || low.includes('power') || low.includes('energy') || low.includes('qos') || low.includes('schedul')) return 'cloud';
+    return 'cloud';
   }
 
   // Application state
@@ -348,7 +350,6 @@
   let svg = null;
   let gZoom = null;
   let zoomBehavior = null;
-  let isCrossCuttingOnly = false;
 
   document.addEventListener('DOMContentLoaded', init);
 
@@ -380,7 +381,7 @@
     allPapers.forEach(paper => {
       const paperDomains = new Set();
       (paper.fields || []).forEach(f => paperDomains.add(mapFieldToDomain(f)));
-      if (paperDomains.size === 0) paperDomains.add('arch');
+      if (paperDomains.size === 0) paperDomains.add('cloud');
 
       const rawKws = paper.keywords || [];
       const paperConcepts = new Map(); // conceptName -> Set of original terms
@@ -453,7 +454,7 @@
       .filter(node => node.count >= 2 || curatedConceptValues.has(node.id))
       .map(node => {
         let maxCount = -1;
-        let primary = 'arch';
+        let primary = 'cloud';
         node.domains.forEach((cnt, dom) => {
           if (cnt > maxCount) {
             maxCount = cnt;
@@ -462,7 +463,6 @@
         });
         node.primaryDomain = primary;
         node.domainList = Array.from(node.domains.keys());
-        node.isCrossCutting = node.domainList.length > 1;
         // Node sizing
         node.radius = Math.min(Math.max(Math.sqrt(node.count) * 6.5 + 7, 10), 28);
         return node;
@@ -550,15 +550,16 @@
       .selectAll('g')
       .data(graphNodes)
       .join('g')
-      .attr('class', d => `graph-node ${d.isCrossCutting ? 'cross-cutting' : ''}`)
+      .attr('class', 'graph-node')
       .call(drag(simulation));
 
-    // Node Circle
+    // Node Circle — light domain fill with a matching darker domain outline
     node.append('circle')
       .attr('r', d => d.radius)
-      .attr('fill', d => DOMAINS[d.primaryDomain]?.color || '#2f6f9f')
-      .attr('fill-opacity', 0.92)
-      .attr('stroke', d => d.isCrossCutting ? '#f59e0b' : '#ffffff');
+      .attr('fill', d => DOMAINS[d.primaryDomain]?.bgLight || '#e0f2fe')
+      .attr('fill-opacity', 1)
+      .attr('stroke', d => DOMAINS[d.primaryDomain]?.color || '#4a6fa5')
+      .attr('stroke-width', 2);
 
     // Labels for all curated nodes
     node.append('text')
@@ -576,9 +577,8 @@
           .style('display', 'block')
           .html(`
             <div class="graph-tooltip-title">${d.label}</div>
-            <div class="graph-tooltip-domain">${DOMAINS[d.primaryDomain]?.name || 'Architecture'}</div>
-            <div class="graph-tooltip-count">📄 ${d.count} Publication${d.count > 1 ? 's' : ''}</div>
-            ${d.isCrossCutting ? '<div style="color: #f59e0b; font-size: 0.8em; margin-top: 2px;">⚡ Bridges ' + d.domainList.map(x => DOMAINS[x]?.shortName || x).join(', ') + '</div>' : ''}
+            <div class="graph-tooltip-domain">${DOMAINS[d.primaryDomain]?.name || 'Systems'}</div>
+            <div class="graph-tooltip-count">${d.count} Publication${d.count > 1 ? 's' : ''}</div>
           `);
       })
       .on('mousemove', (event) => {
@@ -711,7 +711,7 @@
     if (!node) {
       headerElem.innerHTML = `
         <div class="inspector-header-top">
-          <span class="inspector-domain-badge" style="background: #e0f2fe; color: #003876;">Interactive Navigator</span>
+          <span class="inspector-domain-badge" style="background: #f1f5f9; color: #003876;">Interactive Navigator</span>
         </div>
         <div class="inspector-title" style="font-size: 1.25em;">Explore Research Topics</div>
         <div class="inspector-meta">Select any core concept in the graph to inspect relevant publications.</div>
@@ -719,7 +719,7 @@
 
       bodyElem.innerHTML = `
         <div class="inspector-welcome">
-          <div class="inspector-welcome-icon">🕸️</div>
+          <div class="inspector-welcome-icon"><i class="fa fa-share-alt"></i></div>
           <div class="inspector-welcome-title">CASLAB Knowledge Nexus</div>
           <div class="inspector-welcome-text">
             Our research spans emerging AI, Memory hierarchies, Cloud systems, and Microarchitectural security. Click any node in the graph or explore featured topics below:
@@ -737,7 +737,7 @@
       return;
     }
 
-    const domainInfo = DOMAINS[node.primaryDomain] || DOMAINS.arch;
+    const domainInfo = DOMAINS[node.primaryDomain] || DOMAINS.cloud;
 
     // Show sub-keywords / specific terms included
     const subKwArray = Array.from(node.subKeywords || []).filter(k => k.toLowerCase() !== node.label.toLowerCase());
@@ -753,11 +753,6 @@
           <span class="inspector-domain-badge" style="background: ${domainInfo.bgLight}; color: ${domainInfo.color};">
             ${domainInfo.name}
           </span>
-          ${node.isCrossCutting ? `
-            <span class="inspector-cross-badge">
-              ⚡ Cross-Cutting (${node.domainList.map(d => DOMAINS[d]?.shortName || d).join(' • ')})
-            </span>
-          ` : ''}
         </div>
         <button class="graph-tool-btn" style="width: 24px; height: 24px; font-size: 0.8em;" onclick="window.caslabClearSelection()" title="Close Inspector">✕</button>
       </div>
@@ -835,21 +830,6 @@
     }
   }
 
-  function toggleCrossCuttingOnly() {
-    isCrossCuttingOnly = !isCrossCuttingOnly;
-    const btn = document.getElementById('btn-cross-cutting');
-    if (btn) btn.classList.toggle('active', isCrossCuttingOnly);
-
-    if (isCrossCuttingOnly) {
-      gZoom.selectAll('.graph-node')
-        .classed('dimmed', n => !n.isCrossCutting);
-      gZoom.selectAll('.graph-link')
-        .classed('dimmed', l => !l.source.isCrossCutting || !l.target.isCrossCutting);
-    } else {
-      resetHighlights();
-    }
-  }
-
   function bindEvents() {
     const searchInput = document.getElementById('research-search-input');
     const searchClear = document.getElementById('research-search-clear');
@@ -924,10 +904,6 @@
       );
     });
 
-    document.getElementById('btn-cross-cutting')?.addEventListener('click', () => {
-      toggleCrossCuttingOnly();
-    });
-
     const btnViewGraph = document.getElementById('btn-view-graph');
     const btnViewMatrix = document.getElementById('btn-view-matrix');
     const graphWorkspace = document.getElementById('research-graph-workspace');
@@ -957,44 +933,52 @@
 
     const pillars = [
       {
-        id: 'ai',
-        title: 'AI Systems & Heterogeneous Computing',
-        domain: 'ai',
+        id: 'llm',
+        title: 'Efficient LLM and Emerging ML Systems',
+        domain: 'llm',
         image: '/research/images/ai-v2.png',
-        desc: 'We build heterogeneous computing systems for emerging AI workloads. Our work spans CPU-offloaded LLM training, Intel AMX acceleration, billion-scale vector search, on-device AI inference, and specialized accelerator scheduling.',
-        topKeywords: ['LLM Training', 'LLM Inference', 'CPU Offloading & SIMD', 'Vector Search (ANNS)', 'Intel AMX Acceleration', 'On-Device AI']
+        desc: 'We develop efficient systems for large language models and emerging machine learning workloads, focusing on reducing computation, memory, and data-movement overhead. Our research includes LLM training and serving, RAG and ANNS, memory optimization, and hardware-aware acceleration.',
+        topKeywords: ['LLM Training', 'LLM Inference', 'Vector Search (ANNS)', 'CPU Offloading & SIMD', 'On-Device AI']
       },
       {
-        id: 'memory',
-        title: 'Next-Gen Memory-Centric Systems',
-        domain: 'memory',
+        id: 'cxl',
+        title: 'CXL-based Memory Systems',
+        domain: 'cxl',
         image: '/research/images/memory-v2.png',
-        desc: 'We architect data-centric memory systems to break the memory wall. Our research spans CXL memory tiering, GPU Unified Virtual Memory (UVM) oversubscription, Processing-In-Memory (PIM), and Near-Data Processing (NDP).',
-        topKeywords: ['CXL & Tiered Memory', 'GPU UVM & Oversubscription', 'PIM / NDP', 'Page Table Management', 'DRAM Reliability & Rowhammer']
+        desc: 'We design CXL-based memory systems for efficient use of tiered and disaggregated memory. Our research focuses on memory placement, capacity expansion, and resource management across diverse memory devices.',
+        topKeywords: ['CXL & Tiered Memory', 'Memory Disaggregation', 'Memory Placement', 'Capacity Expansion']
+      },
+      {
+        id: 'pim',
+        title: 'Processing-in/Near-Memory (PIM/PNM)',
+        domain: 'pim',
+        image: '/research/images/tiering.png',
+        desc: 'We explore PIM/PNM architectures that reduce costly data movement by bringing computation closer to memory. Our work spans architectural design, data placement, and system support for memory-intensive workloads.',
+        topKeywords: ['PIM / NDP', 'Near-Data Processing', 'Data Placement', 'Memory-Intensive Workloads']
+      },
+      {
+        id: 'gpu',
+        title: 'GPU/NPU Computing Systems',
+        domain: 'gpu',
+        image: '/research/images/ai-v2.png',
+        desc: 'We study efficient execution of emerging workloads on GPUs, NPUs, and other on-chip accelerators. Our research covers accelerator-aware execution, CPU–accelerator cooperation, on-device computing, and hardware/software co-design.',
+        topKeywords: ['GPU UVM & Oversubscription', 'Intel AMX Acceleration', 'CPU–Accelerator Cooperation', 'On-Device AI']
       },
       {
         id: 'cloud',
-        title: 'Cloud & Datacenter Infrastructure',
+        title: 'Cloud and Datacenter Resource Management',
         domain: 'cloud',
         image: '/research/images/cloud-v2.png',
-        desc: 'We construct cloud and datacenter systems that guarantee predictability and strict QoS under high server consolidation, spanning serverless runtimes (FaaS), shared-memory isolation, and virtualization.',
-        topKeywords: ['Serverless & FaaS', 'Virtualization & Hypervisor', 'Latency-Critical QoS', 'Datacenter Systems', 'Network Packet Processing']
+        desc: 'We develop resource management techniques for cloud and datacenter systems to improve performance, utilization, and energy efficiency. Our work includes scheduling, resource isolation, SLO/QoS management, and workload consolidation.',
+        topKeywords: ['Serverless & FaaS', 'Latency-Critical QoS', 'DVFS & Power Management', 'Datacenter Systems', 'Virtualization & Hypervisor']
       },
       {
         id: 'security',
-        title: 'Secure Computer Architecture & Transient Execution',
+        title: 'Secure Computer Architecture',
         domain: 'security',
         image: '/research/images/security-v2.png',
-        desc: 'We discover and secure microarchitectural attack surfaces in contemporary processors and accelerators, investigating transient execution attacks, speculation barriers, cache and accelerator contention side channels.',
-        topKeywords: ['Transient Execution Attacks', 'Side-Channel Attacks', 'Speculative Execution Defense', 'Hardware Contention Attacks', 'Microarchitectural Security']
-      },
-      {
-        id: 'power',
-        title: 'Energy-Efficient & Latency-Critical Systems',
-        domain: 'power',
-        image: '/research/images/power-v2.png',
-        desc: 'We optimize energy efficiency for latency-critical workloads without compromising tail latency constraints, combining dynamic voltage and frequency scaling (DVFS), uncore power gating, and dynamic core allocation.',
-        topKeywords: ['Energy-Efficient Systems', 'DVFS & Power Management', 'Dynamic Core Management', 'Latency-Critical QoS']
+        desc: 'We investigate architectural security vulnerabilities and develop mechanisms to protect modern computing systems. Our research covers side-channel and transient-execution attacks, DRAM RowHammer, memory integrity, and architectural defenses.',
+        topKeywords: ['Transient Execution Attacks', 'Side-Channel Attacks', 'DRAM Reliability & Rowhammer', 'Speculative Execution Defense', 'Microarchitectural Security']
       }
     ];
 

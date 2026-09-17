@@ -19,33 +19,31 @@
 }
 
 .research-hero-title {
-  font-size: 2.4em;
-  font-weight: 800;
+  font-size: 2.2em;
+  font-weight: 700;
   color: #003876; /* Yonsei Navy */
   margin-bottom: 6px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
 }
 
 .research-hero-subtitle {
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #475569;
+  font-size: 1.15em;
+  font-weight: 500;
+  color: #64748b;
   margin-bottom: 14px;
 }
 
 .research-hero-description {
-  font-size: 1.05em;
+  font-size: 1.02em;
   line-height: 1.7;
   color: #334155;
-  background: #f8fafc;
-  border-left: 4px solid #003876;
-  padding: 16px 20px;
-  border-radius: 0 8px 8px 0;
   margin-bottom: 20px;
+  max-width: 820px;
 }
 
 .research-hero-description strong {
   color: #0f172a;
+  font-weight: 600;
 }
 
 /* Quick Metrics Bar */
@@ -63,25 +61,27 @@
   background: #ffffff;
   border: 1px solid #e2e8f0;
   padding: 8px 14px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 0.9em;
   color: #334155;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .research-metric-pill strong {
   color: #003876;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.research-metric-pill i {
+  color: #94a3b8;
 }
 
 /* Controls & View Switcher */
 .research-control-bar {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 16px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .research-search-row {
@@ -156,7 +156,7 @@
 .research-view-btn.active {
   background: #ffffff;
   color: #003876;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
 }
 
 /* Category Filter Chips */
@@ -197,13 +197,6 @@
   color: #ffffff;
 }
 
-/* Domain Specific Color Dots on Chips */
-.research-filter-chip[data-domain="ai"].active { background: #8b4ea1; border-color: #8b4ea1; }
-.research-filter-chip[data-domain="memory"].active { background: #b88a28; border-color: #b88a28; }
-.research-filter-chip[data-domain="cloud"].active { background: #3d8e82; border-color: #3d8e82; }
-.research-filter-chip[data-domain="security"].active { background: #a84564; border-color: #a84564; }
-.research-filter-chip[data-domain="arch"].active { background: #2f6f9f; border-color: #2f6f9f; }
-
 /* Main Workspace Layout */
 .research-workspace {
   display: flex;
@@ -223,10 +216,9 @@
   flex: 7;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   height: 640px;
   display: flex;
   flex-direction: column;
@@ -236,7 +228,7 @@
   width: 100%;
   height: 100%;
   cursor: grab;
-  background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+  background: #ffffff;
 }
 
 #research-graph-svg:active {
@@ -267,7 +259,6 @@
   font-weight: bold;
   color: #334155;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   transition: all 0.15s;
 }
 
@@ -280,14 +271,12 @@
   position: absolute;
   bottom: 14px;
   left: 14px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px 12px;
   font-size: 0.78em;
   z-index: 10;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .graph-legend-title {
@@ -347,16 +336,9 @@
   transition: all 0.2s ease;
 }
 
-.graph-node.cross-cutting circle {
-  stroke: #d97706;
-  stroke-width: 2.5px;
-  stroke-dasharray: 4 2;
-}
-
 .graph-node.active circle {
   stroke: #003876 !important;
   stroke-width: 4px !important;
-  filter: drop-shadow(0 0 8px rgba(0, 56, 118, 0.6));
 }
 
 .graph-node text {
@@ -391,7 +373,6 @@
   font-size: 0.82em;
   pointer-events: none;
   z-index: 100;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
   max-width: 240px;
   line-height: 1.4;
 }
@@ -418,8 +399,7 @@
   flex: 5;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 8px;
   height: 640px;
   display: flex;
   flex-direction: column;
@@ -454,17 +434,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.inspector-cross-badge {
-  display: inline-block;
-  background: #fef3c7;
-  color: #92400e;
-  border: 1px solid #fde68a;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.74em;
-  font-weight: 700;
 }
 
 .inspector-title {
@@ -544,16 +513,14 @@
 .pub-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 14px;
   margin-bottom: 12px;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  transition: border-color 0.15s;
 }
 
 .pub-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  border-color: #93c5fd;
+  border-color: #003876;
 }
 
 .pub-card-header {
@@ -567,14 +534,14 @@
   font-size: 0.8em;
   font-weight: 700;
   color: #003876;
-  background: #e0f2fe;
+  background: #f1f5f9;
   padding: 2px 7px;
   border-radius: 4px;
 }
 
 .pub-card-venue.top-tier {
-  background: #fee2e2;
-  color: #991b1b;
+  background: #003876;
+  color: #ffffff;
 }
 
 .pub-card-year {
@@ -705,10 +672,9 @@
 .pillar-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .pillar-card-header {

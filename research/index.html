@@ -12,30 +12,9 @@ categories:
   <!-- Hero Section -->
   <div class="research-hero">
     <h1 class="research-hero-title">Research</h1>
-    <div class="research-hero-subtitle">Interconnected Systems for Emerging Workloads</div>
     <div class="research-hero-description">
       <strong>CASLAB</strong> tackles challenging problems across the spectrum of modern computer architecture and systems. 
       While our research addresses diverse emerging workloads—spanning <strong>Generative AI &amp; LLMs, Cloud &amp; Serverless Infrastructure, Billion-Scale Vector Search, and Hardware-level Security</strong>—all of our work is deeply unified through the foundational principles of <strong>Computer Architecture, Next-Generation Memory Hierarchies, Operating Systems, and Hardware/Software Co-Design</strong>.
-    </div>
-
-    <!-- Metrics Bar -->
-    <div class="research-metrics-bar">
-      <div class="research-metric-pill">
-        <i class="fa fa-university" style="color: #003876;"></i>
-        <span><strong>Yonsei University</strong> CASLAB</span>
-      </div>
-      <div class="research-metric-pill">
-        <i class="fa fa-book" style="color: #8b4ea1;"></i>
-        <span><strong>Top-Tier Systems Research</strong> (ASPLOS, ISCA, MICRO, HPCA, ATC)</span>
-      </div>
-      <div class="research-metric-pill">
-        <i class="fa fa-share-alt" style="color: #3d8e82;"></i>
-        <span><strong>170+</strong> Interconnected Keywords</span>
-      </div>
-      <div class="research-metric-pill">
-        <i class="fa fa-bolt" style="color: #d97706;"></i>
-        <span><strong>Cross-Cutting</strong> HW/SW Co-Design</span>
-      </div>
     </div>
   </div>
 
@@ -49,33 +28,30 @@ categories:
       </div>
 
       <div class="research-view-toggle">
-        <button class="research-view-btn active" id="btn-view-graph">
-          <i class="fa fa-share-alt"></i> Knowledge Graph
+        <button class="research-view-btn active" id="btn-view-matrix">
+          <i class="fa fa-th-large"></i> Topics
         </button>
-        <button class="research-view-btn" id="btn-view-matrix">
-          <i class="fa fa-th-large"></i> Topic Pillars
+        <button class="research-view-btn" id="btn-view-graph">
+          <i class="fa fa-share-alt"></i> Knowledge Graph
         </button>
       </div>
     </div>
 
     <!-- Domain Filters -->
     <div class="research-filters">
-      <span class="research-filter-label">Filter Domains:</span>
+      <span class="research-filter-label">Filter:</span>
       <button class="research-filter-chip active" data-domain="all">All Domains</button>
-      <button class="research-filter-chip" data-domain="ai">AI Systems</button>
-      <button class="research-filter-chip" data-domain="memory">Memory Systems (CXL/PIM/UVM)</button>
+      <button class="research-filter-chip" data-domain="llm">LLM &amp; ML Systems</button>
+      <button class="research-filter-chip" data-domain="cxl">CXL Memory</button>
+      <button class="research-filter-chip" data-domain="pim">PIM / PNM</button>
+      <button class="research-filter-chip" data-domain="gpu">GPU / NPU</button>
       <button class="research-filter-chip" data-domain="cloud">Cloud &amp; Datacenter</button>
-      <button class="research-filter-chip" data-domain="security">Hardware Security</button>
-      <button class="research-filter-chip" data-domain="power">Power &amp; Energy</button>
-      <button class="research-filter-chip" data-domain="arch">Architecture</button>
-      <button class="research-filter-chip" id="btn-cross-cutting" style="margin-left: auto; border-color: #f59e0b; color: #b45309;">
-        ⚡ Cross-Cutting Only
-      </button>
+      <button class="research-filter-chip" data-domain="security">Secure Architecture</button>
     </div>
   </div>
 
   <!-- View 1: Knowledge Graph & Inspector Workspace -->
-  <div class="research-workspace" id="research-graph-workspace">
+  <div class="research-workspace" id="research-graph-workspace" style="display: none;">
     <!-- Graph Canvas Card -->
     <div class="research-graph-card" id="research-graph-card">
       <!-- Floating Canvas Controls -->
@@ -89,28 +65,28 @@ categories:
       <div class="graph-legend-overlay">
         <div class="graph-legend-title">Research Domains</div>
         <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #8b4ea1;"></div>
-          <span>AI &amp; Heterogeneous Systems</span>
+          <div class="graph-legend-color" style="background: #efe7f7; border: 1.5px solid #7c5aa6;"></div>
+          <span>LLM &amp; ML Systems</span>
         </div>
         <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #b88a28;"></div>
-          <span>Memory-Centric Systems</span>
+          <div class="graph-legend-color" style="background: #e3eef7; border: 1.5px solid #2f6f9f;"></div>
+          <span>CXL-based Memory</span>
         </div>
         <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #3d8e82;"></div>
+          <div class="graph-legend-color" style="background: #e0efec; border: 1.5px solid #3d8e82;"></div>
+          <span>PIM / PNM</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #f2ecd8; border: 1.5px solid #9a7d2e;"></div>
+          <span>GPU / NPU Computing</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #e6ecf5; border: 1.5px solid #4a6fa5;"></div>
           <span>Cloud &amp; Datacenter</span>
         </div>
         <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #a84564;"></div>
-          <span>Hardware Security</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #2f6f9f;"></div>
-          <span>Computer Architecture</span>
-        </div>
-        <div class="graph-legend-item" style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed #e2e8f0;">
-          <div class="graph-legend-color" style="background: #f59e0b; border: 1px dashed #b45309;"></div>
-          <span><strong>⚡ Cross-Cutting Bridge</strong></span>
+          <div class="graph-legend-color" style="background: #f5e2e8; border: 1.5px solid #a84564;"></div>
+          <span>Secure Architecture</span>
         </div>
       </div>
 
@@ -135,7 +111,7 @@ categories:
   </div>
 
   <!-- View 2: Structured Research Pillars & Matrix -->
-  <div class="research-matrix-view" id="research-matrix-workspace">
+  <div class="research-matrix-view active" id="research-matrix-workspace">
     <!-- Dynamically rendered via JS -->
   </div>
 </div>
