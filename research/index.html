@@ -2,47 +2,173 @@
 layout: default
 title: CASLAB / Research
 categories:
- - research
+  - research
 ---
 
-<script src="/js/smooth-scroll.min.js"></script>
+<link rel="stylesheet" href="/css/research-graph.css">
+<script src="/js/d3.min.js"></script>
 
-<div class="row">
-  <div class="col-md-12 post">
-    <h1><b>Research</b></h1>
-    <hr/>
-    <p style="font-size: 1.2em;">
-    We investigate the cutting edge of computer systems and architecture. 
-    We are dedicated to advancing AI performance, revolutionizing cloud application optimization, 
-    and pushing the boundaries of next-gen memory solutions. 
-    We are also committed to efficient power management and proactive architectural security.
-    </p>
+<div class="research-page-container">
+  <!-- Hero Section -->
+  <div class="research-hero">
+    <h1 class="research-hero-title">Research</h1>
+    <div class="research-hero-subtitle">Interconnected Systems for Emerging Workloads</div>
+    <div class="research-hero-description">
+      <strong>CASLAB</strong> tackles challenging problems across the spectrum of modern computer architecture and systems. 
+      While our research addresses diverse emerging workloads—spanning <strong>Generative AI &amp; LLMs, Cloud &amp; Serverless Infrastructure, Billion-Scale Vector Search, and Hardware-level Security</strong>—all of our work is deeply unified through the foundational principles of <strong>Computer Architecture, Next-Generation Memory Hierarchies, Operating Systems, and Hardware/Software Co-Design</strong>.
+    </div>
+
+    <!-- Metrics Bar -->
+    <div class="research-metrics-bar">
+      <div class="research-metric-pill">
+        <i class="fa fa-university" style="color: #003876;"></i>
+        <span><strong>Yonsei University</strong> CASLAB</span>
+      </div>
+      <div class="research-metric-pill">
+        <i class="fa fa-book" style="color: #8b4ea1;"></i>
+        <span><strong>Top-Tier Systems Research</strong> (ASPLOS, ISCA, MICRO, HPCA, ATC)</span>
+      </div>
+      <div class="research-metric-pill">
+        <i class="fa fa-share-alt" style="color: #3d8e82;"></i>
+        <span><strong>170+</strong> Interconnected Keywords</span>
+      </div>
+      <div class="research-metric-pill">
+        <i class="fa fa-bolt" style="color: #d97706;"></i>
+        <span><strong>Cross-Cutting</strong> HW/SW Co-Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Control Bar -->
+  <div class="research-control-bar">
+    <div class="research-search-row">
+      <div class="research-search-box">
+        <i class="fa fa-search research-search-icon"></i>
+        <input type="text" id="research-search-input" placeholder="Search keywords (e.g., LLM, CXL, UVM, FaaS, Side-Channel, SIMD)..." autocomplete="off">
+        <i class="fa fa-times research-search-clear" id="research-search-clear"></i>
+      </div>
+
+      <div class="research-view-toggle">
+        <button class="research-view-btn active" id="btn-view-graph">
+          <i class="fa fa-share-alt"></i> Knowledge Graph
+        </button>
+        <button class="research-view-btn" id="btn-view-matrix">
+          <i class="fa fa-th-large"></i> Topic Pillars
+        </button>
+      </div>
+    </div>
+
+    <!-- Domain Filters -->
+    <div class="research-filters">
+      <span class="research-filter-label">Filter Domains:</span>
+      <button class="research-filter-chip active" data-domain="all">All Domains</button>
+      <button class="research-filter-chip" data-domain="ai">AI Systems</button>
+      <button class="research-filter-chip" data-domain="memory">Memory Systems (CXL/PIM/UVM)</button>
+      <button class="research-filter-chip" data-domain="cloud">Cloud &amp; Datacenter</button>
+      <button class="research-filter-chip" data-domain="security">Hardware Security</button>
+      <button class="research-filter-chip" data-domain="power">Power &amp; Energy</button>
+      <button class="research-filter-chip" data-domain="arch">Architecture</button>
+      <button class="research-filter-chip" id="btn-cross-cutting" style="margin-left: auto; border-color: #f59e0b; color: #b45309;">
+        ⚡ Cross-Cutting Only
+      </button>
+    </div>
+  </div>
+
+  <!-- View 1: Knowledge Graph & Inspector Workspace -->
+  <div class="research-workspace" id="research-graph-workspace">
+    <!-- Graph Canvas Card -->
+    <div class="research-graph-card" id="research-graph-card">
+      <!-- Floating Canvas Controls -->
+      <div class="graph-controls-overlay">
+        <button class="graph-tool-btn" id="btn-zoom-in" title="Zoom In">+</button>
+        <button class="graph-tool-btn" id="btn-zoom-out" title="Zoom Out">−</button>
+        <button class="graph-tool-btn" id="btn-zoom-reset" title="Reset View">⟲</button>
+      </div>
+
+      <!-- Graph Legend -->
+      <div class="graph-legend-overlay">
+        <div class="graph-legend-title">Research Domains</div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #8b4ea1;"></div>
+          <span>AI &amp; Heterogeneous Systems</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #b88a28;"></div>
+          <span>Memory-Centric Systems</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #3d8e82;"></div>
+          <span>Cloud &amp; Datacenter</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #a84564;"></div>
+          <span>Hardware Security</span>
+        </div>
+        <div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: #2f6f9f;"></div>
+          <span>Computer Architecture</span>
+        </div>
+        <div class="graph-legend-item" style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed #e2e8f0;">
+          <div class="graph-legend-color" style="background: #f59e0b; border: 1px dashed #b45309;"></div>
+          <span><strong>⚡ Cross-Cutting Bridge</strong></span>
+        </div>
+      </div>
+
+      <div class="graph-hint-overlay">
+        <i class="fa fa-info-circle"></i> Drag nodes • Scroll to zoom • Click a keyword to inspect publications
+      </div>
+
+      <!-- D3 SVG Canvas -->
+      <svg id="research-graph-svg"></svg>
+      <div id="graph-tooltip" class="graph-tooltip"></div>
+    </div>
+
+    <!-- Publication Inspector Card (Right Column) -->
+    <div class="research-inspector-card" id="research-inspector-panel">
+      <div class="inspector-header" id="inspector-header">
+        <!-- Dynamically rendered via JS -->
+      </div>
+      <div class="inspector-body" id="inspector-body">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- View 2: Structured Research Pillars & Matrix -->
+  <div class="research-matrix-view" id="research-matrix-workspace">
+    <!-- Dynamically rendered via JS -->
   </div>
 </div>
 
-<div class="bigspacer"></div>
-
-<h3><b>Research Topics:</b></h3>
-<ol>
-{% for topic in site.categories.research %}
-  <li style="font-size: 1.1em;">
-    <a data-scroll href="#{{ topic.alias }}">{{ topic.title }}</a>
-  </li>
-{% endfor %}
-</ol>
-
-<div class="bigspacer"></div>
-
-<div class="row">
-  <div class="col-md-12">
-  {% for topic in site.categories.research %}
-    {% include research_post.html topic_loc=topic %}
-    <div class="bigspacer"></div>
-    <div class="bigspacer"></div>
+<!-- Automated Jekyll Publication & Keyword Data Pipeline -->
+<script id="caslab-pubs-data" type="application/json">
+[
+  {% assign first_item = true %}
+  {% for pub in site.categories.publications %}
+    {% if pub.template or pub.hidden %}{% continue %}{% endif %}
+    {% unless pub.type == "Paper" %}{% continue %}{% endunless %}
+    {% unless first_item %},{% endunless %}
+    {% assign first_item = false %}
+    {
+      "title": {{ pub.title | jsonify }},
+      "url": {{ pub.url | jsonify }},
+      "year": {{ pub.paper.year | jsonify }},
+      "venue": {{ pub.paper.publisher-short | default: pub.paper.publisher | jsonify }},
+      "tier": {{ pub.publication_tags | first | jsonify }},
+      "fields": {{ pub.publication_fields | default: pub.researches | jsonify }},
+      "authors": [
+        {% for author in pub.authors %}
+          {{ author.name | default: author | jsonify }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "keywords": [
+        {% for kw in pub.keywords %}
+          {{ kw | jsonify }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
   {% endfor %}
-  </div>
-</div>
-
-<script>
-  smoothScroll.init();
+]
 </script>
+
+<script src="/js/research-graph.js"></script>

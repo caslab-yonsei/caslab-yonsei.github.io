@@ -2,14 +2,36 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h1 id="{{ include.topic_loc.alias }}"><a class="off" href="{{ topic_loc.url }}">{{ topic_loc.title }}</a></h1>
+    <h2 class="research-topic-heading" id="{{ include.topic_loc.alias }}"><a class="off" href="{{ topic_loc.url }}">{{ topic_loc.title }}</a></h2>
     <hr/>
+    {% if topic_loc.tags.size > 0 %}
+    <div class="publication-badges research-badges">
+      {% for tag in topic_loc.tags %}
+      <span class="publication-badge publication-field {{ tag.class }}">{{ tag.label }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
     {% if topic_loc.image %}
-    <img class="offset" src="{{ topic_loc.image }}">
+    <img class="research-illustration" src="{{ topic_loc.image }}" alt="{{ topic_loc.title }} research illustration">
     {% endif %}
     <div class="post">
       {{ topic_loc.content }}
     </div>
+    {% if topic_loc.recent_works.size > 0 %}
+    <div class="research-recent-work">
+      <h3>Recent work</h3>
+      <ul>
+      {% for work_title in topic_loc.recent_works %}
+        {% for pub in site.categories.publications %}
+          {% if pub.title == work_title %}
+            <li><a href="{{ pub.url }}">{{ pub.title }}</a></li>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
     {% comment %}
     {% assign has_header = false %}
     {% for pub in site.categories.publications %}
