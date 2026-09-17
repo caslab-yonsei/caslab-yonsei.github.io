@@ -213,6 +213,65 @@ a.off.ref {
     margin: 0 2px;
 }
 
+.research-intro {
+    font-size: 1.2em;
+}
+
+.research-topic-list {
+    padding-left: 22px;
+}
+
+.research-topic-list li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.research-cross-cutting {
+    margin-top: 20px;
+}
+
+.research-cross-cutting-list {
+    margin-bottom: 0;
+}
+
+.research-cross-cutting-list li {
+    margin-bottom: 5px;
+}
+
+.research-topic-heading {
+    font-size: floor(@font-size-base * 2.15);
+}
+
+.research-badges {
+    margin-top: -5px;
+    margin-bottom: 12px;
+}
+
+.research-illustration {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0 16px;
+}
+
+.research-recent-work {
+    clear: both;
+    margin-top: 18px;
+}
+
+.research-recent-work h3 {
+    margin-bottom: 6px;
+}
+
+.research-recent-work ul {
+    padding-left: 20px;
+}
+
+.research-recent-work li {
+    margin-bottom: 4px;
+}
+
 // General Image Stuff //
 
 img {
@@ -222,6 +281,13 @@ img {
 img.offset {
     float: right;
     margin: 12px 0px 10px 15px;
+}
+
+@media (max-width: @screen-xs-max) {
+    img.offset {
+        float: none;
+        margin: 0 0 15px;
+    }
 }
 
 .post img {

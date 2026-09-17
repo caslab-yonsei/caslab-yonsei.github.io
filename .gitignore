@@ -5,3 +5,7 @@ _site
 .jekyll-metadata
 .sass-cache
 Gemfile.lock
+vendor
+scratch
+css/style.css
+DESIGN.md
