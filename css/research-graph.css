@@ -3,14 +3,9 @@
    ========================================================================== */
 
 .research-page-container {
-  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 40px;
-}
-
-.container.research-wide-container {
-  max-width: 1220px !important;
-  width: 96% !important;
 }
 
 /* Header & Mission Banner */
@@ -26,13 +21,6 @@
   letter-spacing: -0.4px;
 }
 
-.research-hero-subtitle {
-  font-size: 1.15em;
-  font-weight: 500;
-  color: #64748b;
-  margin-bottom: 14px;
-}
-
 .research-hero-description {
   font-size: 1.02em;
   line-height: 1.7;
@@ -44,35 +32,6 @@
 .research-hero-description strong {
   color: #0f172a;
   font-weight: 600;
-}
-
-/* Quick Metrics Bar */
-.research-metrics-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.research-metric-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  color: #334155;
-}
-
-.research-metric-pill strong {
-  color: #003876;
-  font-weight: 600;
-}
-
-.research-metric-pill i {
-  color: #94a3b8;
 }
 
 /* Controls & View Switcher */
@@ -201,7 +160,7 @@
 .research-workspace {
   display: flex;
   gap: 20px;
-  min-height: 640px;
+  min-height: 720px;
   position: relative;
 }
 
@@ -219,7 +178,7 @@
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  height: 640px;
+  height: 720px;
   display: flex;
   flex-direction: column;
 }
@@ -233,6 +192,28 @@
 
 #research-graph-svg:active {
   cursor: grabbing;
+}
+
+/* Fullscreen mode: workspace holds both the graph and the publication inspector */
+#research-graph-workspace:fullscreen,
+#research-graph-workspace:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  padding: 16px;
+  gap: 16px;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+#research-graph-workspace:fullscreen .research-graph-card,
+#research-graph-workspace:-webkit-full-screen .research-graph-card,
+#research-graph-workspace:fullscreen .research-inspector-card,
+#research-graph-workspace:-webkit-full-screen .research-inspector-card {
+  height: 100%;
+}
+
+#research-graph-workspace:fullscreen .research-graph-card {
+  border-radius: 8px;
 }
 
 /* Graph Canvas Overlays */
@@ -362,6 +343,11 @@
   opacity: 0.06;
 }
 
+.graph-node.hidden,
+.graph-link.hidden {
+  display: none;
+}
+
 /* Floating Tooltip */
 .graph-tooltip {
   position: absolute;
@@ -400,7 +386,7 @@
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  height: 640px;
+  height: 720px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

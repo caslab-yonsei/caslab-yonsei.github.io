@@ -15,7 +15,14 @@
       shortName: 'LLM & ML',
       color: '#7c5aa6',
       bgLight: '#efe7f7',
-      target: { xOffset: -250, yOffset: -150 }
+      target: { xOffset: -250, yOffset: -150 },
+      // matchOrder controls precedence when a text could match several domains
+      matchOrder: 50,
+      filterLabel: 'LLM & ML Systems',
+      matchers: ['llm', 'anns', 'rag', 'recommendation', 'transformer', 'language model', 'machine learning', 'ai system', 'ai hw', 'ai ', ' ml '],
+      pillarTitle: 'Efficient LLM and Emerging ML Systems',
+      pillarDesc: 'We develop efficient systems for large language models and emerging machine learning workloads, focusing on reducing computation, memory, and data-movement overhead. Our research includes LLM training and serving, RAG and ANNS, memory optimization, and hardware-aware acceleration.',
+      topKeywords: ['LLM Training', 'LLM Inference', 'Vector Search (ANNS)', 'CPU Offloading & SIMD', 'On-Device AI']
     },
     cxl: {
       id: 'cxl',
@@ -23,7 +30,13 @@
       shortName: 'CXL Memory',
       color: '#2f6f9f',
       bgLight: '#e3eef7',
-      target: { xOffset: -260, yOffset: 90 }
+      target: { xOffset: -260, yOffset: 90 },
+      matchOrder: 40,
+      filterLabel: 'CXL Memory',
+      matchers: ['cxl', 'tiered memory', 'disaggregat'],
+      pillarTitle: 'CXL-based Memory Systems',
+      pillarDesc: 'We design CXL-based memory systems for efficient use of tiered and disaggregated memory. Our research focuses on memory placement, capacity expansion, and resource management across diverse memory devices.',
+      topKeywords: ['CXL & Tiered Memory', 'Memory Disaggregation', 'Memory Placement', 'Capacity Expansion']
     },
     pim: {
       id: 'pim',
@@ -31,7 +44,13 @@
       shortName: 'PIM / PNM',
       color: '#3d8e82',
       bgLight: '#e0efec',
-      target: { xOffset: -60, yOffset: 200 }
+      target: { xOffset: -60, yOffset: 200 },
+      matchOrder: 30,
+      filterLabel: 'PIM / PNM',
+      matchers: ['pim', 'pnm', 'processing-in-memory', 'processing in memory', 'near-memory', 'near memory', 'near-data', 'ndp'],
+      pillarTitle: 'Processing-in/Near-Memory (PIM/PNM)',
+      pillarDesc: 'We explore PIM/PNM architectures that reduce costly data movement by bringing computation closer to memory. Our work spans architectural design, data placement, and system support for memory-intensive workloads.',
+      topKeywords: ['Processing-in-Memory', 'Near-Data Processing', 'NDP', 'Memory-Intensive Workloads']
     },
     gpu: {
       id: 'gpu',
@@ -39,7 +58,13 @@
       shortName: 'GPU / NPU',
       color: '#9a7d2e',
       bgLight: '#f2ecd8',
-      target: { xOffset: 0, yOffset: -220 }
+      target: { xOffset: 0, yOffset: -220 },
+      matchOrder: 60,
+      filterLabel: 'GPU / NPU',
+      matchers: ['gpu', 'npu', 'accelerator', 'amx', 'tpu'],
+      pillarTitle: 'GPU/NPU Computing Systems',
+      pillarDesc: 'We study efficient execution of emerging workloads on GPUs, NPUs, and other on-chip accelerators. Our research covers accelerator-aware execution, CPU–accelerator cooperation, on-device computing, and hardware/software co-design.',
+      topKeywords: ['GPU UVM & Oversubscription', 'Intel AMX Acceleration', 'CPU–Accelerator Cooperation', 'On-Device AI']
     },
     cloud: {
       id: 'cloud',
@@ -47,7 +72,13 @@
       shortName: 'Cloud / Datacenter',
       color: '#4a6fa5',
       bgLight: '#e6ecf5',
-      target: { xOffset: 250, yOffset: -110 }
+      target: { xOffset: 250, yOffset: -110 },
+      matchOrder: 20,
+      filterLabel: 'Cloud & Datacenter',
+      matchers: ['cloud', 'datacenter', 'data center', 'virtualization', 'hypervisor', 'faas', 'serverless', 'power', 'energy', 'qos', 'schedul', 'latency-critical', 'resource management'],
+      pillarTitle: 'Cloud and Datacenter Resource Management',
+      pillarDesc: 'We develop resource management techniques for cloud and datacenter systems to improve performance, utilization, and energy efficiency. Our work includes scheduling, resource isolation, SLO/QoS management, and workload consolidation.',
+      topKeywords: ['Serverless & FaaS', 'Latency-Critical QoS', 'DVFS & Power Management', 'Datacenter Systems', 'Virtualization & Hypervisor']
     },
     security: {
       id: 'security',
@@ -55,9 +86,26 @@
       shortName: 'Security',
       color: '#a84564',
       bgLight: '#f5e2e8',
-      target: { xOffset: 240, yOffset: 150 }
+      target: { xOffset: 240, yOffset: 150 },
+      matchOrder: 70,
+      filterLabel: 'Secure Architecture',
+      matchers: ['security', 'side-channel', 'side channel', 'rowhammer', 'transient', 'speculat', 'covert', 'attack', 'trusted execution'],
+      pillarTitle: 'Secure Computer Architecture',
+      pillarDesc: 'We investigate architectural security vulnerabilities and develop mechanisms to protect modern computing systems. Our research covers side-channel and transient-execution attacks, DRAM RowHammer, memory integrity, and architectural defenses.',
+      topKeywords: ['Transient Execution Attacks', 'Side-Channel Attacks', 'DRAM Reliability & Rowhammer', 'Speculative Execution Defense', 'Microarchitectural Security']
     }
   };
+
+  // Fallback domain used when nothing matches.
+  const FALLBACK_DOMAIN = 'cloud';
+
+  // Domains ordered for display (filters, legend, pillars).
+  const DOMAIN_ORDER = ['llm', 'cxl', 'pim', 'gpu', 'cloud', 'security'];
+
+  // Domains ordered by match precedence (higher matchOrder wins first).
+  const DOMAIN_MATCH_ORDER = Object.values(DOMAINS)
+    .slice()
+    .sort((a, b) => b.matchOrder - a.matchOrder);
 
   // High-level Semantic Concept Map: Merges near-duplicate and context-overlapping terms
   const CONCEPT_MAP = {
@@ -325,17 +373,37 @@
     'data center performance': null,
   };
 
-  function mapFieldToDomain(field) {
-    if (!field) return 'cloud';
-    const low = String(field).toLowerCase().trim();
-    if (low.includes('security') || low.includes('side-channel') || low.includes('side channel') || low.includes('rowhammer') || low.includes('transient') || low.includes('speculat')) return 'security';
-    if (low.includes('gpu') || low.includes('npu') || low.includes('accelerator')) return 'gpu';
-    if (low.includes('cxl')) return 'cxl';
-    if (low.includes('pim') || low.includes('pnm') || low.includes('near-memory') || low.includes('near memory') || low.includes('ndp') || low.includes('processing-in-memory')) return 'pim';
-    if (low.includes('llm') || low.includes('ai') || low.includes('ml ') || low.includes('machine learning') || low.includes('anns') || low.includes('rag') || low.includes('recommendation')) return 'llm';
+  // Map an arbitrary text signal (a field label or a keyword) to a domain.
+  // Returns null when nothing matches, so callers can combine multiple signals.
+  function matchDomain(text) {
+    if (!text) return null;
+    const low = ' ' + String(text).toLowerCase().trim() + ' ';
+    for (const domain of DOMAIN_MATCH_ORDER) {
+      if (domain.matchers.some(m => low.includes(m))) return domain.id;
+    }
     if (low.includes('memory')) return 'cxl';
-    if (low.includes('cloud') || low.includes('datacenter') || low.includes('data center') || low.includes('virtualization') || low.includes('faas') || low.includes('serverless') || low.includes('power') || low.includes('energy') || low.includes('qos') || low.includes('schedul')) return 'cloud';
-    return 'cloud';
+    return null;
+  }
+
+  // Resolve the domains a paper belongs to. Keyword signals are more specific
+  // than the broad publication_fields tags, so keywords take precedence.
+  function resolvePaperDomains(paper) {
+    const domains = new Set();
+    (paper.keywords || []).forEach(k => {
+      // A keyword entry can be a comma-separated list (e.g. "NDP, CXL, LLM")
+      String(k).split(',').forEach(part => {
+        const d = matchDomain(part);
+        if (d) domains.add(d);
+      });
+    });
+    if (domains.size === 0) {
+      (paper.fields || []).forEach(f => {
+        const d = matchDomain(f);
+        if (d) domains.add(d);
+      });
+    }
+    if (domains.size === 0) domains.add(FALLBACK_DOMAIN);
+    return domains;
   }
 
   // Application state
@@ -354,9 +422,6 @@
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
-    const parentContainer = document.querySelector('.research-page-container')?.closest('.container');
-    if (parentContainer) parentContainer.classList.add('research-wide-container');
-
     const dataElem = document.getElementById('caslab-pubs-data');
     if (!dataElem) return;
 
@@ -367,6 +432,8 @@
       return;
     }
 
+    renderFilters();
+    renderLegend();
     buildGraphData();
     renderGraph();
     bindEvents();
@@ -374,14 +441,38 @@
     renderMatrixView();
   }
 
+  // Build the domain filter chips from DOMAINS (single source of truth).
+  function renderFilters() {
+    const bar = document.getElementById('research-filters');
+    if (!bar) return;
+    // Keep the "Filter:" label (first child), append All + one chip per domain.
+    const chips = [`<button class="research-filter-chip active" data-domain="all">All Domains</button>`]
+      .concat(DOMAIN_ORDER.map(id =>
+        `<button class="research-filter-chip" data-domain="${id}">${DOMAINS[id].filterLabel}</button>`
+      ));
+    bar.insertAdjacentHTML('beforeend', chips.join(''));
+  }
+
+  // Build the graph legend from DOMAINS.
+  function renderLegend() {
+    const legend = document.querySelector('.graph-legend-overlay');
+    if (!legend) return;
+    const items = DOMAIN_ORDER.map(id => {
+      const d = DOMAINS[id];
+      return `<div class="graph-legend-item">
+          <div class="graph-legend-color" style="background: ${d.bgLight}; border: 1.5px solid ${d.color};"></div>
+          <span>${d.filterLabel}</span>
+        </div>`;
+    });
+    legend.insertAdjacentHTML('beforeend', items.join(''));
+  }
+
   function buildGraphData() {
     nodeMap.clear();
     linkMap.clear();
 
     allPapers.forEach(paper => {
-      const paperDomains = new Set();
-      (paper.fields || []).forEach(f => paperDomains.add(mapFieldToDomain(f)));
-      if (paperDomains.size === 0) paperDomains.add('cloud');
+      const paperDomains = resolvePaperDomains(paper);
 
       const rawKws = paper.keywords || [];
       const paperConcepts = new Map(); // conceptName -> Set of original terms
@@ -454,7 +545,7 @@
       .filter(node => node.count >= 2 || curatedConceptValues.has(node.id))
       .map(node => {
         let maxCount = -1;
-        let primary = 'cloud';
+        let primary = FALLBACK_DOMAIN;
         node.domains.forEach((cnt, dom) => {
           if (cnt > maxCount) {
             maxCount = cnt;
@@ -487,21 +578,6 @@
 
     svg = d3.select('#research-graph-svg')
       .attr('viewBox', [0, 0, width, height]);
-
-    // SVG filters
-    const defs = svg.append('defs');
-    const filter = defs.append('filter')
-      .attr('id', 'glow')
-      .attr('x', '-50%')
-      .attr('y', '-50%')
-      .attr('width', '200%')
-      .attr('height', '200%');
-    filter.append('feGaussianBlur')
-      .attr('stdDeviation', '4')
-      .attr('result', 'coloredBlur');
-    const feMerge = filter.append('feMerge');
-    feMerge.append('feMergeNode').attr('in', 'coloredBlur');
-    feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
     gZoom = svg.append('g').attr('class', 'zoom-layer');
 
@@ -813,21 +889,44 @@
 
     if (domain === 'all') {
       gZoom.selectAll('.graph-node')
-        .classed('dimmed', false);
+        .classed('dimmed', false)
+        .classed('hidden', false);
       gZoom.selectAll('.graph-link')
-        .classed('dimmed', false);
+        .classed('dimmed', false)
+        .classed('hidden', false);
     } else {
+      const inDomain = n => n.primaryDomain === domain || n.domainList.includes(domain);
       gZoom.selectAll('.graph-node')
-        .classed('dimmed', n => n.primaryDomain !== domain && !n.domainList.includes(domain));
+        .classed('dimmed', false)
+        .classed('hidden', n => !inDomain(n));
 
       gZoom.selectAll('.graph-link')
-        .classed('dimmed', l => {
-          const s = l.source;
-          const t = l.target;
-          return (s.primaryDomain !== domain && !s.domainList.includes(domain)) ||
-                 (t.primaryDomain !== domain && !t.domainList.includes(domain));
-        });
+        .classed('dimmed', false)
+        .classed('hidden', l => !inDomain(l.source) || !inDomain(l.target));
     }
+  }
+
+  function resizeGraph() {
+    const container = document.getElementById('research-graph-card');
+    if (!container || !svg || !simulation) return;
+    const width = container.clientWidth || 700;
+    const height = container.clientHeight || 640;
+
+    svg.attr('viewBox', [0, 0, width, height]);
+
+    simulation
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('domainX', d3.forceX(d => {
+        const offset = DOMAINS[d.primaryDomain]?.target?.xOffset || 0;
+        return (width / 2) + offset;
+      }).strength(0.055))
+      .force('domainY', d3.forceY(d => {
+        const offset = DOMAINS[d.primaryDomain]?.target?.yOffset || 0;
+        return (height / 2) + offset;
+      }).strength(0.055));
+
+    // Reheat so nodes animate outward to fill the new space
+    simulation.alpha(0.6).restart();
   }
 
   function bindEvents() {
@@ -904,16 +1003,44 @@
       );
     });
 
+    // Fullscreen toggle
+    const btnFullscreen = document.getElementById('btn-fullscreen');
+    const fsTarget = document.getElementById('research-graph-workspace');
+    btnFullscreen?.addEventListener('click', () => {
+      const fsElement = document.fullscreenElement || document.webkitFullscreenElement;
+      if (!fsElement) {
+        if (fsTarget.requestFullscreen) fsTarget.requestFullscreen();
+        else if (fsTarget.webkitRequestFullscreen) fsTarget.webkitRequestFullscreen();
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      }
+    });
+
+    const onFullscreenChange = () => {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      const icon = btnFullscreen?.querySelector('i');
+      if (icon) icon.className = isFs ? 'fa fa-compress' : 'fa fa-expand';
+      // Let the browser settle the new size, then re-fit the graph
+      setTimeout(resizeGraph, 60);
+    };
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+
     const btnViewGraph = document.getElementById('btn-view-graph');
     const btnViewMatrix = document.getElementById('btn-view-matrix');
     const graphWorkspace = document.getElementById('research-graph-workspace');
     const matrixWorkspace = document.getElementById('research-matrix-workspace');
+    const filtersBar = document.getElementById('research-filters');
 
     btnViewGraph?.addEventListener('click', () => {
       btnViewGraph.classList.add('active');
       btnViewMatrix?.classList.remove('active');
       if (graphWorkspace) graphWorkspace.style.display = 'flex';
       if (matrixWorkspace) matrixWorkspace.classList.remove('active');
+      if (filtersBar) filtersBar.style.display = 'flex';
+      // Card now has its real dimensions; re-fit the graph to them
+      setTimeout(resizeGraph, 60);
     });
 
     btnViewMatrix?.addEventListener('click', () => {
@@ -921,6 +1048,7 @@
       btnViewGraph?.classList.remove('active');
       if (graphWorkspace) graphWorkspace.style.display = 'none';
       if (matrixWorkspace) matrixWorkspace.classList.add('active');
+      if (filtersBar) filtersBar.style.display = 'none';
     });
 
     window.caslabSelectKeyword = selectKeyword;
@@ -931,72 +1059,23 @@
     const matrixContainer = document.getElementById('research-matrix-workspace');
     if (!matrixContainer) return;
 
-    const pillars = [
-      {
-        id: 'llm',
-        title: 'Efficient LLM and Emerging ML Systems',
-        domain: 'llm',
-        image: '/research/images/ai-v2.png',
-        desc: 'We develop efficient systems for large language models and emerging machine learning workloads, focusing on reducing computation, memory, and data-movement overhead. Our research includes LLM training and serving, RAG and ANNS, memory optimization, and hardware-aware acceleration.',
-        topKeywords: ['LLM Training', 'LLM Inference', 'Vector Search (ANNS)', 'CPU Offloading & SIMD', 'On-Device AI']
-      },
-      {
-        id: 'cxl',
-        title: 'CXL-based Memory Systems',
-        domain: 'cxl',
-        image: '/research/images/memory-v2.png',
-        desc: 'We design CXL-based memory systems for efficient use of tiered and disaggregated memory. Our research focuses on memory placement, capacity expansion, and resource management across diverse memory devices.',
-        topKeywords: ['CXL & Tiered Memory', 'Memory Disaggregation', 'Memory Placement', 'Capacity Expansion']
-      },
-      {
-        id: 'pim',
-        title: 'Processing-in/Near-Memory (PIM/PNM)',
-        domain: 'pim',
-        image: '/research/images/tiering.png',
-        desc: 'We explore PIM/PNM architectures that reduce costly data movement by bringing computation closer to memory. Our work spans architectural design, data placement, and system support for memory-intensive workloads.',
-        topKeywords: ['PIM / NDP', 'Near-Data Processing', 'Data Placement', 'Memory-Intensive Workloads']
-      },
-      {
-        id: 'gpu',
-        title: 'GPU/NPU Computing Systems',
-        domain: 'gpu',
-        image: '/research/images/ai-v2.png',
-        desc: 'We study efficient execution of emerging workloads on GPUs, NPUs, and other on-chip accelerators. Our research covers accelerator-aware execution, CPU–accelerator cooperation, on-device computing, and hardware/software co-design.',
-        topKeywords: ['GPU UVM & Oversubscription', 'Intel AMX Acceleration', 'CPU–Accelerator Cooperation', 'On-Device AI']
-      },
-      {
-        id: 'cloud',
-        title: 'Cloud and Datacenter Resource Management',
-        domain: 'cloud',
-        image: '/research/images/cloud-v2.png',
-        desc: 'We develop resource management techniques for cloud and datacenter systems to improve performance, utilization, and energy efficiency. Our work includes scheduling, resource isolation, SLO/QoS management, and workload consolidation.',
-        topKeywords: ['Serverless & FaaS', 'Latency-Critical QoS', 'DVFS & Power Management', 'Datacenter Systems', 'Virtualization & Hypervisor']
-      },
-      {
-        id: 'security',
-        title: 'Secure Computer Architecture',
-        domain: 'security',
-        image: '/research/images/security-v2.png',
-        desc: 'We investigate architectural security vulnerabilities and develop mechanisms to protect modern computing systems. Our research covers side-channel and transient-execution attacks, DRAM RowHammer, memory integrity, and architectural defenses.',
-        topKeywords: ['Transient Execution Attacks', 'Side-Channel Attacks', 'DRAM Reliability & Rowhammer', 'Speculative Execution Defense', 'Microarchitectural Security']
-      }
-    ];
+    // Pillars are derived from the single DOMAINS source of truth.
+    const pillars = DOMAIN_ORDER.map(id => DOMAINS[id]);
 
     const html = pillars.map(p => {
       const relatedPapers = allPapers.filter(paper => {
-        const fields = (paper.fields || []).map(f => mapFieldToDomain(f));
-        return fields.includes(p.domain);
+        return resolvePaperDomains(paper).has(p.id);
       });
 
       return `
         <div class="pillar-card">
           <div class="pillar-card-header">
-            <h2 class="pillar-card-title">${p.title}</h2>
-            <span class="inspector-domain-badge" style="background: ${DOMAINS[p.domain]?.bgLight || '#e0f2fe'}; color: ${DOMAINS[p.domain]?.color || '#003876'};">
+            <h2 class="pillar-card-title">${p.pillarTitle}</h2>
+            <span class="inspector-domain-badge" style="background: ${p.bgLight}; color: ${p.color};">
               ${relatedPapers.length} Publications
             </span>
           </div>
-          <p class="pillar-card-desc">${p.desc}</p>
+          <p class="pillar-card-desc">${p.pillarDesc}</p>
           <div class="pillar-keywords-box">
             <div class="pillar-keywords-title">Core Research Themes</div>
             <div class="inspector-connected-chips">

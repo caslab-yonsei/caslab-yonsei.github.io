@@ -37,16 +37,9 @@ categories:
       </div>
     </div>
 
-    <!-- Domain Filters -->
-    <div class="research-filters">
+    <!-- Domain Filters (Knowledge Graph view only). Chips are generated from DOMAINS by JS. -->
+    <div class="research-filters" id="research-filters" style="display: none;">
       <span class="research-filter-label">Filter:</span>
-      <button class="research-filter-chip active" data-domain="all">All Domains</button>
-      <button class="research-filter-chip" data-domain="llm">LLM &amp; ML Systems</button>
-      <button class="research-filter-chip" data-domain="cxl">CXL Memory</button>
-      <button class="research-filter-chip" data-domain="pim">PIM / PNM</button>
-      <button class="research-filter-chip" data-domain="gpu">GPU / NPU</button>
-      <button class="research-filter-chip" data-domain="cloud">Cloud &amp; Datacenter</button>
-      <button class="research-filter-chip" data-domain="security">Secure Architecture</button>
     </div>
   </div>
 
@@ -59,35 +52,12 @@ categories:
         <button class="graph-tool-btn" id="btn-zoom-in" title="Zoom In">+</button>
         <button class="graph-tool-btn" id="btn-zoom-out" title="Zoom Out">−</button>
         <button class="graph-tool-btn" id="btn-zoom-reset" title="Reset View">⟲</button>
+        <button class="graph-tool-btn" id="btn-fullscreen" title="Toggle Fullscreen"><i class="fa fa-expand"></i></button>
       </div>
 
-      <!-- Graph Legend -->
+      <!-- Graph Legend. Items are generated from DOMAINS by JS. -->
       <div class="graph-legend-overlay">
         <div class="graph-legend-title">Research Domains</div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #efe7f7; border: 1.5px solid #7c5aa6;"></div>
-          <span>LLM &amp; ML Systems</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #e3eef7; border: 1.5px solid #2f6f9f;"></div>
-          <span>CXL-based Memory</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #e0efec; border: 1.5px solid #3d8e82;"></div>
-          <span>PIM / PNM</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #f2ecd8; border: 1.5px solid #9a7d2e;"></div>
-          <span>GPU / NPU Computing</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #e6ecf5; border: 1.5px solid #4a6fa5;"></div>
-          <span>Cloud &amp; Datacenter</span>
-        </div>
-        <div class="graph-legend-item">
-          <div class="graph-legend-color" style="background: #f5e2e8; border: 1.5px solid #a84564;"></div>
-          <span>Secure Architecture</span>
-        </div>
       </div>
 
       <div class="graph-hint-overlay">
