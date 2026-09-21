@@ -6,7 +6,10 @@ categories:
 ---
 
 {% assign n_pubs = 0 %}
-{% for publication in site.categories.publications %}
+{% assign papers = site.categories.publications | where: "type", "Paper" | where: "international", true | where_exp: "pub", "pub.template != true" | where_exp: "pub", "pub.hidden != true" %}
+{% assign publication_years = papers | group_by: "paper.year" | sort: "name" | reverse %}
+{% for publication_year in publication_years %}
+{% for publication in publication_year.items %}
   {% if publication.template -%}{% continue -%}{% endif -%}
   {% if publication.hidden -%}{% continue -%}{% endif -%}
   {% unless publication.type == "Paper" -%}{% continue -%}{% endunless -%}
@@ -32,6 +35,7 @@ categories:
     </div>
   </div>
   {% assign n_pubs = n_pubs | plus: 1 %}
+{% endfor %}
 {% endfor %}
 
 {% comment %}
