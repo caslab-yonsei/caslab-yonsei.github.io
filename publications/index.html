@@ -6,7 +6,8 @@ categories:
 ---
 
 {% assign n_pubs = 0 %}
-{% assign publication_years = site.categories.publications | group_by: "paper.year" | sort: "name" | reverse %}
+{% assign papers = site.categories.publications | where: "type", "Paper" | where: "international", true | where_exp: "pub", "pub.template != true" | where_exp: "pub", "pub.hidden != true" %}
+{% assign publication_years = papers | group_by: "paper.year" | sort: "name" | reverse %}
 {% for publication_year in publication_years %}
 {% for publication in publication_year.items %}
   {% if publication.template -%}{% continue -%}{% endif -%}
