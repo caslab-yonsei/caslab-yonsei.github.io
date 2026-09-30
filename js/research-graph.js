@@ -11,7 +11,7 @@
   const DOMAINS = {
     llm: {
       id: 'llm',
-      name: 'Efficient LLM & Emerging ML Systems',
+      name: 'LLM and Emerging ML Systems',
       shortName: 'LLM & ML',
       color: '#7c5aa6',
       bgLight: '#efe7f7',
@@ -19,28 +19,28 @@
       // matchOrder controls precedence when a text could match several domains
       matchOrder: 50,
       filterLabel: 'LLM & ML Systems',
-      matchers: ['llm', 'anns', 'rag', 'recommendation', 'transformer', 'language model', 'machine learning', 'ai system', 'ai hw', 'ai ', ' ml '],
-      pillarTitle: 'Efficient LLM and Emerging ML Systems',
+      matchers: ['llm', 'anns', 'rag', 'recommendation', 'transformer', 'language model', 'machine learning', 'nearest neighbor', 'vector search', 'ai', 'ml'],
+      pillarTitle: 'LLM and Emerging ML Systems',
       pillarDesc: 'We develop efficient systems for large language models and emerging machine learning workloads, focusing on reducing computation, memory, and data-movement overhead. Our research includes LLM training and serving, RAG and ANNS, memory optimization, and hardware-aware acceleration.',
-      topKeywords: ['LLM Training', 'LLM Inference', 'Vector Search (ANNS)', 'CPU Offloading & SIMD', 'On-Device AI']
+      topKeywords: ['LLM Training', 'LLM Inference', 'Vector Search (ANNS)', 'CPU Offloading & SIMD']
     },
     cxl: {
       id: 'cxl',
-      name: 'CXL-based Memory Systems',
-      shortName: 'CXL Memory',
+      name: 'Memory Systems and Architectures (e.g., CXL & Tiered Memory)',
+      shortName: 'Memory Systems',
       color: '#2f6f9f',
       bgLight: '#e3eef7',
       target: { xOffset: -260, yOffset: 90 },
       matchOrder: 40,
-      filterLabel: 'CXL Memory',
+      filterLabel: 'Memory Systems',
       matchers: ['cxl', 'tiered memory', 'disaggregat'],
-      pillarTitle: 'CXL-based Memory Systems',
-      pillarDesc: 'We design CXL-based memory systems for efficient use of tiered and disaggregated memory. Our research focuses on memory placement, capacity expansion, and resource management across diverse memory devices.',
-      topKeywords: ['CXL & Tiered Memory', 'Memory Disaggregation', 'Memory Placement', 'Capacity Expansion']
+      pillarTitle: 'Memory Systems and Architectures (e.g., CXL & Tiered Memory)',
+      pillarDesc: 'We design memory systems and architectures for data-intensive computing, with a focus on CXL and tiered memory. Our research covers memory disaggregation, data placement, capacity expansion, and resource management across diverse memory devices.',
+      topKeywords: ['CXL & Tiered Memory', 'OS Memory Management', 'DRAM & Memory Hierarchies']
     },
     pim: {
       id: 'pim',
-      name: 'Processing-in/Near-Memory (PIM/PNM)',
+      name: 'Processing-in-Memory and Processing-Near-Memory (PIM/PNM)',
       shortName: 'PIM / PNM',
       color: '#3d8e82',
       bgLight: '#e0efec',
@@ -48,37 +48,37 @@
       matchOrder: 30,
       filterLabel: 'PIM / PNM',
       matchers: ['pim', 'pnm', 'processing-in-memory', 'processing in memory', 'near-memory', 'near memory', 'near-data', 'ndp'],
-      pillarTitle: 'Processing-in/Near-Memory (PIM/PNM)',
-      pillarDesc: 'We explore PIM/PNM architectures that reduce costly data movement by bringing computation closer to memory. Our work spans architectural design, data placement, and system support for memory-intensive workloads.',
-      topKeywords: ['Processing-in-Memory', 'Near-Data Processing', 'NDP', 'Memory-Intensive Workloads']
+      pillarTitle: 'Processing-in-Memory and Processing-Near-Memory (PIM/PNM)',
+      pillarDesc: 'We explore processing-in-memory (PIM) and processing-near-memory (PNM) architectures that reduce costly data movement by bringing computation closer to memory. Our work spans architectural design, data placement, and system support for memory-intensive workloads.',
+      topKeywords: ['PIM / PNM']
     },
     gpu: {
       id: 'gpu',
-      name: 'GPU/NPU Computing Systems',
-      shortName: 'GPU / NPU',
+      name: 'GPU/Accelerator Systems (e.g., GPU, NPU)',
+      shortName: 'GPU / Accelerator',
       color: '#9a7d2e',
       bgLight: '#f2ecd8',
       target: { xOffset: 0, yOffset: -220 },
       matchOrder: 60,
-      filterLabel: 'GPU / NPU',
-      matchers: ['gpu', 'npu', 'accelerator', 'amx', 'tpu'],
-      pillarTitle: 'GPU/NPU Computing Systems',
-      pillarDesc: 'We study efficient execution of emerging workloads on GPUs, NPUs, and other on-chip accelerators. Our research covers accelerator-aware execution, CPU–accelerator cooperation, on-device computing, and hardware/software co-design.',
-      topKeywords: ['GPU UVM & Oversubscription', 'Intel AMX Acceleration', 'CPU–Accelerator Cooperation', 'On-Device AI']
+      filterLabel: 'GPU / Accelerator',
+      matchers: ['gpu', 'npu', 'accelerator', 'acceleration', 'amx', 'tpu'],
+      pillarTitle: 'GPU/Accelerator Systems (e.g., GPU, NPU)',
+      pillarDesc: 'We study efficient execution of emerging workloads on GPUs and other accelerators, including NPUs. Our research covers accelerator-aware execution, CPU–accelerator cooperation, on-device computing, and hardware/software co-design.',
+      topKeywords: ['GPU UVM & Oversubscription', 'Intel AMX Acceleration', 'GPU Architecture', 'Hardware Accelerators']
     },
     cloud: {
       id: 'cloud',
-      name: 'Cloud & Datacenter Resource Management',
+      name: 'Cloud and Datacenter Resource Management',
       shortName: 'Cloud / Datacenter',
       color: '#4a6fa5',
       bgLight: '#e6ecf5',
       target: { xOffset: 250, yOffset: -110 },
       matchOrder: 20,
       filterLabel: 'Cloud & Datacenter',
-      matchers: ['cloud', 'datacenter', 'data center', 'virtualization', 'hypervisor', 'faas', 'serverless', 'power', 'energy', 'qos', 'schedul', 'latency-critical', 'resource management'],
+      matchers: ['cloud', 'datacenter', 'data center', 'virtualization', 'hypervisor', 'faas', 'serverless', 'power', 'energy', 'qos', 'latency-critical', 'resource management'],
       pillarTitle: 'Cloud and Datacenter Resource Management',
       pillarDesc: 'We develop resource management techniques for cloud and datacenter systems to improve performance, utilization, and energy efficiency. Our work includes scheduling, resource isolation, SLO/QoS management, and workload consolidation.',
-      topKeywords: ['Serverless & FaaS', 'Latency-Critical QoS', 'DVFS & Power Management', 'Datacenter Systems', 'Virtualization & Hypervisor']
+      topKeywords: ['Serverless & FaaS', 'Isolation & QoS Management', 'DVFS & Power Management', 'Datacenter & Cloud Systems', 'Virtualization & Hypervisor']
     },
     security: {
       id: 'security',
@@ -89,10 +89,10 @@
       target: { xOffset: 240, yOffset: 150 },
       matchOrder: 70,
       filterLabel: 'Secure Architecture',
-      matchers: ['security', 'side-channel', 'side channel', 'rowhammer', 'transient', 'speculat', 'covert', 'attack', 'trusted execution'],
+      matchers: ['security', 'side-channel', 'side channel', 'rowhammer', 'row hammer', 'transient', 'speculation', 'speculative execution', 'covert', 'attack', 'trusted execution'],
       pillarTitle: 'Secure Computer Architecture',
       pillarDesc: 'We investigate architectural security vulnerabilities and develop mechanisms to protect modern computing systems. Our research covers side-channel and transient-execution attacks, DRAM RowHammer, memory integrity, and architectural defenses.',
-      topKeywords: ['Transient Execution Attacks', 'Side-Channel Attacks', 'DRAM Reliability & Rowhammer', 'Speculative Execution Defense', 'Microarchitectural Security']
+      topKeywords: ['Transient Execution Attacks', 'Side-Channel & Contention Attacks', 'DRAM Reliability', 'Microarchitectural Security']
     }
   };
 
@@ -106,6 +106,20 @@
   const DOMAIN_MATCH_ORDER = Object.values(DOMAINS)
     .slice()
     .sort((a, b) => b.matchOrder - a.matchOrder);
+
+  // Compile a domain's matchers into one regex. Short acronyms (<= 4 chars, e.g.
+  // "rag", "npu", "ai") only match as whole words, optionally plural, so "rag"
+  // does not fire inside "storage" or "npu" inside "input". Longer matchers are
+  // stems and match anywhere ("attack" also matches "attacks").
+  function compileMatchers(matchers) {
+    const escape = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const parts = matchers.map(m => {
+      const t = escape(m.trim().toLowerCase());
+      return m.trim().length <= 4 ? `(?:^|[^a-z0-9])${t}s?(?![a-z0-9])` : t;
+    });
+    return new RegExp(parts.join('|'));
+  }
+  DOMAIN_MATCH_ORDER.forEach(d => { d.matchRe = compileMatchers(d.matchers); });
 
   // High-level Semantic Concept Map: Merges near-duplicate and context-overlapping terms
   const CONCEPT_MAP = {
@@ -171,16 +185,19 @@
     'non-volatile memory': 'CXL & Tiered Memory',
     'numa interleaving': 'CXL & Tiered Memory',
 
-    // 9. PIM / NDP
-    'pim': 'PIM / NDP',
-    'ndp': 'PIM / NDP',
-    'cxl-ndp systems': 'PIM / NDP',
-    'ndp, cxl, llm': 'PIM / NDP',
-    'processing-in-memory': 'PIM / NDP',
-    'near-memory processing': 'PIM / NDP',
-    'near-storage computing': 'PIM / NDP',
-    'data movement reduction': 'PIM / NDP',
-    'sparse matrix multiplication': 'PIM / NDP',
+    // 9. PIM / PNM
+    'pim': 'PIM / PNM',
+    'ndp': 'PIM / PNM',
+    'cxl-ndp systems': 'PIM / PNM',
+    'ndp, cxl, llm': 'PIM / PNM',
+    'processing-in-memory': 'PIM / PNM',
+    'near-memory processing': 'PIM / PNM',
+    'processing-near-memory': 'PIM / PNM',
+    'processing near memory': 'PIM / PNM',
+    'pnm': 'PIM / PNM',
+    'near-storage computing': 'PIM / PNM',
+    'data movement reduction': 'PIM / PNM',
+    'sparse matrix multiplication': 'PIM / PNM',
 
     // 10. GPU UVM & Oversubscription
     'uvm': 'GPU UVM & Oversubscription',
@@ -267,7 +284,6 @@
     'public clouds': 'Datacenter & Cloud Systems',
     'data center': 'Datacenter & Cloud Systems',
     'data center architecture': 'Datacenter & Cloud Systems',
-    'data center performance': 'Datacenter & Cloud Systems',
     'data center servers': 'Datacenter & Cloud Systems',
     'data-center servers': 'Datacenter & Cloud Systems',
     'server processors': 'Datacenter & Cloud Systems',
@@ -377,9 +393,9 @@
   // Returns null when nothing matches, so callers can combine multiple signals.
   function matchDomain(text) {
     if (!text) return null;
-    const low = ' ' + String(text).toLowerCase().trim() + ' ';
+    const low = String(text).toLowerCase().trim();
     for (const domain of DOMAIN_MATCH_ORDER) {
-      if (domain.matchers.some(m => low.includes(m))) return domain.id;
+      if (domain.matchRe.test(low)) return domain.id;
     }
     if (low.includes('memory')) return 'cxl';
     return null;
@@ -481,6 +497,8 @@
         const clean = String(k).trim();
         if (!clean) return;
         const low = clean.toLowerCase();
+        // Keywords mapped to null in CONCEPT_MAP are too generic: no graph node.
+        if (CONCEPT_MAP[low] === null) return;
         // Use representative concept if mapped, or clean Title Case if not
         const concept = CONCEPT_MAP[low] || clean
           .split(/\s+/)
@@ -1067,6 +1085,13 @@
         return resolvePaperDomains(paper).has(p.id);
       });
 
+      // A theme chip only works if it names a real graph node; hide stale ones.
+      const themes = p.topKeywords.filter(k => {
+        if (graphNodes.some(n => n.id === k)) return true;
+        console.warn(`[research] "${k}" in DOMAINS.${p.id}.topKeywords is not a graph node`);
+        return false;
+      });
+
       return `
         <div class="pillar-card">
           <div class="pillar-card-header">
@@ -1079,7 +1104,7 @@
           <div class="pillar-keywords-box">
             <div class="pillar-keywords-title">Core Research Themes</div>
             <div class="inspector-connected-chips">
-              ${p.topKeywords.map(k => `
+              ${themes.map(k => `
                 <button class="inspector-chip" onclick="window.caslabSelectKeyword('${k}'); document.getElementById('btn-view-graph').click();">
                   ${k}
                 </button>
