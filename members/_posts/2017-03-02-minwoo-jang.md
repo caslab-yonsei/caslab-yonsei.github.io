@@ -6,9 +6,10 @@ role: Student
 position: Ph.D. Student
 image: /members/images/mjang.jpg
 researches:
-  - Security issues in Hardware (e.g. Flush+Reload attack, Prime+Probe attack, Meltdown, Spectre)
-  - Hybrid Memory
-  - Machine Learning Accelerator
+  - Transient Execution Attacks and Defenses (e.g. Spectre, Meltdown, Invisible Speculation)
+  - Microarchitectural Side Channels (e.g. Flush+Reload, Prime+Probe, MSHR Contention)
+  - Secure Cache and Memory Hierarchy Design
+  - Hybrid Memory and ML Accelerators (previous)
 sidebar:
   - title: Location
     items:
@@ -22,6 +23,12 @@ sidebar:
         reveal: true
         overt: true
         text: minwoo.jang at dgist.ac.kr
+      - type: link
+        icon: inbox
+        reveal: true
+        overt: true
+        url: mailto:minwoo.jang23@gmail.com
+        text: minwoo.jang23@gmail.com
   - title: Google Scholar
     items:
       - type: link
@@ -40,3 +47,4 @@ components: [researches, contents, publications, patents, photos]
 
 # Hobbies
 * Tetris
+* Brewing Chinese tea
