@@ -19,10 +19,12 @@ sidebar:
         text: "Engineering Research Park 212D"
   - title: Email
     items:
-      - type: email
+      - type: link
+        icon: inbox
         reveal: true
         overt: true
-        text: minwoo.jang at dgist.ac.kr
+        url: mailto:minwoo.jang@dgist.ac.kr
+        text: minwoo.jang@dgist.ac.kr
       - type: link
         icon: inbox
         reveal: true
