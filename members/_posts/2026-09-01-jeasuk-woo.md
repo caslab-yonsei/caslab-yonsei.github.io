@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Jaeseok Woo
+title: Jeasuk Woo
 abbrev: J. Wo
 role: Student
 position: M.S. Student
@@ -20,7 +20,7 @@ sidebar:
       - type: email
         reveal: true
         overt: true
-        text: woje at yonsei.ac.kr
+        text: woje01 at yonsei.ac.kr
 alterlink: 
 components: [researches, contents, publications, patents, photos]
 ---
