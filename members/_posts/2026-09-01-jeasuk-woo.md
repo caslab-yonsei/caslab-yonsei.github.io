@@ -27,5 +27,5 @@ components: [researches, contents, publications, patents, photos]
 
 # Education
 * 2026.09~, **M.S. Student**, Dept. of Systems Semiconductor Engineering, **Yonsei University**
-* 2021.03~2025.08, **B.S.**, Electrical & Electronic Engineering, **Yonsei University**
+* 2020.02~2026.08, **B.S.**, Electrical & Electronic Engineering, **Yonsei University**
 
