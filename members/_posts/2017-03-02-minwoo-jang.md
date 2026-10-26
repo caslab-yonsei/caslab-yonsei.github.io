@@ -6,10 +6,9 @@ role: Student
 position: Ph.D. Student
 image: /members/images/mjang.jpg
 researches:
-  - Transient Execution Attacks and Defenses (e.g. Spectre, Meltdown, Invisible Speculation)
-  - Microarchitectural Side Channels (e.g. Flush+Reload, Prime+Probe, MSHR Contention)
-  - Secure Cache and Memory Hierarchy Design
-  - Hybrid Memory and ML Accelerators (previous)
+  - Transient Execution Attacks
+  - Microarchitectural Side Channels
+  - Secure Cache Design
 sidebar:
   - title: Location
     items:
@@ -19,18 +18,14 @@ sidebar:
         text: "Engineering Research Park 212D"
   - title: Email
     items:
-      - type: link
-        icon: inbox
+      - type: email
         reveal: true
         overt: true
-        url: mailto:minwoo.jang@dgist.ac.kr
-        text: minwoo.jang@dgist.ac.kr
-      - type: link
-        icon: inbox
+        text: minwoo.jang at dgist.ac.kr
+      - type: email
         reveal: true
         overt: true
-        url: mailto:minwoo.jang23@gmail.com
-        text: minwoo.jang23@gmail.com
+        text: minwoo.jang23 at gmail.com
   - title: Google Scholar
     items:
       - type: link
