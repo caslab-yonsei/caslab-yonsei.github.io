@@ -6,10 +6,9 @@ role: Student
 position: Ph.D. Student
 image: /members/images/mjang.jpg
 researches:
-  - Transient Execution Attacks and Defenses (e.g. Spectre, Meltdown, Invisible Speculation)
-  - Microarchitectural Side Channels (e.g. Flush+Reload, Prime+Probe, MSHR Contention)
-  - Secure Cache and Memory Hierarchy Design
-  - Hybrid Memory and ML Accelerators (previous)
+  - Transient Execution Attacks
+  - Microarchitectural Side Channels
+  - Secure Cache Design
 sidebar:
   - title: Location
     items:
